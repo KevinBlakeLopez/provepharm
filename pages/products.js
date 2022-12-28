@@ -14,14 +14,18 @@ export default function Products() {
               return (
                 <div className="my-8">
                   <h2 className="text-4xl tracking-widest mb-8">
-                    {product.title}
+                    {product.title ? product.title : null}
                   </h2>
                   <div className="flex justify-between max-w-lg">
-                    <Image
-                      src={product.featuredImage.node.sourceUrl}
-                      width="100"
-                      height="300"
-                    />
+                    {product.featuredImage ? (
+                      <Image
+                        src={product.featuredImage.node.sourceUrl}
+                        width="100"
+                        height="300"
+                      />
+                    ) : (
+                      <div className="h-[300px] w-[100px] bg-slate-700"></div>
+                    )}
                     <div className="flex">
                       <ul className="mr-8">
                         <li className="font-bold">Reference Listed Drug:</li>
@@ -38,9 +42,13 @@ export default function Products() {
                         <li className="mb-4">{product.ndc}</li>
                         <li className="font-bold">Safety Data Sheet:</li>
                         <li className="mb-4 underline underline-offset-2 text-blue-500">
-                          <a href={product.dataSheet.mediaItemUrl}>
-                            Click Here PDF
-                          </a>
+                          {product.dataSheet.mediaItemUrl ? (
+                            <a href={product.dataSheet.mediaItemUrl}>
+                              Click Here PDF
+                            </a>
+                          ) : (
+                            <h3>Please add PDF here</h3>
+                          )}
                         </li>
                       </ul>
                     </div>
@@ -83,6 +91,6 @@ Products.query = gql`
 export async function getServerProps(context) {
   return getWordPressProps(context, {
     Products,
-    revalidate: 5,
+    revalidate: 1,
   });
 }
