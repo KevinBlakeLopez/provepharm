@@ -42,7 +42,7 @@ export default function Products() {
                         <li className="mb-4">{product.ndc}</li>
                         <li className="font-bold">Safety Data Sheet:</li>
                         <li className="mb-4 underline underline-offset-2 text-blue-500">
-                          {product.dataSheet.mediaItemUrl ? (
+                          {product.dataSheet ? (
                             <a href={product.dataSheet.mediaItemUrl}>
                               Click Here PDF
                             </a>
