@@ -12,35 +12,44 @@ export default function Products() {
           {data ? (
             data.products.nodes.map((product) => {
               return (
-                <div className="my-8">
-                  <h2 className="text-4xl tracking-widest mb-8">
+                <div className="my-20 w-[600px]">
+                  <h2 className="text-3xl tracking-widest mb-8">
                     {product.title ? product.title : null}
                   </h2>
-                  <div className="flex justify-between max-w-lg">
+                  <div className="flex justify-between">
                     {product.featuredImage ? (
                       <Image
                         src={product.featuredImage.node.sourceUrl}
-                        width="100"
-                        height="300"
+                        width="80"
+                        height="250"
                       />
                     ) : (
                       <div className="h-[300px] w-[100px] bg-slate-700"></div>
                     )}
                     <div className="flex">
                       <ul className="mr-8">
-                        <li className="font-bold">Reference Listed Drug:</li>
+                        <li className="font-medium text-lg">
+                          Reference Listed Drug:
+                        </li>
                         <li className="mb-4">{product.referenceListedDrug}</li>
-                        <li className="font-bold">Form:</li>
+                        <li className="font-medium text-lg">Form:</li>
                         <li className="mb-4">{product.form}</li>
-                        <li className="font-bold">Strength:</li>
+                        <li className="font-medium text-lg">Strength:</li>
                         <li className="mb-4">{product.strength}</li>
+                        <li className="mt-2">
+                          <button className="bg-blue-500 w-full py-2 text-white">
+                            View Product
+                          </button>
+                        </li>
                       </ul>
                       <ul>
-                        <li className="font-bold">Pack Size:</li>
+                        <li className="font-medium text-lg">Pack Size:</li>
                         <li className="mb-4">{product.packSize}</li>
-                        <li className="font-bold">NDC:</li>
+                        <li className="font-medium text-lg">NDC:</li>
                         <li className="mb-4">{product.ndc}</li>
-                        <li className="font-bold">Safety Data Sheet:</li>
+                        <li className="font-medium text-lg">
+                          Safety Data Sheet:
+                        </li>
                         <li className="mb-4 underline underline-offset-2 text-blue-500">
                           {product.dataSheet ? (
                             <a href={product.dataSheet.mediaItemUrl}>
