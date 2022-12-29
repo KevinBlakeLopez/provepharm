@@ -59,7 +59,11 @@ export default function Product() {
         <div>
           <div className="my-20 w-[1000px]">
             <h2 className="text-[1.75rem] tracking-widest mb-8">
-              {product.title ? product.title : null}
+              {product.title ? product.title : null} (
+              {product.productVariationTitle
+                ? product.productVariationTitle
+                : null}
+              )
             </h2>
             <div className="flex justify-between">
               <section>
