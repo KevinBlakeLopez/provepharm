@@ -3,42 +3,9 @@ import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-// Product.query = gql`
-//   query NewQuery($slug: String!) {
-//     productBy(slug: $slug) {
-//       title
-//       featuredImage {
-//         node {
-//           sourceUrl
-//         }
-//       }
-//       referenceListedDrug
-//       form
-//       strength
-//       packSize
-//       ndc
-//       dataSheet {
-//         mediaItemUrl
-//       }
-//       genericName
-//       productVariationTitle
-//       gtin
-//       therapeuticClass
-//       therapeuticEquivalenceRating
-//       latex
-//       preservativeFree
-//       glutenFree
-//       amerisourceBergen
-//       cardinal
-//       mcKessen
-//       slug
-//     }
-//   }
-// `;
-
 Product.query = gql`
   query NewQuery {
-    productBy(slug: "succinylcholine") {
+    productBy(slug: "succinylcholine-injection-10ml-usp") {
       title
       featuredImage {
         node {
@@ -68,9 +35,14 @@ Product.query = gql`
 `;
 
 export default function Product() {
+  const { data, loading } = useQuery(Product.query);
   const router = useRouter();
   const { slug } = router.query;
-  const { data } = useQuery(Product.query, { variables: { slug: slug } });
+
+  if (loading) {
+    return <></>;
+  }
+
   const { productBy } = data;
   const product = productBy;
 
@@ -83,7 +55,7 @@ export default function Product() {
               {product.title ? product.title : null}
             </h2>
             <div className="flex justify-between">
-              {data.product.featuredImage ? (
+              {product.featuredImage ? (
                 <Image
                   src={product.featuredImage.node.sourceUrl}
                   width="80"
