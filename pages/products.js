@@ -37,7 +37,7 @@ export default function Products() {
                         <li className="mb-4">{product.form}</li>
                         <li className="font-medium text-lg">Strength:</li>
                         <li className="mb-4">{product.strength}</li>
-                        <li className="mt-2 bg-blue-500 w-full py-2 text-white">
+                        <li className="mt-2 bg-blue-500 w-full py-2 px-12 text-white">
                           <Link
                             href={`/product/${encodeURIComponent(
                               product.slug
