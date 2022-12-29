@@ -1,6 +1,7 @@
 import { getWordPressProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Products() {
   const { data } = useQuery(Products.query);
@@ -36,10 +37,14 @@ export default function Products() {
                         <li className="mb-4">{product.form}</li>
                         <li className="font-medium text-lg">Strength:</li>
                         <li className="mb-4">{product.strength}</li>
-                        <li className="mt-2">
-                          <button className="bg-blue-500 w-full py-2 text-white">
+                        <li className="mt-2 bg-blue-500 w-full py-2 text-white">
+                          <Link
+                            href={`/product/${encodeURIComponent(
+                              product.slug
+                            )}`}
+                          >
                             View Product
-                          </button>
+                          </Link>
                         </li>
                       </ul>
                       <ul>
@@ -92,6 +97,7 @@ Products.query = gql`
         dataSheet {
           mediaItemUrl
         }
+        slug
       }
     }
   }
