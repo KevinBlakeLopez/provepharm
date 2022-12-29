@@ -57,25 +57,27 @@ export default function Product() {
     <div>
       <div className="flex flex-col items-center">
         <div>
-          <div className="my-20 w-[600px]">
+          <div className="my-20 w-[1000px]">
             <h2 className="text-[1.75rem] tracking-widest mb-8">
               {product.title ? product.title : null}
             </h2>
-            <div className="flex">
+            <div className="flex justify-between">
               <section>
                 <div className="flex justify-between">
-                  {product.featuredImage ? (
-                    <Image
-                      src={product.featuredImage.node.sourceUrl}
-                      width="80"
-                      height="250"
-                    />
-                  ) : (
-                    <div className="h-[300px] w-[100px] bg-slate-700"></div>
-                  )}
+                  <section className="border border-solid p-8 px-32">
+                    {product.featuredImage ? (
+                      <Image
+                        src={product.featuredImage.node.sourceUrl}
+                        width="80"
+                        height="250"
+                      />
+                    ) : (
+                      <div className="h-[300px] w-[100px] bg-slate-700"></div>
+                    )}
+                  </section>
                 </div>
               </section>
-              <ul className="mr-8">
+              <ul className="mx-8">
                 {product.productVariationTitle ? (
                   <li className="font-medium text-lg mb-4">
                     Product Variation Title
