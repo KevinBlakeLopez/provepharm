@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 Product.query = gql`
-  query NewQuery($slug: String!) {
+  query ProductQuery($slug: String) {
     productBy(slug: $slug) {
       title
       featuredImage {
@@ -20,7 +20,7 @@ Product.query = gql`
       dataSheet {
         mediaItemUrl
       }
-      genericName
+      name
       productVariationTitle
       gtin
       therapeuticClass
@@ -37,11 +37,14 @@ Product.query = gql`
 `;
 
 export default function Product() {
+  const router = useRouter();
+  const { slug } = router.query;
+
   const { data, loading } = useQuery(Product.query, {
     variables: { slug: slug },
   });
-  const router = useRouter();
-  const { slug } = router.query;
+
+  console.log(data);
 
   if (loading) {
     return <></>;
