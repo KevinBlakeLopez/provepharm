@@ -13,7 +13,7 @@ export default function Products() {
             data.products.nodes.map((product) => {
               return (
                 <div className="my-20 w-[600px]">
-                  <h2 className="text-3xl tracking-widest mb-8">
+                  <h2 className="text-[1.75rem] tracking-widest mb-8">
                     {product.title ? product.title : null}
                   </h2>
                   <div className="flex justify-between">
