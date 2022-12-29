@@ -112,13 +112,13 @@ export default function Product() {
                 {product.productVariationTitle ? (
                   <li className="mb-4">{product.productVariationTitle}</li>
                 ) : null}
-                <li className="mb-4 mt-1">{product.referenceListedDrug}</li>
-                <li className="mb-4 mt-2">{product.ndc}</li>
-                <li className="mb-4 mt-2">{product.strength}</li>
-                <li className="mb-4 mt-4">{product.gtin}</li>
-                <li className="mb-4 mt-4">{product.form}</li>
-                <li className="mb-4 mt-1">{product.packSize}</li>
-                <li className="mb-4 mt-1">{product.therapeuticClass}</li>
+                <li className="mb-4">{product.referenceListedDrug}</li>
+                <li className="mb-4 mt-5">{product.ndc}</li>
+                <li className="mb-4 mt-5">{product.strength}</li>
+                <li className="mb-4 mt-5">{product.gtin}</li>
+                <li className="mb-4 mt-5">{product.form}</li>
+                <li className="mb-4 mt-5">{product.packSize}</li>
+                <li className="mb-4 mt-5">{product.therapeuticClass}</li>
                 {product.therapeuticEquivalenceRating ? (
                   <li className="mb-4 mt-1">
                     {product.therapeuticEquivalenceRating}
