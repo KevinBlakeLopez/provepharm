@@ -92,9 +92,11 @@ export default function Product() {
                 <li className="font-medium text-lg mb-4">Form</li>
                 <li className="font-medium text-lg mb-4">Pack Size</li>
                 <li className="font-medium text-lg mb-4">Therapeutic Class</li>
-                <li className="font-medium text-lg mb-4">
-                  Therapeutic Equivalence Rating
-                </li>
+                {product.therapeuticEquivalenceRating ? (
+                  <li className="font-medium text-lg mb-4">
+                    Therapeutic Equivalence Rating
+                  </li>
+                ) : null}
                 <li className="font-medium text-lg mb-4">
                   Not made with natural rubber latex
                 </li>
@@ -111,18 +113,24 @@ export default function Product() {
                   <li className="mb-4">{product.productVariationTitle}</li>
                 ) : null}
                 <li className="mb-4 mt-1">{product.referenceListedDrug}</li>
-                <li className="mb-4 mt-1">{product.ndc}</li>
-                <li className="mb-4 mt-1">{product.strength}</li>
-                <li className="mb-4 mt-1">{product.gtin}</li>
-                <li className="mb-4 mt-1">{product.form}</li>
+                <li className="mb-4 mt-2">{product.ndc}</li>
+                <li className="mb-4 mt-2">{product.strength}</li>
+                <li className="mb-4 mt-4">{product.gtin}</li>
+                <li className="mb-4 mt-4">{product.form}</li>
                 <li className="mb-4 mt-1">{product.packSize}</li>
                 <li className="mb-4 mt-1">{product.therapeuticClass}</li>
+                {product.therapeuticEquivalenceRating ? (
+                  <li className="mb-4 mt-1">
+                    {product.therapeuticEquivalenceRating}
+                  </li>
+                ) : null}
+                <li className="mb-4 mt-1">{product.latex ? "yes" : "no"}</li>
                 <li className="mb-4 mt-1">
-                  {product.therapeuticEquivalenceRating}
+                  {product.preservativeFree ? "yes" : "no"}
                 </li>
-                <li className="mb-4 mt-1">{product.latex}</li>
-                <li className="mb-4 mt-1">{product.preservativeFree}</li>
-                <li className="mb-4 mt-1">{product.glutenFree}</li>
+                <li className="mb-4 mt-1">
+                  {product.glutenFree ? "yes" : "no"}
+                </li>
                 <li className="mb-12 underline underline-offset-2 text-blue-500">
                   {product.dataSheet ? (
                     <a href={product.dataSheet.mediaItemUrl}>Click Here PDF</a>
