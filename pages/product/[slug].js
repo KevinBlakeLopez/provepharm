@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 Product.query = gql`
-  query NewQuery {
-    productBy(slug: "succinylcholine-injection-10ml-usp") {
+  query NewQuery($slug: String!) {
+    productBy(slug: $slug) {
       title
       featuredImage {
         node {
@@ -20,6 +20,7 @@ Product.query = gql`
       dataSheet {
         mediaItemUrl
       }
+      genericName
       productVariationTitle
       gtin
       therapeuticClass
@@ -30,12 +31,15 @@ Product.query = gql`
       amerisourceBergen
       cardinal
       mcKessen
+      slug
     }
   }
 `;
 
 export default function Product() {
-  const { data, loading } = useQuery(Product.query);
+  const { data, loading } = useQuery(Product.query, {
+    variables: { slug: slug },
+  });
   const router = useRouter();
   const { slug } = router.query;
 
