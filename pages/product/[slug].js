@@ -114,37 +114,35 @@ export default function Product() {
               </ul>
               <ul className="mr-8 mt-1">
                 {product.productVariationTitle ? (
-                  <li className="mb-4">{product.productVariationTitle}</li>
+                  <li className="">{product.productVariationTitle}</li>
                 ) : null}
-                <li className="mb-4">{product.referenceListedDrug}</li>
-                <li className="mb-4 mt-5">{product.ndc}</li>
-                <li className="mb-4 mt-5">{product.strength}</li>
-                <li className="mb-4 mt-5">{product.gtin}</li>
-                <li className="mb-4 mt-5">{product.form}</li>
-                <li className="mb-4 mt-5">{product.packSize}</li>
-                <li className="mb-4 mt-5">{product.therapeuticClass}</li>
+                <li className="mt-5">{product.referenceListedDrug}</li>
+                <li className="mt-4">{product.ndc}</li>
+                <li className="mt-5">{product.strength}</li>
+                <li className="mt-5">{product.gtin}</li>
+                <li className="mt-6">{product.form}</li>
+                <li className="mt-4">{product.packSize}</li>
+                <li className="mt-4">{product.therapeuticClass}</li>
                 {product.therapeuticEquivalenceRating ? (
-                  <li className="mb-4 mt-1">
+                  <li className="mt-1">
                     {product.therapeuticEquivalenceRating}
                   </li>
                 ) : null}
-                <li className="mb-4 mt-1">{product.latex ? "yes" : "no"}</li>
-                <li className="mb-4 mt-1">
+                <li className="mt-4">{product.latex ? "yes" : "no"}</li>
+                <li className="mt-4">
                   {product.preservativeFree ? "yes" : "no"}
                 </li>
-                <li className="mb-4 mt-1">
-                  {product.glutenFree ? "yes" : "no"}
-                </li>
-                <li className="mb-12 underline underline-offset-2 text-blue-500">
+                <li className="mt-6">{product.glutenFree ? "yes" : "no"}</li>
+                <li className="mt-4 underline underline-offset-2 text-blue-500">
                   {product.dataSheet ? (
                     <a href={product.dataSheet.mediaItemUrl}>Click Here PDF</a>
                   ) : (
                     <h3>Please add PDF here</h3>
                   )}
                 </li>
-                <li className="mb-4">{product.amerisourceBergen}</li>
-                <li className="mb-4">{product.cardinal}</li>
-                <li className="mb-4">{product.mcKessen}</li>
+                <li className="mt-20">{product.amerisourceBergen}</li>
+                <li className="mt-5">{product.cardinal}</li>
+                <li className="mt-5">{product.mcKessen}</li>
               </ul>
             </div>
           </div>
