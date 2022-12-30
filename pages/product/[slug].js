@@ -122,18 +122,18 @@ export default function Product() {
                 <li className="mt-5">{product.gtin}</li>
                 <li className="mt-6">{product.form}</li>
                 <li className="mt-4">{product.packSize}</li>
-                <li className="mt-4">{product.therapeuticClass}</li>
+                <li className="mt-5">{product.therapeuticClass}</li>
                 {product.therapeuticEquivalenceRating ? (
                   <li className="mt-1">
                     {product.therapeuticEquivalenceRating}
                   </li>
                 ) : null}
-                <li className="mt-4">{product.latex ? "yes" : "no"}</li>
+                <li className="mt-5">{product.latex ? "yes" : "no"}</li>
                 <li className="mt-4">
                   {product.preservativeFree ? "yes" : "no"}
                 </li>
                 <li className="mt-6">{product.glutenFree ? "yes" : "no"}</li>
-                <li className="mt-4 underline underline-offset-2 text-blue-500">
+                <li className="mt-5 underline underline-offset-2 text-blue-500">
                   {product.dataSheet ? (
                     <a href={product.dataSheet.mediaItemUrl}>Click Here PDF</a>
                   ) : (
