@@ -142,68 +142,49 @@ export default function Product() {
                 ) : null}
 
                 <li className="flex justify-between">
-                  <p className="font-medium text-lg mb-4 mr-20">Pack Size</p>
-                  <p className="mb-4">{product.packSize}</p>
-                </li>
-
-                {/* <li>
-                  <p className="font-medium text-lg mb-4 mr-20">
-                    Therapeutic className
+                  <p className="font-medium text-lg mb-4">
+                    Not made with natural rubber latex
                   </p>
-                  <p className="mb-4">{product.therapeuticClass}</p>
+                  <p className="mt-5">{product.latex ? "yes" : "no"}</p>
+                </li>
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Preservative Free</p>
+                  <p className="mt-4">
+                    {product.preservativeFree ? "yes" : "no"}
+                  </p>
                 </li>
 
-                <li className="font-medium text-lg mb-4">GTIN</li>
-                <li className="font-medium text-lg mb-4">Form</li>
-                <li className="font-medium text-lg mb-4">Pack Size</li>
-                <li className="font-medium text-lg mb-4">Therapeutic className</li>
-                {product.therapeuticEquivalenceRating ? (
-                  <li className="font-medium text-lg mb-4">
-                    Therapeutic Equivalence Rating
-                  </li>
-                ) : null}
-                <li className="font-medium text-lg mb-4">
-                  Not made with natural rubber latex
-                </li> */}
-                {/* <li className="font-medium text-lg mb-4">Preservative Free</li>
-                <li className="font-medium text-lg mb-4">Gluten Free</li>
-                <li className="font-medium text-lg mb-8">Safety Data Sheet</li>
-                <li className="mb-4">ITEM CODES</li>
-                <li className="font-medium text-lg mb-4">Amerisource Bergen</li>
-                <li className="font-medium text-lg mb-4">Cardinal</li>
-                <li className="font-medium text-lg mb-4">McKessen</li>
-              </ul>
-              <ul className="mr-8 mt-1">
-                {product.productVariationTitle ? (
-                  <li className="">{product.productVariationTitle}</li>
-                ) : null}
-                <li className="mb-4">{product.referenceListedDrug}</li>
-                <li className="mb-4 mt-5">{product.ndc}</li>
-                <li className="mb-4 mt-5">{product.strength}</li>
-                <li className="mb-4 mt-5">{product.gtin}</li>
-                <li className="mb-4 mt-5">{product.form}</li>
-                <li className="mb-4 mt-5">{product.packSize}</li>
-                <li className="mb-4 mt-5">{product.therapeuticClass}</li> */}
-                {/* {product.therapeuticEquivalenceRating ? (
-                  <li className="mb-4 mt-1">
-                    {product.therapeuticEquivalenceRating}
-                  </li>
-                ) : null}
-                <li className="mt-5">{product.latex ? "yes" : "no"}</li>
-                <li className="mt-4">
-                  {product.preservativeFree ? "yes" : "no"}
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Gluten Free </p>
+                  <p className="mt-6">{product.glutenFree ? "yes" : "no"}</p>
                 </li>
-                <li className="mt-6">{product.glutenFree ? "yes" : "no"}</li>
-                <li className="mt-5 underline underline-offset-2 text-blue-500">
-                  {product.dataSheet ? (
-                    <a href={product.dataSheet.mediaItemUrl}>Click Here PDF</a>
-                  ) : (
-                    <h3>Please add PDF here</h3>
-                  )}
-                </li> */}
-                {/* <li className="mb-4">{product.amerisourceBergen}</li>
-                <li className="mb-4">{product.cardinal}</li>
-                <li className="mb-4">{product.mcKessen}</li> */}
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-8">Safety Data Sheet </p>
+                  <p className="mt-5 underline underline-offset-2 text-blue-500">
+                    {product.dataSheet ? (
+                      <a href={product.dataSheet.mediaItemUrl}>
+                        Click Here PDF
+                      </a>
+                    ) : (
+                      <h3>Please add PDF here</h3>
+                    )}
+                  </p>
+                </li>
+                <li className="flex justify-between">
+                  <p className="mb-4">ITEM CODES</p>
+                </li>
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Amerisource Bergen</p>
+                  <p className="mb-4">{product.amerisourceBergen}</p>
+                </li>
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Cardinal</p>
+                  <p className="mb-4">{product.cardinal}</p>
+                </li>
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">McKessen</p>
+                  <p className="mb-4">{product.mcKessen}</p>
+                </li>
               </ul>
             </div>
           </div>
