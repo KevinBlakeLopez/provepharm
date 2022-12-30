@@ -127,7 +127,7 @@ export default function Product() {
 
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">
-                    Therapeutic className
+                    Therapeutic Class
                   </p>
                   <p className="mb-4">{product.therapeuticClass}</p>
                 </li>
@@ -145,22 +145,20 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">
                     Not made with natural rubber latex
                   </p>
-                  <p className="mt-5">{product.latex ? "yes" : "no"}</p>
+                  <p className="">{product.latex ? "yes" : "no"}</p>
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Preservative Free</p>
-                  <p className="mt-4">
-                    {product.preservativeFree ? "yes" : "no"}
-                  </p>
+                  <p className="">{product.preservativeFree ? "yes" : "no"}</p>
                 </li>
 
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Gluten Free </p>
-                  <p className="mt-6">{product.glutenFree ? "yes" : "no"}</p>
+                  <p className="">{product.glutenFree ? "yes" : "no"}</p>
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-8">Safety Data Sheet </p>
-                  <p className="mt-5 underline underline-offset-2 text-blue-500">
+                  <p className="underline underline-offset-2 text-blue-500">
                     {product.dataSheet ? (
                       <a href={product.dataSheet.mediaItemUrl}>
                         Click Here PDF
