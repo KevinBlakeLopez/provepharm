@@ -81,21 +81,82 @@ export default function Product() {
                   </section>
                 </div>
               </section>
-              <ul className="mx-8">
-                {product.productVariationTitle ? (
-                  <li className="font-medium text-lg mb-4">
-                    Product Variation Title
+              <ul className="w-[450px] mx-8">
+                <li className="flex justify-between">
+                  {product.productVariationTitle ? (
+                    <>
+                      <p className="font-medium text-lg mb-4 mr-20">
+                        Product Variation Title
+                      </p>
+                      <p className="mb-4">{product.productVariationTitle}</p>
+                    </>
+                  ) : null}
+                </li>
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">
+                    Reference Listed Drug
+                  </p>
+                  <p className="mb-4">{product.referenceListedDrug}</p>
+                </li>
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">NDC</p>
+                  <p className="mb-4">{product.ndc}</p>
+                </li>
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">Strength</p>
+                  <p className="mb-4">{product.strength}</p>
+                </li>
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">GTIN</p>
+                  <p className="mb-4">{product.gtin}</p>
+                </li>
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">Form</p>
+                  <p className="mb-4">{product.form}</p>
+                </li>
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">Pack Size</p>
+                  <p className="mb-4">{product.packSize}</p>
+                </li>
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">
+                    Therapeutic className
+                  </p>
+                  <p className="mb-4">{product.therapeuticClass}</p>
+                </li>
+
+                {product.therapeuticEquivalenceRating ? (
+                  <li className="flex justify-between">
+                    <p className="font-medium text-lg mb-4 mr-20">
+                      Therapeutic Equivalence Rating
+                    </p>
+                    <p> {product.therapeuticEquivalenceRating}</p>
                   </li>
                 ) : null}
-                <li className="font-medium text-lg mb-4">
-                  Reference Listed Drug
+
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">Pack Size</p>
+                  <p className="mb-4">{product.packSize}</p>
                 </li>
-                <li className="font-medium text-lg mb-4">NDC</li>
-                <li className="font-medium text-lg mb-4">Strength</li>
+
+                {/* <li>
+                  <p className="font-medium text-lg mb-4 mr-20">
+                    Therapeutic className
+                  </p>
+                  <p className="mb-4">{product.therapeuticClass}</p>
+                </li>
+
                 <li className="font-medium text-lg mb-4">GTIN</li>
                 <li className="font-medium text-lg mb-4">Form</li>
                 <li className="font-medium text-lg mb-4">Pack Size</li>
-                <li className="font-medium text-lg mb-4">Therapeutic Class</li>
+                <li className="font-medium text-lg mb-4">Therapeutic className</li>
                 {product.therapeuticEquivalenceRating ? (
                   <li className="font-medium text-lg mb-4">
                     Therapeutic Equivalence Rating
@@ -103,8 +164,8 @@ export default function Product() {
                 ) : null}
                 <li className="font-medium text-lg mb-4">
                   Not made with natural rubber latex
-                </li>
-                <li className="font-medium text-lg mb-4">Preservative Free</li>
+                </li> */}
+                {/* <li className="font-medium text-lg mb-4">Preservative Free</li>
                 <li className="font-medium text-lg mb-4">Gluten Free</li>
                 <li className="font-medium text-lg mb-8">Safety Data Sheet</li>
                 <li className="mb-4">ITEM CODES</li>
@@ -122,8 +183,8 @@ export default function Product() {
                 <li className="mb-4 mt-5">{product.gtin}</li>
                 <li className="mb-4 mt-5">{product.form}</li>
                 <li className="mb-4 mt-5">{product.packSize}</li>
-                <li className="mb-4 mt-5">{product.therapeuticClass}</li>
-                {product.therapeuticEquivalenceRating ? (
+                <li className="mb-4 mt-5">{product.therapeuticClass}</li> */}
+                {/* {product.therapeuticEquivalenceRating ? (
                   <li className="mb-4 mt-1">
                     {product.therapeuticEquivalenceRating}
                   </li>
@@ -141,10 +202,10 @@ export default function Product() {
                   ) : (
                     <h3>Please add PDF here</h3>
                   )}
-                </li>
-                <li className="mb-4">{product.amerisourceBergen}</li>
+                </li> */}
+                {/* <li className="mb-4">{product.amerisourceBergen}</li>
                 <li className="mb-4">{product.cardinal}</li>
-                <li className="mb-4">{product.mcKessen}</li>
+                <li className="mb-4">{product.mcKessen}</li> */}
               </ul>
             </div>
           </div>
