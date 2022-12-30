@@ -124,7 +124,7 @@ export default function Product() {
                 <li className="mt-4">{product.packSize}</li>
                 <li className="mt-5">{product.therapeuticClass}</li>
                 {product.therapeuticEquivalenceRating ? (
-                  <li className="mt-1">
+                  <li className="mt-5">
                     {product.therapeuticEquivalenceRating}
                   </li>
                 ) : null}
