@@ -175,7 +175,7 @@ export default function Product() {
               </ul>
               <ul className="mr-8 mt-1">
                 {product.productVariationTitle ? (
-                  <li className="mb-4">{product.productVariationTitle}</li>
+                  <li className="">{product.productVariationTitle}</li>
                 ) : null}
                 <li className="mb-4">{product.referenceListedDrug}</li>
                 <li className="mb-4 mt-5">{product.ndc}</li>
@@ -189,14 +189,12 @@ export default function Product() {
                     {product.therapeuticEquivalenceRating}
                   </li>
                 ) : null}
-                <li className="mb-4 mt-1">{product.latex ? "yes" : "no"}</li>
-                <li className="mb-4 mt-1">
+                <li className="mt-5">{product.latex ? "yes" : "no"}</li>
+                <li className="mt-4">
                   {product.preservativeFree ? "yes" : "no"}
                 </li>
-                <li className="mb-4 mt-1">
-                  {product.glutenFree ? "yes" : "no"}
-                </li>
-                <li className="mb-12 underline underline-offset-2 text-blue-500">
+                <li className="mt-6">{product.glutenFree ? "yes" : "no"}</li>
+                <li className="mt-5 underline underline-offset-2 text-blue-500">
                   {product.dataSheet ? (
                     <a href={product.dataSheet.mediaItemUrl}>Click Here PDF</a>
                   ) : (
