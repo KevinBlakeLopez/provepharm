@@ -1,5 +1,6 @@
 import { getWordPressProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client"; 
+
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -58,7 +59,7 @@ export default function Product() {
       <div className="flex flex-col items-center">
         <div>
           <div className="my-20 w-[1000px]">
-            <h2 className="text-[1.5rem] tracking-widest mb-8">
+            <h2 className="text-[1.7rem] tracking-wide mb-8">
               {product.title ? product.title : null}
               {product.productVariationTitle
                 ? " ( " + product.productVariationTitle + " ) "
@@ -105,6 +106,20 @@ export default function Product() {
                 </li>
 
                 <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Safety Data Sheet </p>
+                  <p className="underline underline-offset-2 text-blue-500">
+                    {product.dataSheet ? (
+                      <a href={product.dataSheet.mediaItemUrl}>
+                        Click Here PDF
+                      </a>
+                    ) : (
+                      <h3>Please add PDF here</h3>
+                    )}
+                  </p>
+                </li>
+
+                <br />
+                <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">Strength</p>
                   <p className="mb-4">{product.strength}</p>
                 </li>
@@ -118,7 +133,7 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4 mr-20">Form</p>
                   <p className="mb-4">{product.form}</p>
                 </li>
-
+                <br />
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">Pack Size</p>
                   <p className="mb-4">{product.packSize}</p>
@@ -139,7 +154,7 @@ export default function Product() {
                     <p> {product.therapeuticEquivalenceRating}</p>
                   </li>
                 ) : null}
-
+                <br />
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">
                     Not made with natural rubber latex
@@ -155,18 +170,7 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">Gluten Free </p>
                   <p className="">{product.glutenFree ? "yes" : "no"}</p>
                 </li>
-                <li className="flex justify-between">
-                  <p className="font-medium text-lg mb-8">Safety Data Sheet </p>
-                  <p className="underline underline-offset-2 text-blue-500">
-                    {product.dataSheet ? (
-                      <a href={product.dataSheet.mediaItemUrl}>
-                        Click Here PDF
-                      </a>
-                    ) : (
-                      <h3>Please add PDF here</h3>
-                    )}
-                  </p>
-                </li>
+                <br />
                 <li className="flex justify-between">
                   <p className="mb-4">ITEM CODES</p>
                 </li>

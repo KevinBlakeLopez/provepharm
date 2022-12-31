@@ -2,19 +2,21 @@ import { getWordPressProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
+import ProductsFinder from "../components/ProductsFinder/ProductsFinder";
 
 export default function Products() {
   const { data } = useQuery(Products.query);
   console.log(data);
   return (
-    <div>
+    <div className="mt-10">
       <div className="flex flex-col items-center">
-        <div>
+        <div className="w-[600px]">
+          <ProductsFinder />
           {data ? (
             data.products.nodes.map((product) => {
               return (
-                <div className="my-20 w-[600px]">
-                  <h2 className="text-[1.75rem] tracking-widest mb-8">
+                <div className="my-[80px]">
+                  <h2 className="text-[1.7rem] tracking-wide mb-8">
                     {product.title ? product.title : null}
                   </h2>
                   <div className="flex justify-between">
@@ -37,14 +39,16 @@ export default function Products() {
                         <li className="mb-4">{product.form}</li>
                         <li className="font-medium text-lg">Strength:</li>
                         <li className="mb-4">{product.strength}</li>
-                        <li className="mt-2 bg-blue-500 w-full py-2 px-12 text-white">
-                          <Link
-                            href={`/product/${encodeURIComponent(
-                              product.slug
-                            )}`}
-                          >
-                            View Product
-                          </Link>
+                        <li className="mt-5 bg-sky-700 w-10/12 text-white">
+                          <div className="py-2 px-2 text-center">
+                            <Link
+                              href={`/product/${encodeURIComponent(
+                                product.slug
+                              )}`}
+                            >
+                              View Product
+                            </Link>
+                          </div>
                         </li>
                       </ul>
                       <ul>
