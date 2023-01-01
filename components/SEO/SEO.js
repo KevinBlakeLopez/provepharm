@@ -21,16 +21,24 @@ export default function SEO({ title, description, imageUrl, url }) {
     <>
       <Head>
         <Script
-          async
+          strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-TZWF1H1MKM"
-        ></Script>
-        <Script>
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments) };
-  gtag('js', new Date());
-  gtag('config', 'G-TZWF1H1MKM');`}
-        </Script>
-
+        />
+            
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TZWF1H1MKM', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
+        />
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />
         <></>
@@ -42,7 +50,6 @@ function gtag(){dataLayer.push(arguments) };
             <meta property="twitter:title" content={title} />
           </>
         )}
-
         {description && (
           <>
             <meta name="description" content={description} />
@@ -50,14 +57,12 @@ function gtag(){dataLayer.push(arguments) };
             <meta property="twitter:description" content={description} />
           </>
         )}
-
         {imageUrl && (
           <>
             <meta property="og:image" content={imageUrl} />
             <meta property="twitter:image" content={imageUrl} />
           </>
         )}
-
         {url && (
           <>
             <meta property="og:url" content={url} />
