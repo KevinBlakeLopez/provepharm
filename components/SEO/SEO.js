@@ -1,4 +1,5 @@
-import Head from 'next/head';
+import Head from "next/head";
+import Script from "next/script";
 
 /**
  * Provide SEO related meta tags to a page.
@@ -19,9 +20,20 @@ export default function SEO({ title, description, imageUrl, url }) {
   return (
     <>
       <Head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-TZWF1H1MKM"
+        ></Script>
+        <Script>
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments) };
+  gtag('js', new Date());
+  gtag('config', 'G-TZWF1H1MKM');`}
+        </Script>
+
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />
-
+        <></>
         {title && (
           <>
             <title>{title}</title>
