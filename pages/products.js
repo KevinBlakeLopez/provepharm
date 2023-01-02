@@ -19,6 +19,9 @@ Products.query = gql`
           safetysheet {
             mediaItemUrl
           }
+          productimage {
+            mediaItemUrl
+          }
         }
         slug
       }
@@ -41,14 +44,14 @@ export default function Products() {
                 return (
                   <div className="my-[80px]">
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
-                      {product.metafields.genericname
-                        ? product.metafields.genericname
+                      {product.metaFields.genericname
+                        ? product.metaFields.genericname
                         : null}
                     </h2>
                     <div className="flex justify-between">
-                      {product.featuredImage ? (
+                      {product.productimage ? (
                         <Image
-                          src={product.featuredImage.node.sourceUrl}
+                          src={product.productimage.mediaItemUrl}
                           width="80"
                           height="250"
                         />
