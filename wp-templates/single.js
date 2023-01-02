@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
-import * as MENUS from '../constants/menus';
-import { BlogInfoFragment } from '../fragments/GeneralSettings';
+import { gql } from "@apollo/client";
+import * as MENUS from "../constants/menus";
+import { BlogInfoFragment } from "../fragments/GeneralSettings";
 import {
   Header,
   Footer,
@@ -11,7 +11,7 @@ import {
   ContentWrapper,
   FeaturedImage,
   SEO,
-} from '../components';
+} from "../components";
 
 export default function Component(props) {
   // Loading state for previews
@@ -32,11 +32,11 @@ export default function Component(props) {
         description={siteDescription}
         imageUrl={featuredImage?.node?.sourceUrl}
       />
-      <Header
+      {/* <Header
         title={siteTitle}
         description={siteDescription}
         menuItems={primaryMenu}
-      />
+      /> */}
       <Main>
         <>
           <EntryHeader

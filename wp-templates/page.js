@@ -32,11 +32,11 @@ export default function Component(props) {
         description={siteDescription}
         imageUrl={featuredImage?.node?.sourceUrl}
       />
-      <Header
+      {/* <Header
         title={siteTitle}
         description={siteDescription}
         menuItems={primaryMenu}
-      />
+      /> */}
       <Main>
         <>
           <EntryHeader title={title} image={featuredImage?.node} />

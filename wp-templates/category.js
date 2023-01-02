@@ -23,11 +23,11 @@ export default function Component(props) {
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
-      <Header
+      {/* <Header
         title={siteTitle}
         description={siteDescription}
         menuItems={primaryMenu}
-      />
+      /> */}
       <Main>
         <>
           <EntryHeader title={`Category: ${name}`} />
