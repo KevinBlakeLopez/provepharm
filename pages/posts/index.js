@@ -1,10 +1,9 @@
 import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
-import Products from "../products";
 
 export default function Posts() {
   const { data } = useQuery(Posts.query);
-  console.log(data.posts.nodes);
+
   return (
     <>
       <div className="flex justify-center mt-16 ">
@@ -16,7 +15,7 @@ export default function Posts() {
                 return (
                   <>
                     <h2 className="text-2xl">{post.title}</h2>
-                    <p>{post.excerpt}</p>
+                    <p dangerouslySetInnerHTML={{ __html: post.excerpt }} />
                   </>
                 );
               })
