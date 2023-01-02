@@ -64,12 +64,14 @@ export default function Products() {
                             Reference Listed Drug:
                           </li>
                           <li className="mb-4">
-                            {product.referencelisteddrug}
+                            {product.metaFields.referencelisteddrug}
                           </li>
                           <li className="font-medium text-lg">Form:</li>
-                          <li className="mb-4">{product.form}</li>
+                          <li className="mb-4">{product.metaFields.form}</li>
                           <li className="font-medium text-lg">Strength:</li>
-                          <li className="mb-4">{product.strength}</li>
+                          <li className="mb-4">
+                            {product.metaFields.strength}
+                          </li>
                           <li className="mt-5 bg-sky-700 w-10/12 text-white">
                             <div className="py-2 px-2 text-center">
                               <Link
@@ -84,15 +86,21 @@ export default function Products() {
                         </ul>
                         <ul>
                           <li className="font-medium text-lg">Pack Size:</li>
-                          <li className="mb-4">{product.packsize}</li>
+                          <li className="mb-4">
+                            {product.metaFields.packsize}
+                          </li>
                           <li className="font-medium text-lg">NDC:</li>
-                          <li className="mb-4">{product.ndc}</li>
+                          <li className="mb-4">{product.metaFields.ndc}</li>
                           <li className="font-medium text-lg">
                             Safety Data Sheet:
                           </li>
                           <li className="mb-4 underline underline-offset-2 text-blue-500">
-                            {product.dataSheet ? (
-                              <a href={product.safetysheet.mediaItemUrl}>
+                            {product.metaFields.safetysheet ? (
+                              <a
+                                href={
+                                  product.metaFields.safetysheet.mediaItemUrl
+                                }
+                              >
                                 Click Here PDF
                               </a>
                             ) : (
