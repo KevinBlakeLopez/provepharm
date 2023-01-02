@@ -38,9 +38,20 @@ export default function Component() {
             <Image
               src="/provepharm-logo-white.png"
               alt="me"
-              height="440"
-              width="1040"
+              height="220"
+              width="520"
             />
+
+            <iframe
+              className="mx-auto my-24"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/6nYHvbeQeps"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
         </Container>
       </Main>
