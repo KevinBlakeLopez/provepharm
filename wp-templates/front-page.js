@@ -1,6 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import * as MENUS from "../constants/menus";
 import { BlogInfoFragment } from "../fragments/GeneralSettings";
+import Image from "next/image";
 import {
   Header,
   Footer,
@@ -31,10 +32,15 @@ export default function Component() {
       /> */}
       <Main>
         <Container>
-          <Hero title={"Front Page"} />
-          <div className="text-center">
-            <p>This page is utilizing the "front-page" WordPress template.</p>
-            <code>./wp-templates/front-page.js</code>
+          {/* <Hero title={"Provepharm"} /> */}
+
+          <div className="text-center mt-20">
+            <Image
+              src="/provepharm-logo-white.png"
+              alt="me"
+              height="440"
+              width="1040"
+            />
           </div>
         </Container>
       </Main>
