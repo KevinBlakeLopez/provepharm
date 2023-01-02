@@ -1,4 +1,4 @@
-import { getWordPressProps } from "@faustwp/core";
+import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 
 import Image from "next/image";
@@ -200,7 +200,7 @@ export default function Product() {
 }
 
 export async function getServerProps(context) {
-  return getWordPressProps(context, {
+  return getNextStaticProps(context, {
     Product,
     revalidate: 1,
   });

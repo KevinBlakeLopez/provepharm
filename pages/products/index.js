@@ -1,33 +1,8 @@
-import { getWordPressProps } from "@faustwp/core";
+import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
-import ProductsFinder from "../components/ProductsFinder/ProductsFinder";
-
-Products.query = gql`
-  query Products {
-    products2 {
-      nodes {
-        metaFields {
-          referencelisteddrug
-          genericname
-          form
-          strength
-          packsize
-          ndc
-          safetysheet {
-            mediaItemUrl
-          }
-          productimage {
-            mediaItemUrl
-          }
-        }
-        slug
-      }
-    }
-  }
-`;
+import ProductsFinder from "../../components/ProductsFinder/ProductsFinder";
 
 export default function Products() {
   const { data } = useQuery(Products.query);
@@ -75,7 +50,7 @@ export default function Products() {
                           <li className="mt-5 bg-sky-700 w-10/12 text-white">
                             <div className="py-2 px-2 text-center">
                               <Link
-                                href={`/product/${encodeURIComponent(
+                                href={`/products/${encodeURIComponent(
                                   product.slug
                                 )}`}
                               >
@@ -123,9 +98,33 @@ export default function Products() {
   );
 }
 
-export async function getServerProps(context) {
-  return getWordPressProps(context, {
-    Products,
+Products.query = gql`
+  query Products {
+    products2 {
+      nodes {
+        metaFields {
+          referencelisteddrug
+          genericname
+          form
+          strength
+          packsize
+          ndc
+          safetysheet {
+            mediaItemUrl
+          }
+          productimage {
+            mediaItemUrl
+          }
+        }
+        slug
+      }
+    }
+  }
+`;
+
+export async function getStaticProps(context) {
+  return getNextStaticProps(context, {
+    Page: Products,
     revalidate: 1,
   });
 }
