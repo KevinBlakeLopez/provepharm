@@ -1,6 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames/bind";
 import Image from "next/image";
+import Link from "next/link";
 import Script from "next/script";
 import styles from "./Header.module.scss";
 
@@ -45,7 +46,7 @@ export default function Header({
           />
           <ul className="text-white flex">
             <li className="mr-3">
-              <a href="">Products</a>
+              <Link href="/products">Products</Link>
             </li>
             <li className="mr-3">
               <a href="">Newsletters</a>
