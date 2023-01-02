@@ -58,7 +58,12 @@ export default function Product() {
       <div className="flex flex-col items-center">
         <div>
           <div className="my-20 w-[1000px]">
-            <Link href="/products">Products</Link>
+            <Link legacyBehavior href="/products">
+              <a className="text-[1.3rem] underline underline-offset-2 text-blue-500">
+                {" "}
+                All Products
+              </a>
+            </Link>
             <h2 className="text-[1.7rem] tracking-wide mb-8">
               {product.genericname ? product.genericname : null}
               {product.productvariationtitle
