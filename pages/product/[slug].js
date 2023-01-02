@@ -135,7 +135,7 @@ export default function Product() {
                 <br />
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">Pack Size</p>
-                  <p className="mb-4">{product.packSize}</p>
+                  <p className="mb-4">{product.packsize}</p>
                 </li>
 
                 <li className="flex justify-between">
