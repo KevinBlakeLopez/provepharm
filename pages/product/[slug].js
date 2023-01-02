@@ -2,6 +2,7 @@ import { getWordPressProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 Product.query = gql`
@@ -57,6 +58,7 @@ export default function Product() {
       <div className="flex flex-col items-center">
         <div>
           <div className="my-20 w-[1000px]">
+            <Link href="/products">Products</Link>
             <h2 className="text-[1.7rem] tracking-wide mb-8">
               {product.genericname ? product.genericname : null}
               {product.productvariationtitle
