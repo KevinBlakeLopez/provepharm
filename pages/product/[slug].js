@@ -1,38 +1,36 @@
 import { getWordPressProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client"; 
+import { gql, useQuery } from "@apollo/client";
 
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 Product.query = gql`
-  query ProductQuery($slug: String) {
-    productBy(slug: $slug) {
-      title
-      featuredImage {
-        node {
-          sourceUrl
+  query ProductQuery($id: ID!) {
+    product2(id: $id, idType: SLUG) {
+      metaFields {
+        amerisourcebergen2
+        cardinal
+        form
+        genericname
+        glutenFree
+        gtin
+        mckessen
+        ndc
+        packsize
+        preservativeFree
+        productimage {
+          mediaItemUrl
         }
+        productvariationtitle
+        referencelisteddrug
+        rubberFree
+        safetysheet {
+          mediaItemUrl
+        }
+        strength
+        therapeuticclass
+        therapeuticequivalencerating
       }
-      referenceListedDrug
-      form
-      strength
-      packSize
-      ndc
-      dataSheet {
-        mediaItemUrl
-      }
-      name
-      productVariationTitle
-      gtin
-      therapeuticClass
-      therapeuticEquivalenceRating
-      latex
-      preservativeFree
-      glutenFree
-      amerisourceBergen
-      cardinal
-      mcKessen
-      slug
     }
   }
 `;
@@ -42,17 +40,17 @@ export default function Product() {
   const { slug } = router.query;
 
   const { data, loading } = useQuery(Product.query, {
-    variables: { slug: slug },
+    variables: { id: slug },
   });
 
-  console.log(data);
+  console.log(45, data);
 
   if (loading) {
     return <></>;
   }
 
-  const { productBy } = data;
-  const product = productBy;
+  const { metaFields } = data.product2;
+  const product = metaFields;
 
   return (
     <div>
@@ -60,18 +58,18 @@ export default function Product() {
         <div>
           <div className="my-20 w-[1000px]">
             <h2 className="text-[1.7rem] tracking-wide mb-8">
-              {product.title ? product.title : null}
-              {product.productVariationTitle
-                ? " ( " + product.productVariationTitle + " ) "
+              {product.genericname ? product.genericname : null}
+              {product.productvariationtitle
+                ? " ( " + product.productvariationtitle + " ) "
                 : null}
             </h2>
             <div className="flex justify-between">
               <section>
                 <div className="flex justify-between">
                   <section className="border border-solid p-8 px-32">
-                    {product.featuredImage ? (
+                    {product.productimage ? (
                       <Image
-                        src={product.featuredImage.node.sourceUrl}
+                        src={product.productimage.mediaItemUrl}
                         width="80"
                         height="250"
                       />
@@ -83,21 +81,20 @@ export default function Product() {
               </section>
               <ul className="w-[450px] mx-8">
                 <li className="flex justify-between">
-                  {product.productVariationTitle ? (
+                  {product.productvariationtitle ? (
                     <>
                       <p className="font-medium text-lg mb-4 mr-20">
                         Product Variation Title
                       </p>
-                      <p className="mb-4">{product.productVariationTitle}</p>
+                      <p className="mb-4">{product.productvariationtitle}</p>
                     </>
                   ) : null}
                 </li>
-
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">
                     Reference Listed Drug
                   </p>
-                  <p className="mb-4">{product.referenceListedDrug}</p>
+                  <p className="mb-4">{product.referencelisteddrug}</p>
                 </li>
 
                 <li className="flex justify-between">
@@ -108,8 +105,8 @@ export default function Product() {
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Safety Data Sheet </p>
                   <p className="underline underline-offset-2 text-blue-500">
-                    {product.dataSheet ? (
-                      <a href={product.dataSheet.mediaItemUrl}>
+                    {product.safetysheet ? (
+                      <a href={product.safetysheet.mediaItemUrl}>
                         Click Here PDF
                       </a>
                     ) : (
@@ -143,15 +140,15 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4 mr-20">
                     Therapeutic Class
                   </p>
-                  <p className="mb-4">{product.therapeuticClass}</p>
+                  <p className="mb-4">{product.therapeuticclass}</p>
                 </li>
 
-                {product.therapeuticEquivalenceRating ? (
+                {product.therapeuticequivalencerating ? (
                   <li className="flex justify-between">
                     <p className="font-medium text-lg mb-4 mr-20">
                       Therapeutic Equivalence Rating
                     </p>
-                    <p> {product.therapeuticEquivalenceRating}</p>
+                    <p> {product.therapeuticequivalencerating}</p>
                   </li>
                 ) : null}
                 <br />
@@ -176,7 +173,7 @@ export default function Product() {
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Amerisource Bergen</p>
-                  <p className="mb-4">{product.amerisourceBergen}</p>
+                  <p className="mb-4">{product.amerisourcebergen2}</p>
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Cardinal</p>
@@ -184,7 +181,7 @@ export default function Product() {
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">McKessen</p>
-                  <p className="mb-4">{product.mcKessen}</p>
+                  <p className="mb-4">{product.mckessen}</p>
                 </li>
               </ul>
             </div>

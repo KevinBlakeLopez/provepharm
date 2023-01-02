@@ -5,9 +5,31 @@ import Link from "next/link";
 import Script from "next/script";
 import ProductsFinder from "../components/ProductsFinder/ProductsFinder";
 
+Products.query = gql`
+  query Products {
+    products2 {
+      nodes {
+        metaFields {
+          referencelisteddrug
+          genericname
+          form
+          strength
+          packsize
+          ndc
+          safetysheet {
+            mediaItemUrl
+          }
+        }
+        slug
+      }
+    }
+  }
+`;
+
 export default function Products() {
   const { data } = useQuery(Products.query);
-  console.log(data);
+  console.log(31, data);
+  console.log(data ? data.products2.nodes[0].metaFields.form : null);
   return (
     <>
       <div className="mt-10">
@@ -15,11 +37,13 @@ export default function Products() {
           <div className="w-[600px]">
             <ProductsFinder />
             {data ? (
-              data.products.nodes.map((product) => {
+              data.products2.nodes.map((product) => {
                 return (
                   <div className="my-[80px]">
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
-                      {product.title ? product.title : null}
+                      {product.metafields.genericname
+                        ? product.metafields.genericname
+                        : null}
                     </h2>
                     <div className="flex justify-between">
                       {product.featuredImage ? (
@@ -37,7 +61,7 @@ export default function Products() {
                             Reference Listed Drug:
                           </li>
                           <li className="mb-4">
-                            {product.referenceListedDrug}
+                            {product.referencelisteddrug}
                           </li>
                           <li className="font-medium text-lg">Form:</li>
                           <li className="mb-4">{product.form}</li>
@@ -57,7 +81,7 @@ export default function Products() {
                         </ul>
                         <ul>
                           <li className="font-medium text-lg">Pack Size:</li>
-                          <li className="mb-4">{product.packSize}</li>
+                          <li className="mb-4">{product.packsize}</li>
                           <li className="font-medium text-lg">NDC:</li>
                           <li className="mb-4">{product.ndc}</li>
                           <li className="font-medium text-lg">
@@ -65,7 +89,7 @@ export default function Products() {
                           </li>
                           <li className="mb-4 underline underline-offset-2 text-blue-500">
                             {product.dataSheet ? (
-                              <a href={product.dataSheet.mediaItemUrl}>
+                              <a href={product.safetysheet.mediaItemUrl}>
                                 Click Here PDF
                               </a>
                             ) : (
@@ -87,30 +111,6 @@ export default function Products() {
     </>
   );
 }
-
-Products.query = gql`
-  query NewQuery {
-    products {
-      nodes {
-        title
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        referenceListedDrug
-        form
-        strength
-        packSize
-        ndc
-        dataSheet {
-          mediaItemUrl
-        }
-        slug
-      }
-    }
-  }
-`;
 
 export async function getServerProps(context) {
   return getWordPressProps(context, {
