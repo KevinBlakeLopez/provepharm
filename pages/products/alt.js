@@ -1,4 +1,4 @@
-import { getWordPressProps } from "@faustwp/core";
+import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 
 import Image from "next/image";
@@ -199,9 +199,32 @@ export default function Product() {
   );
 }
 
-export async function getServerProps(context) {
-  return getWordPressProps(context, {
-    Product,
+const productSlugs = gql`
+  query ProductSlugsQuery {
+    products2 {
+      nodes {
+        slug
+      }
+    }
+  }
+`;
+
+export async function getStaticPaths() {
+  const { data } = useQuery(productSlugs);
+
+  const paths = data.products2.nodes.map((product) => ({
+    params: { slug: product.slug },
+  }));
+
+  return {
+    paths: [paths],
+    fallback: false, // can also be true or 'blocking'
+  };
+}
+
+export async function getStaticProps(context) {
+  return getNextStaticProps(context, {
+    Page: Product,
     revalidate: 1,
   });
 }
