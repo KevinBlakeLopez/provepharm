@@ -49,9 +49,9 @@ export default function Products() {
                         : null}
                     </h2>
                     <div className="flex justify-between">
-                      {product.productimage ? (
+                      {product.metaFields.productimage ? (
                         <Image
-                          src={product.productimage.mediaItemUrl}
+                          src={product.metaFields.productimage.mediaItemUrl}
                           width="80"
                           height="250"
                         />

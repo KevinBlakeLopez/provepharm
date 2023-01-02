@@ -22,19 +22,17 @@ export default function Header({
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-TZWF1H1MKM"
       />
-          
       <Script
         id="google-analytics"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-TZWF1H1MKM', {
-            page_path: window.location.pathname,
-          });
-        `,
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TZWF1H1MKM', {
+            page_path: window.location.pathname,});
+            `,
         }}
       />
       <header className="bg-slate-900 h-20  w-full flex justify-center">
