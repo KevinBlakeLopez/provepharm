@@ -199,9 +199,9 @@ export default function Product() {
   );
 }
 
-export async function getServerProps(context) {
+export async function getStaticProps(context) {
   return getNextStaticProps(context, {
-    Product,
+    Page: Product,
     revalidate: 1,
   });
 }
