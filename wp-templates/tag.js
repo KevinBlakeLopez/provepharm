@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
-import * as MENUS from '../constants/menus';
-import { BlogInfoFragment } from '../fragments/GeneralSettings';
+import { gql } from "@apollo/client";
+import * as MENUS from "../constants/menus";
+import { BlogInfoFragment } from "../fragments/GeneralSettings";
 import {
   Header,
   Footer,
@@ -11,7 +11,7 @@ import {
   FeaturedImage,
   Post,
   SEO,
-} from '../components';
+} from "../components";
 
 export default function Component(props) {
   const { title: siteTitle, description: siteDescription } =
@@ -23,11 +23,11 @@ export default function Component(props) {
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
-      <Header
+      {/* <Header
         title={siteTitle}
         description={siteDescription}
         menuItems={primaryMenu}
-      />
+      /> */}
       <Main>
         <>
           <EntryHeader title={`Tag: ${name}`} />
