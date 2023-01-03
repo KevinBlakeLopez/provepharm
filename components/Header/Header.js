@@ -52,7 +52,7 @@ export default function Header({
               <Link href="/products">Products</Link>
             </li>
             <li className="mr-5">
-              <a href="">News</a>
+              <Link href="/posts">News</Link>
             </li>
             <li className="mr-5">
               <a href="">Press Releases</a>
