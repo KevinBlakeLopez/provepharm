@@ -37,7 +37,7 @@ export default function Header({
         }}
       />
       <header className="bg-slate-900 h-20  w-full flex justify-center">
-        <div className="w-[1000px] flex justify-between items-center">
+        <div className="w-[1200px] flex justify-between items-center">
           <Image
             src="/provepharm-logo-white.png"
             alt="me"
@@ -45,14 +45,20 @@ export default function Header({
             width="130"
           />
           <ul className="text-white flex">
-            <li className="mr-3">
+            <li className="mr-5">
+              <a href="">Team</a>
+            </li>
+            <li className="mr-5">
               <Link href="/products">Products</Link>
             </li>
-            <li className="mr-3">
-              <a href="">Newsletters</a>
+            <li className="mr-5">
+              <a href="">News</a>
             </li>
-            <li className="mr-3">
-              <a href="">Team</a>
+            <li className="mr-5">
+              <a href="">Press Releases</a>
+            </li>
+            <li className="mr-5">
+              <a href="">Contact</a>
             </li>
           </ul>
         </div>

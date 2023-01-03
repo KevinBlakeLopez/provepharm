@@ -55,16 +55,14 @@ export default function Product() {
 
   return (
     <div>
-      <div className="flex flex-col items-center">
-        <div className="mt-8">
-          <Link legacyBehavior href="/products">
-            <a className="text-[1.3rem] underline underline-offset-2 text-blue-500">
-              {" "}
-              All Products
-            </a>
-          </Link>
-          <div className="mb-20 mt-10 w-[1000px]">
+      <div className="flex flex-col items-center mt-14">
+        <div className="">
+          <div className="mb-20 mt-2 w-[1000px]">
             <h2 className="text-[1.7rem] tracking-wide mb-8">
+              <Link legacyBehavior href="/products">
+                <a className=" text-blue-500">Products</a>
+              </Link>
+              {" > "}
               {product.genericname ? product.genericname : null}
               {product.productvariationtitle
                 ? " ( " + product.productvariationtitle + " ) "
