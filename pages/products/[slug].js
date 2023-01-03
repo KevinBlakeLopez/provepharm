@@ -99,7 +99,9 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">
                     Reference Listed Drug
                   </p>
-                  <p className="mb-4">{product.referencelisteddrug}</p>
+                  <p className="mb-4">
+                    {product.referencelisteddrug ? "yes" : "no"}
+                  </p>
                 </li>
 
                 <li className="flex justify-between">

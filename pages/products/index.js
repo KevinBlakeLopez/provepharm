@@ -39,7 +39,9 @@ export default function Products() {
                             Reference Listed Drug:
                           </li>
                           <li className="mb-4">
-                            {product.metaFields.referencelisteddrug}
+                            {product.metaFields.referencelisteddrug
+                              ? "yes"
+                              : "no"}
                           </li>
                           <li className="font-medium text-lg">Form:</li>
                           <li className="mb-4">{product.metaFields.form}</li>
