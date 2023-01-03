@@ -28,6 +28,7 @@ Product.query = gql`
         safetysheet {
           mediaItemUrl
         }
+        video
         strength
         therapeuticclass
         therapeuticequivalencerating
@@ -83,6 +84,14 @@ export default function Product() {
                     )}
                   </section>
                 </div>
+                <section>
+                  <iframe
+                    className="mt-16"
+                    width="400"
+                    height="220"
+                    src={product.video}
+                  ></iframe>
+                </section>
               </section>
               <ul className="w-[450px] mx-8">
                 <li className="flex justify-between">
