@@ -39,15 +39,19 @@ export default function Component(props) {
       /> */}
       <Main>
         <>
-          <EntryHeader
-            title={title}
-            image={featuredImage?.node}
-            date={date}
-            author={author?.node?.name}
-          />
-          <Container>
-            <ContentWrapper content={content} />
-          </Container>
+          <div className="mt-20 flex justify-center">
+            <div className="w-[800px]">
+              <EntryHeader
+                title={title}
+                image={featuredImage?.node}
+                date={date}
+                author={author?.node?.name}
+              />
+              <Container>
+                <ContentWrapper content={content} />
+              </Container>
+            </div>
+          </div>
         </>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
