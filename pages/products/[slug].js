@@ -87,8 +87,8 @@ export default function Product() {
                 <section>
                   <iframe
                     className="mt-16"
-                    width="400"
-                    height="220"
+                    width="420"
+                    height="315"
                     src={product.video}
                   ></iframe>
                 </section>
