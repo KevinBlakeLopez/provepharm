@@ -19,15 +19,13 @@ export default function Products() {
                 return (
                   <div className="my-[80px]">
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
-                      {product.metaFields.genericname
-                        ? product.metaFields.genericname
-                        : null}
+                      {product.title ? product.title : null}
                     </h2>
                     <div className="flex justify-between">
                       {product.metaFields.productimage ? (
                         <Image
                           src={product.metaFields.productimage.mediaItemUrl}
-                          width="80"
+                          width="130"
                           height="250"
                         />
                       ) : (
@@ -104,6 +102,7 @@ Products.query = gql`
   query Products {
     products2 {
       nodes {
+        title
         metaFields {
           referencelisteddrug
           genericname
