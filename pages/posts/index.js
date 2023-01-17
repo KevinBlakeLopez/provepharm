@@ -8,6 +8,7 @@ export default function Posts() {
 
   return (
     <>
+      <h1>Yo</h1>
       <div className="flex justify-center mt-16 ">
         <div className="w-[800px]">
           <h2 className="text-3xl font-medium">Provepharm News</h2>
