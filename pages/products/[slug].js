@@ -15,9 +15,13 @@ Product.query = gql`
         genericname
         glutenFree
         gtin
+        importantsafetyinformation
         mckessen
         ndc
         packsize
+        prescribinginformation {
+          url
+        }
         preservativeFree
         productimage {
           mediaItemUrl
@@ -76,7 +80,7 @@ export default function Product() {
                     {product.productimage ? (
                       <Image
                         src={product.productimage.mediaItemUrl}
-                        width="80"
+                        width="130"
                         height="250"
                       />
                     ) : (
@@ -84,6 +88,16 @@ export default function Product() {
                     )}
                   </section>
                 </div>
+                <section className="mt-12">
+                  Prescribing Information:{" "}
+                  {product.prescribinginformation ? (
+                    <Link href={product.prescribinginformation.url}>
+                      <a className="underline text-orange-500">Click here</a>
+                    </Link>
+                  ) : (
+                    <p>Please add Link</p>
+                  )}
+                </section>
                 <section>
                   <iframe
                     className="mt-16"
@@ -204,6 +218,7 @@ export default function Product() {
           </div>
         </div>
       </div>
+      <section>{product.importantsafetyinformation}</section>
     </div>
   );
 }
