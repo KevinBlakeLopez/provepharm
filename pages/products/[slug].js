@@ -7,7 +7,8 @@ import { useRouter } from "next/router";
 
 Product.query = gql`
   query ProductQuery($id: ID!) {
-    product2(id: $id, idType: SLUG) {
+    product(id: $id, idType: SLUG) {
+      title
       metaFields {
         amerisourcebergen2
         cardinal
@@ -55,8 +56,9 @@ export default function Product() {
     return <></>;
   }
 
-  const { metaFields } = data.product2;
+  const { metaFields } = data.product;
   const product = metaFields;
+  const product2 = data.product;
 
   return (
     <div>
@@ -68,10 +70,11 @@ export default function Product() {
                 <a className=" text-blue-500">Products</a>
               </Link>
               {" > "}
-              {product.genericname ? product.genericname : null}
+              {product2.title}
+              {/* {product.genericname ? product.genericname : null}
               {product.productvariationtitle
                 ? " ( " + product.productvariationtitle + " ) "
-                : null}
+                : null} */}
             </h2>
             <div className="flex justify-between">
               <section>
@@ -108,6 +111,16 @@ export default function Product() {
                 </section>
               </section>
               <ul className="w-[450px] mx-8">
+                <li className="flex justify-between">
+                  {product.genericname ? (
+                    <>
+                      <p className="font-medium text-lg mb-4 mr-20">
+                        Generic Name
+                      </p>
+                      <p className="mb-4 text-right">{product.genericname}</p>
+                    </>
+                  ) : null}
+                </li>
                 <li className="flex justify-between">
                   {product.productvariationtitle ? (
                     <>
@@ -218,7 +231,17 @@ export default function Product() {
           </div>
         </div>
       </div>
-      <section>{product.importantsafetyinformation}</section>
+      <section className="bg-slate-400 fixed bottom-0">
+        <h5 className="text-center text-2xl font-bold">
+          Important Safety Information
+        </h5>
+        <div
+          className="my-8 mx-72 text-lg h-48 overflow-auto"
+          dangerouslySetInnerHTML={{
+            __html: product.importantsafetyinformation,
+          }}
+        />
+      </section>
     </div>
   );
 }

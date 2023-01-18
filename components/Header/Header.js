@@ -46,19 +46,22 @@ export default function Header({
           />
           <ul className="text-white flex">
             <li className="mr-5">
-              <a href="">Team</a>
+              <a href="">About Us</a>
             </li>
             <li className="mr-5">
               <Link href="/products">Products</Link>
             </li>
             <li className="mr-5">
-              <Link href="/posts">News</Link>
+              <a href="">Events</a>
+            </li>
+            <li className="mr-5">
+              <a href="">Contact Us</a>
             </li>
             <li className="mr-5">
               <a href="">Press Releases</a>
             </li>
             <li className="mr-5">
-              <a href="">Contact</a>
+              <Link href="/posts">News</Link>
             </li>
           </ul>
         </div>
