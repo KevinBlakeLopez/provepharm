@@ -1,6 +1,6 @@
 import { getWordPressProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
-
+import Modal from "../../components/Modal";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -94,9 +94,10 @@ export default function Product() {
                 <section className="mt-12">
                   Prescribing Information:{" "}
                   {product.prescribinginformation ? (
-                    <Link href={product.prescribinginformation.url}>
-                      <a className="underline text-orange-500">Click here</a>
-                    </Link>
+                    <Modal
+                      text="Click here"
+                      externalLink={product.prescribinginformation.url}
+                    />
                   ) : (
                     <p>Please add Link</p>
                   )}
