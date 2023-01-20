@@ -12,14 +12,14 @@ export default function Products() {
     <>
       <div className="mt-10">
         <div className="flex flex-col items-center">
-          <div className="w-[600px]">
+          <div className="w-2/5">
             <ProductsFinder />
             {data ? (
               data.products.nodes.map((product) => {
                 return (
                   <div className="my-[80px]">
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
-                      {product.title ? product.title : null}
+                      {product.metaFields.genericname}
                     </h2>
                     <div className="flex justify-between">
                       {product.metaFields.productimage ? (

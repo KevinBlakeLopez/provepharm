@@ -12,12 +12,16 @@ Product.query = gql`
       metaFields {
         amerisourcebergen2
         cardinal
+        closuresize
+        containersize
+        discontinued
         form
         genericname
         glutenFree
         gtin
         importantsafetyinformation
         mckessen
+        morrisDickson
         ndc
         packsize
         prescribinginformation {
@@ -62,10 +66,10 @@ export default function Product() {
 
   return (
     <div>
-      <div className="flex flex-col items-center mt-14">
+      <div className="flex flex-col items-center mt-14 pb-40">
         <div className="">
-          <div className="mb-20 mt-2 w-[1000px]">
-            <h2 className="text-[1.7rem] tracking-wide mb-8">
+          <div className="mb-20 mt-2 w-11/12">
+            <h2 className="text-[1.7em] tracking-wide mb-8">
               <Link legacyBehavior href="/products">
                 <a className=" text-blue-500">Products</a>
               </Link>
@@ -111,14 +115,22 @@ export default function Product() {
                   ></iframe>
                 </section>
               </section>
-              <ul className="w-[450px] mx-8">
+              <ul className="w-2/5 mx-8">
                 <li className="flex justify-between">
                   {product.genericname ? (
                     <>
                       <p className="font-medium text-lg mb-4 mr-20">
                         Generic Name
                       </p>
-                      <p className="mb-4 text-right">{product.genericname}</p>
+                      <p className="mb-4 text-right">
+                        {product.genericname +
+                          " " +
+                          product.strength +
+                          " " +
+                          product.form +
+                          " x " +
+                          product.packsize}
+                      </p>
                     </>
                   ) : null}
                 </li>
@@ -226,6 +238,15 @@ export default function Product() {
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">McKessen</p>
                   <p className="mb-4">{product.mckessen}</p>
+                </li>
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Morris & Dickson</p>
+                  <p className="mb-4">{product.morrisDickson}</p>
+                </li>
+                <br />
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Discontinued: </p>
+                  <p className="">{product.discontinued ? "yes" : "no"}</p>
                 </li>
               </ul>
             </div>

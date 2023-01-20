@@ -37,7 +37,7 @@ export default function Header({
         }}
       />
       <header className="bg-slate-900 h-20  w-full flex justify-center">
-        <div className="w-[1200px] flex justify-between items-center">
+        <div className="w-[70%] flex justify-between items-center">
           <Image
             src="/provepharm-logo-white.png"
             alt="me"
