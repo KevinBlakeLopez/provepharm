@@ -10,9 +10,9 @@ export default function Products() {
   console.log(data ? data.products.nodes[0].metaFields.form : null);
   return (
     <>
-      <div className="mt-10">
-        <div className="flex flex-col items-center">
-          <div className="w-2/5">
+      <div className="mt-10 mx-4 md:mx-0">
+        <div className="md:flex md:flex-col md:items-center">
+          <div className="lg:w-2/5">
             <ProductsFinder />
             {data ? (
               data.products.nodes.map((product) => {
@@ -21,7 +21,7 @@ export default function Products() {
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
                       {product.metaFields.genericname}
                     </h2>
-                    <div className="flex justify-between">
+                    <div className="md:flex md:justify-between">
                       {product.metaFields.productimage ? (
                         <Image
                           src={product.metaFields.productimage.mediaItemUrl}
@@ -108,7 +108,7 @@ export default function Products() {
 
 Products.query = gql`
   query Products {
-    products {
+    products(first: 30) {
       nodes {
         title
         metaFields {

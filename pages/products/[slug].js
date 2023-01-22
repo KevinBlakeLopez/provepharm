@@ -4,9 +4,11 @@ import Modal from "../../components/Modal";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Header, NavigationMenu } from "../../components";
 
 Product.query = gql`
-  query ProductQuery($id: ID!) {
+  ${NavigationMenu.fragments.entry}
+  query ProductQuery($id: ID!, $headerLocation: MenuLocationEnum) {
     product(id: $id, idType: SLUG) {
       title
       metaFields {
@@ -43,8 +45,21 @@ Product.query = gql`
         therapeuticequivalencerating
       }
     }
+    headerMenuItems: menuItems(where: { location: $headerLocation }) {
+      nodes {
+        ...NavigationMenuItemFragment
+      }
+    }
   }
 `;
+
+Product.variables = () => {
+  return {
+    first: appConfig.postsPerPage,
+    after: "",
+    headerLocation: MENUS.PRIMARY_LOCATION,
+  };
+};
 
 export default function Product() {
   const router = useRouter();
@@ -65,22 +80,23 @@ export default function Product() {
   const product2 = data.product;
 
   return (
-    <div>
-      <div className="flex flex-col items-center mt-14 pb-40">
+    <>
+      <Header menuItems={data.headerMenuItems} />
+      <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-40">
         <div className="">
-          <div className="mb-20 mt-2 w-11/12">
+          <div className="mb-20 mt-2 lg:w-11/12">
             <h2 className="text-[1.7em] tracking-wide mb-8">
               <Link legacyBehavior href="/products">
                 <a className=" text-blue-500">Products</a>
               </Link>
               {" > "}
-              {product2.title}
+              {product.genericname}
               {/* {product.genericname ? product.genericname : null}
               {product.productvariationtitle
                 ? " ( " + product.productvariationtitle + " ) "
                 : null} */}
             </h2>
-            <div className="flex justify-between">
+            <div className="md:flex md:justify-between">
               <section>
                 <div className="flex justify-between">
                   <section className="border border-solid p-8 px-32">
@@ -106,16 +122,22 @@ export default function Product() {
                     <p>Please add Link</p>
                   )}
                 </section>
-                <section>
-                  <iframe
-                    className="mt-16"
-                    width="420"
-                    height="315"
-                    src={product.video}
-                  ></iframe>
-                </section>
+
+                {product.video ? (
+                  <section>
+                    <iframe
+                      className="mt-16"
+                      width="420"
+                      height="315"
+                      layout="responsive"
+                      src={product.video}
+                    ></iframe>
+                  </section>
+                ) : (
+                  <div></div>
+                )}
               </section>
-              <ul className="w-2/5 mx-8">
+              <ul className="md:w-2/5 lg:mx-8">
                 <li className="flex justify-between">
                   {product.genericname ? (
                     <>
@@ -267,7 +289,7 @@ export default function Product() {
           />
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
