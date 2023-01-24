@@ -40,49 +40,54 @@ export default function AboutUs() {
               </figure>
 
               <div class="es">
-                THERAPEUTICS AND DIAGNOSTICS THAT
-                <br />
-                <strong>MAKE A DIFFERENCE IN PATIENTS' LIVES</strong>
+                CONNECTING HEALTHCARE PROVIDERS WITH PATIENTS TO IMPROVE LIVES
               </div>
             </div>
           </div>
 
           <>
-            <div>
-              <div>
-                <div>
-                  <div>
-                    <div>
-                      <div>
-                        <h3 class="mb-4 text-blue-900">ABOUT US</h3>
+            <div class="wp-block-columns alignfull mission-section mb-0">
+              <div class="wp-block-column">
+                <div class="alignwide container">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <h3>Our Mission</h3>
 
-                        <p>
-                          With an impressive legacy of healthcare innovations
-                          and solutions spanning more than 20 years, Provepharm
-                          is at the forefront of developing innovative drugs
-                          from well-known molecules that advance therapeutic
-                          progress for the benefits of patients.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div>
-                      <div aria-hidden="true" className="h-[40px]"></div>
+                      <p>
+                        Provepharm is driven to improve the lives of our
+                        patients, employees, and the ecosystem. We focus our
+                        resources on two main areas of development:
+                      </p>
                     </div>
 
-                    <div class="wp-block-image about-image">
-                      <figure class="alignleft size-full">
+                    <div class="col-lg-6">
+                      <div class="wp-block-cover has-background-dim mission-box">
                         <img
-                          src="/sites/default/files/inline-images/image2_0.jpg"
+                          class="wp-block-cover__image-background wp-image-50"
                           alt=""
-                          class="wp-image-49"
+                          src="/sites/default/files/inline-images/image5_1.jpg"
+                          data-object-fit="cover"
                           data-entity-type="file"
-                          data-entity-uuid="c0e24fd0-15a1-4c51-8c7d-d7bf6edfcf2c"
+                          data-entity-uuid="01ba18a1-7156-436e-ba4e-bb4d69f9d13f"
                           data-image-style="original"
                         />
-                      </figure>
+                        <div class="wp-block-cover__inner-container">
+                          <div class="alignwide container">
+                            <h4>Main Areas of Development</h4>
+
+                            <ul>
+                              <li>
+                                <strong>Molecule Vitalization</strong> to fully
+                                optimize the molecule’s potential
+                              </li>
+                              <li>
+                                Innovation of New Treatments for niche markets
+                                with unmet therapeutic or diagnostic need
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
