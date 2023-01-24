@@ -27,7 +27,7 @@ export default function AboutUs() {
       <Main>
         <Container>
           {/* <Hero title={"Provepharm"} /> */}
-          <div class="mb-0">
+          <div class="bg-blue-900 text-white">
             <div id="upper-banner">
               <figure class="size-full" id="ban-image">
                 <img
@@ -48,13 +48,13 @@ export default function AboutUs() {
           </div>
 
           <>
-            <div class="wp-block-columns alignfull about-us-full-section">
-              <div class="wp-block-column">
-                <div class="wp-block-columns about-us-section container mb-0">
-                  <div class="wp-block-column col-lg-7">
-                    <div class="wp-block-columns content">
-                      <div class="wp-block-column">
-                        <h3 class="mb-4">About Us</h3>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <h3 class="mb-4 text-blue-900">ABOUT US</h3>
 
                         <p>
                           With an impressive legacy of healthcare innovations
@@ -67,13 +67,9 @@ export default function AboutUs() {
                     </div>
                   </div>
 
-                  <div class="wp-block-column col-lg-5 about-box">
-                    <div class="alignwide container">
-                      <div
-                        aria-hidden="true"
-                        class="wp-block-spacer"
-                        className="h-[40px]"
-                      ></div>
+                  <div>
+                    <div>
+                      <div aria-hidden="true" className="h-[40px]"></div>
                     </div>
 
                     <div class="wp-block-image about-image">
@@ -93,21 +89,19 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <div class="wp-block-columns alignfull pillars-section mb-0">
-              <div class="wp-block-column container">
-                <h3>
-                  To accomplish this mission, <br />
-                  our strategy is based on
-                  <span class="mt-2">5 pillars</span>
+            <div class="bg-blue-900 text-white">
+              <div class="">
+                <h3 className="text-center text-blue-300">
+                  TO ACCOMPLISH THIS MISSION, <br />
+                  OUR STRATEGY IS BASED ON <span class="mt-2">5 PILLARS</span>
                 </h3>
 
-                <div class="wp-block-columns pillars-box row">
-                  <div class="wp-block-column">
-                    <figure class="wp-block-image size-full pillars-top">
+                <div className="flex">
+                  <div>
+                    <figure>
                       <img
                         src="/sites/default/files/inline-images/plant.png"
                         alt=""
-                        class="wp-image-5"
                         data-entity-type="file"
                         data-entity-uuid="0a97b5ce-5ba9-406f-8f77-1d2f630f669a"
                         data-image-style="original"
@@ -119,17 +113,14 @@ export default function AboutUs() {
                       </figcaption>
                     </figure>
 
-                    <p class="pillars-content">
-                      With the acquisition of products or companies
-                    </p>
+                    <p>With the acquisition of products or companies</p>
                   </div>
 
-                  <div class="wp-block-column">
-                    <figure class="wp-block-image size-full pillars-top">
+                  <div>
+                    <figure>
                       <img
                         src="/sites/default/files/inline-images/settings.png"
                         alt=""
-                        class="wp-image-6"
                         data-entity-type="file"
                         data-entity-uuid="07dd2a78-8f98-4d18-86fd-ad6e8ebe559f"
                         data-image-style="original"
@@ -141,12 +132,10 @@ export default function AboutUs() {
                       </figcaption>
                     </figure>
 
-                    <p class="pillars-content">
-                      By diversifying our product portfolio
-                    </p>
+                    <p>By diversifying our product portfolio</p>
                   </div>
 
-                  <div class="wp-block-column">
+                  <div>
                     <figure class="wp-block-image size-full pillars-top">
                       <img
                         src="/sites/default/files/inline-images/cube.png"
@@ -212,9 +201,11 @@ export default function AboutUs() {
 
                 <div class="wp-block-columns pillars-discover mb-0">
                   <div class="wp-block-column">
-                    <h4>From drug discovery – to marketplace</h4>
+                    <h4 className="text-blue-300 text-center">
+                      From drug discovery – to marketplace
+                    </h4>
 
-                    <p>
+                    <p className="text-center">
                       Scientific experience combined with healthcare business
                       savvy enables Provepharm to add
                       <br />
@@ -227,13 +218,13 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <div class="wp-block-columns alignfull third-way-section mb-0">
-              <div class="wp-block-column">
-                <div class="wp-block-columns alignfull third-way-banner">
-                  <div class="wp-block-column">
-                    <div class="wp-block-columns third-way-arrow mb-0">
-                      <div class="wp-block-column top">
-                        <figure class="wp-block-image size-large">
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <figure>
                           <img
                             src="/sites/default/files/styles/large/public/inline-images/top-3rd-way.png?itok=Wfn-AFDS"
                             alt=""
@@ -245,8 +236,8 @@ export default function AboutUs() {
                         </figure>
                       </div>
 
-                      <div class="wp-block-column bottom">
-                        <figure class="wp-block-image size-large">
+                      <div>
+                        <figure>
                           <img
                             src="/sites/default/files/styles/large/public/inline-images/bottom-3rd-way.png?itok=EjpeK693"
                             alt=""
@@ -259,9 +250,9 @@ export default function AboutUs() {
                       </div>
                     </div>
 
-                    <div class="wp-block-columns container mb-0">
-                      <div class="wp-block-column text-center text-uppercase content">
-                        <p>
+                    <div>
+                      <div className="text-center bg-slate-800">
+                        <p className="text-white">
                           PROVEPHARM IS AN INTERNATIONAL, PRIVATE,
                           PHARMACEUTICAL COMPANY WITH A GLOBAL PRESENCE IN OVER
                           30 COUNTRIES WORLDWIDE.
@@ -271,11 +262,11 @@ export default function AboutUs() {
                   </div>
                 </div>
 
-                <div class="wp-block-columns third-way-content">
-                  <div class="wp-block-column container">
-                    <div class="wp-block-columns">
-                      <div class="wp-block-column col-lg-5">
-                        <p>
+                <div>
+                  <div>
+                    <div className="flex justify-between mt-12">
+                      <div className="mr-8">
+                        <p className="mb-8">
                           At Provepharm, we innovate in order to understand each
                           molecule's full potential, to provide treatments that
                           help patients. Provepharm is an international private
@@ -283,7 +274,7 @@ export default function AboutUs() {
                           worldwide.
                         </p>
 
-                        <p>
+                        <p className="mb-8">
                           The company operates with integrity, as our goal is to
                           have a positive, significant and sustainable impact on
                           our planet’s ecosystem. As a responsible
@@ -301,7 +292,7 @@ export default function AboutUs() {
                         </p>
                       </div>
 
-                      <div class="wp-block-column col-lg-5 offset-lg-1">
+                      <div>
                         <p>
                           And, commitment is also demonstrated through the
                           group’s social initiatives, the ultimate expression of
@@ -333,13 +324,12 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <div class="wp-block-columns alignfull people-lives-section mb-0">
-              <div class="wp-block-column">
-                <div class="wp-block-columns mb-0">
-                  <div class="wp-block-column pl-box">
-                    <div class="wp-block-cover pl-image">
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
                       <img
-                        class="wp-block-cover__image-background wp-image-50"
                         alt=""
                         src="/sites/default/files/inline-images/image5_1.jpg"
                         data-object-fit="cover"
@@ -347,22 +337,22 @@ export default function AboutUs() {
                         data-entity-uuid="01ba18a1-7156-436e-ba4e-bb4d69f9d13f"
                         data-image-style="original"
                       />
-                      <div class="wp-block-cover__inner-container">
-                        <p class="has-text-align-center has-large-font-size"></p>
+                      <div>
+                        <p></p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div class="wp-block-columns container position-relative z-index-1 mb-0">
-                  <div class="wp-block-column col-lg-6">
-                    <div class="wp-block-columns mb-0">
-                      <div class="wp-block-column product-text">
+                <div class="relative z-index-1 mb-0">
+                  <div>
+                    <div>
+                      <div className="bg-blue-400">
                         <h3>
-                          Products <br />
-                          that make a <br />
-                          difference in <br />
-                          people’s lives
+                          PRODUCTS <br />
+                          THAT MAKE A <br />
+                          DIFFERENCE IN <br />
+                          PEOPLE'S LIVES
                         </h3>
 
                         <p>
@@ -383,10 +373,10 @@ export default function AboutUs() {
             <div class="wp-block-columns alignfull history-section mb-0">
               <div class="wp-block-column history-box">
                 <div class="alignwide container">
-                  <div class="row">
-                    <div class="col-lg-6 dot-left">
-                      <div class="alignwide container line-box">
-                        <h3>Our history</h3>
+                  <div className="flex">
+                    <div>
+                      <div>
+                        <h3>OUR HISTORY</h3>
 
                         <p>
                           Driven by an entrepreneurial spirit, privately-owned,
