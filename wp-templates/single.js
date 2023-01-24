@@ -5,13 +5,13 @@ import {
   Header,
   Footer,
   Main,
-  Container,
   EntryHeader,
   NavigationMenu,
   ContentWrapper,
   FeaturedImage,
   SEO,
 } from "../components";
+import Container from "../components/Container";
 
 export default function Component(props) {
   // Loading state for previews

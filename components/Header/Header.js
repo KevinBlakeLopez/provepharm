@@ -36,36 +36,31 @@ export default function Header({ menuItems }) {
         }}
       />
       <header
-        className={`bg-slate-900 w-full p-5 ${
-          isNavShown ? "fixed top-0 width:100%" : ""
-        }`}
+        className={`bg-white
+         w-full p-5 ${isNavShown ? "fixed top-0 width:100%" : ""}`}
       >
         <div className="flex justify-between items-center">
-          <Image
-            src="/provepharm-logo-white.png"
-            alt="me"
-            height="55"
-            width="130"
-          />
+          <Image src="/logo.jpeg" alt="me" height="55" width="130" />
 
           <div>
             <div className="md:hidden" onClick={handleClick}>
-              <div className="h-[2px] w-6 bg-white mb-1"></div>
-              <div className="h-[2px] w-6 bg-white mb-1"></div>
-              <div className="h-[2px] w-6 bg-white mb-1"></div>
+              <div className="h-[2px] w-6 bg-black mb-1"></div>
+              <div className="h-[2px] w-6 bg-black mb-1"></div>
+              <div className="h-[2px] w-6 bg-black mb-1"></div>
             </div>
 
             <div
               className={
                 isNavShown
                   ? `
-                  fixed left-0 top-24 w-full h-full pt-5 pl-5 bg-slate-900 z-50
+                  fixed left-0 top-24 w-full h-full pt-5 pl-5 bg-white
+                   z-50
                   md:relative md:top-[initial]
                   `
                   : "hidden md:block"
               }
             >
-              <ul className="text-white md:flex">
+              <ul className="text-blue-900 md:flex">
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-2">
                   <a href="">About Us</a>
                 </li>
@@ -73,13 +68,13 @@ export default function Header({ menuItems }) {
                   <Link href="/products">Products</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
-                  <a href="">Events</a>
+                  <Link href="/events">Events</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
-                  <a href="">Contact Us</a>
+                  <Link href="/contact">Contact Us</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
-                  <a href="">Press Releases</a>
+                  <Link href="/press-releases">Press Releases</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
                   <Link href="/posts">News</Link>

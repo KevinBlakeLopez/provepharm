@@ -2,15 +2,23 @@ import { getNextStaticProps } from "@faustwp/core";
 import Image from "next/image";
 import Link from "next/link";
 import { gql, useQuery } from "@apollo/client";
+import Banner from "../../components/Banner";
+import { Header, NavigationMenu } from "../../components";
+import * as MENUS from "../../constants/menus";
 
 export default function Posts() {
-  const { data } = useQuery(Posts.query);
+  const { data, loading } = useQuery(Posts.query);
+
+  if (loading) {
+    return <></>;
+  }
 
   return (
     <>
+      <Header menuItems={data.headerMenuItems} />
+      <Banner>News</Banner>
       <div className="flex justify-center mt-16 ">
         <div className="w-[800px]">
-          <h2 className="text-3xl font-medium">Provepharm News</h2>
           {data.posts
             ? data.posts.nodes.map((post) => {
                 console.log(post);
@@ -19,9 +27,9 @@ export default function Posts() {
                     <div className="my-10 cursor-pointer">
                       <div className="flex items-center mb-10">
                         {post.featuredImage ? (
-                          <div className="w-[400px]">
+                          <div className="max-w-[400px]">
                             <Image
-                              width="800"
+                              width="1200"
                               height="600"
                               src={post.featuredImage.node.mediaItemUrl}
                             />
@@ -53,7 +61,8 @@ export default function Posts() {
 }
 
 Posts.query = gql`
-  query Posts {
+  ${NavigationMenu.fragments.entry}
+  query Posts($headerLocation: MenuLocationEnum) {
     posts(first: 10) {
       nodes {
         date
@@ -68,8 +77,19 @@ Posts.query = gql`
         }
       }
     }
+    headerMenuItems: menuItems(where: { location: $headerLocation }) {
+      nodes {
+        ...NavigationMenuItemFragment
+      }
+    }
   }
 `;
+
+Posts.variables = () => {
+  return {
+    headerLocation: MENUS.PRIMARY_LOCATION,
+  };
+};
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {

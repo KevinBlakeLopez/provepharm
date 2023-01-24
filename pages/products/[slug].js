@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Header, NavigationMenu } from "../../components";
+import Banner from "../../components/Banner";
 
 Product.query = gql`
   ${NavigationMenu.fragments.entry}
@@ -69,19 +70,17 @@ export default function Product() {
     variables: { id: slug },
   });
 
-  console.log(45, data);
-
   if (loading) {
     return <></>;
   }
 
   const { metaFields } = data.product;
   const product = metaFields;
-  const product2 = data.product;
 
   return (
     <>
       <Header menuItems={data.headerMenuItems} />
+      <Banner>Our Products</Banner>
       <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-40">
         <div className="">
           <div className="mb-20 mt-2 lg:w-11/12">

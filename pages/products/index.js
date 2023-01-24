@@ -3,13 +3,21 @@ import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import ProductsFinder from "../../components/ProductsFinder/ProductsFinder";
+import Banner from "../../components/Banner";
+import { Header, NavigationMenu } from "../../components";
+import * as MENUS from "../../constants/menus";
 
 export default function Products() {
-  const { data } = useQuery(Products.query);
-  console.log(31, data);
-  console.log(data ? data.products.nodes[0].metaFields.form : null);
+  const { data, loading } = useQuery(Products.query);
+
+  if (loading) {
+    return <></>;
+  }
+
   return (
     <>
+      <Header menuItems={data.headerMenuItems} />
+      <Banner>Our Products</Banner>
       <div className="mt-10 mx-4 md:mx-0">
         <div className="md:flex md:flex-col md:items-center">
           <div className="lg:w-2/5">
@@ -107,7 +115,8 @@ export default function Products() {
 }
 
 Products.query = gql`
-  query Products {
+  ${NavigationMenu.fragments.entry}
+  query Products($headerLocation: MenuLocationEnum) {
     products(first: 30) {
       nodes {
         title
@@ -128,8 +137,19 @@ Products.query = gql`
         slug
       }
     }
+    headerMenuItems: menuItems(where: { location: $headerLocation }) {
+      nodes {
+        ...NavigationMenuItemFragment
+      }
+    }
   }
 `;
+
+Products.variables = () => {
+  return {
+    headerLocation: MENUS.PRIMARY_LOCATION,
+  };
+};
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
