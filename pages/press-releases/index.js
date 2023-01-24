@@ -22,7 +22,7 @@ export default function PressReleases() {
           ({ id, title, excerpt, date, featuredImage }) => (
             <div className="md:flex md:items-center mb-10" key={id}>
               {featuredImage ? (
-                <div className="max-w-[400px]">
+                <div className="max-w-[400px] mr-16">
                   <Image
                     width="600"
                     height="600"
