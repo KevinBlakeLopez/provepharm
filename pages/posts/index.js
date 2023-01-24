@@ -18,7 +18,7 @@ export default function Posts() {
       <Header menuItems={data.headerMenuItems} />
       <Banner>News</Banner>
       <div className="flex justify-center mt-16 ">
-        <div className="w-[800px]">
+        <div className="w-[1000px]">
           {data.posts
             ? data.posts.nodes.map((post) => {
                 console.log(post);

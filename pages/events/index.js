@@ -4,7 +4,7 @@ import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import { Header, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
-// import Image from "next/image";
+import Image from "next/image";
 // import Link from "next/link";
 
 export default function Events() {
@@ -17,27 +17,40 @@ export default function Events() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Banner>Events</Banner>
-      <Container size="xs">
-        {data.events.nodes.map(({ id, title, excerpt, date }) => (
-          <div className="mb-10" key={id}>
-            <p className="mb-2 text-sm">
-              {new Date(date).toLocaleDateString("en-US", {
-                day: "2-digit",
-                month: "long",
-                year: "numeric",
-              })}
-            </p>
-            <h2 className="text-xl mb-3 font-semibold">{title}</h2>
-            <div
-              className="mb-2"
-              dangerouslySetInnerHTML={{ __html: excerpt }}
-            />
-            <p className="mb-10 text-blue-500 underline cursor-pointer">
-              Read more
-            </p>
-            <div class="w-full h-[1px] bg-[#ebebeb]"></div>
-          </div>
-        ))}
+      <Container size="sm">
+        {data.events.nodes.map(
+          ({ id, title, excerpt, date, featuredImage }) => (
+            <div className="md:flex md:items-center mb-10" key={id}>
+              {featuredImage ? (
+                <div className="max-w-[400px] mr-48">
+                  <Image
+                    width="2800"
+                    height="600"
+                    src={featuredImage.node.mediaItemUrl}
+                  />
+                </div>
+              ) : null}
+              <section>
+                <p className="mb-2 text-sm">
+                  {new Date(date).toLocaleDateString("en-US", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+                <h2 className="text-xl mb-3 font-semibold">{title}</h2>
+                <div
+                  className="mb-2"
+                  dangerouslySetInnerHTML={{ __html: excerpt }}
+                />
+                <p className="mb-10 text-blue-500 underline cursor-pointer">
+                  Read more
+                </p>
+                <div class="w-full h-[1px] bg-[#ebebeb]"></div>
+              </section>
+            </div>
+          )
+        )}
       </Container>
     </>
   );
