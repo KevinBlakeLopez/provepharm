@@ -1,16 +1,9 @@
-import { gql, useQuery } from '@apollo/client';
-import * as MENUS from '../constants/menus';
-import { BlogInfoFragment } from '../fragments/GeneralSettings';
-import {
-  Header,
-  Hero,
-  Footer,
-  Main,
-  Container,
-  NavigationMenu,
-  SEO,
-} from '../components';
-import { getNextStaticProps } from '@faustwp/core';
+import { gql, useQuery } from "@apollo/client";
+import * as MENUS from "../constants/menus";
+import { BlogInfoFragment } from "../fragments/GeneralSettings";
+import { Header, Hero, Footer, Main, NavigationMenu, SEO } from "../components";
+import Container from "../components/Container";
+import { getNextStaticProps } from "@faustwp/core";
 
 export default function Page(props) {
   const { data } = useQuery(Page.query, {
@@ -18,7 +11,8 @@ export default function Page(props) {
   });
   const title = props.title;
 
-  const { title: siteTitle, description: siteDescription } = data?.generalSettings;
+  const { title: siteTitle, description: siteDescription } =
+    data?.generalSettings;
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
   const footerMenu = data?.footerMenuItems?.nodes ?? [];
 
@@ -70,10 +64,13 @@ Page.query = gql`
 Page.variables = () => {
   return {
     headerLocation: MENUS.PRIMARY_LOCATION,
-    footerLocation: MENUS.FOOTER_LOCATION
+    footerLocation: MENUS.FOOTER_LOCATION,
   };
 };
 
 export function getStaticProps(ctx) {
-  return getNextStaticProps(ctx, {Page, props: {title: 'File Page Example'}});
+  return getNextStaticProps(ctx, {
+    Page,
+    props: { title: "File Page Example" },
+  });
 }

@@ -1,17 +1,17 @@
-import { gql } from '@apollo/client';
-import * as MENUS from '../constants/menus';
-import { BlogInfoFragment } from '../fragments/GeneralSettings';
+import { gql } from "@apollo/client";
+import * as MENUS from "../constants/menus";
+import { BlogInfoFragment } from "../fragments/GeneralSettings";
 import {
   Header,
   Footer,
   Main,
-  Container,
   EntryHeader,
   NavigationMenu,
   Post,
   FeaturedImage,
   SEO,
-} from '../components';
+} from "../components";
+import Container from "../components/Container";
 
 export default function Component(props) {
   const { title: siteTitle, description: siteDescription } =

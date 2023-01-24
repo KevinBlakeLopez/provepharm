@@ -1,5 +1,6 @@
 import className from "classnames/bind";
-import { Heading, PostInfo, Container, FeaturedImage } from "..";
+import { Heading, PostInfo, FeaturedImage } from "..";
+import Container from "../Container";
 import styles from "./EntryHeader.module.scss";
 
 let cx = className.bind(styles);

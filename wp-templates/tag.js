@@ -5,13 +5,13 @@ import {
   Header,
   Footer,
   Main,
-  Container,
   EntryHeader,
   NavigationMenu,
   FeaturedImage,
   Post,
   SEO,
 } from "../components";
+import Container from "../components/Container";
 
 export default function Component(props) {
   const { title: siteTitle, description: siteDescription } =
