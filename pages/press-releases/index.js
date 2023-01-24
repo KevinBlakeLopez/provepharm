@@ -17,10 +17,10 @@ export default function PressReleases() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Banner>Press Releases</Banner>
-      <Container size="xs">
+      <Container size="sm">
         {data.pressReleases.nodes.map(
           ({ id, title, excerpt, date, featuredImage }) => (
-            <div className="flex items-center mb-10" key={id}>
+            <div className="md:flex md:items-center mb-10" key={id}>
               {featuredImage ? (
                 <div className="max-w-[400px]">
                   <Image
