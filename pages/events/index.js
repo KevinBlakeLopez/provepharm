@@ -2,7 +2,7 @@ import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
-import { Header, NavigationMenu } from "../../components";
+import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
 import Image from "next/image";
 // import Link from "next/link";
@@ -52,6 +52,7 @@ export default function Events() {
           )
         )}
       </Container>
+      <Footer />
     </>
   );
 }

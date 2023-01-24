@@ -6,8 +6,6 @@ import Link from "next/link";
 import Script from "next/script";
 import styles from "./Header.module.scss";
 
-let cx = classNames.bind(styles);
-
 export default function Header({ menuItems }) {
   console.log(menuItems);
 
@@ -61,23 +59,23 @@ export default function Header({ menuItems }) {
               }
             >
               <ul className="text-blue-900 md:flex">
-                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-2">
+                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
                   <Link href="/about">About Us</Link>
                 </li>
-                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
+                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
                   <Link href="/products">Products</Link>
                 </li>
-                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
-                  <Link href="/events">Events</Link>
-                </li>
-                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
-                  <Link href="/contact">Contact Us</Link>
-                </li>
-                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
+                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
                   <Link href="/press-releases">Press Releases</Link>
                 </li>
-                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
+                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
                   <Link href="/posts">News</Link>
+                </li>
+                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
+                  <Link href="/events">Events</Link>
+                </li>
+                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
+                  <Link href="/contact">Contact</Link>
                 </li>
               </ul>
             </div>

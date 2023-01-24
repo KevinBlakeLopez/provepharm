@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ProductsFinder from "../../components/ProductsFinder/ProductsFinder";
 import Banner from "../../components/Banner";
-import { Header, NavigationMenu } from "../../components";
+import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
 
 export default function Products() {
@@ -110,6 +110,7 @@ export default function Products() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
-import { Header, NavigationMenu } from "../../components";
+import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
 
 export default function ContactUs() {
@@ -214,6 +214,7 @@ export default function ContactUs() {
           </section>
         </div>
       </Container>
+      <Footer />
     </>
   );
 }

@@ -4,7 +4,7 @@ import Modal from "../../components/Modal";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Header, NavigationMenu } from "../../components";
+import { Header, Footer, NavigationMenu } from "../../components";
 import Banner from "../../components/Banner";
 
 Product.query = gql`
@@ -274,7 +274,7 @@ export default function Product() {
           </div>
         </div>
       </div>
-      <section className="bg-slate-400 fixed bottom-0 w-full">
+      <section className="bg-slate-400 sticky bottom-0 w-full">
         <h5 className="text-center text-2xl font-bold mt-2">
           Important Safety Information
         </h5>
@@ -288,6 +288,7 @@ export default function Product() {
           />
         </div>
       </section>
+      <Footer />
     </>
   );
 }

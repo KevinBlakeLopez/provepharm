@@ -2,7 +2,7 @@ import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
-import { Header, NavigationMenu } from "../../components";
+import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
 import Image from "next/image";
 // import Link from "next/link";
@@ -53,7 +53,7 @@ export default function PressReleases() {
         )}
         <div className="h-36" />
       </Container>
-      <section className="bg-slate-400 fixed bottom-0 w-full">
+      <section className="bg-slate-400 sticky bottom-0 w-full">
         <h5 className="text-center text-2xl font-bold mt-2">
           Important Safety Information
         </h5>
@@ -229,6 +229,7 @@ export default function PressReleases() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
