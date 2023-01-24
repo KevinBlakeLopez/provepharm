@@ -16,10 +16,10 @@ export default function ContactUs() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Banner>Contact Us</Banner>
-      <Container size="sm">
-        <div className="flex justify-between mt-16">
-          <section className="mr-16">
-            <h3 className="text-2xl text-blue-900">GENERAL INQUIRIES</h3>
+      <Container size="xl">
+        <div className="md:flex md:justify-between mt-16">
+          <section className="mr-24">
+            <h3 className="text-2xl text-blue-900 mb-4">GENERAL INQUIRIES</h3>
             <form
               action="/contact-us"
               method="post"
@@ -27,49 +27,46 @@ export default function ContactUs() {
               accept-charset="UTF-8"
               className="max-w-xl"
             >
-              <div class="" id="edit-fullname">
-                <div class="">
-                  <div class="flex">
-                    <fieldset class="mb-3 border-2 mr-8">
-                      <input
-                        type="text"
-                        id="edit-name"
-                        name="name"
-                        value=""
-                        placeholder="First Name"
-                        className=""
-                        required="required"
-                        aria-required="true"
-                      />
-                    </fieldset>
-                    <fieldset class="mb-3 border-2">
-                      <input
-                        type="text"
-                        id="edit-last-name"
-                        name="last_name"
-                        value=""
-                        placeholder="Last Name"
-                        className=""
-                        required="required"
-                        aria-required="true"
-                      />
-                    </fieldset>
-                  </div>
-                </div>
+              <div class="flex mb-5">
+                <fieldset class="border-2 mr-8">
+                  <input
+                    type="text"
+                    id="edit-name"
+                    name="name"
+                    value=""
+                    placeholder="First Name"
+                    className="text-xl py-1.5 pl-2"
+                    required="required"
+                    aria-required="true"
+                  />
+                </fieldset>
+                <fieldset class="border-2">
+                  <input
+                    type="text"
+                    id="edit-last-name"
+                    name="last_name"
+                    value=""
+                    placeholder="Last Name"
+                    className="text-xl py-1 pl-2"
+                    required="required"
+                    aria-required="true"
+                  />
+                </fieldset>
               </div>
-              <fieldset class="mb-3 border-2">
+
+              <fieldset className="mb-5 border-2">
                 <input
                   type="email"
                   id="edit-email"
                   name="email"
                   value=""
                   placeholder="Email"
-                  class="form-email required form-control"
+                  className="text-xl py-1 pl-2"
                   required="required"
                   aria-required="true"
                 />
               </fieldset>
-              <fieldset class="mb-3 border-2">
+              <fieldset className="mb-5 border-2 text-xl py-1 pl-2">
                 <select
                   id="edit-topic"
                   name="topic"
@@ -87,27 +84,25 @@ export default function ContactUs() {
                   <option value="General Inquiries">General Inquiries</option>
                 </select>
               </fieldset>
-              <fieldset class="mb-3 border-2">
+              <fieldset class="mb-5 border-2">
                 <div class="form-textarea-wrapper">
                   <textarea
                     id="edit-message"
                     name="message"
-                    rows="5"
-                    cols="60"
                     placeholder="Your Inquiry"
-                    class="form-textarea required form-control resize-vertical"
+                    className="text-xl py-1 pl-2"
                     required="required"
                     aria-required="true"
                   ></textarea>
                 </div>
               </fieldset>
-              <div class="mb-3 bg-blue-900" id="edit-actions">
+              <div class="mb-8 bg-blue-900 md:w-48" id="edit-actions">
                 <input
-                  class=""
+                  className="text-lg py-2 pl-7 text-white"
                   type="submit"
                   id="edit-actions-submit"
                   name="op"
-                  value="Send message"
+                  value="SEND MESSAGE"
                 />
               </div>
               <input
@@ -119,53 +114,86 @@ export default function ContactUs() {
               />
               <input type="hidden" name="form_id" value="" class="" />
             </form>
-          </section>
-          <section>
-            <div class="">
-              <p>
-                <a href="mailto:safety-us@provepharm.com">
+            <div>
+              <p className="mb-5">
+                <a
+                  className="text-xl underline text-blue-400"
+                  href="mailto:safety-us@provepharm.com"
+                >
                   REQUEST FOR MEDICAL INFORMATION
                 </a>{" "}
               </p>
               <p>
-                <a href="mailto:safety-us@provepharm.com">
+                <a
+                  className="text-xl underline text-blue-400"
+                  href="mailto:safety-us@provepharm.com"
+                >
                   ADVERSE EVENT REPORTING
                 </a>
               </p>
             </div>
-            <div class="col-lg-4 offset-lg-1 mt-2">
-              <div class="">
-                <h4>Pharmacovigilance:</h4>
+          </section>
+          <section>
+            <div className="text-lg">
+              <div className="mb-4">
+                <h4 className="font-medium">Pharmacovigilance:</h4>
                 <p>
-                  P: <a href="tel:1-833-727-6556">1-833-727-6556</a>
+                  P:{" "}
+                  <a
+                    className="underline text-blue-400"
+                    href="tel:1-833-727-6556"
+                  >
+                    1-833-727-6556
+                  </a>
                 </p>
                 <p>
                   E:{" "}
-                  <a href="mailto:safety-us@provepharm.com">
+                  <a
+                    className="underline text-blue-400"
+                    href="mailto:safety-us@provepharm.com"
+                  >
                     safety-us@provepharm.com
                   </a>
                 </p>
               </div>
-              <div class="">
-                <h4>Medical Information</h4>
+              <div className="mb-4">
+                <h4 className="font-medium">Medical Information</h4>
                 <p>
-                  P: <a href="tel:1-833-727-6556">1-833-727-6556</a>
+                  P:{" "}
+                  <a
+                    className="underline text-blue-400"
+                    href="tel:1-833-727-6556"
+                  >
+                    1-833-727-6556
+                  </a>
                 </p>
                 <p>
                   E:{" "}
-                  <a href="mailto:safety-us@provepharm.com">
+                  <a
+                    className="underline text-blue-400"
+                    href="mailto:safety-us@provepharm.com"
+                  >
                     safety-us@provepharm.com
                   </a>
                 </p>
               </div>
-              <div class="">
-                <h4>Product Quality Complaints</h4>
+              <div class="mb-4">
+                <h4 className="font-medium">Product Quality Complaints</h4>
                 <p>
-                  P: <a href="tel:1-833-727-6556">1-833-727-6556</a>
+                  P:{" "}
+                  <a
+                    className="underline text-blue-400"
+                    href="tel:1-833-727-6556"
+                  >
+                    1-833-727-6556
+                  </a>
                 </p>
                 <p>
                   E:{" "}
-                  <a href="mailto:quality@provepharm.com">
+                  <a
+                    className="underline text-blue-400"
+                    href="mailto:quality@provepharm.com"
+                  >
                     quality@provepharm.com
                   </a>
                 </p>
@@ -174,7 +202,10 @@ export default function ContactUs() {
                 <h4>General Inquiries or Customer Service</h4>
                 <p>
                   E:{" "}
-                  <a href="mailto:us-info@provepharm.com">
+                  <a
+                    className="underline text-blue-400"
+                    href="mailto:us-info@provepharm.com"
+                  >
                     us-info@provepharm.com
                   </a>
                 </p>
