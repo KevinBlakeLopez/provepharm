@@ -1,22 +1,30 @@
 import { getWordPressProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
-
+import Modal from "../../components/Modal";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Header, NavigationMenu } from "../../components";
+import Banner from "../../components/Banner";
 
 Product.query = gql`
-  query ProductQuery($id: ID!) {
-    product2(id: $id, idType: SLUG) {
+  ${NavigationMenu.fragments.entry}
+  query ProductQuery($id: ID!, $headerLocation: MenuLocationEnum) {
+    product(id: $id, idType: SLUG) {
+      title
       metaFields {
         amerisourcebergen2
         cardinal
+        closuresize
+        containersize
+        discontinued
         form
         genericname
         glutenFree
         gtin
         importantsafetyinformation
         mckessen
+        morrisDickson
         ndc
         packsize
         prescribinginformation {
@@ -38,8 +46,21 @@ Product.query = gql`
         therapeuticequivalencerating
       }
     }
+    headerMenuItems: menuItems(where: { location: $headerLocation }) {
+      nodes {
+        ...NavigationMenuItemFragment
+      }
+    }
   }
 `;
+
+Product.variables = () => {
+  return {
+    first: appConfig.postsPerPage,
+    after: "",
+    headerLocation: MENUS.PRIMARY_LOCATION,
+  };
+};
 
 export default function Product() {
   const router = useRouter();
@@ -49,31 +70,32 @@ export default function Product() {
     variables: { id: slug },
   });
 
-  console.log(45, data);
-
   if (loading) {
     return <></>;
   }
 
-  const { metaFields } = data.product2;
+  const { metaFields } = data.product;
   const product = metaFields;
 
   return (
-    <div>
-      <div className="flex flex-col items-center mt-14">
+    <>
+      <Header menuItems={data.headerMenuItems} />
+      <Banner>Our Products</Banner>
+      <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-40">
         <div className="">
-          <div className="mb-20 mt-2 w-[1000px]">
-            <h2 className="text-[1.7rem] tracking-wide mb-8">
+          <div className="mb-20 mt-2 lg:w-11/12">
+            <h2 className="text-[1.7em] tracking-wide mb-8">
               <Link legacyBehavior href="/products">
                 <a className=" text-blue-500">Products</a>
               </Link>
               {" > "}
-              {product.genericname ? product.genericname : null}
+              {product.genericname}
+              {/* {product.genericname ? product.genericname : null}
               {product.productvariationtitle
                 ? " ( " + product.productvariationtitle + " ) "
-                : null}
+                : null} */}
             </h2>
-            <div className="flex justify-between">
+            <div className="md:flex md:justify-between">
               <section>
                 <div className="flex justify-between">
                   <section className="border border-solid p-8 px-32">
@@ -89,23 +111,50 @@ export default function Product() {
                   </section>
                 </div>
                 <section className="mt-12">
-                  <p>
-                    Prescribing Information:{" "}
-                    <Link href={product.prescribinginformation.url}>
-                      <a className="underline text-orange-500">Click here</a>
-                    </Link>
-                  </p>
+                  Prescribing Information:{" "}
+                  {product.prescribinginformation ? (
+                    <Modal
+                      text="Click here"
+                      externalLink={product.prescribinginformation.url}
+                    />
+                  ) : (
+                    <p>Please add Link</p>
+                  )}
                 </section>
-                <section>
-                  <iframe
-                    className="mt-20"
-                    width="420"
-                    height="315"
-                    src={product.video}
-                  ></iframe>
-                </section>
+
+                {product.video ? (
+                  <section>
+                    <iframe
+                      className="mt-16"
+                      width="420"
+                      height="315"
+                      layout="responsive"
+                      src={product.video}
+                    ></iframe>
+                  </section>
+                ) : (
+                  <div></div>
+                )}
               </section>
-              <ul className="w-[450px] mx-8">
+              <ul className="md:w-2/5 lg:mx-8">
+                <li className="flex justify-between">
+                  {product.genericname ? (
+                    <>
+                      <p className="font-medium text-lg mb-4 mr-20">
+                        Generic Name
+                      </p>
+                      <p className="mb-4 text-right">
+                        {product.genericname +
+                          " " +
+                          product.strength +
+                          " " +
+                          product.form +
+                          " x " +
+                          product.packsize}
+                      </p>
+                    </>
+                  ) : null}
+                </li>
                 <li className="flex justify-between">
                   {product.productvariationtitle ? (
                     <>
@@ -211,13 +260,35 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">McKessen</p>
                   <p className="mb-4">{product.mckessen}</p>
                 </li>
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Morris & Dickson</p>
+                  <p className="mb-4">{product.morrisDickson}</p>
+                </li>
+                <br />
+                <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4">Discontinued: </p>
+                  <p className="">{product.discontinued ? "yes" : "no"}</p>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <section>{product.importantsafetyinformation}</section>
-    </div>
+      <section className="bg-slate-400 fixed bottom-0 w-full">
+        <h5 className="text-center text-2xl font-bold mt-2">
+          Important Safety Information
+        </h5>
+        <div className="flex justify-center">
+          {" "}
+          <div
+            className="isi mb-4 max-w-[1000px] h-44 overflow-auto"
+            dangerouslySetInnerHTML={{
+              __html: product.importantsafetyinformation,
+            }}
+          />
+        </div>
+      </section>
+    </>
   );
 }
 

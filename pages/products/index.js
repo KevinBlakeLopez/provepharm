@@ -3,25 +3,33 @@ import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import ProductsFinder from "../../components/ProductsFinder/ProductsFinder";
+import Banner from "../../components/Banner";
+import { Header, NavigationMenu } from "../../components";
+import * as MENUS from "../../constants/menus";
 
 export default function Products() {
-  const { data } = useQuery(Products.query);
-  console.log(31, data);
-  console.log(data ? data.products2.nodes[0].metaFields.form : null);
+  const { data, loading } = useQuery(Products.query);
+
+  if (loading) {
+    return <></>;
+  }
+
   return (
     <>
-      <div className="mt-10">
-        <div className="flex flex-col items-center">
-          <div className="w-[600px]">
+      <Header menuItems={data.headerMenuItems} />
+      <Banner>Our Products</Banner>
+      <div className="mt-10 mx-4 md:mx-0">
+        <div className="md:flex md:flex-col md:items-center">
+          <div className="lg:w-2/5">
             <ProductsFinder />
             {data ? (
-              data.products2.nodes.map((product) => {
+              data.products.nodes.map((product) => {
                 return (
                   <div className="my-[80px]">
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
-                      {product.title ? product.title : null}
+                      {product.metaFields.genericname}
                     </h2>
-                    <div className="flex justify-between">
+                    <div className="md:flex md:justify-between">
                       {product.metaFields.productimage ? (
                         <Image
                           src={product.metaFields.productimage.mediaItemUrl}
@@ -33,7 +41,7 @@ export default function Products() {
                       )}
                       <div className="flex">
                         <ul className="mr-8">
-                          <li className="font-medium text-lg">
+                          <li className="font-medium text-lg text-sky-500 ">
                             Reference Listed Drug:
                           </li>
                           <li className="mb-4">
@@ -41,9 +49,13 @@ export default function Products() {
                               ? "yes"
                               : "no"}
                           </li>
-                          <li className="font-medium text-lg">Form:</li>
+                          <li className="font-medium text-lg text-sky-500">
+                            Form:
+                          </li>
                           <li className="mb-4">{product.metaFields.form}</li>
-                          <li className="font-medium text-lg">Strength:</li>
+                          <li className="font-medium text-lg text-sky-500">
+                            Strength:
+                          </li>
                           <li className="mb-4">
                             {product.metaFields.strength}
                           </li>
@@ -60,13 +72,17 @@ export default function Products() {
                           </li>
                         </ul>
                         <ul>
-                          <li className="font-medium text-lg">Pack Size:</li>
+                          <li className="font-medium text-lg text-sky-500">
+                            Pack Size:
+                          </li>
                           <li className="mb-4">
                             {product.metaFields.packsize}
                           </li>
-                          <li className="font-medium text-lg">NDC:</li>
+                          <li className="font-medium text-lg text-sky-500">
+                            NDC:
+                          </li>
                           <li className="mb-4">{product.metaFields.ndc}</li>
-                          <li className="font-medium text-lg">
+                          <li className="font-medium text-lg text-sky-500">
                             Safety Data Sheet:
                           </li>
                           <li className="mb-4 underline underline-offset-2 text-blue-500">
@@ -99,8 +115,9 @@ export default function Products() {
 }
 
 Products.query = gql`
-  query Products {
-    products2 {
+  ${NavigationMenu.fragments.entry}
+  query Products($headerLocation: MenuLocationEnum) {
+    products(first: 30) {
       nodes {
         title
         metaFields {
@@ -120,8 +137,19 @@ Products.query = gql`
         slug
       }
     }
+    headerMenuItems: menuItems(where: { location: $headerLocation }) {
+      nodes {
+        ...NavigationMenuItemFragment
+      }
+    }
   }
 `;
+
+Products.variables = () => {
+  return {
+    headerLocation: MENUS.PRIMARY_LOCATION,
+  };
+};
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
