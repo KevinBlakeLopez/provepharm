@@ -24,27 +24,27 @@ export default function Footer({ menuItems }) {
           <ul className="mt-5 md:mt-0 flex flex-col md:flex-row text-lg text-blue-800">
             <div className="md:mr-20">
               <li className="mb-3">
-                <Link className="" href="/terms">
+                <Link className="" href="/about">
                   About
                 </Link>
               </li>
               <li className="mb-3">
-                <Link className="" href="/terms">
+                <Link className="" href="/products">
                   Products
                 </Link>
               </li>
               <li className="mb-3">
-                <Link className="ted" href="/terms">
+                <Link className="ted" href="/press-releases">
                   Press Releases
                 </Link>
               </li>
               <li className="mb-3">
-                <Link className="" href="/terms">
+                <Link className="" href="/posts">
                   News
                 </Link>
               </li>
               <li className="mb-3">
-                <Link className="" href="/terms">
+                <Link className="" href="/events">
                   Events
                 </Link>
               </li>
@@ -52,12 +52,12 @@ export default function Footer({ menuItems }) {
             <div class="mb-6"></div>
             <div className="md:mr-20">
               <li className="mb-3">
-                <Link className="" href="/terms">
+                <Link className="" href="/contact">
                   Report an adverse event
                 </Link>
               </li>
               <li>
-                <Link className="" href="/terms">
+                <Link className="" href="/compliance">
                   Compliance & Code of Conduct
                 </Link>
               </li>
