@@ -1,28 +1,29 @@
 import { useQuery, gql } from "@apollo/client";
-import * as MENUS from "../constants/menus";
-import { BlogInfoFragment } from "../fragments/GeneralSettings";
+import * as MENUS from "../../constants/menus";
+import { BlogInfoFragment } from "../../fragments/GeneralSettings";
 import Image from "next/image";
-import { Header, Footer, Main, NavigationMenu, Hero, SEO } from "../components";
+import {
+  Header,
+  Footer,
+  Main,
+  NavigationMenu,
+  Hero,
+  SEO,
+} from "../../components";
 // import Container from "../components/Container";
 
-export default function Component() {
-  const { data } = useQuery(Component.query, {
-    variables: Component.variables(),
+export default function AboutUs() {
+  const { data, loading } = useQuery(AboutUs.query, {
+    variables: AboutUs.variables(),
   });
 
-  const { title: siteTitle, description: siteDescription } =
-    data?.generalSettings;
-  const primaryMenu = data?.headerMenuItems?.nodes ?? [];
-  const footerMenu = data?.footerMenuItems?.nodes ?? [];
+  if (loading) {
+    return <></>;
+  }
 
   return (
     <>
-      <SEO title={siteTitle} description={siteDescription} />
-      <Header
-        title={siteTitle}
-        description={siteDescription}
-        menuItems={primaryMenu}
-      />
+      <Header menuItems={data.headerMenuItems} />
       <Main>
         {/* <Container> */}
         {/* <Hero title={"Provepharm"} /> */}
@@ -601,12 +602,11 @@ export default function Component() {
         </>
         {/* </Container> */}
       </Main>
-      <Footer title={siteTitle} menuItems={footerMenu} />
     </>
   );
 }
 
-Component.query = gql`
+AboutUs.query = gql`
   ${BlogInfoFragment}
   ${NavigationMenu.fragments.entry}
   query GetPageData(
@@ -629,7 +629,7 @@ Component.query = gql`
   }
 `;
 
-Component.variables = () => {
+AboutUs.variables = () => {
   return {
     headerLocation: MENUS.PRIMARY_LOCATION,
     footerLocation: MENUS.FOOTER_LOCATION,

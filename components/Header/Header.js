@@ -62,7 +62,7 @@ export default function Header({ menuItems }) {
             >
               <ul className="text-blue-900 md:flex">
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-2">
-                  <a href="">About Us</a>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-3">
                   <Link href="/products">Products</Link>
