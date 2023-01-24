@@ -261,8 +261,8 @@ export default function Component() {
                   </div>
                 </div>
 
-                <div class="wp-block-columns third-way-content">
-                  <div class="wp-block-column container">
+                <div>
+                  <div>
                     <div className="flex justify-between mt-12">
                       <div className="mr-8">
                         <p className="mb-8">
@@ -343,15 +343,15 @@ export default function Component() {
                   </div>
                 </div>
 
-                <div class="wp-block-columns container position-relative z-index-1 mb-0">
-                  <div class="wp-block-column col-lg-6">
-                    <div class="wp-block-columns mb-0">
-                      <div class="bg-blue-400">
+                <div class="relative z-index-1 mb-0">
+                  <div>
+                    <div>
+                      <div className="bg-blue-400">
                         <h3>
-                          Products <br />
-                          that make a <br />
-                          difference in <br />
-                          people’s lives
+                          PRODUCTS <br />
+                          THAT MAKE A <br />
+                          DIFFERENCE IN <br />
+                          PEOPLE'S LIVES
                         </h3>
 
                         <p>
@@ -372,10 +372,10 @@ export default function Component() {
             <div class="wp-block-columns alignfull history-section mb-0">
               <div class="wp-block-column history-box">
                 <div class="alignwide container">
-                  <div class="row">
-                    <div class="col-lg-6 dot-left">
-                      <div class="alignwide container line-box">
-                        <h3>Our history</h3>
+                  <div className="flex">
+                    <div>
+                      <div>
+                        <h3>OUR HISTORY</h3>
 
                         <p>
                           Driven by an entrepreneurial spirit, privately-owned,
