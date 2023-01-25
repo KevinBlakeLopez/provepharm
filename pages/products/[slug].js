@@ -274,14 +274,14 @@ export default function Product() {
           </div>
         </div>
       </div>
-      <section className="bg-slate-400 sticky bottom-0 w-full">
-        <h5 className="text-center text-2xl font-bold mt-2">
+      <section className="bg-slate-400 px-2 sticky bottom-0 w-full">
+        <h5 className="text-center text-2xl font-bold py-4">
           Important Safety Information
         </h5>
         <div className="flex justify-center">
           {" "}
           <div
-            className="isi mb-4 max-w-[1000px] h-44 overflow-auto"
+            className="isi mb-4 max-w-[1000px] h-44 overflow-auto md:pr-6"
             dangerouslySetInnerHTML={{
               __html: product.importantsafetyinformation,
             }}
