@@ -26,32 +26,30 @@ export default function Component() {
       <Main>
         <Container>
           {/* <Hero title={"Provepharm"} /> */}
-          <div class="bg-blue-900 text-white mb-12">
-            <div id="upper-banner">
-              <figure class="size-full" id="ban-image">
-                <img
-                  src=""
-                  alt=""
-                  class="wp-image-48"
-                  data-entity-type="file"
-                  data-image-style="original"
-                />
-              </figure>
+          <div class="bg-blue-900 text-white mb-12 h-[80vh] flex items-center">
+            <figure class="size-full" id="ban-image">
+              <img
+                src=""
+                alt=""
+                class="wp-image-48"
+                data-entity-type="file"
+                data-image-style="original"
+              />
+            </figure>
 
-              <div className="text-7xl">
-                THERAPEUTICS AND DIAGNOSTICS THAT
-                <br />
-                <strong>MAKE A DIFFERENCE IN PATIENTS' LIVES</strong>
-              </div>
-            </div>
+            <p className="text-7xl">
+              THERAPEUTICS AND DIAGNOSTICS THAT
+              <br />
+              <strong>MAKE A DIFFERENCE IN PATIENTS' LIVES</strong>
+            </p>
           </div>
 
           <>
-            <div className="flex">
-              <section>
-                <h3 class="mb-4 text-blue-900">ABOUT US</h3>
+            <div className="flex mb-12">
+              <section className="w-1/2">
+                <h3 className="mb-4 text-blue-900 text-6xl">ABOUT US</h3>
 
-                <p>
+                <p className="text-xl">
                   With an impressive legacy of healthcare innovations and
                   solutions spanning more than 20 years, Provepharm is at the
                   forefront of developing innovative drugs from well-known
@@ -60,11 +58,10 @@ export default function Component() {
                 </p>
               </section>
 
-              <figure class="alignleft size-full">
+              <figure className="w-1/2">
                 <img
-                  src="/sites/default/files/inline-images/image2_0.jpg"
+                  src=""
                   alt=""
-                  class="wp-image-49"
                   data-entity-type="file"
                   data-entity-uuid="c0e24fd0-15a1-4c51-8c7d-d7bf6edfcf2c"
                   data-image-style="original"
@@ -72,132 +69,126 @@ export default function Component() {
               </figure>
             </div>
 
-            <div class="bg-blue-900 text-white">
-              <div class="">
-                <h3 className="text-center text-blue-300">
-                  TO ACCOMPLISH THIS MISSION, <br />
-                  OUR STRATEGY IS BASED ON <span class="mt-2">5 PILLARS</span>
-                </h3>
+            <div className="bg-blue-900 text-white text-center h-screen flex text-xl">
+              <h3 className="text-4xl  text-blue-300 pt-16">
+                TO ACCOMPLISH THIS MISSION, <br />
+                OUR STRATEGY IS BASED ON <br />
+                <span class="text-5xl text-white mt-8">5 PILLARS</span>
+              </h3>
 
-                <div className="flex">
-                  <div>
-                    <figure>
-                      <img
-                        src="/sites/default/files/inline-images/plant.png"
-                        alt=""
-                        data-entity-type="file"
-                        data-entity-uuid="0a97b5ce-5ba9-406f-8f77-1d2f630f669a"
-                        data-image-style="original"
-                      />
-                      <figcaption>
-                        External
-                        <br />
-                        Growth
-                      </figcaption>
-                    </figure>
+              <div>
+                <figure>
+                  <img
+                    src="/sites/default/files/inline-images/plant.png"
+                    alt=""
+                    data-entity-type="file"
+                    data-entity-uuid="0a97b5ce-5ba9-406f-8f77-1d2f630f669a"
+                    data-image-style="original"
+                  />
+                  <figcaption className="font-semibold pb-4">
+                    External
+                    <br />
+                    Growth
+                  </figcaption>
+                </figure>
+                <hr className="w-8 pb-4" />
+                <p>With the acquisition of products or companies</p>
+              </div>
 
-                    <p>With the acquisition of products or companies</p>
-                  </div>
+              <div>
+                <figure>
+                  <img
+                    src="/sites/default/files/inline-images/settings.png"
+                    alt=""
+                    data-entity-type="file"
+                    data-entity-uuid="07dd2a78-8f98-4d18-86fd-ad6e8ebe559f"
+                    data-image-style="original"
+                  />
+                  <figcaption className="font-semibold pb-4">
+                    Internal
+                    <br />
+                    Development
+                  </figcaption>
+                </figure>
+                <hr className="w-8 pb-4" />
+                <p>By diversifying our product portfolio</p>
+              </div>
 
-                  <div>
-                    <figure>
-                      <img
-                        src="/sites/default/files/inline-images/settings.png"
-                        alt=""
-                        data-entity-type="file"
-                        data-entity-uuid="07dd2a78-8f98-4d18-86fd-ad6e8ebe559f"
-                        data-image-style="original"
-                      />
-                      <figcaption>
-                        Internal
-                        <br />
-                        Development
-                      </figcaption>
-                    </figure>
+              <div>
+                <figure class="wp-block-image size-full pillars-top">
+                  <img
+                    src="/sites/default/files/inline-images/cube.png"
+                    alt=""
+                    data-entity-type="file"
+                    data-entity-uuid="13496128-6b7f-4261-931c-574f7ecedbbf"
+                    data-image-style="original"
+                  />
+                  <figcaption className="font-semibold pb-4">
+                    Commercial
+                    <br />
+                    Transformation
+                  </figcaption>
+                </figure>
+                <hr className="w-8 pb-4" />
+                <p class="pillars-content">By expanding sales channels</p>
+              </div>
 
-                    <p>By diversifying our product portfolio</p>
-                  </div>
+              <div class="wp-block-column">
+                <figure class="wp-block-image size-full pillars-top">
+                  <img
+                    src="/sites/default/files/inline-images/secure-shield.png"
+                    alt=""
+                    title=""
+                    data-entity-type="file"
+                    data-entity-uuid="cfd501fb-6de4-4a2d-b7b1-5079a09e45f9"
+                    data-image-style="original"
+                  />
+                  <figcaption className="font-semibold pb-4">
+                    Secure
+                    <br />
+                    Our API
+                  </figcaption>
+                </figure>
+                <hr className="w-8 pb-4" />
+                <p class="pillars-content">By securing our supply</p>
+              </div>
 
-                  <div>
-                    <figure class="wp-block-image size-full pillars-top">
-                      <img
-                        src="/sites/default/files/inline-images/cube.png"
-                        alt=""
-                        class="wp-image-7"
-                        data-entity-type="file"
-                        data-entity-uuid="13496128-6b7f-4261-931c-574f7ecedbbf"
-                        data-image-style="original"
-                      />
-                      <figcaption>
-                        Commercial
-                        <br />
-                        Transformation
-                      </figcaption>
-                    </figure>
+              <div class="wp-block-column">
+                <figure class="wp-block-image size-full pillars-top">
+                  <img
+                    src="/sites/default/files/inline-images/award.png"
+                    alt=""
+                    data-entity-type="file"
+                    data-entity-uuid="a3b752d5-6374-4271-9efa-4c2d571677e8"
+                    data-image-style="original"
+                  />
+                  <figcaption className="font-semibold pb-4">
+                    Operational
+                    <br />
+                    Excellence
+                  </figcaption>
+                </figure>
+                <hr className="w-8 pb-4" />
+                <p class="pillars-content">
+                  By capitalizing on the women and men of Provepharm
+                </p>
+              </div>
+            </div>
 
-                    <p class="pillars-content">By expanding sales channels</p>
-                  </div>
+            <div class="wp-block-columns pillars-discover mb-0">
+              <div class="wp-block-column">
+                <h4 className="text-blue-300 text-center">
+                  From drug discovery – to marketplace
+                </h4>
 
-                  <div class="wp-block-column">
-                    <figure class="wp-block-image size-full pillars-top">
-                      <img
-                        src="/sites/default/files/inline-images/secure-shield.png"
-                        alt=""
-                        class="wp-image-8"
-                        title=""
-                        data-entity-type="file"
-                        data-entity-uuid="cfd501fb-6de4-4a2d-b7b1-5079a09e45f9"
-                        data-image-style="original"
-                      />
-                      <figcaption>
-                        Secure
-                        <br />
-                        Our API
-                      </figcaption>
-                    </figure>
-
-                    <p class="pillars-content">By securing our supply</p>
-                  </div>
-
-                  <div class="wp-block-column">
-                    <figure class="wp-block-image size-full pillars-top">
-                      <img
-                        src="/sites/default/files/inline-images/award.png"
-                        alt=""
-                        class="wp-image-9"
-                        data-entity-type="file"
-                        data-entity-uuid="a3b752d5-6374-4271-9efa-4c2d571677e8"
-                        data-image-style="original"
-                      />
-                      <figcaption>
-                        Operational
-                        <br />
-                        Excellence
-                      </figcaption>
-                    </figure>
-
-                    <p class="pillars-content">
-                      By capitalizing on the women and men of Provepharm
-                    </p>
-                  </div>
-                </div>
-
-                <div class="wp-block-columns pillars-discover mb-0">
-                  <div class="wp-block-column">
-                    <h4 className="text-blue-300 text-center">
-                      From drug discovery – to marketplace
-                    </h4>
-
-                    <p className="text-center">
-                      Scientific experience combined with healthcare business
-                      savvy enables Provepharm to add
-                      <br />
-                      value to all levels of the product lifecycle, from
-                      ground-breaking discovery, to successfully bringing
-                      therapy and diagnostics to the appropriate patient
-                    </p>
-                  </div>
-                </div>
+                <p className="text-center">
+                  Scientific experience combined with healthcare business savvy
+                  enables Provepharm to add
+                  <br />
+                  value to all levels of the product lifecycle, from
+                  ground-breaking discovery, to successfully bringing therapy
+                  and diagnostics to the appropriate patient
+                </p>
               </div>
             </div>
 
@@ -230,7 +221,7 @@ export default function Component() {
             </div>
 
             <>
-              <div className="mb-12">
+              <div className="mb-36">
                 <figure>
                   <img
                     src="/sites/default/files/styles/large/public/inline-images/top-3rd-way.png?itok=Wfn-AFDS"
@@ -253,7 +244,7 @@ export default function Component() {
                   />
                 </figure>
 
-                <div className="text-center bg-slate-800">
+                <div className="text-center bg-slate-800 pt-24 pb-36">
                   <p className="text-5xl text-white leading-[4rem]">
                     PROVEPHARM IS AN INTERNATIONAL, PRIVATE, PHARMACEUTICAL{" "}
                     <br /> COMPANY WITH A GLOBAL PRESENCE IN OVER 30 COUNTRIES
@@ -262,7 +253,7 @@ export default function Component() {
                 </div>
               </div>
 
-              <div className="flex justify-between mt-12 text-xl">
+              <div className="flex justify-between mt-12 text-xl mb-36">
                 <div className="w-1/2 mr-8">
                   <p className="mb-8">
                     At Provepharm, we innovate in order to understand each
