@@ -26,8 +26,8 @@ export default function AboutUs() {
       <Header menuItems={data.headerMenuItems} />
       <Main>
         {/* <Hero title={"Provepharm"} /> */}
-        <div className="bg-[url('/about-hero.jpeg')] bg-cover md:h-[80vh] text-white mb-12">
-          <h2 className="pl-8 md:pl-64 text-7xl">
+        <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light md:h-[80vh] text-white mb-12 flex items-center">
+          <h2 className="pl-8 md:pl-64 text-7xl font-light">
             CONNECTING <br />
             HEALTHCARE
             <br /> PROVIDERS <br />
@@ -37,28 +37,31 @@ export default function AboutUs() {
         </div>
 
         <>
-          <div className="flex mb-16">
-            <div class="w-1/2">
-              <h3 className="text-6xl mb-4">OUR MISSION</h3>
+          <Container size="md">
+            <div className="flex mb-16">
+              <div class="w-1/2 mr-8">
+                <h3 className="text-6xl text-blue-400 font-light mb-4">
+                  OUR MISSION
+                </h3>
 
-              <p className="text-xl">
-                Provepharm is driven to improve the lives of our patients,
-                employees, and the ecosystem. We focus our resources on two main
-                areas of development:
-              </p>
-            </div>
+                <p className="text-xl">
+                  Provepharm is driven to improve the lives of our patients,
+                  employees, and the ecosystem. We focus our resources on two
+                  main areas of development:
+                </p>
+              </div>
 
-            <div className="w-1/2">
-              <img
-                alt=""
-                src="/sites/default/files/inline-images/image5_1.jpg"
-                data-object-fit="cover"
-                data-entity-type="file"
-                data-entity-uuid="01ba18a1-7156-436e-ba4e-bb4d69f9d13f"
-                data-image-style="original"
-              />
-              <div>
-                <div className="bg-blue-900 p-6">
+              <div className="w-1/2">
+                <img
+                  alt=""
+                  src="/sites/default/files/inline-images/image5_1.jpg"
+                  data-object-fit="cover"
+                  data-entity-type="file"
+                  data-entity-uuid="01ba18a1-7156-436e-ba4e-bb4d69f9d13f"
+                  data-image-style="original"
+                />
+
+                <div className="bg-[url('/aboutMainBG.jpeg')] bg-cover bg-blend-soft-light bg-[#02029ca6] p-8">
                   <h4 className="text-3xl text-blue-300 mb-4">
                     Main Areas of Development
                   </h4>
@@ -76,7 +79,7 @@ export default function AboutUs() {
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
 
           <div className="mb-12">
             <figure>

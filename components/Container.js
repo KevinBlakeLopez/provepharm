@@ -2,6 +2,7 @@ function Container({ size, children }) {
   const sizeMap = {
     xs: "max-w-[800px]",
     sm: "max-w-[1000px]",
+    md: "max-w-[1100px]",
     lg: "max-w-[1400px]",
     xl: "max-w-[1600px]",
     full: "max-w-full",

@@ -14,10 +14,10 @@ Product.query = gql`
       title
       metaFields {
         amerisourcebergen2
+        brandProduct
         cardinal
         closuresize
         containersize
-        discontinued
         form
         genericname
         glutenFree
@@ -35,7 +35,6 @@ Product.query = gql`
           mediaItemUrl
         }
         productvariationtitle
-        referencelisteddrug
         rubberFree
         safetysheet {
           mediaItemUrl
@@ -90,10 +89,6 @@ export default function Product() {
               </Link>
               {" > "}
               {product.genericname}
-              {/* {product.genericname ? product.genericname : null}
-              {product.productvariationtitle
-                ? " ( " + product.productvariationtitle + " ) "
-                : null} */}
             </h2>
             <div className="md:flex md:justify-between">
               <section>
@@ -143,15 +138,7 @@ export default function Product() {
                       <p className="font-medium text-lg mb-4 mr-20">
                         Generic Name
                       </p>
-                      <p className="mb-4 text-right">
-                        {product.genericname +
-                          " " +
-                          product.strength +
-                          " " +
-                          product.form +
-                          " x " +
-                          product.packsize}
-                      </p>
+                      <p className="mb-4 text-right">{product.genericname}</p>
                     </>
                   ) : null}
                 </li>
@@ -159,21 +146,12 @@ export default function Product() {
                   {product.productvariationtitle ? (
                     <>
                       <p className="font-medium text-lg mb-4 mr-20">
-                        Product Variation Title
+                        {product.brandProduct ? "Brand Name" : "Reference Listed Drug"} 
                       </p>
                       <p className="mb-4">{product.productvariationtitle}</p>
                     </>
                   ) : null}
                 </li>
-                <li className="flex justify-between">
-                  <p className="font-medium text-lg mb-4">
-                    Reference Listed Drug
-                  </p>
-                  <p className="mb-4">
-                    {product.referencelisteddrug ? "yes" : "no"}
-                  </p>
-                </li>
-
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">NDC</p>
                   <p className="mb-4">{product.ndc}</p>
@@ -231,7 +209,7 @@ export default function Product() {
                 <br />
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">
-                    Not made with natural rubber latex
+                    Container Closure is not made with natural rubber latex
                   </p>
                   <p className="">{product.latex ? "yes" : "no"}</p>
                 </li>
@@ -264,17 +242,12 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">Morris & Dickson</p>
                   <p className="mb-4">{product.morrisDickson}</p>
                 </li>
-                <br />
-                <li className="flex justify-between">
-                  <p className="font-medium text-lg mb-4">Discontinued: </p>
-                  <p className="">{product.discontinued ? "yes" : "no"}</p>
-                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <section className="bg-slate-400 px-2 sticky bottom-0 w-full">
+      <section className="bg-slate-400 px-2 fixed bottom-0 w-full z-50">
         <h5 className="text-center text-2xl font-bold py-4">
           Important Safety Information
         </h5>

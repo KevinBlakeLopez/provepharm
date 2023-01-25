@@ -42,12 +42,10 @@ export default function Products() {
                       <div className="flex">
                         <ul className="mr-8">
                           <li className="font-medium text-lg text-sky-500 ">
-                            Reference Listed Drug:
+                            {product.metaFields.brandProduct ? "Brand Name:" : "Reference Listed Drug:" }
                           </li>
                           <li className="mb-4">
-                            {product.metaFields.referencelisteddrug
-                              ? "yes"
-                              : "no"}
+                            {product.metaFields.productvariationtitle}
                           </li>
                           <li className="font-medium text-lg text-sky-500">
                             Form:
@@ -122,7 +120,7 @@ Products.query = gql`
       nodes {
         title
         metaFields {
-          referencelisteddrug
+          productvariationtitle
           genericname
           form
           strength
@@ -134,6 +132,7 @@ Products.query = gql`
           productimage {
             mediaItemUrl
           }
+          brandProduct
         }
         slug
       }
