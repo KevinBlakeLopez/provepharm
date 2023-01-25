@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Header, Footer, NavigationMenu } from "../../components";
+import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 
 Product.query = gql`
@@ -23,7 +24,7 @@ Product.query = gql`
         glutenFree
         gtin
         importantsafetyinformation
-        mckessen
+        mckesson
         morrisDickson
         ndc
         packsize
@@ -80,9 +81,9 @@ export default function Product() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Banner>Our Products</Banner>
-      <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-40">
-        <div className="">
-          <div className="mb-20 mt-2 lg:w-11/12">
+      <Container size="lg">
+        <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-10">
+          <div className="mb-20 mt-2">
             <h2 className="text-[1.7em] tracking-wide mb-8">
               <Link legacyBehavior href="/products">
                 <a className=" text-blue-500">Products</a>
@@ -131,7 +132,7 @@ export default function Product() {
                   <div></div>
                 )}
               </section>
-              <ul className="md:w-2/5 lg:mx-8">
+              <ul className="lg:mx-8">
                 <li className="flex justify-between">
                   {product.genericname ? (
                     <>
@@ -146,7 +147,9 @@ export default function Product() {
                   {product.productvariationtitle ? (
                     <>
                       <p className="font-medium text-lg mb-4 mr-20">
-                        {product.brandProduct ? "Brand Name" : "Reference Listed Drug"} 
+                        {product.brandProduct
+                          ? "Brand Name"
+                          : "Reference Listed Drug"}
                       </p>
                       <p className="mb-4">{product.productvariationtitle}</p>
                     </>
@@ -172,23 +175,23 @@ export default function Product() {
 
                 <br />
                 <li className="flex justify-between">
+                  <p className="font-medium text-lg mb-4 mr-20">Pack Size</p>
+                  <p className="mb-4">{product.packsize}</p>
+                </li>
+                <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">Strength</p>
                   <p className="mb-4">{product.strength}</p>
                 </li>
-
-                <li className="flex justify-between">
-                  <p className="font-medium text-lg mb-4 mr-20">GTIN</p>
-                  <p className="mb-4">{product.gtin}</p>
-                </li>
-
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">Form</p>
                   <p className="mb-4">{product.form}</p>
                 </li>
+
                 <br />
+                
                 <li className="flex justify-between">
-                  <p className="font-medium text-lg mb-4 mr-20">Pack Size</p>
-                  <p className="mb-4">{product.packsize}</p>
+                  <p className="font-medium text-lg mb-4 mr-20">GTIN</p>
+                  <p className="mb-4">{product.gtin}</p>
                 </li>
 
                 <li className="flex justify-between">
@@ -235,8 +238,8 @@ export default function Product() {
                   <p className="mb-4">{product.cardinal}</p>
                 </li>
                 <li className="flex justify-between">
-                  <p className="font-medium text-lg mb-4">McKessen</p>
-                  <p className="mb-4">{product.mckessen}</p>
+                  <p className="font-medium text-lg mb-4">McKesson</p>
+                  <p className="mb-4">{product.mckesson}</p>
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Morris & Dickson</p>
@@ -246,7 +249,7 @@ export default function Product() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
       <section className="bg-slate-400 px-2 fixed bottom-0 w-full z-50">
         <h5 className="text-center text-2xl font-bold py-4">
           Important Safety Information

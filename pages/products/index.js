@@ -42,7 +42,9 @@ export default function Products() {
                       <div className="flex">
                         <ul className="mr-8">
                           <li className="font-medium text-lg text-sky-500 ">
-                            {product.metaFields.brandProduct ? "Brand Name:" : "Reference Listed Drug:" }
+                            {product.metaFields.brandProduct
+                              ? "Brand Name:"
+                              : "Reference Listed Drug:"}
                           </li>
                           <li className="mb-4">
                             {product.metaFields.productvariationtitle}
