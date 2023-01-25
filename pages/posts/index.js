@@ -1,6 +1,7 @@
 import { getNextStaticProps } from "@faustwp/core";
 import Image from "next/image";
 import Link from "next/link";
+import Container from "../../components/Container";
 import { gql, useQuery } from "@apollo/client";
 import Banner from "../../components/Banner";
 import { Header, Footer, NavigationMenu } from "../../components";
@@ -17,7 +18,41 @@ export default function Posts() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Banner>News</Banner>
-      <div className="flex justify-center mt-16 ">
+      <Container size="sm">
+        {data.posts.nodes.map(({ id, title, excerpt, date, featuredImage }) => (
+          <div className="md:flex md:items-center mb-10" key={id}>
+            {featuredImage ? (
+              <div className="max-w-[278px] max-h-[278px] mr-16">
+                <Image
+                  width="600"
+                  height="600"
+                  src={featuredImage.node.mediaItemUrl}
+                />
+              </div>
+            ) : null}
+            <section>
+              <p className="mb-2 text-sm">
+                {new Date(date).toLocaleDateString("en-US", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+              <h2 className="text-xl mb-3 font-semibold">{title}</h2>
+              <div
+                className="mb-2"
+                dangerouslySetInnerHTML={{ __html: excerpt }}
+              />
+              <p className="mb-10 text-blue-500 underline cursor-pointer">
+                Read more
+              </p>
+              <div class="w-full h-[1px] bg-[#ebebeb]"></div>
+            </section>
+          </div>
+        ))}
+        <div className="h-36" />
+      </Container>
+      {/* <div className="flex justify-center mt-16 ">
         <div className="w-[1000px]">
           {data.posts
             ? data.posts.nodes.map((post) => {
@@ -55,7 +90,7 @@ export default function Posts() {
               })
             : null}
         </div>
-      </div>
+      </div> */}
       <Footer />
     </>
   );

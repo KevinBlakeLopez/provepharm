@@ -58,7 +58,6 @@ export default function PressReleases() {
           Important Safety Information
         </h5>
         <div className="flex justify-center">
-          {" "}
           <div className="isi mb-4 max-w-[1000px] h-44 overflow-auto">
             <div class="content">
               <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item">
