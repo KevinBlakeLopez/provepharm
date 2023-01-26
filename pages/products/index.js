@@ -20,7 +20,7 @@ export default function Products() {
       <Banner>Our Products</Banner>
       <div className="mt-10 mx-4 md:mx-0">
         <div className="md:flex md:flex-col md:items-center">
-          <div className="lg:w-2/5">
+          <div className="lg:w-[35%]">
             <ProductsFinder />
             {data ? (
               data.products.nodes.map((product) => {
@@ -40,7 +40,7 @@ export default function Products() {
                         <div className="h-[300px] w-[100px] bg-slate-700"></div>
                       )}
                       <div className="flex">
-                        <ul className="mr-8">
+                        <ul className="mr-8 w-[210px]">
                           <li className="font-medium text-lg text-sky-500 ">
                             {product.metaFields.brandProduct
                               ? "Brand Name:"

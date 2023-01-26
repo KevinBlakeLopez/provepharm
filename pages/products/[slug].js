@@ -82,7 +82,7 @@ export default function Product() {
       <Header menuItems={data.headerMenuItems} />
       <Banner>Our Products</Banner>
       <Container size="lg">
-        <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-10">
+        <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-6">
           <div className="mb-20 mt-2">
             <h2 className="text-[1.7em] tracking-wide mb-8">
               <Link legacyBehavior href="/products">
@@ -257,7 +257,7 @@ export default function Product() {
         <div className="flex justify-center">
           {" "}
           <div
-            className="isi mb-4 max-w-[1000px] h-44 overflow-auto md:pr-6"
+            className="isi mb-4 max-w-[1000px] h-44 overflow-auto md:pr-6"  
             dangerouslySetInnerHTML={{
               __html: product.importantsafetyinformation,
             }}
