@@ -20,7 +20,7 @@ export default function Products() {
       <Banner>Our Products</Banner>
       <div className="mt-10 mx-4 md:mx-0">
         <div className="md:flex md:flex-col md:items-center">
-          <div className="lg:w-[35%]">
+          <div className="lg:w-[675px]">
             <ProductsFinder />
             {data ? (
               data.products.nodes.map((product) => {
