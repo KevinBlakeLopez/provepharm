@@ -82,7 +82,7 @@ export default function Product() {
       <Banner>Our Products</Banner>
       <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-40">
         <div className="">
-          <div className="mb-20 mt-2 lg:w-11/12">
+          <div className="mb-20 mt-2">
             <h2 className="text-[1.7em] tracking-wide mb-8">
               <Link legacyBehavior href="/products">
                 <a className=" text-blue-500">Products</a>
@@ -131,7 +131,7 @@ export default function Product() {
                   <div></div>
                 )}
               </section>
-              <ul className="md:w-2/5 lg:mx-8">
+              <ul className="lg:mx-8">
                 <li className="flex justify-between">
                   {product.genericname ? (
                     <>
@@ -146,7 +146,9 @@ export default function Product() {
                   {product.productvariationtitle ? (
                     <>
                       <p className="font-medium text-lg mb-4 mr-20">
-                        {product.brandProduct ? "Brand Name" : "Reference Listed Drug"} 
+                        {product.brandProduct
+                          ? "Brand Name"
+                          : "Reference Listed Drug"}
                       </p>
                       <p className="mb-4">{product.productvariationtitle}</p>
                     </>
