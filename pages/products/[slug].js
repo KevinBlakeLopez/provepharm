@@ -133,7 +133,6 @@ export default function Product() {
                 )}
               </section>
               <ul className="lg:mx-8">
-              <ul className="lg:mx-8">
                 <li className="flex justify-between">
                   {product.genericname ? (
                     <>
@@ -192,7 +191,7 @@ export default function Product() {
                 </li>
 
                 <br />
-                
+
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">GTIN</p>
                   <p className="mb-4">{product.gtin}</p>
@@ -261,7 +260,7 @@ export default function Product() {
         <div className="flex justify-center">
           {" "}
           <div
-            className="isi mb-4 max-w-[1000px] h-44 overflow-auto md:pr-6"  
+            className="isi mb-4 max-w-[1000px] h-44 overflow-auto md:pr-6"
             dangerouslySetInnerHTML={{
               __html: product.importantsafetyinformation,
             }}
