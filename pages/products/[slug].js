@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { Header, Footer, NavigationMenu } from "../../components";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
+import ISI from "../../components/ISI";
 
 Product.query = gql`
   ${NavigationMenu.fragments.entry}
@@ -150,9 +151,6 @@ export default function Product() {
                         {product.brandProduct
                           ? "Brand Name"
                           : "Reference Listed Drug"}
-                        {product.brandProduct
-                          ? "Brand Name"
-                          : "Reference Listed Drug"}
                       </p>
                       <p className="mb-4">{product.productvariationtitle}</p>
                     </>
@@ -253,21 +251,8 @@ export default function Product() {
           </div>
         </div>
       </Container>
-      <section className="bg-slate-400 px-2 fixed bottom-0 w-full z-50">
-        <h5 className="text-center text-2xl font-bold py-4">
-          Important Safety Information
-        </h5>
-        <div className="flex justify-center">
-          {" "}
-          <div
-            className="isi mb-4 max-w-[1000px] h-44 overflow-auto md:pr-6"
-            dangerouslySetInnerHTML={{
-              __html: product.importantsafetyinformation,
-            }}
-          />
-        </div>
-      </section>
-      <Footer />
+      <ISI importantsafetyinformation={product.importantsafetyinformation} />
+      <Footer disclaimer />
     </>
   );
 }

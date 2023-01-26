@@ -34,7 +34,7 @@ export default function AboutUs() {
       <Main>
         {/* <Hero title={"Provepharm"} /> */}
         <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light md:h-[80vh] text-white mb-12 flex items-center">
-          <h2 className="pl-8 md:pl-64 text-7xl font-light">
+          <h2 className="pl-8 md:pl-64 md:text-7xl font-light">
             CONNECTING <br />
             HEALTHCARE
             <br /> PROVIDERS <br />
@@ -45,8 +45,8 @@ export default function AboutUs() {
 
         <>
           <Container size="md">
-            <div className="flex mb-16">
-              <div class="w-1/2 mr-8">
+            <div className="md:flex mb-16">
+              <div class="md:w-1/2 mr-8">
                 <h3 className="text-6xl text-blue-400 font-light mb-4">
                   OUR MISSION
                 </h3>
@@ -58,7 +58,7 @@ export default function AboutUs() {
                 </p>
               </div>
 
-              <div className="w-1/2">
+              <div className="md:w-1/2">
                 <img
                   alt=""
                   src="/sites/default/files/inline-images/image5_1.jpg"
@@ -89,30 +89,8 @@ export default function AboutUs() {
           </Container>
 
           <div className="mb-12">
-            <figure>
-              <img
-                src="/sites/default/files/styles/large/public/inline-images/top-3rd-way.png?itok=Wfn-AFDS"
-                alt=""
-                class="wp-image-10"
-                data-entity-type="file"
-                data-entity-uuid="dd41f566-b6f2-4d64-b5d6-cfc863194cfc"
-                data-image-style="original"
-              />
-            </figure>
-
-            <figure>
-              <img
-                src="/sites/default/files/styles/large/public/inline-images/bottom-3rd-way.png?itok=EjpeK693"
-                alt=""
-                class="wp-image-11"
-                data-entity-type="file"
-                data-entity-uuid="641f3fb8-f8b4-4bcf-9a89-efed2cb8a7cb"
-                data-image-style="original"
-              />
-            </figure>
-
-            <div className="bg-[url('/aboutBannerWoman.jpeg')] bg-cover text-center bg-slate-800 md:h-[50vh] flex items-center">
-              <p className="text-6xl text-white leading-[4rem] px-60 font-light">
+            <div className="bg-[url('/aboutBannerWoman.jpeg')] bg-cover bg-center text-center bg-slate-800 md:h-[50vh] flex items-center">
+              <p className="md:text-6xl text-white leading-[4rem] md:px-60 font-light">
                 PROVEPHARM IS AN INTERNATIONAL, PRIVATE, PHARMACEUTICAL <br />{" "}
                 COMPANY WITH A GLOBAL PRESENCE IN OVER 30 COUNTRIES WORLDWIDE.
               </p>
@@ -120,8 +98,8 @@ export default function AboutUs() {
           </div>
 
           <Container>
-            <div className="flex justify-between items-center text-xl">
-              <div className="w-1/2 mr-8">
+            <div className="md:flex justify-between items-center text-xl">
+              <div className="md:w-1/2 mr-8">
                 <p className="mb-8">
                   At Provepharm, we innovate in order to understand each
                   molecule's full potential, to provide treatments that help
@@ -145,7 +123,7 @@ export default function AboutUs() {
                 </p>
               </div>
 
-              <div className="w-1/2">
+              <div className="md:w-1/2">
                 <p className="mb-8">
                   And, commitment is also demonstrated through the group’s
                   social initiatives, the ultimate expression of our values and
@@ -172,48 +150,36 @@ export default function AboutUs() {
             </div>
           </Container>
 
-          <div>
-            <img
-              alt=""
-              src="/sites/default/files/inline-images/image5_1.jpg"
-              data-object-fit="cover"
-              data-entity-type="file"
-              data-entity-uuid="01ba18a1-7156-436e-ba4e-bb4d69f9d13f"
-              data-image-style="original"
-            />
-            <div>
-              <p></p>
-            </div>
-          </div>
+          <div className="md:flex mb-32">
+            <div className="bg-blue-400 text-white md:w-1/2 py-20">
+              <section className="w-2/3">
+                <h3 className="text-6xl">
+                  PRODUCTS <br />
+                  THAT MAKE A <br />
+                  DIFFERENCE IN <br />
+                  PEOPLE'S LIVES
+                </h3>
 
-          <div className="flex">
-            <div className="bg-blue-400 text-white w-1/2 py-20">
-              <h3 className="text-6xl">
-                PRODUCTS <br />
-                THAT MAKE A <br />
-                DIFFERENCE IN <br />
-                PEOPLE'S LIVES
-              </h3>
-
-              <p className="text-xl">
-                At Provepharm, we innovate to unlock each molecule's full
-                potential, to provide treatments that help improve patients'
-                lives. Our portfolio of products meets the highest
-                pharmaceutical quality standards, in the following areas:
-                antidotes, diagnostics, injectable vitamins, metabolism, and
-                neuroscience.
-              </p>
+                <p className="text-xl">
+                  At Provepharm, we innovate to unlock each molecule's full
+                  potential, to provide treatments that help improve patients'
+                  lives. Our portfolio of products meets the highest
+                  pharmaceutical quality standards, in the following areas:
+                  antidotes, diagnostics, injectable vitamins, metabolism, and
+                  neuroscience.
+                </p>
+              </section>
             </div>
-            <figure className="w-1/2">
+            <figure className="md:w-1/2">
               <Image src={aboutMainBG} />
             </figure>
           </div>
 
           <Container>
-            <div className="flex">
-              <div className="w-1/2">
-                <div>
-                  <h3 className="text-6xl">OUR HISTORY</h3>
+            <div className="md:flex justify-between text-xl font-light">
+              <div className="md:w-5/12">
+                <div className="mb-24">
+                  <h3 className="text-6xl mb-6">OUR HISTORY</h3>
 
                   <p>
                     Driven by an entrepreneurial spirit, privately-owned,
@@ -226,11 +192,11 @@ export default function AboutUs() {
                 </div>
 
                 <div>
-                  <figure>
+                  <figure className="mb-6">
                     <Image src={blueDye} />
                   </figure>
 
-                  <p>
+                  <p className="mb-24">
                     Provence Technologies launched several internal research
                     programs, including a process patented in 2006, by
                     co-inventors Michel Feraud and Babak Sayah, for the
@@ -242,13 +208,15 @@ export default function AboutUs() {
                   </p>
                 </div>
 
-                <div>
-                  <figure class="aligncenter size-large">
+                <div className="">
+                  <figure className="mb-10">
                     <Image src={MF} />
-                    <figcaption>Michel Feraud, Founder CEO</figcaption>
+                    <figcaption className="text-base text-center">
+                      Michel Feraud, Founder CEO
+                    </figcaption>
                   </figure>
 
-                  <p>
+                  <p className="mb-24">
                     Provepharm, acquires a company specialized in the chemical
                     synthesis of peptides and proteins for therapeutic use. This
                     is the first merger and acquisition operation opening a new
@@ -257,37 +225,38 @@ export default function AboutUs() {
                   </p>
                 </div>
 
-                <div class="alignwide container line-box in-box">
-                  <div class="alignwide container line-box-content">
-                    <p>
-                      Provepharm Life Solutions launches its new brand identity
-                      with the addition of multiple healthcare professionals
-                      joining the management team and executive board.{" "}
-                    </p>
-                  </div>
-                </div>
+                <p className="mb-10">
+                  Provepharm Life Solutions launches its new brand identity with
+                  the addition of multiple healthcare professionals joining the
+                  management team and executive board.{" "}
+                </p>
 
                 <div class="alignwide container line-box in-box">
-                  <figure class="wp-block-image size-full line-box-image">
+                  <figure className="mb-6">
                     <Image src={allEmployees} />
                   </figure>
 
                   <p>
                     Provepharm Life Solutions acquires{" "}
-                    <strong>Apollo Pharmaceuticals USA</strong>, a company
-                    specializing in <strong>sterile injectable products</strong>
+                    <strong className="font-bold">
+                      Apollo Pharmaceuticals USA
+                    </strong>
+                    , a company specializing in{" "}
+                    <strong className="font-bold">
+                      sterile injectable products
+                    </strong>
                     , in the United States, as part of its diversification plan.
                   </p>
                 </div>
               </div>
 
-              <div className="w-1/2">
-                <figure class="wp-block-image size-full line-box-image">
+              <div className="md:w-5/12">
+                <figure className="mb-8">
                   <Image src={microscope} />
                 </figure>
 
                 <div class="alignwide container line-box-content">
-                  <p>
+                  <p className="mb-8">
                     The early years: Michel Feraud, president, and founder,
                     initially launched the company as “Provence Technologies”, a
                     research and development chemistry laboratory, together with
@@ -301,7 +270,7 @@ export default function AboutUs() {
                 </div>
 
                 <div class="alignwide container line-box in-box">
-                  <p>
+                  <p className="mb-8">
                     Provepharm obtained a centralized marketing authorization
                     from EMA paving the way for the{" "}
                     <strong>
@@ -313,11 +282,11 @@ export default function AboutUs() {
                 </div>
 
                 <div class="alignwide container line-box in-box">
-                  <figure class="wp-block-image size-full line-box-image">
+                  <figure className="mb-8">
                     <Image src={provayblue} />
                   </figure>
 
-                  <p>
+                  <p className="mb-8">
                     Provepharm obtained FDA approval to commercialize{" "}
                     <a
                       href="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
@@ -331,13 +300,13 @@ export default function AboutUs() {
                 </div>
 
                 <div class="alignwide container line-box in-box">
-                  <figure class="wp-block-image size-full line-box-image">
+                  <figure className="mb-8">
                     <Image src={lab2} />
                   </figure>
 
-                  <p>
+                  <p className="mb-8">
                     Provepharm Life Solutions joins forces with{" "}
-                    <strong>
+                    <strong className="font-bold">
                       new strategic minority partners, Téthys Invest and
                       ArchiMed
                     </strong>

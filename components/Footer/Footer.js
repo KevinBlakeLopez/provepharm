@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "../Container";
 
-export default function Footer({ menuItems }) {
+export default function Footer({ disclaimer }) {
   const year = new Date().getFullYear();
 
   return (
@@ -81,6 +81,7 @@ export default function Footer({ menuItems }) {
       <div className="bg-slate-800 text-white py-10 px-5 flex justify-center">
         <p className="text-center">{`${year} Provepharm Inc., All rights reserved`}</p>
       </div>
+      <div className={disclaimer ? "h-60" : ""}></div>
     </footer>
   );
 }
