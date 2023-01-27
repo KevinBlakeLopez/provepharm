@@ -50,9 +50,9 @@ export default function Component() {
 
         <>
           <Container size="md">
-            <div className="flex justify-between mb-12">
-              <section className="w-1/2">
-                <h3 className="mb-4 text-blue-900 text-6xl">ABOUT US</h3>
+            <div className="md:flex justify-between mb-12">
+              <section className="md:w-1/2">
+                <h3 className="mb-4 text-blue-900 md:text-6xl">ABOUT US</h3>
 
                 <p className="text-xl">
                   With an impressive legacy of healthcare innovations and
@@ -63,7 +63,7 @@ export default function Component() {
                 </p>
               </section>
 
-              <figure className="w-1/2">
+              <figure className="md:w-1/2">
                 <Image src={frontPageBanner} />
               </figure>
             </div>
@@ -71,16 +71,16 @@ export default function Component() {
 
           <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-blue-900 text-white text-center text-xl">
             <Container>
-              <h3 className="text-4xl text-blue-300 mb-8 pt-16">
+              <h3 className="text-4xl text-blue-300 mb-4 pt-16">
                 TO ACCOMPLISH THIS MISSION, <br />
                 OUR STRATEGY IS BASED ON
               </h3>
-              <h3 class="text-5xl text-white mb-8">5 PILLARS</h3>
+              <h3 class="text-5xl text-white mb-16">5 PILLARS</h3>
 
               <div className="md:flex mb-12">
                 <div>
                   <figure>
-                    <Image src={plant} />
+                    <Image src={plant} width={110} height={110} />
 
                     <figcaption className="font-semibold pb-4">
                       External
@@ -94,7 +94,7 @@ export default function Component() {
 
                 <div>
                   <figure>
-                    <Image src={gears} />
+                    <Image src={gears} width={110} height={110} />
                     <figcaption className="font-semibold pb-4">
                       Internal
                       <br />
@@ -107,7 +107,7 @@ export default function Component() {
 
                 <div>
                   <figure class="wp-block-image size-full pillars-top">
-                    <Image src={hexagon} />
+                    <Image src={hexagon} width={110} height={110}  />
                     <figcaption className="font-semibold pb-4">
                       Commercial
                       <br />
@@ -120,7 +120,7 @@ export default function Component() {
 
                 <div class="wp-block-column">
                   <figure class="wp-block-image size-full pillars-top">
-                    <Image src={shield} />
+                    <Image src={shield} width={110} height={110}  />
                     <figcaption className="font-semibold pb-4">
                       Secure
                       <br />
@@ -133,7 +133,7 @@ export default function Component() {
 
                 <div class="wp-block-column">
                   <figure class="wp-block-image size-full pillars-top">
-                    <Image src={award} />
+                    <Image src={award} width={110} height={110} />
                     <figcaption className="font-semibold pb-4">
                       Operational
                       <br />
