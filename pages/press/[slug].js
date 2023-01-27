@@ -61,7 +61,7 @@ export default function PressRelease() {
       <Header menuItems={data.headerMenuItems} />
       <Banner>Press Releases</Banner>
       <Container size="sm">
-        <h2 className="text-5xl mb-16">{pressRelease.title}</h2>
+        <h2 className="text-3xl md:text-5xl mb-16">{pressRelease.title}</h2>
         <figure className="mb-16">
           <Image
             src={pressRelease.featuredImage.node.mediaItemUrl}
@@ -70,8 +70,17 @@ export default function PressRelease() {
           />
         </figure>
         <section className="text-xl">
-          <h5 className="mb-8">{pressRelease.date}</h5>
-          <div dangerouslySetInnerHTML={{ __html: pressRelease.content }}></div>
+          <h5 className="mb-8">
+            {new Date(pressRelease.date).toLocaleDateString("en-US", {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            })}
+          </h5>
+          <div
+            className={"post-content"}
+            dangerouslySetInnerHTML={{ __html: pressRelease.content }}
+          ></div>
         </section>
       </Container>
 
