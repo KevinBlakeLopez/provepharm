@@ -21,7 +21,7 @@ export default function Footer({ disclaimer }) {
             </p>
           </div>
 
-          <ul className="mt-5 md:mt-0 flex flex-col md:flex-row text-lg text-blue-800">
+          <ul className="mt-5 md:mt-0 flex flex-col md:flex-row text-lg text-[#1e387d]">
             <div className="md:mr-20">
               <li className="mb-3">
                 <Link className="" href="/about">
@@ -78,7 +78,7 @@ export default function Footer({ disclaimer }) {
           </ul>
         </div>
       </Container>
-      <div className="bg-slate-800 text-white py-10 px-5 flex justify-center">
+      <div className="bg-[#1e387d] text-white py-10 px-5 flex justify-center">
         <p className="text-center">{`${year} Provepharm Inc., All rights reserved`}</p>
       </div>
       <div className={disclaimer ? "h-60" : ""}></div>

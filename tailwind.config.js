@@ -6,7 +6,22 @@ module.exports = {
     "./wp-templates/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      lineHeight: {
+        "extra-tight": "1.125",
+      },
+      colors: {
+        primary: "#1e387d",
+        //secondary is used for buttons
+        secondary: "#00a6e7",
+        tertiary: "#2ac3ff",
+        navHover: "#0070ba",
+        buttonHover: "#007bff",
+        anchor: "#0071b3",
+        hoverAnchor: "#0d6efd",
+        prescribingAnchor: "#ffc107",
+      },
+    },
   },
   plugins: [],
 };

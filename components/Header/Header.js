@@ -35,7 +35,7 @@ export default function Header({ menuItems }) {
       />
       <header
         className={`bg-white
-         w-full p-5 ${isNavShown ? "fixed top-0 width:100%" : ""}`}
+         border-b-2 w-full p-5 ${isNavShown ? "fixed top-0 width:100%" : ""}`}
       >
         <div className="flex justify-between items-center">
           <Image src="/logo.jpeg" alt="me" height="55" width="130" />
@@ -58,7 +58,7 @@ export default function Header({ menuItems }) {
                   : "hidden md:block"
               }
             >
-              <ul className="text-blue-900 md:flex">
+              <ul className="text-[#1e387d] md:flex">
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
                   <Link href="/about">About Us</Link>
                 </li>

@@ -41,7 +41,7 @@ export default function Products() {
                       )}
                       <div className="flex">
                         <ul className="mr-8 w-[210px]">
-                          <li className="font-medium text-lg text-sky-500 ">
+                          <li className="font-medium text-lg text-[#1e387d] ">
                             {product.metaFields.brandProduct
                               ? "Brand Name:"
                               : "Reference Listed Drug:"}
@@ -49,17 +49,17 @@ export default function Products() {
                           <li className="mb-4">
                             {product.metaFields.productvariationtitle}
                           </li>
-                          <li className="font-medium text-lg text-sky-500">
+                          <li className="font-medium text-lg text-[#1e387d]">
                             Form:
                           </li>
                           <li className="mb-4">{product.metaFields.form}</li>
-                          <li className="font-medium text-lg text-sky-500">
+                          <li className="font-medium text-lg text-[#1e387d]">
                             Strength:
                           </li>
                           <li className="mb-4">
                             {product.metaFields.strength}
                           </li>
-                          <li className="mt-5 bg-sky-700 w-10/12 text-white">
+                          <li className="mt-5 bg-[#00a6e7] w-10/12 text-white">
                             <div className="py-2 px-2 text-center">
                               <Link
                                 href={`/products/${encodeURIComponent(
@@ -72,17 +72,17 @@ export default function Products() {
                           </li>
                         </ul>
                         <ul>
-                          <li className="font-medium text-lg text-sky-500">
+                          <li className="font-medium text-lg text-[#1e387d]">
                             Pack Size:
                           </li>
                           <li className="mb-4">
                             {product.metaFields.packsize}
                           </li>
-                          <li className="font-medium text-lg text-sky-500">
+                          <li className="font-medium text-lg text-[#1e387d]">
                             NDC:
                           </li>
                           <li className="mb-4">{product.metaFields.ndc}</li>
-                          <li className="font-medium text-lg text-sky-500">
+                          <li className="font-medium text-lg text-[#1e387d]">
                             Safety Data Sheet:
                           </li>
                           <li className="mb-4 underline underline-offset-2 text-blue-500">

@@ -50,9 +50,9 @@ export default function Component() {
 
         <>
           <Container size="md">
-            <div className="md:flex justify-between mb-12">
+            <div className="md:flex justify-between mb-12 text-[#1e387d]">
               <section className="md:w-1/2">
-                <h3 className="mb-4 text-blue-900 md:text-6xl">ABOUT US</h3>
+                <h3 className="mb-4 md:text-6xl">ABOUT US</h3>
 
                 <p className="text-xl">
                   With an impressive legacy of healthcare innovations and
@@ -69,16 +69,16 @@ export default function Component() {
             </div>
           </Container>
 
-          <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-blue-900 text-white text-center text-xl">
+          <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-[#1e387d] text-white text-center text-xl">
             <Container>
-              <h3 className="text-4xl text-blue-300 mb-4 pt-16">
+              <h3 className="text-4xl text-[#00a6e7] mb-4 pt-16">
                 TO ACCOMPLISH THIS MISSION, <br />
                 OUR STRATEGY IS BASED ON
               </h3>
               <h3 class="text-5xl text-white mb-16">5 PILLARS</h3>
 
               <div className="md:flex mb-12">
-                <div>
+                <div className="md:flex-col items-center">
                   <figure>
                     <Image src={plant} width={110} height={110} />
 
@@ -88,7 +88,7 @@ export default function Component() {
                       Growth
                     </figcaption>
                   </figure>
-                  <hr className="w-8 pb-4" />
+                  <hr className="w-16 mx-auto pb-4" />
                   <p>With the acquisition of products or companies</p>
                 </div>
 
@@ -101,33 +101,33 @@ export default function Component() {
                       Development
                     </figcaption>
                   </figure>
-                  <hr className="w-8 pb-4" />
+                  <hr className="w-8 mx-auto pb-4" />
                   <p>By diversifying our product portfolio</p>
                 </div>
 
                 <div>
                   <figure class="wp-block-image size-full pillars-top">
-                    <Image src={hexagon} width={110} height={110}  />
+                    <Image src={hexagon} width={110} height={110} />
                     <figcaption className="font-semibold pb-4">
                       Commercial
                       <br />
                       Transformation
                     </figcaption>
                   </figure>
-                  <hr className="w-8 pb-4" />
+                  <hr className="w-8 mx-auto pb-4" />
                   <p class="pillars-content">By expanding sales channels</p>
                 </div>
 
                 <div class="wp-block-column">
                   <figure class="wp-block-image size-full pillars-top">
-                    <Image src={shield} width={110} height={110}  />
+                    <Image src={shield} width={110} height={110} />
                     <figcaption className="font-semibold pb-4">
                       Secure
                       <br />
                       Our API
                     </figcaption>
                   </figure>
-                  <hr className="w-8 pb-4" />
+                  <hr className="w-8 mx-auto pb-4" />
                   <p class="pillars-content">By securing our supply</p>
                 </div>
 
@@ -140,7 +140,7 @@ export default function Component() {
                       Excellence
                     </figcaption>
                   </figure>
-                  <hr className="w-8 pb-4" />
+                  <hr className="w-8 mx-auto pb-4" />
                   <p class="pillars-content">
                     By capitalizing on the women and men of Provepharm
                   </p>
@@ -148,7 +148,7 @@ export default function Component() {
               </div>
 
               <div class="wp-block-columns pillars-discover mb-0">
-                <h4 className="text-3xl text-blue-300 text-center mb-4">
+                <h4 className="text-3xl text-[#00a6e7] text-center mb-4">
                   From drug discovery – to marketplace
                 </h4>
 
@@ -175,7 +175,7 @@ export default function Component() {
             </div>
 
             <Container>
-              <div className="md:flex justify-between items-center text-xl">
+              <div className="md:flex justify-between items-center text-xl text-[#1e387d]">
                 <div className="md:w-1/2 mr-8">
                   <p className="mb-8">
                     At Provepharm, we innovate in order to understand each
@@ -230,7 +230,7 @@ export default function Component() {
             </Container>
 
             <div className="md:flex mb-32">
-              <div className="bg-blue-400 text-white md:w-1/2 py-20">
+              <div className="bg-[#00a6e7] text-white md:w-1/2 py-20">
                 <section className="w-2/3">
                   <h3 className="text-6xl">
                     PRODUCTS <br />
@@ -255,7 +255,7 @@ export default function Component() {
             </div>
 
             <Container>
-              <div className="md:flex justify-between text-xl font-light">
+              <div className="md:flex justify-between text-xl text-[#1e387d] font-light">
                 <div className="md:w-5/12">
                   <div className="mb-24">
                     <h3 className="text-6xl mb-6">OUR HISTORY</h3>
