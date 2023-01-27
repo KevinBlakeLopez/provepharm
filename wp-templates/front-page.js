@@ -39,7 +39,7 @@ export default function Component() {
       <Main>
         {/* <Hero title={"Provepharm"} /> */}
         <div class="bg-[url('/frontPage-hero.jpeg')] bg-cover bg-slate-700 bg-blend-soft-light text-white mb-12 md:h-[80vh] flex items-center">
-          <p className="pl-8 md:pl-64 text-7xl font-light">
+          <p className="pl-8 md:pl-64 text-4xl md:text-7xl font-light">
             THERAPEUTICS AND <br /> DIAGNOSTICS THAT
             <br />
             <strong className="font-bold">
@@ -69,7 +69,7 @@ export default function Component() {
             </div>
           </Container>
 
-          <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-blue-900 text-white text-center h-screen text-xl">
+          <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-blue-900 text-white text-center text-xl">
             <Container>
               <h3 className="text-4xl text-blue-300 mb-8 pt-16">
                 TO ACCOMPLISH THIS MISSION, <br />
@@ -77,10 +77,11 @@ export default function Component() {
               </h3>
               <h3 class="text-5xl text-white mb-8">5 PILLARS</h3>
 
-              <div className="flex mb-12">
+              <div className="md:flex mb-12">
                 <div>
                   <figure>
-                    <Image className="" src={plant} />
+                    <Image src={plant} />
+
                     <figcaption className="font-semibold pb-4">
                       External
                       <br />
