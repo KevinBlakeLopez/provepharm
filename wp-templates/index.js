@@ -2,6 +2,7 @@ import category from "./category";
 import tag from "./tag";
 import frontPage from "./front-page";
 import page from "./page";
+import press from "./single-press";
 import single from "./single";
 import singleProducts from "./single-products";
 
@@ -12,4 +13,5 @@ export default {
   page,
   single,
   "single-products": singleProducts,
+  "single-press": press,
 };

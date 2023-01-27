@@ -5,7 +5,7 @@ export default function ISI({ importantsafetyinformation }) {
 
   return (
     <section
-      className={`bg-slate-400 px-2 fixed ${
+      className={`bg-gray-600 px-2 fixed ${
         expanded ? "top-[75px]" : ""
       } bottom-[-128px] md:bottom-[-45px] left-0 right-0 w-full z-50 transition-transform-[top 1s ease-in-out]`}
     >
