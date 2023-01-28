@@ -19,7 +19,7 @@ export default function Posts() {
       <Header menuItems={data.headerMenuItems} />
       <Banner>News</Banner>
       <Container size="sm">
-        {data.posts.nodes.map(({ id, title, excerpt, date, featuredImage }) => (
+        {data.posts.nodes.map(({ id, title, excerpt, date, featuredImage, slug }) => (
           <div className="md:flex md:items-center mb-10" key={id}>
             {featuredImage ? (
               <div className="max-w-[278px] max-h-[278px] mr-16">
@@ -44,7 +44,9 @@ export default function Posts() {
                 dangerouslySetInnerHTML={{ __html: excerpt }}
               />
               <p className="mb-10 text-blue-500 underline cursor-pointer">
-                Read more
+                <Link href={`/posts/${encodeURIComponent(slug)}`}>
+                  Read more
+                </Link>
               </p>
               <div class="w-full h-[1px] bg-[#ebebeb]"></div>
             </section>
@@ -52,45 +54,6 @@ export default function Posts() {
         ))}
         <div className="h-36" />
       </Container>
-      {/* <div className="flex justify-center mt-16 ">
-        <div className="w-[1000px]">
-          {data.posts
-            ? data.posts.nodes.map((post) => {
-                console.log(post);
-                return (
-                  <Link href={`/${encodeURIComponent(post.slug)}`}>
-                    <div className="my-10 cursor-pointer">
-                      <div className="flex items-center mb-10">
-                        {post.featuredImage ? (
-                          <div className="max-w-[400px]">
-                            <Image
-                              width="1200"
-                              height="600"
-                              src={post.featuredImage.node.mediaItemUrl}
-                            />
-                          </div>
-                        ) : null}
-                        <div className="my-8 ml-6">
-                          <h2 className="text-2xl mb-4 font-medium">
-                            {post.title}
-                          </h2>
-                          <div
-                            className="mb-4 text-lg"
-                            dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                          />
-                          <p className="mb-8">
-                            {new Date(post.date).toLocaleDateString()}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="w-full h-[1px] bg-gray-300"></div>
-                    </div>
-                  </Link>
-                );
-              })
-            : null}
-        </div>
-      </div> */}
       <Footer />
     </>
   );

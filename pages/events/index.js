@@ -5,7 +5,7 @@ import Banner from "../../components/Banner";
 import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 
 export default function Events() {
   const { loading, error, data } = useQuery(Events.query);
@@ -13,13 +13,15 @@ export default function Events() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
+  console.log(data);
+
   return (
     <>
       <Header menuItems={data.headerMenuItems} />
       <Banner>Events</Banner>
       <Container size="sm">
         {data.events.nodes.map(
-          ({ id, title, excerpt, date, featuredImage }) => (
+          ({ id, title, excerpt, date, featuredImage, slug }) => (
             <div className="md:flex md:items-center mb-10" key={id}>
               {featuredImage ? (
                 <div className="max-w-[400px] mr-48">
@@ -44,7 +46,9 @@ export default function Events() {
                   dangerouslySetInnerHTML={{ __html: excerpt }}
                 />
                 <p className="mb-10 text-blue-500 underline cursor-pointer">
-                  Read more
+                  <Link href={`/events/${encodeURIComponent(slug)}`}>
+                    Read more
+                  </Link>
                 </p>
                 <div class="w-full h-[1px] bg-[#ebebeb]"></div>
               </section>
@@ -62,6 +66,7 @@ Events.query = gql`
   query Events($headerLocation: MenuLocationEnum) {
     events(first: 200) {
       nodes {
+        slug
         id
         title
         excerpt
