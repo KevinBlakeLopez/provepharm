@@ -5,17 +5,20 @@ export default function ISI({ importantsafetyinformation }) {
 
   return (
     <section
-      className={`bg-gray-400 px-2 fixed ${
+      className={`bg-gray-400 fixed ${
         expanded ? "top-[75px]" : ""
       } bottom-[-128px] md:bottom-[-45px] left-0 right-0 w-full z-50 transition-transform-[top 1s ease-in-out]`}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between bg-gray-600 text-zinc-100">
         <button
           className="text-center text-xl font-bold py-4 px-2"
           onClick={() => setExpanded(!expanded)}
         >
-          {expanded ? "Close" : "Expand"}
+          {expanded ? "Minimize" : "Expand"}
         </button>
+        <h5 className="text-center text-xl font-bold py-4">
+          Important Safety Information
+        </h5>
         <button
           className="text-center text-xl font-bold py-4 px-2"
           onClick={() => window.print()}
@@ -24,9 +27,7 @@ export default function ISI({ importantsafetyinformation }) {
           Print
         </button>
       </div>
-      <h5 className="text-center text-xl font-bold pb-6">
-        Important Safety Information
-      </h5>
+
       <div className="flex justify-center">
         <div
           style={{ height: expanded ? "calc(100vh - 220px)" : "200px" }}
