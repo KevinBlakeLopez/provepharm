@@ -81,7 +81,7 @@ export default function Footer({ disclaimer }) {
       <div className="bg-[#1e387d] text-white py-10 px-5 flex justify-center">
         <p className="text-center">{`${year} Provepharm Inc., All rights reserved`}</p>
       </div>
-      <div className={disclaimer ? "h-60" : ""}></div>
+      <div className={disclaimer ? "h-52" : ""}></div>
     </footer>
   );
 }
