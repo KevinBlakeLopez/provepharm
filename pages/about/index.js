@@ -87,10 +87,12 @@ export default function AboutUs() {
                 before:bg-[url('/aboutBannerWoman.jpeg')] before:bg-cover before:bg-center before:absolute before:right-0 before:left-0 before:top-0 before:bottom-0 before:content-[''] before:z-0 text-center before:opacity-50"
             >
               <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
-                <figure className="absolute top-[-35%]">
-                  <img src="/frontpage-V.png"></img>
+                <figure className="absolute top-[-20%]">
+                  <img src="/frontPage-V.png"></img>
                 </figure>
-                <img src="/frontpage-A.png"></img>
+                <figure className="absolute bottom-[5%]">
+                  <img src="/frontPage-A.png"></img>
+                </figure>
               </div>
               <p className="z-10 text-3xl lg:text-[3rem] leading-tight text-white tracking-wide py-12 px-8">
                 PROVEPHARM IS AN INTERNATIONAL,

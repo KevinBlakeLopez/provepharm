@@ -27,12 +27,12 @@ export default function Bludigo() {
       <Main>
         <section
           id="hero"
-          className="bg-primary h-[400px] md:h-[80vh] text-white md:flex items-center"
+          className="bg-primary h-[400px] md:h-[80vh] text-white md:flex justify- items-center"
         >
           <div className="">
-            <p className="text-3xl lg:text-8xl">See the difference.</p>
+            <p className="text-3xl lg:text-8xl pb-6">See the difference.</p>
             <h1 className="text-xl">
-              Bludigo (indigotindisulfonate sodium injection, USP)
+              Bludigo™ <br /> (indigotindisulfonate sodium injection, USP)
             </h1>
           </div>
           <figure>
@@ -40,7 +40,7 @@ export default function Bludigo() {
           </figure>
         </section>
         <section id="video-section" className="text-primary">
-          <h2>
+          <h2 className="text-3xl">
             Introducing Bludigo™ (indigotindisulfonate sodium injection, USP)
             the first and only FDA-approved injectable indigo carmine diagnostic
             dye.
@@ -51,8 +51,8 @@ export default function Bludigo() {
         </section>
         <section className="md:flex">
           <div className="bg-primary md:w-2/5 text-white">
-            <h3 className="">Not just any blue dye.</h3>
-            <p>
+            <h3 className="text-6xl pb-8">Not just any blue dye.</h3>
+            <p className="text-xl">
               Bludigo™ is a diagnostic dye indicated for use as a visualization
               aid in the cystoscopic assessment of the integrity of the ureters
               in adults following urological and gynecological open, robotic, or
