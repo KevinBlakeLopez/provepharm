@@ -213,9 +213,11 @@ export default function Product() {
                 <br />
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">
-                    Container Closure is not made with natural rubber latex
+                    {product.noNaturalRubber
+                      ? "Container Closure is not made with natural rubber latex"
+                      : "Container Closure is made with natural rubber latex"}
                   </p>
-                  <p className="">{product.noNaturalRubber ? "no" : "yes"}</p>
+                  {/* <p className="">{product.noNaturalRubber ? "no" : "yes"}</p> */}
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Preservative Free</p>
