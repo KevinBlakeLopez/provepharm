@@ -28,6 +28,7 @@ Product.query = gql`
         mckesson
         morrisDickson
         ndc
+        noNaturalRubber
         packsize
         prescribinginformation {
           url
@@ -37,7 +38,6 @@ Product.query = gql`
           mediaItemUrl
         }
         productvariationtitle
-        rubberFree
         safetysheet {
           mediaItemUrl
         }
@@ -215,7 +215,7 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">
                     Container Closure is not made with natural rubber latex
                   </p>
-                  <p className="">{product.latex ? "yes" : "no"}</p>
+                  <p className="">{product.noNaturalRubber ? "no" : "yes"}</p>
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">Preservative Free</p>
