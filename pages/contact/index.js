@@ -21,8 +21,7 @@ export default function ContactUs() {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.firstName]: e.target.value,
-      [e.target.lastName]: e.target.value,
+      [e.target.name]: e.target.value,
     });
     setErrors({});
   };
@@ -151,6 +150,8 @@ export default function ContactUs() {
                       name="message"
                       placeholder="Your Inquiry"
                       className="text-xl py-1 pl-2"
+                      value={formData.message}
+                      onChange={handleChange}
                       required="required"
                       aria-required="true"
                     ></textarea>
