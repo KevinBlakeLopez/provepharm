@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Container from "../../components/Container";
@@ -7,6 +8,58 @@ import * as MENUS from "../../constants/menus";
 
 export default function ContactUs() {
   const { data, loading } = useQuery(ContactUs.query);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "General Inquiry",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.firstName]: e.target.value,
+      [e.target.lastName]: e.target.value,
+    });
+    setErrors({});
+  };
+
+  const validateForm = () => {
+    let formErrors = {};
+
+    if (!formData.firstName) {
+      formErrors.firstName = "First Name is required";
+    }
+    if (!formData.lastName) {
+      formErrors.lastName = "Last Name is required";
+    }
+    if (!formData.email) {
+      formErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      formErrors.email = "Email is invalid";
+    }
+    if (!formData.message) {
+      formErrors.message = "Message is required";
+    }
+
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    const mailtoLink = `mailto:kevinblakelopez@gmail.com?subject=${formData.subject}&body=Name: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
+    window.location.href = mailtoLink;
+    setFormSubmitted(true);
+  };
 
   if (loading) {
     return <></>;
@@ -19,105 +72,117 @@ export default function ContactUs() {
       <Container size="xl">
         <div className="md:flex md:justify-between mt-16">
           <section className="mr-24">
-            <h3 className="text-2xl text-blue-900 mb-4">GENERAL INQUIRIES</h3>
-            <form
-              action="/contact-us"
-              method="post"
-              id=""
-              accept-charset="UTF-8"
-              className="max-w-xl"
-            >
-              <div class="flex mb-5">
-                <fieldset class="border-2 mr-8">
-                  <input
-                    type="text"
-                    id="edit-name"
-                    name="name"
-                    value=""
-                    placeholder="First Name"
-                    className="text-xl py-1.5 pl-2"
-                    required="required"
-                    aria-required="true"
-                  />
-                </fieldset>
-                <fieldset class="border-2">
-                  <input
-                    type="text"
-                    id="edit-last-name"
-                    name="last_name"
-                    value=""
-                    placeholder="Last Name"
-                    className="text-xl py-1 pl-2"
-                    required="required"
-                    aria-required="true"
-                  />
-                </fieldset>
-              </div>
+            <h3 className="text-2xl text-primary mb-4">GENERAL INQUIRIES</h3>
+            <form onSubmit={handleSubmit}>
+              {" "}
+              {formSubmitted ? (
+                <p>Thanks for your message!</p>
+              ) : (
+                <>
+                  <div className="flex mb-5">
+                    <fieldset className="border-2 mr-8">
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        placeholder="First Name"
+                        className="text-xl py-1.5 pl-2"
+                        required="required"
+                        aria-required="true"
+                      />
+                    </fieldset>
+                    {errors.firsName && <p>{errors.firstName}</p>}
+                    <fieldset className="border-2">
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        placeholder="Last Name"
+                        className="text-xl py-1 pl-2"
+                        required="required"
+                        aria-required="true"
+                      />
+                    </fieldset>
+                    {errors.lastName && <p>{errors.lastName}</p>}
+                  </div>
 
-              <fieldset className="mb-5 border-2">
-                <input
-                  type="email"
-                  id="edit-email"
-                  name="email"
-                  value=""
-                  placeholder="Email"
-                  className="text-xl py-1 pl-2"
-                  required="required"
-                  aria-required="true"
-                />
-              </fieldset>
-              <fieldset className="mb-5 border-2 text-xl py-1 pl-2">
-                <select
-                  id="edit-topic"
-                  name="topic"
-                  class="form-select required"
-                  required="required"
-                  aria-required="true"
-                >
-                  <option value="" selected="selected">
-                    Topic
-                  </option>
-                  <option value="Medical Information">
-                    Medical Information
-                  </option>
-                  <option value="Adverse Events">Adverse Events</option>
-                  <option value="General Inquiries">General Inquiries</option>
-                </select>
-              </fieldset>
-              <fieldset class="mb-5 border-2">
-                <div class="form-textarea-wrapper">
-                  <textarea
-                    id="edit-message"
-                    name="message"
-                    placeholder="Your Inquiry"
-                    className="text-xl py-1 pl-2"
-                    required="required"
-                    aria-required="true"
-                  ></textarea>
-                </div>
-              </fieldset>
-              <div class="mb-8 bg-blue-900 md:w-48" id="edit-actions">
-                <input
-                  className="text-lg py-2 pl-7 text-white"
-                  type="submit"
-                  id="edit-actions-submit"
-                  name="op"
-                  value="SEND MESSAGE"
-                />
-              </div>
-              <input
-                autocomplete="off"
-                type="hidden"
-                name="form_build_id"
-                value=""
-                class=""
-              />
-              <input type="hidden" name="form_id" value="" class="" />
+                  <div>
+                    <fieldset className="mb-5 border-2">
+                      <input
+                        type="email"
+                        id="edit-email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email"
+                        className="text-xl py-1 pl-2"
+                        required="required"
+                        aria-required="true"
+                      />
+                    </fieldset>
+                    {errors.email && <p>{errors.email}</p>}
+                  </div>
+
+                  <fieldset className="mb-5 border-2 text-xl py-1 pl-2">
+                    <select
+                      id="edit-topic"
+                      name="topic"
+                      value={formData.subject}
+                      onChange={handleChange}
+                    >
+                      <option value="">Topic</option>
+                      <option value="Medical Information">
+                        Medical Information
+                      </option>
+                      <option value="Adverse Events">Adverse Events</option>
+                      <option value="General Inquiries">
+                        General Inquiries
+                      </option>
+                    </select>
+                  </fieldset>
+
+                  <fieldset className="mb-5 border-2">
+                    <textarea
+                      id="message"
+                      name="message"
+                      placeholder="Your Inquiry"
+                      className="text-xl py-1 pl-2"
+                      required="required"
+                      aria-required="true"
+                    ></textarea>
+                    {errors.message && <p>{errors.message}</p>}
+                  </fieldset>
+                  <section className="flex justify-between">
+                    <div className="mb-8 bg-primary md:w-48" id="edit-actions">
+                      <input
+                        className="text-lg py-2 pl-7 text-white"
+                        type="submit"
+                        id="edit-actions-submit"
+                        name="submit"
+                        value="SEND MESSAGE"
+                      />
+                    </div>
+                    <div className="mb-8 bg-primary md:w-48" id="edit-actions">
+                      <input
+                        className="text-lg py-2 pl-7 text-white"
+                        type="reset"
+                        id="reset"
+                        name="reset"
+                        value="CLEAR FORM"
+                      />
+                    </div>
+                  </section>
+                </>
+              )}
             </form>
             <div>
               <p className="mb-5">
                 <a
-                  className="text-xl underline text-blue-400"
+                  className="text-xl underline text-secondary"
                   href="mailto:safety-us@provepharm.com"
                 >
                   REQUEST FOR MEDICAL INFORMATION
@@ -125,7 +190,7 @@ export default function ContactUs() {
               </p>
               <p>
                 <a
-                  className="text-xl underline text-blue-400"
+                  className="text-xl underline text-secondary"
                   href="mailto:safety-us@provepharm.com"
                 >
                   ADVERSE EVENT REPORTING
@@ -140,7 +205,7 @@ export default function ContactUs() {
                 <p>
                   P:{" "}
                   <a
-                    className="underline text-blue-400"
+                    className="underline text-secondary"
                     href="tel:1-833-727-6556"
                   >
                     1-833-727-6556
@@ -149,7 +214,7 @@ export default function ContactUs() {
                 <p>
                   E:{" "}
                   <a
-                    className="underline text-blue-400"
+                    className="underline text-secondary"
                     href="mailto:safety-us@provepharm.com"
                   >
                     safety-us@provepharm.com
@@ -161,7 +226,7 @@ export default function ContactUs() {
                 <p>
                   P:{" "}
                   <a
-                    className="underline text-blue-400"
+                    className="underline text-secondary"
                     href="tel:1-833-727-6556"
                   >
                     1-833-727-6556
@@ -170,19 +235,19 @@ export default function ContactUs() {
                 <p>
                   E:{" "}
                   <a
-                    className="underline text-blue-400"
+                    className="underline text-secondary"
                     href="mailto:safety-us@provepharm.com"
                   >
                     safety-us@provepharm.com
                   </a>
                 </p>
               </div>
-              <div class="mb-4">
+              <div className="mb-4">
                 <h4 className="font-medium">Product Quality Complaints</h4>
                 <p>
                   P:{" "}
                   <a
-                    className="underline text-blue-400"
+                    className="underline text-secondary"
                     href="tel:1-833-727-6556"
                   >
                     1-833-727-6556
@@ -191,19 +256,19 @@ export default function ContactUs() {
                 <p>
                   E:{" "}
                   <a
-                    className="underline text-blue-400"
+                    className="underline text-secondary"
                     href="mailto:quality@provepharm.com"
                   >
                     quality@provepharm.com
                   </a>
                 </p>
               </div>
-              <div class="mb-5">
+              <div className="mb-5">
                 <h4>General Inquiries or Customer Service</h4>
                 <p>
                   E:{" "}
                   <a
-                    className="underline text-blue-400"
+                    className="underline text-secondary"
                     href="mailto:us-info@provepharm.com"
                   >
                     us-info@provepharm.com

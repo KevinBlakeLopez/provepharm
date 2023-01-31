@@ -147,7 +147,7 @@ export default function AboutUs() {
             <div id="people-lives-image" className=" md:order-2 md:w-1/2">
               <figure className="">
                 <div className="block">
-                  <Image fill src={aboutMainBG} />
+                  <Image fill="true" src={aboutMainBG} />
                 </div>
               </figure>
             </div>
