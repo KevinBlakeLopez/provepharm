@@ -10,7 +10,10 @@ import {
   Hero,
   SEO,
 } from "../../components";
-import blueDye from "../../public/history-bluedye.jpeg";
+import bludigoProduct from "../../public/bludigo_product_image.jpeg";
+import videoThumbnail from "../../public/video_thumbnail.png";
+import doctorsStock from "../../public/bludigo_doctors_stock.jpeg";
+
 
 export default function Bludigo() {
   const { data, loading } = useQuery(Bludigo.query, {
@@ -36,7 +39,7 @@ export default function Bludigo() {
             </h1>
           </div>
           <figure>
-            <Image src={blueDye} />
+            <Image src={bludigoProduct} />
           </figure>
         </section>
         <section id="video-section" className="text-primary">
@@ -46,7 +49,7 @@ export default function Bludigo() {
             dye.
           </h2>
           <figure>
-            <Image />
+            <Image src={videoThumbnail}/>
           </figure>
         </section>
         <section className="md:flex">
@@ -59,7 +62,9 @@ export default function Bludigo() {
               endoscopic surgical procedures.{" "}
             </p>
           </div>
-          <figure className="md:w-3/5"></figure>
+          <figure className="md:w-3/5">
+            <Image src={doctorsStock} />
+          </figure>
         </section>
       </Main>
       <Footer />
