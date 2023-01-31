@@ -1,4 +1,4 @@
-function Container({ size, children }) {
+function Container({ margin, padding, size, children }) {
   const sizeMap = {
     xs: "max-w-[800px]",
     sm: "max-w-[1000px]",
@@ -12,7 +12,11 @@ function Container({ size, children }) {
   const width = size ? sizeMap[size] : "max-w-[1000px]";
 
   return (
-    <div className="flex justify-center p-10">
+    <div
+      className={`flex justify-center ${margin ? margin : ""} ${
+        padding ? padding : "p-10"
+      }`}
+    >
       <div className={`${width}`}>{children}</div>
     </div>
   );

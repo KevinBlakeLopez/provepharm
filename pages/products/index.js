@@ -1,5 +1,5 @@
 import { getNextStaticProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, useMutation } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import ProductsFinder from "../../components/ProductsFinder/ProductsFinder";
@@ -9,6 +9,7 @@ import * as MENUS from "../../constants/menus";
 
 export default function Products() {
   const { data, loading } = useQuery(Products.query);
+  
 
   if (loading) {
     return <></>;
@@ -27,7 +28,7 @@ export default function Products() {
                 return (
                   <div className="my-[80px]">
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
-                      {product.metaFields.genericname}
+                      {product.metaFields.brandProduct ? `${product.metaFields.productvariationtitle} ` : ""} {product.metaFields.genericname}
                     </h2>
                     <div className="md:flex md:justify-between">
                       {product.metaFields.productimage ? (
@@ -122,6 +123,7 @@ Products.query = gql`
       nodes {
         title
         metaFields {
+          brandProduct
           productvariationtitle
           genericname
           form
@@ -134,7 +136,6 @@ Products.query = gql`
           productimage {
             mediaItemUrl
           }
-          brandProduct
         }
         slug
       }

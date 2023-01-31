@@ -10,6 +10,7 @@ import {
   Hero,
   SEO,
 } from "../../components";
+import blueDye from "../../public/history-bluedye.jpeg";
 
 export default function Bludigo() {
   const { data, loading } = useQuery(Bludigo.query, {
@@ -26,14 +27,16 @@ export default function Bludigo() {
       <Main>
         <section
           id="hero"
-          className="bg-primary h-[400px] md:h-[80vh] text-white"
+          className="bg-primary h-[400px] md:h-[80vh] text-white md:flex items-center"
         >
-          <div className="flex items-center">
-            <p className="text-6xl">See the difference.</p>
-            <h1>Bludigo (indigotindisulfonate sodium injection, USP)</h1>
+          <div className="">
+            <p className="text-3xl lg:text-8xl">See the difference.</p>
+            <h1 className="text-xl">
+              Bludigo (indigotindisulfonate sodium injection, USP)
+            </h1>
           </div>
           <figure>
-            <Image />
+            <Image src={blueDye} />
           </figure>
         </section>
         <section id="video-section" className="text-primary">

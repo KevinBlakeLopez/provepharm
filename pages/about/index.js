@@ -32,7 +32,6 @@ export default function AboutUs() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Main>
-        {/* <Hero title={"Provepharm"} /> */}
         <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[80vh] text-white mb-12 flex items-center">
           <h2 className="pl-8 md:pl-64 text-2xl md:text-7xl font-semibold md:font-extralight tracking-wider">
             CONNECTING <br />
@@ -44,14 +43,14 @@ export default function AboutUs() {
         </div>
 
         <>
-          <Container size="md">
+          <Container size="sm">
             <div className="md:flex mb-16">
               <div class="md:w-1/2 md: mb-20 mr-8">
                 <h3 className="text-6xl tracking-wider text-secondary font-extralight mb-8">
                   OUR MISSION
                 </h3>
 
-                <p className="text-xl text-primary">
+                <p className="text-lg text-primary">
                   Provepharm is driven to improve the lives of our patients,
                   employees, and the ecosystem. We focus our resources on two
                   main areas of development:
@@ -65,7 +64,7 @@ export default function AboutUs() {
                       Main Areas of Development
                     </h4>
 
-                    <ul className="text-xl text-white">
+                    <ul className="text-lg text-white">
                       <li className="mb-6">
                         <strong>Molecule Vitalization</strong> to fully optimize
                         the molecule’s potential
@@ -81,17 +80,29 @@ export default function AboutUs() {
             </div>
           </Container>
 
-          <div className="mb-12">
-            <div className="bg-[url('/aboutBannerWoman.jpeg')] bg-cover bg-center text-center bg-slate-800 h-[75vh] md:h-[50vh] flex items-center">
-              <p className="text-3xl md:text-[3.5rem] leading-tight md:leading-tight text-white tracking-wide  px-8 md:px-60 font-semibold md:font-light">
-                PROVEPHARM IS AN INTERNATIONAL, PRIVATE, PHARMACEUTICAL <br />{" "}
-                COMPANY WITH A GLOBAL PRESENCE IN OVER 30 COUNTRIES WORLDWIDE.
+          <div id="third-way-banner" className="mb-12">
+            <div
+              className="
+                relative bg-black flex justify-center items-center min-h-[500px]
+                before:bg-[url('/aboutBannerWoman.jpeg')] before:bg-cover before:bg-center before:absolute before:right-0 before:left-0 before:top-0 before:bottom-0 before:content-[''] before:z-0 text-center before:opacity-50"
+            >
+              <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
+                <figure className="absolute top-[-35%]">
+                  <img src="/frontpage-V.png"></img>
+                </figure>
+                <img src="/frontpage-A.png"></img>
+              </div>
+              <p className="z-10 text-3xl lg:text-[3rem] leading-tight text-white tracking-wide py-12 px-8">
+                PROVEPHARM IS AN INTERNATIONAL,
+                <br /> PRIVATE, PHARMACEUTICAL
+                <br /> COMPANY WITH A GLOBAL PRESENCE
+                <br /> IN OVER 30 COUNTRIES WORLDWIDE.
               </p>
             </div>
           </div>
 
-          <Container size="lg">
-            <div className="md:flex justify-between items-center text-xl text-primary">
+          <Container padding="py-0 px-10" margin="mb-10" size="sm">
+            <div className="md:flex justify-between items-center text-lg text-primary">
               <div className="md:w-1/2 mr-8">
                 <p className="mb-8">
                   At Provepharm, we innovate in order to understand each
@@ -152,7 +163,7 @@ export default function AboutUs() {
               </figure>
             </div>
             <div className="bg-secondary text-white font-light md:order-1 md:w-1/2">
-              <section className="md:w-3/4 md:float-right p-10 -mt-2">
+              <section className="md:max-w-[543px] md:float-right p-10 -mt-2">
                 <h3 className="text-3xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
                   PRODUCTS <br className="hidden md:visible" />
                   THAT MAKE A <br className="hidden md:visible" />
@@ -173,10 +184,12 @@ export default function AboutUs() {
           </div>
 
           <Container>
-            <div className="md:flex justify-between text-xl text-primary font-light">
+            <div className="md:flex justify-between text-lg text-primary">
               <div className="md:w-5/12">
                 <div className="mb-10">
-                  <h3 className="text-6xl mb-6 tracking-wider">OUR HISTORY</h3>
+                  <h3 className="text-6xl mb-6 tracking-wider text-secondary font-extralight">
+                    OUR HISTORY
+                  </h3>
 
                   <p>
                     Driven by an entrepreneurial spirit, privately-owned,

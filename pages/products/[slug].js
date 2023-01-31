@@ -90,6 +90,9 @@ export default function Product() {
                 <a className=" text-blue-500">Products</a>
               </Link>
               {" > "}
+              {product.brandProduct
+                ? `${product.productvariationtitle} `
+                : ""}{" "}
               {product.genericname}
             </h2>
             <div className="md:flex md:justify-between">
@@ -135,26 +138,42 @@ export default function Product() {
               </section>
               <ul className="lg:mx-8">
                 <li className="flex justify-between">
-                  {product.genericname ? (
+                  {product.brandProduct ? (
+                    <>
+                      <p className="font-medium text-lg mb-4 mr-20">
+                        Brand Name
+                      </p>
+                      <p className="mb-4 text-right">
+                        {product.productvariationtitle}
+                      </p>
+                    </>
+                  ) : (
                     <>
                       <p className="font-medium text-lg mb-4 mr-20">
                         Generic Name
                       </p>
                       <p className="mb-4 text-right">{product.genericname}</p>
                     </>
-                  ) : null}
+                  )}
                 </li>
                 <li className="flex justify-between">
-                  {product.productvariationtitle ? (
+                  {product.brandProduct ? (
                     <>
                       <p className="font-medium text-lg mb-4 mr-20">
-                        {product.brandProduct
-                          ? "Brand Name"
-                          : "Reference Listed Drug"}
+                        Generic Name
                       </p>
-                      <p className="mb-4">{product.productvariationtitle}</p>
+                      <p className="mb-4 text-right">{product.genericname}</p>
                     </>
-                  ) : null}
+                  ) : (
+                    <>
+                      <p className="font-medium text-lg mb-4 mr-20">
+                        Brand Name
+                      </p>
+                      <p className="mb-4 text-right">
+                        {product.productvariationtitle}
+                      </p>
+                    </>
+                  )}
                 </li>
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4 mr-20">NDC</p>
@@ -214,8 +233,8 @@ export default function Product() {
                 <li className="flex justify-between">
                   <p className="font-medium text-lg mb-4">
                     {product.noNaturalRubber
-                      ? "Container Closure is not made with natural rubber latex"
-                      : "Container Closure is made with natural rubber latex"}
+                      ? "Container Closure is made with natural rubber latex"
+                      : "Container Closure is not made with natural rubber latex"}
                   </p>
                   {/* <p className="">{product.noNaturalRubber ? "no" : "yes"}</p> */}
                 </li>
