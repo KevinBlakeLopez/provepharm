@@ -33,8 +33,8 @@ export default function AboutUs() {
       <Header menuItems={data.headerMenuItems} />
       <Main>
         {/* <Hero title={"Provepharm"} /> */}
-        <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light md:h-[80vh] text-white mb-12 flex items-center">
-          <h2 className="pl-8 md:pl-64 md:text-7xl font-extralight tracking-wider">
+        <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[80vh] text-white mb-12 flex items-center">
+          <h2 className="pl-8 md:pl-64 text-2xl md:text-7xl font-semibold md:font-extralight tracking-wider">
             CONNECTING <br />
             HEALTHCARE
             <br /> PROVIDERS <br />
@@ -46,12 +46,12 @@ export default function AboutUs() {
         <>
           <Container size="md">
             <div className="md:flex mb-16">
-              <div class="md:w-1/2 mr-8">
-                <h3 className="text-6xl tracking-wider text-[#2ac3ff] font-extralight mb-4">
+              <div class="md:w-1/2 md: mb-20 mr-8">
+                <h3 className="text-6xl tracking-wider text-secondary font-extralight mb-8">
                   OUR MISSION
                 </h3>
 
-                <p className="text-xl text-[#1e387d]">
+                <p className="text-xl text-primary">
                   Provepharm is driven to improve the lives of our patients,
                   employees, and the ecosystem. We focus our resources on two
                   main areas of development:
@@ -60,8 +60,8 @@ export default function AboutUs() {
 
               <div className="md:w-1/2">
                 <div className="bg-[url('/aboutMainBG.jpeg')] bg-cover">
-                  <div className="bg-[#1e387de6] opacity-[80] p-8">
-                    <h4 className="text-3xl text-[#2ac3ff] mb-4">
+                  <div className="bg-primary opacity-[80] p-8">
+                    <h4 className="text-3xl text-tertiary mb-4">
                       Main Areas of Development
                     </h4>
 
@@ -83,7 +83,7 @@ export default function AboutUs() {
 
           <div className="mb-12">
             <div className="bg-[url('/aboutBannerWoman.jpeg')] bg-cover bg-center text-center bg-slate-800 h-[75vh] md:h-[50vh] flex items-center">
-              <p className="text-3xl md:text-[3.5rem] leading-tight md:leading-tight text-white tracking-wide  px-8 md:px-60 font-light">
+              <p className="text-3xl md:text-[3.5rem] leading-tight md:leading-tight text-white tracking-wide  px-8 md:px-60 font-semibold md:font-light">
                 PROVEPHARM IS AN INTERNATIONAL, PRIVATE, PHARMACEUTICAL <br />{" "}
                 COMPANY WITH A GLOBAL PRESENCE IN OVER 30 COUNTRIES WORLDWIDE.
               </p>
@@ -91,7 +91,7 @@ export default function AboutUs() {
           </div>
 
           <Container size="lg">
-            <div className="md:flex justify-between items-center text-xl text-[#1e387d]">
+            <div className="md:flex justify-between items-center text-xl text-primary">
               <div className="md:w-1/2 mr-8">
                 <p className="mb-8">
                   At Provepharm, we innovate in order to understand each
@@ -143,13 +143,20 @@ export default function AboutUs() {
             </div>
           </Container>
 
-          <div className="md:flex mb-32">
-            <div className="bg-[#00a6e7] text-white font-light md:w-1/2">
-              <section className="md:w-7/12 md:float-right">
-                <h3 className="text-[3.3rem] tracking-wide leading-extra-tight mb-6">
-                  PRODUCTS <br />
-                  THAT MAKE A <br />
-                  DIFFERENCE IN <br />
+          <div id="people-lives-banner" className="md:flex mb-10">
+            <div id="people-lives-image" className=" md:order-2 md:w-1/2">
+              <figure className="">
+                <div className="block">
+                  <Image fill src={aboutMainBG} />
+                </div>
+              </figure>
+            </div>
+            <div className="bg-secondary text-white font-light md:order-1 md:w-1/2">
+              <section className="md:w-3/4 md:float-right p-10 -mt-2">
+                <h3 className="text-3xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
+                  PRODUCTS <br className="hidden md:visible" />
+                  THAT MAKE A <br className="hidden md:visible" />
+                  DIFFERENCE IN <br className="hidden md:visible" />
                   PEOPLE'S LIVES
                 </h3>
 
@@ -163,15 +170,12 @@ export default function AboutUs() {
                 </p>
               </section>
             </div>
-            <figure className="md:w-1/2">
-              <Image src={aboutMainBG} />
-            </figure>
           </div>
 
           <Container>
-            <div className="md:flex justify-between text-xl text-[#1e387d] font-light">
+            <div className="md:flex justify-between text-xl text-primary font-light">
               <div className="md:w-5/12">
-                <div className="mb-24">
+                <div className="mb-10">
                   <h3 className="text-6xl mb-6 tracking-wider">OUR HISTORY</h3>
 
                   <p>
@@ -224,7 +228,7 @@ export default function AboutUs() {
                   management team and executive board.{" "}
                 </p>
 
-                <div class="alignwide container line-box in-box">
+                <div>
                   <figure className="mb-6">
                     <Image src={allEmployees} />
                   </figure>
@@ -248,7 +252,7 @@ export default function AboutUs() {
                   <Image src={microscope} />
                 </figure>
 
-                <div class="alignwide container line-box-content">
+                <div>
                   <p className="mb-8">
                     The early years: Michel Feraud, president, and founder,
                     initially launched the company as “Provence Technologies”, a
@@ -262,7 +266,7 @@ export default function AboutUs() {
                   </p>
                 </div>
 
-                <div class="alignwide container line-box in-box">
+                <div>
                   <p className="mb-8">
                     Provepharm obtained a centralized marketing authorization
                     from EMA paving the way for the{" "}
@@ -274,7 +278,7 @@ export default function AboutUs() {
                   </p>
                 </div>
 
-                <div class="alignwide container line-box in-box">
+                <div>
                   <figure className="mb-8">
                     <Image src={provayblue} />
                   </figure>
@@ -292,7 +296,7 @@ export default function AboutUs() {
                   </p>
                 </div>
 
-                <div class="alignwide container line-box in-box">
+                <div>
                   <figure className="mb-8">
                     <Image src={lab2} />
                   </figure>

@@ -50,7 +50,7 @@ export default function Component() {
 
         <>
           <Container size="md">
-            <div className="md:flex justify-between mb-12 text-[#1e387d]">
+            <div className="md:flex justify-between mb-12 text-primary">
               <section className="md:w-1/2">
                 <h3 className="mb-4 md:text-6xl">ABOUT US</h3>
 
@@ -69,9 +69,9 @@ export default function Component() {
             </div>
           </Container>
 
-          <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-[#1e387d] text-white text-center text-xl">
+          <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-primary text-white text-center text-xl">
             <Container>
-              <h3 className="text-4xl text-[#00a6e7] mb-4 pt-16">
+              <h3 className="text-4xl text-secondary mb-4 pt-16">
                 TO ACCOMPLISH THIS MISSION, <br />
                 OUR STRATEGY IS BASED ON
               </h3>
@@ -106,7 +106,7 @@ export default function Component() {
                 </div>
 
                 <div>
-                  <figure class="wp-block-image size-full pillars-top">
+                  <figure>
                     <Image src={hexagon} width={110} height={110} />
                     <figcaption className="font-semibold pb-4">
                       Commercial
@@ -115,11 +115,11 @@ export default function Component() {
                     </figcaption>
                   </figure>
                   <hr className="w-8 mx-auto pb-4" />
-                  <p class="pillars-content">By expanding sales channels</p>
+                  <p>By expanding sales channels</p>
                 </div>
 
-                <div class="wp-block-column">
-                  <figure class="wp-block-image size-full pillars-top">
+                <div>
+                  <figure>
                     <Image src={shield} width={110} height={110} />
                     <figcaption className="font-semibold pb-4">
                       Secure
@@ -128,11 +128,11 @@ export default function Component() {
                     </figcaption>
                   </figure>
                   <hr className="w-8 mx-auto pb-4" />
-                  <p class="pillars-content">By securing our supply</p>
+                  <p>By securing our supply</p>
                 </div>
 
-                <div class="wp-block-column">
-                  <figure class="wp-block-image size-full pillars-top">
+                <div>
+                  <figure>
                     <Image src={award} width={110} height={110} />
                     <figcaption className="font-semibold pb-4">
                       Operational
@@ -141,14 +141,14 @@ export default function Component() {
                     </figcaption>
                   </figure>
                   <hr className="w-8 mx-auto pb-4" />
-                  <p class="pillars-content">
+                  <p>
                     By capitalizing on the women and men of Provepharm
                   </p>
                 </div>
               </div>
 
-              <div class="wp-block-columns pillars-discover mb-0">
-                <h4 className="text-3xl text-[#00a6e7] text-center mb-4">
+              <div>
+                <h4 className="text-3xl text-secondary text-center mb-4">
                   From drug discovery – to marketplace
                 </h4>
 
@@ -175,7 +175,7 @@ export default function Component() {
             </div>
 
             <Container>
-              <div className="md:flex justify-between items-center text-xl text-[#1e387d]">
+              <div className="md:flex justify-between items-center text-xl text-primary">
                 <div className="md:w-1/2 mr-8">
                   <p className="mb-8">
                     At Provepharm, we innovate in order to understand each
@@ -229,33 +229,35 @@ export default function Component() {
               </div>
             </Container>
 
-            <div className="md:flex mb-32">
-              <div className="bg-[#00a6e7] text-white md:w-1/2 py-20">
-                <section className="w-2/3">
-                  <h3 className="text-6xl">
-                    PRODUCTS <br />
-                    THAT MAKE A <br />
-                    DIFFERENCE IN <br />
-                    PEOPLE'S LIVES
-                  </h3>
-
-                  <p className="text-xl">
-                    At Provepharm, we innovate to unlock each molecule's full
-                    potential, to provide treatments that help improve patients'
-                    lives. Our portfolio of products meets the highest
-                    pharmaceutical quality standards, in the following areas:
-                    antidotes, diagnostics, injectable vitamins, metabolism, and
-                    neuroscience.
-                  </p>
-                </section>
-              </div>
-              <figure className="md:w-1/2">
-                <Image src={aboutMainBG} />
+            <div id="people-lives-banner" className="md:flex mb-10">
+            <div id="people-lives-image" className=" md:order-2 md:w-1/2">
+              <figure className="">
+                <Image style={{ position: "inherit" }} src={aboutMainBG} />
               </figure>
             </div>
+            <div className="bg-secondary text-white font-light md:order-1 md:w-1/2">
+              <section className="md:w-3/4 md:float-right p-10 -mt-2">
+                <h3 className="text-3xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
+                  PRODUCTS <br className="hidden md:visible" />
+                  THAT MAKE A <br className="hidden md:visible" />
+                  DIFFERENCE IN <br className="hidden md:visible" />
+                  PEOPLE'S LIVES
+                </h3>
+
+                <p className="text-xl">
+                  At Provepharm, we innovate to unlock each molecule's full
+                  potential, to provide treatments that help improve patients'
+                  lives. Our portfolio of products meets the highest
+                  pharmaceutical quality standards, in the following areas:
+                  antidotes, diagnostics, injectable vitamins, metabolism, and
+                  neuroscience.
+                </p>
+              </section>
+            </div>
+          </div>
 
             <Container>
-              <div className="md:flex justify-between text-xl text-[#1e387d] font-light">
+              <div className="md:flex justify-between text-xl text-primary font-light">
                 <div className="md:w-5/12">
                   <div className="mb-24">
                     <h3 className="text-6xl mb-6">OUR HISTORY</h3>
@@ -310,7 +312,7 @@ export default function Component() {
                     joining the management team and executive board.{" "}
                   </p>
 
-                  <div class="alignwide container line-box in-box">
+                  <div>
                     <figure className="mb-6">
                       <Image src={allEmployees} />
                     </figure>
@@ -335,7 +337,7 @@ export default function Component() {
                     <Image src={microscope} />
                   </figure>
 
-                  <div class="alignwide container line-box-content">
+                  <div>
                     <p className="mb-8">
                       The early years: Michel Feraud, president, and founder,
                       initially launched the company as “Provence Technologies”,
@@ -349,7 +351,7 @@ export default function Component() {
                     </p>
                   </div>
 
-                  <div class="alignwide container line-box in-box">
+                  <div>
                     <p className="mb-8">
                       Provepharm obtained a centralized marketing authorization
                       from EMA paving the way for the{" "}
@@ -361,7 +363,7 @@ export default function Component() {
                     </p>
                   </div>
 
-                  <div class="alignwide container line-box in-box">
+                  <div>
                     <figure className="mb-8">
                       <Image src={provayblue} />
                     </figure>
@@ -379,7 +381,7 @@ export default function Component() {
                     </p>
                   </div>
 
-                  <div class="alignwide container line-box in-box">
+                  <div>
                     <figure className="mb-8">
                       <Image src={lab2} />
                     </figure>
