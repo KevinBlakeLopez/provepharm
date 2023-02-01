@@ -141,9 +141,7 @@ export default function Component() {
                     </figcaption>
                   </figure>
                   <hr className="w-8 mx-auto pb-4" />
-                  <p>
-                    By capitalizing on the women and men of Provepharm
-                  </p>
+                  <p>By capitalizing on the women and men of Provepharm</p>
                 </div>
               </div>
 
@@ -165,16 +163,26 @@ export default function Component() {
           </div>
 
           <>
-            <div className="mb-12">
-              <div className="bg-[url('/aboutBannerWoman.jpeg')] bg-cover bg-center text-center bg-slate-800 md:h-[50vh] flex items-center">
-                <p className="md:text-6xl text-white leading-[4rem] md:px-60 font-light">
-                  PROVEPHARM IS AN INTERNATIONAL, PRIVATE, PHARMACEUTICAL <br />{" "}
-                  COMPANY WITH A GLOBAL PRESENCE IN OVER 30 COUNTRIES WORLDWIDE.
+            <div id="third-way-banner" className="mb-12">
+              <div className="relative bg-black flex justify-center items-center min-h-[500px] before:bg-[url('/aboutBannerWoman.jpeg')] before:bg-cover before:bg-center before:absolute before:right-0 before:left-0 before:top-0 before:bottom-0 before:content-[''] before:z-0 text-center before:opacity-50">
+                <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
+                  <figure className="hidden md:visible absolute top-[20%]">
+                    <img src="/frontPage-V.png" />
+                  </figure>
+                  <figure className="hidden md:visible absolute bottom-[5%]">
+                    <img src="/frontPage-A.png" />
+                  </figure>
+                </div>
+                <p className="z-10 text-3xl lg:text-[3.5rem] text-white font-light leading-tight tracking-wider py-12 px-8 ">
+                  PROVEPHARM IS AN INTERNATIONAL,
+                  <br /> PRIVATE, PHARMACEUTICAL
+                  <br /> COMPANY WITH A GLOBAL PRESENCE
+                  <br /> IN OVER 30 COUNTRIES WORLDWIDE.
                 </p>
               </div>
             </div>
 
-            <Container>
+            <Container padding="py-0 px-10" margin="mb-10" size="sm">
               <div className="md:flex justify-between items-center text-xl text-primary">
                 <div className="md:w-1/2 mr-8">
                   <p className="mb-8">
@@ -230,31 +238,31 @@ export default function Component() {
             </Container>
 
             <div id="people-lives-banner" className="md:flex mb-10">
-            <div id="people-lives-image" className=" md:order-2 md:w-1/2">
-              <figure className="">
-                <Image style={{ position: "inherit" }} src={aboutMainBG} />
-              </figure>
-            </div>
-            <div className="bg-secondary text-white font-light md:order-1 md:w-1/2">
-              <section className="md:w-3/4 md:float-right p-10 -mt-2">
-                <h3 className="text-3xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
-                  PRODUCTS <br className="hidden md:visible" />
-                  THAT MAKE A <br className="hidden md:visible" />
-                  DIFFERENCE IN <br className="hidden md:visible" />
-                  PEOPLE'S LIVES
-                </h3>
+              <div id="people-lives-image" className=" md:order-2 md:w-1/2">
+                <figure className="">
+                  <Image style={{ position: "inherit" }} src={aboutMainBG} />
+                </figure>
+              </div>
+              <div className="bg-secondary text-white font-light md:order-1 md:w-1/2">
+                <section className="md:w-3/4 md:float-right p-10 -mt-2">
+                  <h3 className="text-3xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
+                    PRODUCTS <br className="hidden md:visible" />
+                    THAT MAKE A <br className="hidden md:visible" />
+                    DIFFERENCE IN <br className="hidden md:visible" />
+                    PEOPLE'S LIVES
+                  </h3>
 
-                <p className="text-xl">
-                  At Provepharm, we innovate to unlock each molecule's full
-                  potential, to provide treatments that help improve patients'
-                  lives. Our portfolio of products meets the highest
-                  pharmaceutical quality standards, in the following areas:
-                  antidotes, diagnostics, injectable vitamins, metabolism, and
-                  neuroscience.
-                </p>
-              </section>
+                  <p className="text-xl">
+                    At Provepharm, we innovate to unlock each molecule's full
+                    potential, to provide treatments that help improve patients'
+                    lives. Our portfolio of products meets the highest
+                    pharmaceutical quality standards, in the following areas:
+                    antidotes, diagnostics, injectable vitamins, metabolism, and
+                    neuroscience.
+                  </p>
+                </section>
+              </div>
             </div>
-          </div>
 
             <Container>
               <div className="md:flex justify-between text-xl text-primary font-light">
@@ -372,9 +380,7 @@ export default function Component() {
                       Provepharm obtained FDA approval to commercialize{" "}
                       <a
                         href="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        class="link-warning"
+                        className="underline text-prescribingAnchor"
                       >
                         ProvayBlue®, (injectable methylene blue).
                       </a>

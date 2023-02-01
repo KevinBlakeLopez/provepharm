@@ -1,6 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import * as MENUS from "../../constants/menus";
 import { BlogInfoFragment } from "../../fragments/GeneralSettings";
+import Modal from "../../components/Modal";
 import Image from "next/image";
 import {
   Header,
@@ -32,7 +33,7 @@ export default function AboutUs() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Main>
-        <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[80vh] text-white mb-12 flex items-center">
+        <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[80vh] text-white mb-10 flex items-center">
           <h2 className="pl-8 md:pl-64 text-2xl md:text-7xl font-semibold md:font-extralight tracking-wider">
             CONNECTING <br />
             HEALTHCARE
@@ -43,9 +44,9 @@ export default function AboutUs() {
         </div>
 
         <>
-          <Container size="sm">
-            <div className="md:flex mb-16">
-              <div class="md:w-2/5 md: mb-20 mr-8">
+          <Container size="md">
+            <div className="md:flex mb-10">
+              <div class="md:w-1/2 md: mb-20 mr-8">
                 <h3 className="text-6xl tracking-wider text-secondary font-extralight mb-8">
                   OUR MISSION
                 </h3>
@@ -57,7 +58,7 @@ export default function AboutUs() {
                 </p>
               </div>
 
-              <div className="md:w-3/5">
+              <div className="md:w-1/2">
                 <div>
                   <div className="bg-[#0c132a] bg-blend-soft-light bg-[url('/aboutMainBG.jpeg')] bg-cover opacity-[90] px-16 py-14 max-w-[630px]">
                     <h4 className="text-3xl text-tertiary mb-4">
@@ -102,13 +103,13 @@ export default function AboutUs() {
             >
               <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
                 <figure className="hidden md:visible absolute top-[-20%]">
-                  <img src="/frontPage-V.png"></img>
+                  <img src="/frontPage-V.png" />
                 </figure>
                 <figure className="hidden md:visible absolute bottom-[5%]">
-                  <img src="/frontPage-A.png"></img>
+                  <img src="/frontPage-A.png" />
                 </figure>
               </div>
-              <p className="z-10 text-3xl lg:text-[3rem] leading-tight text-white tracking-wide py-12 px-8">
+              <p className="z-10 text-3xl lg:text-[3.5rem] font-light leading-tight text-white tracking-wider py-12 px-8">
                 PROVEPHARM IS AN INTERNATIONAL,
                 <br /> PRIVATE, PHARMACEUTICAL
                 <br /> COMPANY WITH A GLOBAL PRESENCE
@@ -316,9 +317,7 @@ export default function AboutUs() {
                     Provepharm obtained FDA approval to commercialize{" "}
                     <a
                       href="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      class="link-warning"
+                      className="underline text-prescribingAnchor"
                     >
                       ProvayBlue®, (injectable methylene blue).
                     </a>
