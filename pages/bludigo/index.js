@@ -14,8 +14,10 @@ import bludigoProduct from "../../public/bludigo_product_image.png";
 import videoThumbnail from "../../public/video_thumbnail.png";
 import doctorsStock from "../../public/bludigo_doctors_stock.jpeg";
 import Container from "../../components/Container";
+import chart from "../../public/chart_icon_2x.png";
 import clock from "../../public/clock_icon_2x.png";
 import target from "../../public/target_icon_2x.png";
+import table from "../../public/table_2x.png";
 
 export default function Bludigo() {
   const { data, loading } = useQuery(Bludigo.query, {
@@ -56,8 +58,8 @@ export default function Bludigo() {
             </figure>
           </section>
         </Container>
-        <section className="md:flex">
-          <div className="bg-primary md:w-5/12 text-white px-32 py-28">
+        <section className="md:flex mb-20">
+          <div className="bg-primary md:w-5/12 text-white md:px-32 md:py-28">
             <h3 className="text-6xl pb-12">Not just any blue dye.</h3>
             <p className="text-2xl">
               Bludigo™ is a diagnostic dye indicated for use as a visualization
@@ -71,32 +73,54 @@ export default function Bludigo() {
           </figure>
         </section>
         <Container size="lg">
-          <section>
-            <p className="text-3xl md:text-5xl text-primary">
+          <section className="mb-20">
+            <p className="text-3xl md:text-5xl text-primary md:w-2/3 pb-16">
               Bludigo has a deep blue color that significantly aids
               visualization when assessing ureter patency.
             </p>
-            <figure className="md:flex">
+            <div className="md:w-2/3 md:mx-auto">
+              <figure className="md:flex">
+                <Image src={chart} />
+                <figcaption className="text-2xl pl-6">
+                  83% of the ureter patency assessments in the Bludigo™ clinical
+                  trial were reported as visualizing good or striking color
+                  contrast in the ureter jet stream.
+                </figcaption>
+              </figure>
+              <figure className="md:flex">
+                <Image src={target} />
+                <div className="flex-col">
+                  <figcaption className="text-2xl pl-6">
+                    In 90% of urologic and gynecologic surgical procedures
+                    (N=49) in the Bludigo™ clinical trial, physicians agreed
+                    that their ability to assess ureteral patency was improved
+                    following the use of Bludigo™ compared to saline.
+                  </figcaption>
+                  <p className="pl-6">
+                    Data on file PVP-19ICO1 clinical study report.
+                  </p>
+                </div>
+              </figure>
+            </div>
+          </section>
+          <figure className="mb-20">
+            <Image src={table} />
+          </figure>
+
+          <section>
+            <h3 className="text-3xl md:text-5xl text-primary mb-16">
+              Fast detection. Bludigo is excreted in the urine quickly.
+            </h3>
+            <figure className="md:flex md:w-2/3 md:mx-auto">
               <Image src={clock} />
-              <figcaption className="text-2xl pl-6">
-                83% of the ureter patency assessments in the Bludigo™ clinical
-                trial were reported as visualizing good or striking color
-                contrast in the ureter jet stream.
+              <figcaption className="text-3xl">
+                After injection, the blue color at the ureteral orifices is
+                detectable within 4–9 minutes.
               </figcaption>
             </figure>
-            <figure className="md:flex">
-              <Image src={target} />
-              <div className="flex-col">
-                <figcaption className="text-2xl">
-                  In 90% of urologic and gynecologic surgical procedures (N=49)
-                  in the Bludigo™ clinical trial, physicians agreed that their
-                  ability to assess ureteral patency was improved following the
-                  use of Bludigo™ compared to saline.
-                </figcaption>
-                <p>Data on file PVP-19ICO1 clinical study report.</p>
-              </div>
-            </figure>
           </section>
+          <hr />
+
         </Container>
       </Main>
       <Footer />

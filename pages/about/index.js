@@ -45,7 +45,7 @@ export default function AboutUs() {
         <>
           <Container size="sm">
             <div className="md:flex mb-16">
-              <div class="md:w-1/2 md: mb-20 mr-8">
+              <div class="md:w-2/5 md: mb-20 mr-8">
                 <h3 className="text-6xl tracking-wider text-secondary font-extralight mb-8">
                   OUR MISSION
                 </h3>
@@ -57,28 +57,35 @@ export default function AboutUs() {
                 </p>
               </div>
 
-              <div className="md:w-1/2">
-                <div className="bg-[url('/aboutMainBG.jpeg')] bg-cover">
-                  <div className="bg-primary opacity-[80] p-8">
+              <div className="md:w-3/5">
+                <div>
+                  <div className="bg-[#0c132a] bg-blend-soft-light bg-[url('/aboutMainBG.jpeg')] bg-cover opacity-[90] px-16 py-14 max-w-[630px]">
                     <h4 className="text-3xl text-tertiary mb-4">
                       Main Areas of Development
                     </h4>
 
-                    <ul className="text-lg text-white">
+                    <ul className="text-xl text-white">
                       <li
                         style={{
                           background: "url('/arrow.png') no-repeat left 5px",
                         }}
-                        className="mb-6"
+                        className="mb-6 pl-[30px]"
                       >
                         <p>
                           <strong>Molecule Vitalization</strong> to fully
                           optimize the molecule’s potential
                         </p>
                       </li>
-                      <li className="mb-6">
-                        Innovation of New Treatments for niche markets with
-                        unmet therapeutic or diagnostic need
+                      <li
+                        style={{
+                          background: "url('/arrow.png') no-repeat left 5px",
+                        }}
+                        className="mb-6 pl-[30px]"
+                      >
+                        <p>
+                          Innovation of New Treatments for niche markets with
+                          unmet therapeutic or diagnostic need
+                        </p>
                       </li>
                     </ul>
                   </div>
@@ -94,10 +101,10 @@ export default function AboutUs() {
                 before:bg-[url('/aboutBannerWoman.jpeg')] before:bg-cover before:bg-center before:absolute before:right-0 before:left-0 before:top-0 before:bottom-0 before:content-[''] before:z-0 text-center before:opacity-50"
             >
               <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
-                <figure className="absolute top-[-20%]">
+                <figure className="hidden md:visible absolute top-[-20%]">
                   <img src="/frontPage-V.png"></img>
                 </figure>
-                <figure className="absolute bottom-[5%]">
+                <figure className="hidden md:visible absolute bottom-[5%]">
                   <img src="/frontPage-A.png"></img>
                 </figure>
               </div>
