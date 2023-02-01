@@ -107,20 +107,54 @@ export default function Bludigo() {
             <Image src={table} />
           </figure>
 
-          <section>
-            <h3 className="text-3xl md:text-5xl text-primary mb-16">
+          <section className="mb-8 md:mb-36 bg-secondary">
+            <h3 className="text-3xl md:text-5xl text-primary mb-16 md:w-3/5">
               Fast detection. Bludigo is excreted in the urine quickly.
             </h3>
             <figure className="md:flex md:w-2/3 md:mx-auto">
               <Image src={clock} />
-              <figcaption className="text-3xl">
+              <figcaption className="text-3xl md:ml-8">
                 After injection, the blue color at the ureteral orifices is
                 detectable within 4–9 minutes.
               </figcaption>
             </figure>
           </section>
-          <hr />
-
+          <hr className="mb-16" />
+          <section className="mb-16">
+            <p className="text-primary text-center mb-8 text-3xl font-bold">
+              Read the full prescribing information
+            </p>
+            <button className="bg-primary py-4 px-10 text-white text-xl">
+              LEARN MORE
+            </button>
+          </section>
+          <section className="md:flex justify-evenly">
+            <div className="bg-white p-8">
+              <h5 className="text-3xl text-primary mb-4">
+                Indications and Usage
+              </h5>
+              <a className="underline text-lg text-primary">
+                Click to read more
+              </a>
+            </div>
+            <div className="bg-white p-8">
+              <h5 className="text-3xl text-primary mb-4">
+                Product Information
+              </h5>
+              <a className="underline text-lg text-primary">
+                Click to read more
+              </a>
+            </div>
+          </section>
+          <section className="bg-primary md:flex p-10">
+            <p className="text-white text-4xl">
+              Learn more about Bludigo (indigotindisulfonate sodium injection,
+              USP){" "}
+            </p>
+            <button className="bg-white text-primary text-xl py-4 px-8">
+              CONTACT US
+            </button>
+          </section>
         </Container>
       </Main>
       <Footer />
