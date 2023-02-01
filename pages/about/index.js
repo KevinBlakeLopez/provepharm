@@ -65,9 +65,16 @@ export default function AboutUs() {
                     </h4>
 
                     <ul className="text-lg text-white">
-                      <li className="mb-6">
-                        <strong>Molecule Vitalization</strong> to fully optimize
-                        the molecule’s potential
+                      <li
+                        style={{
+                          background: "url('/arrow.png') no-repeat left 5px",
+                        }}
+                        className="mb-6"
+                      >
+                        <p>
+                          <strong>Molecule Vitalization</strong> to fully
+                          optimize the molecule’s potential
+                        </p>
                       </li>
                       <li className="mb-6">
                         Innovation of New Treatments for niche markets with
