@@ -9,23 +9,25 @@ export default function ISI({ importantsafetyinformation }) {
         expanded ? "top-[75px]" : ""
       } bottom-[-128px] md:bottom-[-45px] left-0 right-0 w-full z-50 transition-transform-[top 1s ease-in-out]`}
     >
-      <div className="flex justify-between bg-gray-600 text-zinc-100">
+      <div className="bg-gray-600 text-zinc-100 flex justify-end">
         <button
-          className="text-center text-xl font-bold py-4 px-2"
+          className="text-xl py-4 pr-24"
           onClick={() => setExpanded(!expanded)}
         >
-          {expanded ? "Minimize" : "Expand"}
+          {expanded
+            ? "Minimize Important Safety Information"
+            : "Read Important Safety Information"}
         </button>
-        <h5 className="text-center text-xl font-bold py-4">
+        {/* <h5 className="text-center text-xl font-bold py-4">
           Important Safety Information
-        </h5>
-        <button
+        </h5> */}
+        {/* <button
           className="text-center text-xl font-bold py-4 px-2"
           onClick={() => window.print()}
           //   https://www.npmjs.com/package/react-to-print
         >
           Print
-        </button>
+        </button> */}
       </div>
 
       <div className="flex justify-center">

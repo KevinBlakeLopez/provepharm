@@ -12,12 +12,12 @@ const Modal = ({ text, externalLink }) => {
   };
 
   return (
-    <div className="">
-      <button className="underline text-orange-500" onClick={openModal}>
+    <div className={isOpen ? "modal-open" : ""}>
+      <button className={isOpen ? "hidden" : "underline text-prescribingAnchor"} onClick={openModal}>
         {text}
       </button>
       {isOpen && (
-        <div className="z-20 backdrop-filter-none filter-none fixed top-[5%] left-[33%] max-w-[35%] max-h-80 ">
+        <div className="fixed top-[5%] sm:left-[12%] lg:left-[33%] md:max-w-[75%] lg:max-w-[35%] max-h-80 ">
           {/* <div className={isOpen ? "modal-open" : ""} /> */}
           <div className="bg-slate-400 p-4 rounded-md">
             <div className="">

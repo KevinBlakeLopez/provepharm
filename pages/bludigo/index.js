@@ -79,26 +79,24 @@ export default function Bludigo() {
               visualization when assessing ureter patency.
             </p>
             <div className="md:w-2/3 md:mx-auto">
-              <figure className="md:flex">
+              <figure className="md:flex mb-12">
                 <Image src={chart} />
-                <figcaption className="text-2xl pl-6">
+                <figcaption className="text-2xl ml-24">
                   83% of the ureter patency assessments in the Bludigo™ clinical
                   trial were reported as visualizing good or striking color
                   contrast in the ureter jet stream.
                 </figcaption>
               </figure>
               <figure className="md:flex">
-                <Image src={target} />
-                <div className="flex-col">
-                  <figcaption className="text-2xl pl-6">
+                <Image src={target} width={400} height={100} />
+                <div className="flex-col ml-24">
+                  <figcaption className="text-2xl">
                     In 90% of urologic and gynecologic surgical procedures
                     (N=49) in the Bludigo™ clinical trial, physicians agreed
                     that their ability to assess ureteral patency was improved
                     following the use of Bludigo™ compared to saline.
                   </figcaption>
-                  <p className="pl-6">
-                    Data on file PVP-19ICO1 clinical study report.
-                  </p>
+                  <p>Data on file PVP-19ICO1 clinical study report.</p>
                 </div>
               </figure>
             </div>
@@ -120,16 +118,16 @@ export default function Bludigo() {
             </figure>
           </section>
           <hr className="mb-16" />
-          <section className="mb-16">
-            <p className="text-primary text-center mb-8 text-3xl font-bold">
+          <section className="mb-16 text-center">
+            <p className="text-primary mb-8 text-3xl font-bold">
               Read the full prescribing information
             </p>
             <button className="bg-primary py-4 px-10 text-white text-xl">
               LEARN MORE
             </button>
           </section>
-          <section className="md:flex justify-evenly">
-            <div className="bg-white p-8">
+          <section className="md:flex justify-evenly mb-16">
+            <div className="bg-slate-400 p-8">
               <h5 className="text-3xl text-primary mb-4">
                 Indications and Usage
               </h5>
@@ -137,7 +135,7 @@ export default function Bludigo() {
                 Click to read more
               </a>
             </div>
-            <div className="bg-white p-8">
+            <div className="bg-slate-400 p-8">
               <h5 className="text-3xl text-primary mb-4">
                 Product Information
               </h5>
@@ -146,7 +144,7 @@ export default function Bludigo() {
               </a>
             </div>
           </section>
-          <section className="bg-primary md:flex p-10">
+          <section className="bg-primary md:flex p-10 lg:w-3/4 mx-auto mb-16">
             <p className="text-white text-4xl">
               Learn more about Bludigo (indigotindisulfonate sodium injection,
               USP){" "}

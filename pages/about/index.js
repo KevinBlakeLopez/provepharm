@@ -44,9 +44,9 @@ export default function AboutUs() {
         </div>
 
         <>
-          <Container size="md">
+          <Container size="sm">
             <div className="md:flex mb-10">
-              <div class="md:w-1/2 md: mb-20 mr-8">
+              <div class="mb-10 md:mb-0 md:w-1/2 md:flex md:flex-col md:justify-center md:pr-[60px] ">
                 <h3 className="text-6xl tracking-wider text-secondary font-extralight mb-8">
                   OUR MISSION
                 </h3>
@@ -60,7 +60,7 @@ export default function AboutUs() {
 
               <div className="md:w-1/2">
                 <div>
-                  <div className="bg-[#0c132a] bg-blend-soft-light bg-[url('/aboutMainBG.jpeg')] bg-cover opacity-[90] px-16 py-14 max-w-[630px]">
+                  <div className="bg-[#0c132a] bg-blend-soft-light bg-[url('/aboutMainBG.jpeg')] bg-cover opacity-[90] px-12 py-12 max-w-[630px]">
                     <h4 className="text-3xl text-tertiary mb-4">
                       Main Areas of Development
                     </h4>
@@ -95,21 +95,21 @@ export default function AboutUs() {
             </div>
           </Container>
 
-          <div id="third-way-banner" className="mb-12">
+          <div id="third-way-banner" className="mb-16 overflow-hidden">
             <div
               className="
                 relative bg-black flex justify-center items-center min-h-[500px]
                 before:bg-[url('/aboutBannerWoman.jpeg')] before:bg-cover before:bg-center before:absolute before:right-0 before:left-0 before:top-0 before:bottom-0 before:content-[''] before:z-0 text-center before:opacity-50"
             >
               <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
-                <figure className="hidden md:visible absolute top-[-20%]">
+                <figure className="hidden md:block absolute top-[-20%]">
                   <img src="/frontPage-V.png" />
                 </figure>
-                <figure className="hidden md:visible absolute bottom-[5%]">
+                <figure className="hidden md:block absolute bottom-[5%]">
                   <img src="/frontPage-A.png" />
                 </figure>
               </div>
-              <p className="z-10 text-3xl lg:text-[3.5rem] font-light leading-tight text-white tracking-wider py-12 px-8">
+              <p className="z-10 text-3xl lg:text-[3.5rem] font-light leading-tight text-white tracking-wider py-16 px-8">
                 PROVEPHARM IS AN INTERNATIONAL,
                 <br /> PRIVATE, PHARMACEUTICAL
                 <br /> COMPANY WITH A GLOBAL PRESENCE
@@ -118,9 +118,9 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <Container padding="py-0 px-10" margin="mb-10" size="sm">
-            <div className="md:flex justify-between items-center text-lg text-primary">
-              <div className="md:w-1/2 mr-8">
+          <Container padding="py-0 px-10" margin="mb-16" size="sm">
+            <div className="md:flex justify-between text-lg text-primary">
+              <div className="md:w-1/2 md:mr-8">
                 <p className="mb-8">
                   At Provepharm, we innovate in order to understand each
                   molecule's full potential, to provide treatments that help
@@ -180,11 +180,11 @@ export default function AboutUs() {
               </figure>
             </div>
             <div className="bg-secondary text-white font-light md:order-1 md:w-1/2">
-              <section className="md:max-w-[543px] md:float-right p-10 -mt-2">
+              <section className="md:max-w-[543px] md:float-right md:py-20 py-14 px-14 md:pl-0 -mt-2">
                 <h3 className="text-3xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
-                  PRODUCTS <br className="hidden md:visible" />
-                  THAT MAKE A <br className="hidden md:visible" />
-                  DIFFERENCE IN <br className="hidden md:visible" />
+                  PRODUCTS <br className="hidden md:block" />
+                  THAT MAKE A <br className="hidden md:block" />
+                  DIFFERENCE IN <br className="hidden md:block" />
                   PEOPLE'S LIVES
                 </h3>
 
@@ -202,8 +202,11 @@ export default function AboutUs() {
 
           <Container>
             <div className="md:flex justify-between text-lg text-primary">
-              <div className="md:w-5/12">
-                <div className="mb-10">
+              <div
+                className="px-3 timeline-graphic md:w-1/2 relative 
+                before:absolute before:content-[''] before:top-0 before:bottom-0 before:right-0 before:w-1"
+              >
+                <div className="mb-10 pr-4">
                   <h3 className="text-6xl mb-6 tracking-wider text-secondary font-extralight">
                     OUR HISTORY
                   </h3>
@@ -276,8 +279,7 @@ export default function AboutUs() {
                   </p>
                 </div>
               </div>
-
-              <div className="md:w-5/12">
+              <div className="px-3 md:w-1/2 relative">
                 <figure className="mb-8">
                   <Image src={microscope} />
                 </figure>
@@ -315,12 +317,10 @@ export default function AboutUs() {
 
                   <p className="mb-8">
                     Provepharm obtained FDA approval to commercialize{" "}
-                    <a
-                      href="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
-                      className="underline text-prescribingAnchor"
-                    >
-                      ProvayBlue®, (injectable methylene blue).
-                    </a>
+                    <Modal
+                      text="ProvayBlue®, (injectable methylene blue)."
+                      externalLink="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
+                    />
                   </p>
                 </div>
 

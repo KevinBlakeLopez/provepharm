@@ -3,6 +3,7 @@ import * as MENUS from "../constants/menus";
 import { BlogInfoFragment } from "../fragments/GeneralSettings";
 import { Header, Footer, Main, NavigationMenu, Hero, SEO } from "../components";
 import Container from "../components/Container";
+import Modal from "../components/Modal";
 import Image from "next/image";
 import frontPageBanner from "../public/frontPageBanner.jpeg";
 import aboutMainBG from "../public/aboutMainBG.jpeg";
@@ -166,14 +167,14 @@ export default function Component() {
             <div id="third-way-banner" className="mb-12">
               <div className="relative bg-black flex justify-center items-center min-h-[500px] before:bg-[url('/aboutBannerWoman.jpeg')] before:bg-cover before:bg-center before:absolute before:right-0 before:left-0 before:top-0 before:bottom-0 before:content-[''] before:z-0 text-center before:opacity-50">
                 <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
-                  <figure className="hidden md:visible absolute top-[20%]">
+                  <figure className="hidden md:block absolute top-[20%]">
                     <img src="/frontPage-V.png" />
                   </figure>
-                  <figure className="hidden md:visible absolute bottom-[5%]">
+                  <figure className="hidden md:block absolute bottom-[5%]">
                     <img src="/frontPage-A.png" />
                   </figure>
                 </div>
-                <p className="z-10 text-3xl lg:text-[3.5rem] text-white font-light leading-tight tracking-wider py-12 px-8 ">
+                <p className="z-10 text-3xl lg:text-[3.5rem] text-white font-light leading-tight tracking-wider py-16 px-8 ">
                   PROVEPHARM IS AN INTERNATIONAL,
                   <br /> PRIVATE, PHARMACEUTICAL
                   <br /> COMPANY WITH A GLOBAL PRESENCE
@@ -183,7 +184,7 @@ export default function Component() {
             </div>
 
             <Container padding="py-0 px-10" margin="mb-10" size="sm">
-              <div className="md:flex justify-between items-center text-xl text-primary">
+              <div className="md:flex justify-between text-xl text-primary">
                 <div className="md:w-1/2 mr-8">
                   <p className="mb-8">
                     At Provepharm, we innovate in order to understand each
@@ -378,12 +379,10 @@ export default function Component() {
 
                     <p className="mb-8">
                       Provepharm obtained FDA approval to commercialize{" "}
-                      <a
-                        href="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
-                        className="underline text-prescribingAnchor"
-                      >
-                        ProvayBlue®, (injectable methylene blue).
-                      </a>
+                      <Modal
+                        text="ProvayBlue®, (injectable methylene blue)."
+                        externalLink="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
+                      />
                     </p>
                   </div>
 
