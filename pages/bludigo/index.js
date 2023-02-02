@@ -2,18 +2,21 @@ import { useQuery, gql } from "@apollo/client";
 import * as MENUS from "../../constants/menus";
 import { BlogInfoFragment } from "../../fragments/GeneralSettings";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Header,
   Footer,
   Main,
   NavigationMenu,
   Hero,
+  Modal,
   SEO,
 } from "../../components";
 import bludigoProduct from "../../public/bludigo_product_image.png";
 import videoThumbnail from "../../public/video_thumbnail.png";
 import doctorsStock from "../../public/bludigo_doctors_stock.jpeg";
 import Container from "../../components/Container";
+import ISI from "../../components/ISI";
 import chart from "../../public/chart_icon_2x.png";
 import clock from "../../public/clock_icon_2x.png";
 import target from "../../public/target_icon_2x.png";
@@ -61,7 +64,7 @@ export default function Bludigo() {
           </Container>
         </div>
         <section className="lg:flex mb-20">
-          <div className="bg-gradient-to-r from-primary to-secondary lg:w-5/12 text-white md:px-32 md:py-28">
+          <div className="bg-primary lg:w-5/12 text-white md:px-32 md:py-28">
             <h3 className="text-6xl pb-12">Not just any blue dye.</h3>
             <p className="text-2xl">
               Bludigo™ is a diagnostic dye indicated for use as a visualization
@@ -76,29 +79,31 @@ export default function Bludigo() {
         </section>
 
         <section className="mb-20">
-          <p className="text-3xl md:text-5xl text-primary md:w-2/3 ml-24 pb-16">
+          <p className="text-3xl md:text-5xl text-primary md:w-2/3 ml-32 pb-16">
             Bludigo has a deep blue color that significantly aids visualization
             when assessing ureter patency.
           </p>
           <div className="md:w-2/3 md:mx-auto">
             <figure className="md:flex mb-12">
               <Image src={chart} />
-              <figcaption className="text-2xl ml-24">
+              <figcaption className="text-2xl text-primary ml-24">
                 83% of the ureter patency assessments in the Bludigo™ clinical
                 trial were reported as visualizing good or striking color
                 contrast in the ureter jet stream.
               </figcaption>
             </figure>
             <figure className="md:flex">
-              <Image src={target} width={400} height={100} />
+              <Image src={target} width={240} />
               <div className="flex-col ml-24">
-                <figcaption className="text-2xl">
+                <figcaption className="text-2xl text-primary">
                   In 90% of urologic and gynecologic surgical procedures (N=49)
                   in the Bludigo™ clinical trial, physicians agreed that their
                   ability to assess ureteral patency was improved following the
                   use of Bludigo™ compared to saline.
                 </figcaption>
-                <p>Data on file PVP-19ICO1 clinical study report.</p>
+                <p className="text-primary">
+                  Data on file PVP-19ICO1 clinical study report.
+                </p>
               </div>
             </figure>
           </div>
@@ -109,8 +114,8 @@ export default function Bludigo() {
           </figure>
         </Container>
 
-        <section className="py-36 bg-gradient-to-r from-primary to-secondary">
-          <h3 className="text-3xl md:text-5xl text-white mb-16 ml-24 md:w-3/5">
+        <section className="py-36 bg-primary">
+          <h3 className="text-3xl md:text-5xl text-white mb-16 ml-32 md:w-3/5">
             Fast detection. Bludigo is excreted in the urine quickly.
           </h3>
           <figure className="md:flex md:w-2/3 md:mx-auto">
@@ -123,12 +128,16 @@ export default function Bludigo() {
         </section>
         <hr className="mb-16" />
         <section className="mb-16 text-center">
-          <p className="text-primary mb-8 text-3xl font-bold">
+          <p className="mb-8 text-3xl font-bold">
             Read the full prescribing information
           </p>
-          <button className="bg-primary py-4 px-10 text-white text-xl">
+          <a
+            className="bg-primary py-4 px-10 text-white text-xl"
+            href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
+          >
             LEARN MORE
-          </button>
+          </a>
+          
         </section>
         <section className="md:flex justify-evenly mb-16">
           <div className="bg-primary p-8">
@@ -140,14 +149,16 @@ export default function Bludigo() {
             <a className="underline text-lg text-white">Click to read more</a>
           </div>
         </section>
-        <section className="bg-primary md:flex p-10 lg:w-3/4 mx-auto mb-16">
+        <section className="bg-primary md:flex items-center p-10 lg:w-3/4 mx-auto mb-16">
           <p className="text-white text-4xl">
             Learn more about Bludigo (indigotindisulfonate sodium injection,
             USP){" "}
           </p>
-          <button className="bg-white text-primary text-xl py-4 px-8">
-            CONTACT US
-          </button>
+          <Link href="/contact">
+            <a className="bg-white text-primary text-xl ml-12 py-4 px-8 h-14 min-w-[13rem]">
+              CONTACT US
+            </a>
+          </Link>
         </section>
       </Main>
       <Footer />
