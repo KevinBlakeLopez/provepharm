@@ -34,12 +34,10 @@ export default function Bludigo() {
       <Main>
         <section
           id="hero"
-          className="bg-primary h-[400px] md:h-[80vh] text-white md:flex items-center"
+          className="bg-gradient-to-br from-primary to-secondary h-[400px] md:h-[80vh] text-white md:flex items-center"
         >
           <div className="md:px-32">
-            <p className="text-secondary text-3xl lg:text-8xl pb-6">
-              See the difference.
-            </p>
+            <p className="text-3xl lg:text-8xl pb-6">See the difference.</p>
             <h1 className="text-xl">
               Bludigo™ <br /> (indigotindisulfonate sodium injection, USP)
             </h1>
@@ -48,20 +46,22 @@ export default function Bludigo() {
             <Image src={bludigoProduct} />
           </figure>
         </section>
-        <Container>
-          <section id="video-section" className="text-primary md:my-20">
-            <h2 className="text-3xl md:pb-12">
-              Introducing Bludigo™ (indigotindisulfonate sodium injection, USP)
-              the first and only FDA-approved injectable indigo carmine
-              diagnostic dye.
-            </h2>
-            <figure>
-              <Image src={videoThumbnail} />
-            </figure>
-          </section>
-        </Container>
-        <section className="md:flex mb-20">
-          <div className="bg-primary md:w-5/12 text-white md:px-32 md:py-28">
+        <div className="">
+          <Container>
+            <section id="video-section" className="text-primary md:my-20">
+              <h2 className="text-3xl md:pb-12">
+                Introducing Bludigo™ (indigotindisulfonate sodium injection,
+                USP) the first and only FDA-approved injectable indigo carmine
+                diagnostic dye.
+              </h2>
+              <figure>
+                <Image src={videoThumbnail} />
+              </figure>
+            </section>
+          </Container>
+        </div>
+        <section className="lg:flex mb-20">
+          <div className="bg-gradient-to-r from-primary to-secondary lg:w-5/12 text-white md:px-32 md:py-28">
             <h3 className="text-6xl pb-12">Not just any blue dye.</h3>
             <p className="text-2xl">
               Bludigo™ is a diagnostic dye indicated for use as a visualization
@@ -70,92 +70,85 @@ export default function Bludigo() {
               endoscopic surgical procedures.{" "}
             </p>
           </div>
-          <figure className="md:w-7/12">
+          <figure className="lg:w-7/12">
             <Image src={doctorsStock} />
           </figure>
         </section>
-        <Container size="lg">
-          <section className="mb-20">
-            <p className="text-3xl md:text-5xl text-primary md:w-2/3 pb-16">
-              Bludigo has a deep blue color that significantly aids
-              visualization when assessing ureter patency.
-            </p>
-            <div className="md:w-2/3 md:mx-auto">
-              <figure className="md:flex mb-12">
-                <Image src={chart} />
-                <figcaption className="text-2xl ml-24">
-                  83% of the ureter patency assessments in the Bludigo™ clinical
-                  trial were reported as visualizing good or striking color
-                  contrast in the ureter jet stream.
-                </figcaption>
-              </figure>
-              <figure className="md:flex">
-                <Image src={target} width={400} height={100} />
-                <div className="flex-col ml-24">
-                  <figcaption className="text-2xl">
-                    In 90% of urologic and gynecologic surgical procedures
-                    (N=49) in the Bludigo™ clinical trial, physicians agreed
-                    that their ability to assess ureteral patency was improved
-                    following the use of Bludigo™ compared to saline.
-                  </figcaption>
-                  <p>Data on file PVP-19ICO1 clinical study report.</p>
-                </div>
-              </figure>
-            </div>
-          </section>
-          <figure className="mb-20">
-            <Image src={table} />
-          </figure>
 
-          <section className="mb-8 md:mb-36 bg-secondary">
-            <h3 className="text-3xl md:text-5xl text-primary mb-16 md:w-3/5">
-              Fast detection. Bludigo is excreted in the urine quickly.
-            </h3>
-            <figure className="md:flex md:w-2/3 md:mx-auto">
-              <Image src={clock} />
-              <figcaption className="text-3xl md:ml-8">
-                After injection, the blue color at the ureteral orifices is
-                detectable within 4–9 minutes.
+        <section className="mb-20">
+          <p className="text-3xl md:text-5xl text-primary md:w-2/3 ml-24 pb-16">
+            Bludigo has a deep blue color that significantly aids visualization
+            when assessing ureter patency.
+          </p>
+          <div className="md:w-2/3 md:mx-auto">
+            <figure className="md:flex mb-12">
+              <Image src={chart} />
+              <figcaption className="text-2xl ml-24">
+                83% of the ureter patency assessments in the Bludigo™ clinical
+                trial were reported as visualizing good or striking color
+                contrast in the ureter jet stream.
               </figcaption>
             </figure>
-          </section>
-          <hr className="mb-16" />
-          <section className="mb-16 text-center">
-            <p className="text-primary mb-8 text-3xl font-bold">
-              Read the full prescribing information
-            </p>
-            <button className="bg-primary py-4 px-10 text-white text-xl">
-              LEARN MORE
-            </button>
-          </section>
-          <section className="md:flex justify-evenly mb-16">
-            <div className="bg-slate-400 p-8">
-              <h5 className="text-3xl text-primary mb-4">
-                Indications and Usage
-              </h5>
-              <a className="underline text-lg text-primary">
-                Click to read more
-              </a>
-            </div>
-            <div className="bg-slate-400 p-8">
-              <h5 className="text-3xl text-primary mb-4">
-                Product Information
-              </h5>
-              <a className="underline text-lg text-primary">
-                Click to read more
-              </a>
-            </div>
-          </section>
-          <section className="bg-primary md:flex p-10 lg:w-3/4 mx-auto mb-16">
-            <p className="text-white text-4xl">
-              Learn more about Bludigo (indigotindisulfonate sodium injection,
-              USP){" "}
-            </p>
-            <button className="bg-white text-primary text-xl py-4 px-8">
-              CONTACT US
-            </button>
-          </section>
+            <figure className="md:flex">
+              <Image src={target} width={400} height={100} />
+              <div className="flex-col ml-24">
+                <figcaption className="text-2xl">
+                  In 90% of urologic and gynecologic surgical procedures (N=49)
+                  in the Bludigo™ clinical trial, physicians agreed that their
+                  ability to assess ureteral patency was improved following the
+                  use of Bludigo™ compared to saline.
+                </figcaption>
+                <p>Data on file PVP-19ICO1 clinical study report.</p>
+              </div>
+            </figure>
+          </div>
+        </section>
+        <Container size="md">
+          <figure className="">
+            <Image src={table} />
+          </figure>
         </Container>
+
+        <section className="py-36 bg-gradient-to-r from-primary to-secondary">
+          <h3 className="text-3xl md:text-5xl text-white mb-16 ml-24 md:w-3/5">
+            Fast detection. Bludigo is excreted in the urine quickly.
+          </h3>
+          <figure className="md:flex md:w-2/3 md:mx-auto">
+            <Image src={clock} />
+            <figcaption className="text-3xl text-white md:ml-8">
+              After injection, the blue color at the ureteral orifices is
+              detectable within 4–9 minutes.
+            </figcaption>
+          </figure>
+        </section>
+        <hr className="mb-16" />
+        <section className="mb-16 text-center">
+          <p className="text-primary mb-8 text-3xl font-bold">
+            Read the full prescribing information
+          </p>
+          <button className="bg-primary py-4 px-10 text-white text-xl">
+            LEARN MORE
+          </button>
+        </section>
+        <section className="md:flex justify-evenly mb-16">
+          <div className="bg-primary p-8">
+            <h5 className="text-3xl text-white mb-4">Indications and Usage</h5>
+            <a className="underline text-lg text-white">Click to read more</a>
+          </div>
+          <div className="bg-primary p-8">
+            <h5 className="text-3xl text-white mb-4">Product Information</h5>
+            <a className="underline text-lg text-white">Click to read more</a>
+          </div>
+        </section>
+        <section className="bg-primary md:flex p-10 lg:w-3/4 mx-auto mb-16">
+          <p className="text-white text-4xl">
+            Learn more about Bludigo (indigotindisulfonate sodium injection,
+            USP){" "}
+          </p>
+          <button className="bg-white text-primary text-xl py-4 px-8">
+            CONTACT US
+          </button>
+        </section>
       </Main>
       <Footer />
     </>
