@@ -37,7 +37,9 @@ export default function Bludigo() {
           className="bg-primary h-[400px] md:h-[80vh] text-white md:flex items-center"
         >
           <div className="md:px-32">
-            <p className="text-3xl lg:text-8xl pb-6">See the difference.</p>
+            <p className="text-secondary text-3xl lg:text-8xl pb-6">
+              See the difference.
+            </p>
             <h1 className="text-xl">
               Bludigo™ <br /> (indigotindisulfonate sodium injection, USP)
             </h1>

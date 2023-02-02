@@ -105,3 +105,14 @@ html {
   border-radius: 50%;
   content: "";
 }
+
+.dot .in-box::before {
+  position: absolute;
+  width: 20px;
+  right: -10px;
+  top: -10px;
+  height: 20px;
+  background-color: #0070ba;
+  border-radius: 50%;
+  content: "";
+}

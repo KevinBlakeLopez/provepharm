@@ -267,9 +267,11 @@ export default function Component() {
 
             <Container>
               <div className="md:flex justify-between text-xl text-primary font-light">
-                <div className="md:w-5/12">
-                  <div className="mb-24">
-                    <h3 className="text-6xl mb-6">OUR HISTORY</h3>
+                <div className="md:w-1/2 dot-left timeline-graphic relative before:absolute before:content-[''] before:top-0 before:bottom-0 before:right-0 before:w-[2px]">
+                  <div className="mb-8 in-box">
+                    <h3 className="text-6xl mb-6 text-secondary">
+                      OUR HISTORY
+                    </h3>
 
                     <p>
                       Driven by an entrepreneurial spirit, privately-owned,
@@ -281,12 +283,12 @@ export default function Component() {
                     </p>
                   </div>
 
-                  <div>
+                  <div className="in-box">
                     <figure className="mb-6">
                       <Image src={blueDye} />
                     </figure>
 
-                    <p className="mb-24">
+                    <p className="mb-8">
                       Provence Technologies launched several internal research
                       programs, including a process patented in 2006, by
                       co-inventors Michel Feraud and Babak Sayah, for the
@@ -298,15 +300,15 @@ export default function Component() {
                     </p>
                   </div>
 
-                  <div className="">
-                    <figure className="mb-10">
+                  <div className="in-box">
+                    <figure className="mb-8">
                       <Image src={MF} />
                       <figcaption className="text-base text-center">
                         Michel Feraud, Founder CEO
                       </figcaption>
                     </figure>
 
-                    <p className="mb-24">
+                    <p className="mb-8">
                       Provepharm, acquires a company specialized in the chemical
                       synthesis of peptides and proteins for therapeutic use.
                       This is the first merger and acquisition operation opening
@@ -314,14 +316,15 @@ export default function Component() {
                       of biological pharmaceutical products.
                     </p>
                   </div>
+                  <div className="in-box">
+                    <p className="mb-8">
+                      Provepharm Life Solutions launches its new brand identity
+                      with the addition of multiple healthcare professionals
+                      joining the management team and executive board.{" "}
+                    </p>
+                  </div>
 
-                  <p className="mb-10">
-                    Provepharm Life Solutions launches its new brand identity
-                    with the addition of multiple healthcare professionals
-                    joining the management team and executive board.{" "}
-                  </p>
-
-                  <div>
+                  <div className="in-box">
                     <figure className="mb-6">
                       <Image src={allEmployees} />
                     </figure>
@@ -340,27 +343,28 @@ export default function Component() {
                     </p>
                   </div>
                 </div>
+                <div className="dot-right md:w-1/2 relative">
+                  <div className="in-box">
+                    <figure className="mb-8">
+                      <Image src={microscope} />
+                    </figure>
 
-                <div className="md:w-5/12">
-                  <figure className="mb-8">
-                    <Image src={microscope} />
-                  </figure>
-
-                  <div>
-                    <p className="mb-8">
-                      The early years: Michel Feraud, president, and founder,
-                      initially launched the company as “Provence Technologies”,
-                      a research and development chemistry laboratory, together
-                      with co-founder and friend Christophe Baralotto. The
-                      company operated as a contract research organization for
-                      international pharmaceutical, cosmetic, and agrochemical
-                      groups. Provence Technologies built its reputation by
-                      designing innovative molecule synthesis pathways and
-                      precise analytical methods, characterizing such products.
-                    </p>
+                    <div>
+                      <p className="mb-8">
+                        The early years: Michel Feraud, president, and founder,
+                        initially launched the company as “Provence
+                        Technologies”, a research and development chemistry
+                        laboratory, together with co-founder and friend
+                        Christophe Baralotto. The company operated as a contract
+                        research organization for international pharmaceutical,
+                        cosmetic, and agrochemical groups. Provence Technologies
+                        built its reputation by designing innovative molecule
+                        synthesis pathways and precise analytical methods,
+                        characterizing such products.
+                      </p>
+                    </div>
                   </div>
-
-                  <div>
+                  <div className="in-box">
                     <p className="mb-8">
                       Provepharm obtained a centralized marketing authorization
                       from EMA paving the way for the{" "}
@@ -372,7 +376,7 @@ export default function Component() {
                     </p>
                   </div>
 
-                  <div>
+                  <div className="in-box">
                     <figure className="mb-8">
                       <Image src={provayblue} />
                     </figure>
@@ -386,7 +390,7 @@ export default function Component() {
                     </p>
                   </div>
 
-                  <div>
+                  <div className="in-box">
                     <figure className="mb-8">
                       <Image src={lab2} />
                     </figure>
@@ -400,14 +404,15 @@ export default function Component() {
                       .
                     </p>
                   </div>
-
-                  <p>
-                    Thanks to its solid financial structure, Provepharm Life
-                    Solutions continues to diligently develop and seek out unmet
-                    needs in the therapeutics and diagnostics area within the
-                    healthcare market to improve the quality of life for each
-                    patient it serves worldwide.
-                  </p>
+                  <div className="in-box">
+                    <p>
+                      Thanks to its solid financial structure, Provepharm Life
+                      Solutions continues to diligently develop and seek out
+                      unmet needs in the therapeutics and diagnostics area
+                      within the healthcare market to improve the quality of
+                      life for each patient it serves worldwide.
+                    </p>
+                  </div>
                 </div>
               </div>
             </Container>
