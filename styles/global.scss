@@ -75,3 +75,33 @@ html {
 .timeline-graphic::before {
   background: url("/dashed.png") repeat-y top left;
 }
+
+.dot-right .in-box {
+  @apply border-t-secondary border-t-[1px] relative p-14;
+}
+
+.dot-left .in-box {
+  @apply border-t-secondary border-t-[1px] relative p-14;
+}
+
+.dot-right .in-box::before {
+  position: absolute;
+  width: 20px;
+  left: -10px;
+  top: -10px;
+  height: 20px;
+  background-color: #0070ba;
+  border-radius: 50%;
+  content: "";
+}
+
+.dot-left .in-box::before {
+  position: absolute;
+  width: 20px;
+  right: -10px;
+  top: -10px;
+  height: 20px;
+  background-color: #0070ba;
+  border-radius: 50%;
+  content: "";
+}
