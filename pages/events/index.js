@@ -24,7 +24,7 @@ export default function Events() {
           ({ id, title, excerpt, date, featuredImage, slug }) => (
             <div className="md:flex md:items-center mb-10" key={id}>
               {featuredImage ? (
-                <div className="max-w-[400px] mr-48">
+                <div className="max-w-[386px] mr-48">
                   <Image
                     width="2800"
                     height="600"
