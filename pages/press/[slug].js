@@ -61,7 +61,7 @@ export default function PressRelease() {
     <>
       <Header menuItems={data.headerMenuItems} />
       {/* <Banner>Press Releases</Banner> */}
-      <Container size="md">
+      <Container size="xxs">
         <SinglePostTemplate data={pressRelease} />
       </Container>
 

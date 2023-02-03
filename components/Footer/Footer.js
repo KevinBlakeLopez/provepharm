@@ -44,7 +44,7 @@ export default function Footer({ disclaimer }) {
                 </Link>
               </li>
               <li className="mb-3">
-                <Link className="" href="/posts">
+                <Link className="" href="/news">
                   News
                 </Link>
               </li>

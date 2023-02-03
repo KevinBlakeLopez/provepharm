@@ -72,7 +72,7 @@ export default function Header({ menuItems }) {
                   <Link href="/press">Press Releases</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
-                  <Link href="/posts">News</Link>
+                  <Link href="/news">News</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
                   <Link href="/events">Events</Link>

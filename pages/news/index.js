@@ -1,44 +1,46 @@
 import { getNextStaticProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client";
+import Image from "next/image";
+import Link from "next/link";
 import Container from "../../components/Container";
+import { gql, useQuery } from "@apollo/client";
 import Banner from "../../components/Banner";
 import AllPostsTemplate from "../../components/AllPostsTemplate";
 import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
-import Image from "next/image";
-import Link from "next/link";
 
-export default function PressReleases() {
-  const { loading, error, data } = useQuery(PressReleases.query);
+export default function Posts() {
+  const { data, loading, error } = useQuery(Posts.query);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) {
+    return <></>;
+  }
+
   if (error) return <p>Error</p>;
 
   return (
     <>
       <Header menuItems={data.headerMenuItems} />
-      <Banner>Press Releases</Banner>
+      <Banner>News</Banner>
       <Container size="sm">
-        <AllPostsTemplate data={data.pressReleases} route="press" />
+        <AllPostsTemplate data={data.posts} route="news" />
       </Container>
       <Footer />
     </>
   );
 }
 
-PressReleases.query = gql`
+Posts.query = gql`
   ${NavigationMenu.fragments.entry}
-  query AllPressReleases($headerLocation: MenuLocationEnum) {
-    pressReleases(first: 200) {
+  query Posts($headerLocation: MenuLocationEnum) {
+    posts(first: 10) {
       nodes {
-        slug
-        id
+        date
         title
         excerpt
-        date
-        dateGmt
+        slug
         featuredImage {
           node {
+            id
             mediaItemUrl
             mediaDetails {
             width
@@ -56,7 +58,7 @@ PressReleases.query = gql`
   }
 `;
 
-PressReleases.variables = () => {
+Posts.variables = () => {
   return {
     headerLocation: MENUS.PRIMARY_LOCATION,
   };
@@ -64,7 +66,7 @@ PressReleases.variables = () => {
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
-    Page: PressReleases,
+    Page: Posts,
     revalidate: 1,
   });
 }

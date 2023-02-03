@@ -1,5 +1,6 @@
 function Container({ margin, padding, size, children }) {
   const sizeMap = {
+    xxs: "max-w-[700px]",
     xs: "max-w-[800px]",
     sm: "max-w-[1000px]",
     md: "max-w-[1100px]",

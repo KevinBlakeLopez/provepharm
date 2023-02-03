@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-const Modal = ({ text, externalLink }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Modal = ({ text, externalLink, open }) => {
+  console.log(4, open);
+  const [isOpen, setIsOpen] = useState(open ? true : false);
+  useEffect(() => {
+    setIsOpen(open);
+  }, [open]);
 
   const openModal = () => {
     setIsOpen(true);
@@ -13,7 +17,10 @@ const Modal = ({ text, externalLink }) => {
 
   return (
     <div className={isOpen ? "modal-open" : ""}>
-      <button className={isOpen ? "hidden" : "underline text-prescribingAnchor"} onClick={openModal}>
+      <button
+        className={isOpen ? "hidden" : "underline text-prescribingAnchor"}
+        onClick={openModal}
+      >
         {text}
       </button>
       {isOpen && (

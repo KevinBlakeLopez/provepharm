@@ -51,12 +51,40 @@ html {
   @apply ml-4;
 }
 
-.post-content > * {
+// Post Content
+.post-content a {
+  @apply text-secondary underline;
+}
+
+.post-content h2 {
+  @apply text-lg mt-1 mb-4 font-bold;
+}
+
+.post-content h3 {
+  @apply text-lg mt-1 mb-4 font-bold;
+}
+
+.post-content h4 {
+  @apply mt-3 mb-1 font-bold;
+}
+
+.post-content p {
   @apply mb-4;
 }
 
-// People Live Banner`
+.post-content ul {
+  @apply mb-4 list-disc;
+}
 
+.post-content ol {
+  @apply mb-4 list-decimal;
+}
+
+.post-content strong {
+  @apply font-semibold;
+}
+
+// People Live Banner`
 #people-lives-banner {
   @apply relative;
 }
