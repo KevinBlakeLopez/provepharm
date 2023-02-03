@@ -260,7 +260,7 @@ export default function AboutUs() {
                     with the addition of multiple healthcare professionals
                     joining the management team and executive board.{" "}
                   </p>
-                  <figure className="mb-6">
+                  <figure className="">
                     <Image src={allEmployees} />
                   </figure>
                 </div>

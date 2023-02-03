@@ -66,6 +66,9 @@ export default function Header({ menuItems }) {
                   <Link href="/products">Products</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
+                  <Link href="/bludigo">Bludigo™</Link>
+                </li>
+                <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">
                   <Link href="/press">Press Releases</Link>
                 </li>
                 <li className="text-lg md:text-base mb-3 md:mb-0 md:mr-4">

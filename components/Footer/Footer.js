@@ -34,6 +34,11 @@ export default function Footer({ disclaimer }) {
                 </Link>
               </li>
               <li className="mb-3">
+                <Link className="" href="/bludigo">
+                  Bludigo™
+                </Link>
+              </li>
+              <li className="mb-3">
                 <Link className="ted" href="/press-releases">
                   Press Releases
                 </Link>
