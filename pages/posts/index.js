@@ -6,7 +6,6 @@ import { gql, useQuery } from "@apollo/client";
 import Banner from "../../components/Banner";
 import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
-
 export default function Posts() {
   const { data, loading } = useQuery(Posts.query);
 
@@ -24,8 +23,8 @@ export default function Posts() {
             {featuredImage ? (
               <div className="max-w-[278px] max-h-[278px] mr-16">
                 <Image
-                  width="600"
-                  height="600"
+                  width={featuredImage.node.mediaDetails.width}
+                  height={featuredImage.node.mediaDetails.height}
                   src={featuredImage.node.mediaItemUrl}
                 />
               </div>
@@ -72,6 +71,10 @@ Posts.query = gql`
           node {
             id
             mediaItemUrl
+            mediaDetails {
+            width
+            height
+          }
           }
         }
       }
