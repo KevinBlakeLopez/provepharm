@@ -61,7 +61,7 @@ export default function Bludigo() {
           </Container>
         </div>
         <section className="lg:flex mb-20">
-          <div className="bg-gradient-to-r from-primary to-secondary lg:w-5/12 text-white md:px-32 md:py-28">
+          <div className="bg-primary lg:w-5/12 text-white md:px-32 md:py-28">
             <h3 className="text-6xl pb-12">Not just any blue dye.</h3>
             <p className="text-2xl">
               Bludigo™ is a diagnostic dye indicated for use as a visualization
@@ -109,7 +109,7 @@ export default function Bludigo() {
           </figure>
         </Container>
 
-        <section className="py-36 bg-gradient-to-r from-primary to-secondary">
+        <section className="py-36 bg-primary">
           <h3 className="text-3xl md:text-5xl text-white mb-16 ml-24 md:w-3/5">
             Fast detection. Bludigo is excreted in the urine quickly.
           </h3>
