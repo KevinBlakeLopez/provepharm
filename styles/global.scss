@@ -55,6 +55,8 @@ html {
   @apply mb-4;
 }
 
+// People Live Banner`
+
 #people-lives-banner {
   @apply relative;
 }
@@ -72,16 +74,18 @@ html {
   clip-path: polygon(0 0, 0% 100%, 100% 0);
 }
 
+// TimeLine
+
 .timeline-graphic::before {
   background: url("/dashed.png") repeat-y top left;
 }
 
 .dot-right .in-box {
-  @apply border-t-secondary border-t-[1px] relative p-14;
+  @apply border-t-secondary border-t-[1px] relative py-14 pl-14;
 }
 
 .dot-left .in-box {
-  @apply border-t-secondary border-t-[1px] relative p-14;
+  @apply border-t-secondary border-t-[1px] relative py-14 pr-14;
 }
 
 .dot-right .in-box::before {
@@ -106,13 +110,21 @@ html {
   content: "";
 }
 
-.dot .in-box::before {
-  position: absolute;
-  width: 20px;
-  right: -10px;
-  top: -10px;
-  height: 20px;
-  background-color: #0070ba;
-  border-radius: 50%;
-  content: "";
+@media screen and (max-width: 768px) {
+  .dot-right::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    background: url(/dashed.png) repeat-y top left;
+  }
+  .dot-right .in-box {
+    @apply border-t-secondary border-t-[1px] relative py-14 pl-0 pr-14;
+  }
+  .dot-right .in-box::before {
+    left: auto;
+    right: -9px;
+  }
 }

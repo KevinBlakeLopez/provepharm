@@ -247,6 +247,16 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">Gluten Free </p>
                   <p className="">{product.glutenFree ? "yes" : "no"}</p>
                 </li>
+                {product.closuresize ? 
+                <li className="flex justify-between">
+                <p className="font-medium text-lg mb-4">Closure Size </p>
+                <p className="">{product.closuresize}</p>
+              </li> : ""}
+                {product.containersize ? 
+                <li className="flex justify-between">
+                <p className="font-medium text-lg mb-4">Container Size </p>
+                <p className="">{product.containersize}</p>
+              </li> : ""}
                 <br />
                 <li className="flex justify-between">
                   <p className="mb-4">ITEM CODES</p>

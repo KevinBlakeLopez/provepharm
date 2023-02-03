@@ -34,7 +34,7 @@ export default function AboutUs() {
       <Header menuItems={data.headerMenuItems} />
       <Main>
         <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[80vh] text-white mb-10 flex items-center">
-          <h2 className="pl-8 md:pl-64 text-2xl md:text-7xl font-semibold md:font-extralight tracking-wider">
+          <h2 className="pl-8 md:pl-64 text-2xl md:text-7xl font-semibold md:font-extralight tracking-wide">
             CONNECTING <br />
             HEALTHCARE
             <br /> PROVIDERS <br />
@@ -171,7 +171,7 @@ export default function AboutUs() {
             </div>
           </Container>
 
-          <div id="people-lives-banner" className="md:flex mb-10">
+          <div id="people-lives-banner" className="md:flex mb-44">
             <div id="people-lives-image" className=" md:order-2 md:w-1/2">
               <figure className="">
                 <div className="block">
@@ -204,10 +204,10 @@ export default function AboutUs() {
             <div className="md:flex justify-between text-lg text-primary">
               <div
                 className="dot-left timeline-graphic md:w-1/2 relative 
-                before:absolute before:content-[''] before:top-0 before:bottom-0 before:right-0 before:w-[2px]"
+                before:absolute before:content-[''] before:top-[-80px] before:bottom-0 before:right-0 before:w-[2px]"
               >
-                <div className="py-14 pr-14 in-box">
-                  <h3 className="text-6xl mb-6 tracking-wider text-secondary font-extralight">
+                <div className="pb-14 pr-14">
+                  <h3 className="text-6xl mb-6 tracking-wide text-secondary font-extralight">
                     OUR HISTORY
                   </h3>
 
@@ -260,7 +260,7 @@ export default function AboutUs() {
                     with the addition of multiple healthcare professionals
                     joining the management team and executive board.{" "}
                   </p>
-                  <figure className="mb-6">
+                  <figure className="">
                     <Image src={allEmployees} />
                   </figure>
                 </div>

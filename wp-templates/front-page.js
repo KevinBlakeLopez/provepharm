@@ -3,6 +3,7 @@ import * as MENUS from "../constants/menus";
 import { BlogInfoFragment } from "../fragments/GeneralSettings";
 import { Header, Footer, Main, NavigationMenu, Hero, SEO } from "../components";
 import Container from "../components/Container";
+import BannerBludigo from "../components/BannerBludigo";
 import Modal from "../components/Modal";
 import Image from "next/image";
 import frontPageBanner from "../public/frontPageBanner.jpeg";
@@ -416,6 +417,7 @@ export default function Component() {
                 </div>
               </div>
             </Container>
+            <BannerBludigo />
           </>
         </>
       </Main>
