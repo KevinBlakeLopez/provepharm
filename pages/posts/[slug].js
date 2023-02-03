@@ -18,6 +18,10 @@ Post.query = gql`
         node {
           uri
           mediaItemUrl
+          mediaDetails {
+            width
+            height
+          }
         }
       }
     }
@@ -55,7 +59,7 @@ export default function Post() {
     <>
       <Header menuItems={data.headerMenuItems} />
       {/* <Banner>Press Releases</Banner> */}
-      <Container size="xs">
+      <Container size="md">
         <SinglePostTemplate data={post} />
       </Container>
 

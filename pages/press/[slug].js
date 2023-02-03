@@ -19,6 +19,10 @@ PressRelease.query = gql`
         node {
           uri
           mediaItemUrl
+          mediaDetails {
+            width
+            height
+          }
         }
       }
     }
@@ -57,8 +61,8 @@ export default function PressRelease() {
     <>
       <Header menuItems={data.headerMenuItems} />
       {/* <Banner>Press Releases</Banner> */}
-      <Container size="xs">
-        <SinglePostTemplate pressRelease={pressRelease} />
+      <Container size="md">
+        <SinglePostTemplate data={pressRelease} />
       </Container>
 
       <Footer />

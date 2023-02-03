@@ -19,6 +19,10 @@ Event.query = gql`
         node {
           uri
           mediaItemUrl
+          mediaDetails {
+            width
+            height
+          }
         }
       }
     }
@@ -59,7 +63,7 @@ export default function Event() {
     <>
       <Header menuItems={data.headerMenuItems} />
       {/* <Banner>Press Releases</Banner> */}
-      <Container size="xs">
+      <Container size="md">
         <SinglePostTemplate data={event} />
       </Container>
 
