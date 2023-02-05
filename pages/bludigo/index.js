@@ -41,9 +41,19 @@ export default function Bludigo() {
         >
           <div className="md:px-32">
             <p className="text-3xl lg:text-8xl pb-6">See the difference.</p>
-            <h1 className="text-xl">
+            <h1 className="text-xl pb-24">
               Bludigo™ <br /> (indigotindisulfonate sodium injection, USP)
             </h1>
+            <div className="bg-white p-8">
+              <h5 className="text-3xl text-primary mb-4">
+                Product Information
+              </h5>
+              <Link href="products/bludigo-indigotindisulfonate-sodium-injection-usp">
+                <a className="underline text-lg text-primary">
+                  Click to read more
+                </a>
+              </Link>
+            </div>
           </div>
           <figure>
             <Image src={bludigoProduct} />
@@ -137,18 +147,8 @@ export default function Bludigo() {
           >
             LEARN MORE
           </a>
-          
         </section>
-        <section className="md:flex justify-evenly mb-16">
-          <div className="bg-primary p-8">
-            <h5 className="text-3xl text-white mb-4">Indications and Usage</h5>
-            <a className="underline text-lg text-white">Click to read more</a>
-          </div>
-          <div className="bg-primary p-8">
-            <h5 className="text-3xl text-white mb-4">Product Information</h5>
-            <a className="underline text-lg text-white">Click to read more</a>
-          </div>
-        </section>
+        <section className="md:flex justify-evenly mb-16"></section>
         <section className="bg-primary md:flex items-center p-10 lg:w-3/4 mx-auto mb-16">
           <p className="text-white text-4xl">
             Learn more about Bludigo (indigotindisulfonate sodium injection,
