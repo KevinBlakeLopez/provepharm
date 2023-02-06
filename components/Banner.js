@@ -6,6 +6,6 @@ function Banner({ children }) {
       </h1>
     </div>
   );
-}
+} 
 
 export default Banner;
