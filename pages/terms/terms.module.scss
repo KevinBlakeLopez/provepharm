@@ -1,4 +1,7 @@
-.termsDiv > * {
+.termsDiv > h2,
+.termsDiv > p,
+.termsDiv > ul,
+.termsDiv > ol {
   margin-bottom: 1rem;
 }
 
