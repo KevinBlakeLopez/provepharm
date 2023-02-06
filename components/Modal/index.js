@@ -26,7 +26,7 @@ const Modal = ({ text, externalLink, open }) => {
       {isOpen && (
         <div className="fixed top-[5%] sm:left-[12%] lg:left-[33%] md:max-w-[75%] lg:max-w-[35%] max-h-80 ">
           {/* <div className={isOpen ? "modal-open" : ""} /> */}
-          <div className="bg-slate-400 p-4 rounded-md">
+          <div className="bg-primary p-4 rounded-md">
             <div className="">
               <button
                 onClick={closeModal}
@@ -36,19 +36,19 @@ const Modal = ({ text, externalLink, open }) => {
               </button>
             </div>
 
-            <p className="p-2 pt-10 text-lg">
+            <p className="my-6 px-2 text-[1.25rem] text-white">
               You are now leaving provepharmusa.com. Provepharm is not
               responsible for the content on any third-party website.
             </p>
-            <section className="flex justify-end mt-4">
+            <section className="flex justify-end my-4">
               <a
-                className="mr-2 py-2 px-3 bg-blue-500 text-white text-lg font-semibold tracking-wider"
+                className="mr-4 py-2 px-3 bg-secondary text-white text-lg font-semibold tracking-wider"
                 href={externalLink}
               >
                 CONTINUE
               </a>
               <button
-                className="py-2 px-3 bg-slate-800 text-white text-lg font-semibold tracking-wider"
+                className="py-2 px-3 bg-white text-primary text-lg font-semibold tracking-wider"
                 onClick={closeModal}
               >
                 CANCEL
