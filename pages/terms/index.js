@@ -4,6 +4,7 @@ import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
+import styles from "./terms.module.scss";
 
 export default function TermsAndConditions() {
   const { loading, error, data } = useQuery(TermsAndConditions.query);
@@ -16,7 +17,9 @@ export default function TermsAndConditions() {
       <Header menuItems={data.headerMenuItems} />
       <Container>
         <div>
-          <h2>Website Terms of Use</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">
+            Website Terms of Use
+          </h2>
 
           <p>Last Modified: 07/05/2022</p>
 
@@ -108,7 +111,7 @@ export default function TermsAndConditions() {
             is correct, current, and complete. You agree that all information
             you provide to this Website or otherwise, including, but not limited
             to, using any interactive features on the Website, is governed by
-            our <em>Privacy Policy</em> please go to provepharmusa.com, and you
+            our <em>Privacy Policy.</em> Please go to provepharmusa.com, and
             consent to all actions we take with respect to your information
             consistent with our Privacy Policy.
           </p>
@@ -367,10 +370,10 @@ export default function TermsAndConditions() {
             Health care professionals and consumers may report side effects or
             adverse reactions to the U.S. Food and Drug Administration (FDA).
             The FDA has established a reporting service known as MedWatch where
-            both health care professionals and consumers can report side
-            effects, they suspect to be associated with the drugs they have
-            prescribed, dispensed, or used. To report, please visit MedWatch or
-            call 1-800-FDA-1088.
+            both health care professionals and consumers can report side effects
+            they suspect to be associated with the drugs they have prescribed,
+            dispensed, or used. To report, please visit MedWatch or call
+            1-800-FDA-1088.
           </p>
 
           <p>
