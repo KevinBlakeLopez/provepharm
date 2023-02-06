@@ -16,7 +16,7 @@ export default function TermsAndConditions() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Container>
-        <div className={styles.termsDiv}>
+        <div className={`${styles.termsDiv} text-zinc-700 text-xl`}>
           <h2 className="text-3xl font-bold text-center mb-4">
             Website Terms of Use
           </h2>
