@@ -39,7 +39,7 @@ export default function Footer({ disclaimer }) {
                 </Link>
               </li>
               <li className="mb-3">
-                <Link className="ted" href="/press-releases">
+                <Link className="ted" href="/press">
                   Press Releases
                 </Link>
               </li>
