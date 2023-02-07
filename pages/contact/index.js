@@ -155,6 +155,7 @@ export default function ContactUs() {
                       <option value="Medical Information">
                         Medical Information
                       </option>
+                      <option value="Product Quality">Product Quality</option>
                       <option value="Adverse Events">Adverse Events</option>
                       <option value="General Inquiries">
                         General Inquiries
@@ -167,7 +168,7 @@ export default function ContactUs() {
                       id="message"
                       name="message"
                       placeholder="Your Inquiry"
-                      className="text-xl py-1 pl-2 mb-5 border-2 w-full h-12"
+                      className="text-xl py-1 pl-2 mb-5 border-2 w-full h-36"
                       value={formData.message}
                       onChange={handleChange}
                       required="required"
