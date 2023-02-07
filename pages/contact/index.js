@@ -86,7 +86,7 @@ export default function ContactUs() {
       <Header menuItems={data.headerMenuItems} />
       <Banner>Contact Us</Banner>
       <Container size="xl">
-        <div className="md:flex md:justify-between mt-16">
+        <div className="lg:flex justify-between mt-16">
           <section className="mr-24">
             <h3 className="text-2xl text-primary mb-4">GENERAL INQUIRIES</h3>
             <form onSubmit={handleSubmit}>
@@ -95,8 +95,8 @@ export default function ContactUs() {
                 <p>Thanks for your message!</p>
               ) : (
                 <>
-                  <div className="flex mb-5">
-                    <fieldset className="border-2 mr-8">
+                  <div className="md:flex justify-between mb-5">
+                    <div>
                       <input
                         type="text"
                         id="firstName"
@@ -104,13 +104,14 @@ export default function ContactUs() {
                         value={formData.firstName}
                         onChange={handleChange}
                         placeholder="First Name"
-                        className="text-xl py-1.5 pl-2"
+                        className="text-xl py-1.5 pl-2 border-2 md:mr-8 mb-5 lg:mb-0"
                         required="required"
                         aria-required="true"
                       />
-                    </fieldset>
-                    {errors.firsName && <p>{errors.firstName}</p>}
-                    <fieldset className="border-2">
+                      {errors.firstName && <p>{errors.firstName}</p>}
+                    </div>
+
+                    <div>
                       <input
                         type="text"
                         id="lastName"
@@ -118,37 +119,37 @@ export default function ContactUs() {
                         value={formData.lastName}
                         onChange={handleChange}
                         placeholder="Last Name"
-                        className="text-xl py-1 pl-2"
+                        className="text-xl py-1.5 pl-2 border-2 md:mr-8 mb-5 lg:mb-0"
                         required="required"
                         aria-required="true"
                       />
-                    </fieldset>
-                    {errors.lastName && <p>{errors.lastName}</p>}
+                      {errors.lastName && <p>{errors.lastName}</p>}
+                    </div>
                   </div>
 
                   <div>
-                    <fieldset className="mb-5 border-2">
-                      <input
-                        type="email"
-                        id="edit-email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Email"
-                        className="text-xl py-1 pl-2"
-                        required="required"
-                        aria-required="true"
-                      />
-                    </fieldset>
+                    <input
+                      type="email"
+                      id="edit-email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Email"
+                      className="text-xl py-1 pl-2 border-2 w-full mb-5"
+                      required="required"
+                      aria-required="true"
+                    />
+
                     {errors.email && <p>{errors.email}</p>}
                   </div>
-
-                  <fieldset className="mb-5 border-2 text-xl py-1 pl-2">
+                  <div>
+                    {" "}
                     <select
                       id="edit-topic"
                       name="topic"
                       value={formData.subject}
                       onChange={handleChange}
+                      className="mb-5 border-2 text-xl py-1 pl-2 w-full"
                     >
                       <option value="">Topic</option>
                       <option value="Medical Information">
@@ -159,22 +160,23 @@ export default function ContactUs() {
                         General Inquiries
                       </option>
                     </select>
-                  </fieldset>
+                  </div>
 
-                  <fieldset className="mb-5 border-2">
+                  <div>
                     <textarea
                       id="message"
                       name="message"
                       placeholder="Your Inquiry"
-                      className="text-xl py-1 pl-2"
+                      className="text-xl py-1 pl-2 mb-5 border-2 w-full h-12"
                       value={formData.message}
                       onChange={handleChange}
                       required="required"
                       aria-required="true"
                     ></textarea>
                     {errors.message && <p>{errors.message}</p>}
-                  </fieldset>
-                  <section className="flex justify-between">
+                  </div>
+
+                  <section className="md:flex justify-between">
                     <div className="mb-8 bg-primary md:w-48" id="edit-actions">
                       <input
                         className="text-lg py-2 pl-7 text-white"
@@ -197,7 +199,7 @@ export default function ContactUs() {
                 </>
               )}
             </form>
-            <div>
+            <div className="mb-10">
               <p className="mb-5">
                 <a
                   className="text-xl underline text-secondary"
