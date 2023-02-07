@@ -16,12 +16,13 @@ export default function BannerBludigo() {
             </div>
             <div className="md:w-1/2 px-2 py-10">
               <p className="text-2xl mb-12 md:mb-8">
-                Bludigo™ is a Solution for Surgical Visualization. Explore the
-                benefits of our pharmaceutical surgical dye.
+                Bludigo is a diagnostic dye indicated for use as a visualization
+                aid in the cystoscopic assessment of the integrity of the
+                ureters in adults.
               </p>
               <Link href="/bludigo">
                 <button className="bg-[#7200A8] px-6 py-[11px] rounded-lg text-xl">
-                  Find out more
+                  Explore the benefits
                 </button>
               </Link>
             </div>

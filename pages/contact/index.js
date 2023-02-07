@@ -55,6 +55,23 @@ export default function ContactUs() {
       return;
     }
 
+    fetch("https://submit-form.com/VpUaj2uX", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        message: "Hello, World",
+      }),
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+
     const mailtoLink = `mailto:kevinblakelopez@gmail.com?subject=${formData.subject}&body=Name: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
     window.location.href = mailtoLink;
     setFormSubmitted(true);
