@@ -86,7 +86,7 @@ export default function ContactUs() {
       <Header menuItems={data.headerMenuItems} />
       <Banner>Contact Us</Banner>
       <Container size="xl">
-        <div className="lg:flex justify-between mt-16">
+        <div className="lg:flex justify-between my-16">
           <section className="mr-24">
             <h3 className="text-2xl text-primary mb-4">GENERAL INQUIRIES</h3>
             <form onSubmit={handleSubmit}>
@@ -119,7 +119,7 @@ export default function ContactUs() {
                         value={formData.lastName}
                         onChange={handleChange}
                         placeholder="Last Name"
-                        className="text-xl py-1.5 pl-2 border-2 md:mr-8 mb-5 lg:mb-0"
+                        className="text-xl py-1.5 pl-2 border-2 mb-5 lg:mb-0"
                         required="required"
                         aria-required="true"
                       />
