@@ -1,5 +1,5 @@
-function Container({ margin, padding, size, children }) {
-  const sizeMap = {
+function Container({ custom, margin, padding, size, children }) {
+  let sizeMap = {
     xxs: "max-w-[700px]",
     xs: "max-w-[800px]",
     sm: "max-w-[1000px]",
@@ -9,9 +9,10 @@ function Container({ margin, padding, size, children }) {
     full: "max-w-full",
   };
 
-  // Default to small if no size is passed
-  //entering comment to push
+  // Default to small if no size is passed entering comment to push
   const width = size ? sizeMap[size] : "max-w-[1000px]";
+
+  if (custom) sizeMap = `max-w-${custom}`;
 
   return (
     <div

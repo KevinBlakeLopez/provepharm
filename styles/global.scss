@@ -39,16 +39,24 @@ html {
   @apply border border-black border-2 px-4 py-2 my-2;
 }
 
-.isi > * {
-  @apply text-xl mt-4;
+.isi h5 {
+  @apply text-2xl mb-6;
+}
+
+.isi h6 {
+  @apply text-xl mt-8 mb-3;
+}
+
+.isi p {
+  @apply text-xl mb-4;
 }
 
 .isi ul {
-  @apply list-disc;
+  @apply text-xl mb-4 list-disc;
 }
 
 .isi li {
-  @apply ml-4;
+  @apply text-xl mb-2 ml-4;
 }
 
 // Post Content

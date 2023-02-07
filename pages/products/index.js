@@ -17,6 +17,8 @@ export default function Products() {
   const categories = new Set();
   const groupedProducts = {};
 
+  {[], [], []}
+
   data.products.nodes.forEach((product) => {
     const category = product.categories.nodes[0]
       ? product.categories.nodes[0].name

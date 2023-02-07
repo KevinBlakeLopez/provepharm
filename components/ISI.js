@@ -33,7 +33,7 @@ export default function ISI({ importantsafetyinformation }) {
       <div className="flex justify-center">
         <div
           style={{ height: expanded ? "calc(100vh - 220px)" : "200px" }}
-          className={`isi mb-20 md:mb-0 max-w-[1400px] overflow-auto md:pr-6`}
+          className={`isi mt-10 mb-20 md:mb-0 max-w-[1400px] overflow-auto md:pr-6`}
           dangerouslySetInnerHTML={{
             __html: importantsafetyinformation,
           }}
