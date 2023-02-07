@@ -9,7 +9,6 @@ import * as MENUS from "../../constants/menus";
 
 export default function Products() {
   const { data, loading } = useQuery(Products.query);
-  
 
   if (loading) {
     return <></>;
@@ -22,13 +21,17 @@ export default function Products() {
       <div className="mt-10 mx-4 md:mx-0">
         <div className="md:flex md:flex-col md:items-center">
           <div className="lg:w-[675px]">
-            <ProductsFinder />
+            {/* upgrades - either make the ProductsFinder component work and/or add filter/sort functionality */}
+            {/* <ProductsFinder /> */}
             {data ? (
               data.products.nodes.map((product) => {
                 return (
                   <div className="my-[80px]">
                     <h2 className="text-[1.7rem] tracking-wide mb-8">
-                      {product.metaFields.brandProduct ? `${product.metaFields.productvariationtitle} ` : ""} {product.metaFields.genericname}
+                      {product.metaFields.brandProduct
+                        ? `${product.metaFields.productvariationtitle} `
+                        : ""}{" "}
+                      {product.metaFields.genericname}
                     </h2>
                     <div className="md:flex md:justify-between">
                       {product.metaFields.productimage ? (
@@ -38,7 +41,11 @@ export default function Products() {
                           height="250"
                         />
                       ) : (
-                        <div className="h-[300px] w-[100px] bg-slate-700"></div>
+                        <div className="h-[250px] w-[140px] bg-primary flex justify-center items-center text-center">
+                          <p className="text-white text-2xl font-medium p-2">
+                            Photo Coming Soon
+                          </p>
+                        </div>
                       )}
                       <div className="flex">
                         <ul className="mr-8 w-[210px]">

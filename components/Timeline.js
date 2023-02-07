@@ -34,7 +34,7 @@ export default function Timeline() {
           </div>
 
           <div className="in-box">
-            <figure className="mb-6">
+            <figure className="mb-8">
               <Image src={blueDye} />
             </figure>
 
@@ -49,7 +49,7 @@ export default function Timeline() {
             </p>
           </div>
 
-          <div className="in-box mt-32">
+          <div className="in-box md:mt-[-4rem]">
             <figure className="mb-8">
               <Image src={MF} />
               <figcaption className="text-base text-center">

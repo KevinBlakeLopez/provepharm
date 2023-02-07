@@ -6,7 +6,7 @@ export default function BannerPeopleLives() {
     <div id="people-lives-banner" className="md:flex mb-44">
       <div
         id="people-lives-image"
-        className="md:bg-[url('/aboutMainBG.jpeg')] md:bg-cover md:h-auto md:h-full md:order-2 md:w-1/2"
+        className="md:bg-[url('/aboutMainBG.jpeg')] md:bg-cover h-auto md:h-full md:order-2 md:w-1/2"
       >
         <figure className="md:hidden">
           <div className="block">

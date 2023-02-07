@@ -38,7 +38,7 @@ export default function Header({ menuItems }) {
          border-b-2 w-full p-5 ${isNavShown ? "fixed top-0 width:100%" : ""}`}
       >
         <div className="flex justify-between items-center">
-          <Image src="/logo.jpeg" alt="me" height="55" width="130" />
+          <div className="cursor-pointer"><Link href="/"><Image src="/logo.jpeg" alt="me" height="55" width="130" /></Link></div>
 
           <div>
             <div className="md:hidden" onClick={handleClick}>

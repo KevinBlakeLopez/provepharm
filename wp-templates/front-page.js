@@ -85,7 +85,7 @@ export default function Component() {
                     Growth
                   </figcaption>
                 </figure>
-                <hr className="w-16 mx-auto pb-4" />
+                <hr className="w-8 mx-auto pb-4" />
                 <p>With the acquisition of products or companies</p>
               </div>
 
@@ -213,7 +213,6 @@ export default function Component() {
             </div>
           </div>
         </Container>
-
 
         <BannerPeopleLives />
 
