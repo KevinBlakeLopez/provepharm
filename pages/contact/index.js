@@ -58,8 +58,8 @@ export default function ContactUs() {
     const formSet = {
       "General Inquiries": "hbCocYHR",
       "Medical Information": "a3Ndy2UR",
-      "Adverse Events": "VpUaj2uX",
       "Product Quality": "CbWevMvn",
+      "Adverse Events": "VpUaj2uX",
     };
 
     const value = formSet[formData.topic];
@@ -109,103 +109,100 @@ export default function ContactUs() {
                   name="_email.subject"
                   value={`Contact Form ${formData.topic} Submission`}
                 />
-                <>
-                  <div className="md:flex md:gap-4 justify-between mb-5">
-                    <div className="md:w-1/2">
-                      <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        placeholder="First Name"
-                        className="text-xl py-1.5 pl-2 border-2 w-full mb-5 md:mr-8 md:mb-0 lg:mb-0 "
-                        required="required"
-                        aria-required="true"
-                      />
-                      {errors.firstName && <p>{errors.firstName}</p>}
-                    </div>
 
-                    <div className="md:w-1/2">
-                      <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        placeholder="Last Name"
-                        className="text-xl py-1.5 pl-2 border-2 lg:mb-0 w-full"
-                        required="required"
-                        aria-required="true"
-                      />
-                      {errors.lastName && <p>{errors.lastName}</p>}
-                    </div>
-                  </div>
-
-                  <div>
+                <div className="md:flex md:gap-4 justify-between mb-5">
+                  <div className="md:w-1/2">
                     <input
-                      type="email"
-                      id="edit-email"
-                      name="email"
-                      value={formData.email}
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
                       onChange={handleChange}
-                      placeholder="Email"
-                      className="text-xl py-1.5 pl-2 border-2 w-full mb-5"
+                      placeholder="First Name"
+                      className="text-xl py-1.5 pl-2 border-2 w-full mb-5 md:mr-8 md:mb-0 lg:mb-0 "
                       required="required"
                       aria-required="true"
                     />
-
-                    {errors.email && <p>{errors.email}</p>}
-                  </div>
-                  <div>
-                    <select
-                      id="edit-topic"
-                      name="topic"
-                      value={formData.topic}
-                      onChange={handleChange}
-                      className="text-xl mb-5 border-2 py-1.5 pl-2 w-full text-r-900"
-                    >
-                      <option value="">Topic</option>
-                      <option value="General Inquiries">
-                        General Inquiries
-                      </option>
-                      <option value="Medical Information">
-                        Medical Information
-                      </option>
-                      <option value="Product Quality">Product Quality</option>
-                      <option value="Adverse Events">Adverse Events</option>
-                    </select>
+                    {errors.firstName && <p>{errors.firstName}</p>}
                   </div>
 
-                  <div>
-                    <textarea
-                      id="message"
-                      name="message"
-                      placeholder="Your Inquiry"
-                      className="text-xl py-1.5 pl-2 mb-5 border-2 w-full h-36"
-                      value={formData.message}
+                  <div className="md:w-1/2">
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
                       onChange={handleChange}
+                      placeholder="Last Name"
+                      className="text-xl py-1.5 pl-2 border-2 lg:mb-0 w-full"
                       required="required"
                       aria-required="true"
-                    ></textarea>
-                    {errors.message && <p>{errors.message}</p>}
+                    />
+                    {errors.lastName && <p>{errors.lastName}</p>}
                   </div>
+                </div>
 
-                  <section className="md:flex justify-between">
-                    <div
-                      className="mb-8 bg-primary md:w-48 cursor-pointer"
-                      id="edit-actions"
-                    >
-                      <input
-                        className="text-lg py-2 pl-7 text-white"
-                        type="submit"
-                        id="edit-actions-submit"
-                        name="submit"
-                        value="SEND MESSAGE"
-                      />
-                    </div>
-                  </section>
-                </>
+                <div>
+                  <input
+                    type="email"
+                    id="edit-email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    className="text-xl py-1.5 pl-2 border-2 w-full mb-5"
+                    required="required"
+                    aria-required="true"
+                  />
+
+                  {errors.email && <p>{errors.email}</p>}
+                </div>
+                <div>
+                  <select
+                    id="edit-topic"
+                    name="topic"
+                    value={formData.topic}
+                    onChange={handleChange}
+                    className="text-xl mb-5 border-2 py-1.5 pl-2 w-full text-r-900"
+                  >
+                    <option value="">Topic</option>
+                    <option value="General Inquiries">General Inquiries</option>
+                    <option value="Medical Information">
+                      Medical Information
+                    </option>
+                    <option value="Product Quality">Product Quality</option>
+                    <option value="Adverse Events">Adverse Events</option>
+                  </select>
+                </div>
+
+                <div>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Your Inquiry"
+                    className="text-xl py-1.5 pl-2 mb-5 border-2 w-full h-36"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required="required"
+                    aria-required="true"
+                  ></textarea>
+                  {errors.message && <p>{errors.message}</p>}
+                </div>
+
+                <section className="md:flex justify-between">
+                  <div
+                    className="mb-8 bg-primary md:w-48 cursor-pointer"
+                    id="edit-actions"
+                  >
+                    <input
+                      className="text-lg py-2 pl-7 text-white"
+                      type="submit"
+                      id="edit-actions-submit"
+                      name="submit"
+                      value="SEND MESSAGE"
+                    />
+                  </div>
+                </section>
               </form>
             )}
             <div className="mb-10">
