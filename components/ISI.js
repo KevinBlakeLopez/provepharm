@@ -7,7 +7,7 @@ export default function ISI({ importantsafetyinformation }) {
     <section
       className={`bg-gray-400 fixed ${
         expanded ? "top-[75px]" : ""
-      } bottom-[-128px] md:bottom-[-45px] left-0 right-0 w-full z-50 transition-transform-[top 1s ease-in-out]`}
+      } bottom-[-170px] md:bottom-[-91px] left-0 right-0 w-full z-50 transition-transform-[top 1s ease-in-out]`}
     >
       <div className="bg-gray-600 text-zinc-100 flex justify-end">
         <button
