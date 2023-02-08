@@ -62,7 +62,7 @@ export default function ContactUs() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        message: "Hello, World",
+        message: formData,
       }),
     })
       .then(function (response) {
