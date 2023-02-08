@@ -71,11 +71,10 @@ export default function ContactUs() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        message: `
-        Topic: ${formData.topic}
-        Name: ${formData.firstName} ${formData.lastName}
-        Email: ${formData.email}
-        Message: ${formData.message}`,
+        Topic: formData.topic,
+        Name: `${formData.firstName} ${" "} ${formData.lastName}`,
+        Email: formData.email,
+        Message: formData.message,
       }),
     })
       .then(function (response) {
@@ -84,9 +83,6 @@ export default function ContactUs() {
       .catch(function (error) {
         console.error(error);
       });
-
-    // const mailtoLink = `mailto:kevinblakelopez@gmail.com?subject=${formData.subject}&body=Name: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
-    // window.location.href = mailtoLink;
     setFormSubmitted(true);
   };
 
@@ -99,18 +95,20 @@ export default function ContactUs() {
       <Header menuItems={data.headerMenuItems} />
       <Banner>Contact Us</Banner>
       <Container size="md">
-        <div className="lg:flex justify-between md:my-16">
-          <section className="md:mr-24">
-            <h3 className="text-2xl text-primary mb-8">GENERAL INQUIRIES</h3>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="hidden"
-                name="_email.subject"
-                value={`Contact Form ${formData.topic} Submission`}
-              />
-              {formSubmitted ? (
-                <p>Thanks for your message!</p>
-              ) : (
+        <div className="lg:flex md:gap-12 justify-between md:my-16">
+          <section className="md:w-[600px]">
+            {/* <h3 className="text-2xl text-primary mb-8">GENERAL INQUIRIES</h3> */}
+            {formSubmitted ? (
+              <div>
+                <p className="text-xl">Thanks for your message!</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="hidden"
+                  name="_email.subject"
+                  value={`Contact Form ${formData.topic} Submission`}
+                />
                 <>
                   <div className="md:flex md:gap-4 justify-between mb-5">
                     <div className="md:w-1/2">
@@ -152,7 +150,7 @@ export default function ContactUs() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Email"
-                      className="text-xl py-1 pl-2 border-2 w-full mb-5"
+                      className="text-xl py-1.5 pl-2 border-2 w-full mb-5"
                       required="required"
                       aria-required="true"
                     />
@@ -165,17 +163,17 @@ export default function ContactUs() {
                       name="topic"
                       value={formData.topic}
                       onChange={handleChange}
-                      className="mb-5 border-2 text-lg py-1 pl-2 w-full"
+                      className="text-xl mb-5 border-2 py-1.5 pl-2 w-full text-r-900"
                     >
                       <option value="">Topic</option>
+                      <option value="General Inquiries">
+                        General Inquiries
+                      </option>
                       <option value="Medical Information">
                         Medical Information
                       </option>
                       <option value="Product Quality">Product Quality</option>
                       <option value="Adverse Events">Adverse Events</option>
-                      <option value="General Inquiries">
-                        General Inquiries
-                      </option>
                     </select>
                   </div>
 
@@ -184,7 +182,7 @@ export default function ContactUs() {
                       id="message"
                       name="message"
                       placeholder="Your Inquiry"
-                      className="text-xl py-1 pl-2 mb-5 border-2 w-full h-36"
+                      className="text-xl py-1.5 pl-2 mb-5 border-2 w-full h-36"
                       value={formData.message}
                       onChange={handleChange}
                       required="required"
@@ -194,7 +192,10 @@ export default function ContactUs() {
                   </div>
 
                   <section className="md:flex justify-between">
-                    <div className="mb-8 bg-primary md:w-48" id="edit-actions">
+                    <div
+                      className="mb-8 bg-primary md:w-48 cursor-pointer"
+                      id="edit-actions"
+                    >
                       <input
                         className="text-lg py-2 pl-7 text-white"
                         type="submit"
@@ -203,22 +204,13 @@ export default function ContactUs() {
                         value="SEND MESSAGE"
                       />
                     </div>
-                    {/* <div className="mb-8 bg-primary md:w-48" id="edit-actions">
-                      <input
-                        className="text-lg py-2 pl-7 text-white"
-                        type="reset"
-                        id="reset"
-                        name="reset"
-                        value="CLEAR FORM"
-                      />
-                    </div> */}
                   </section>
                 </>
-              )}
-            </form>
+              </form>
+            )}
             <div className="mb-10">
               <p className="mb-2">
-                <a
+                {/* <a
                   className="text-lg underline text-secondary"
                   href="mailto:safety-us@provepharm.com"
                 >
@@ -231,11 +223,11 @@ export default function ContactUs() {
                   href="mailto:safety-us@provepharm.com"
                 >
                   ADVERSE EVENT REPORTING
-                </a>
+                </a> */}
               </p>
             </div>
           </section>
-          <section>
+          <section className="md:w-[400px]">
             <div className="text-lg">
               <div className="mb-4">
                 <h4 className="font-medium">Pharmacovigilance:</h4>
