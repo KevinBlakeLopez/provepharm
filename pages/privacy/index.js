@@ -1,5 +1,6 @@
 import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
+import Link from "next/link";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import { Header, Footer, NavigationMenu } from "../../components";
@@ -37,8 +38,8 @@ export default function Privacy() {
           <p className="mb-4">
             This policy describes the types of information we may collect from
             you or that you may provide when you visit the website
-            provepharm.com and our practices for collecting, using, maintaining,
-            protecting, and disclosing that information.
+            provepharmusa.com and our practices for collecting, using,
+            maintaining, protecting, and disclosing that information.
           </p>
           <p className="mb-4">This policy applies to information we collect:</p>
           <ul className="pl-12 mb-4">
@@ -107,7 +108,7 @@ export default function Privacy() {
             parental consent, we will delete that information. If you believe we
             might have any information from or about a child under 18, please
             contact us at{" "}
-            <a href="mailto:us-info@provepharm.com">
+            <a>
               <strong>
                 <span>us-info@provepharm.com</span>
               </strong>
@@ -352,7 +353,7 @@ export default function Privacy() {
             <li>
               To enforce or apply our terms of use and other agreements,
               including for billing and collection purposes please go to
-              provepharm.com.
+              <Link href="/terms">provepharmusa.com/terms</Link>.
             </li>
             <li>
               If we believe disclosure is necessary or appropriate to protect

@@ -142,8 +142,8 @@ export default function Bludigo() {
             Read the full prescribing information
           </p>
           <a
-            className="bg-primary py-4 px-10 text-white text-xl"
             href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
+            className="bg-primary py-4 px-10 text-white text-xl"
           >
             LEARN MORE
           </a>

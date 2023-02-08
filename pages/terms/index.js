@@ -5,6 +5,7 @@ import Banner from "../../components/Banner";
 import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
 import styles from "./terms.module.scss";
+import Link from "next/link";
 
 export default function TermsAndConditions() {
   const { loading, error, data } = useQuery(TermsAndConditions.query);
@@ -31,7 +32,7 @@ export default function TermsAndConditions() {
 
           <p>
             These terms of use are entered into by and between You and
-            Provepharm Inc. The following terms and conditions (govern your
+            Provepharm Inc. The following terms and conditions govern your
             access to and use of provepharmusa.com, including any content,
             functionality, and services offered on or through provepharmusa.com.
           </p>
@@ -40,8 +41,9 @@ export default function TermsAndConditions() {
             Please read the Terms of Use carefully before you start to use the
             Website. By using the Website, you accept and agree to be bound and
             abide by these Terms of Use and our Privacy Policy, found at
-            provepharmusa.com. If you do not want to agree to these Terms of Use
-            or the Privacy Policy, you must not access or use the Website.
+            <Link href="/privacy">provepharmusa.com/privacy</Link>. If you do
+            not want to agree to these Terms of Use or the Privacy Policy, you
+            must not access or use the Website.
           </p>
 
           <p>
@@ -111,9 +113,10 @@ export default function TermsAndConditions() {
             is correct, current, and complete. You agree that all information
             you provide to this Website or otherwise, including, but not limited
             to, using any interactive features on the Website, is governed by
-            our <em>Privacy Policy.</em> Please go to provepharmusa.com, and
-            consent to all actions we take with respect to your information
-            consistent with our Privacy Policy.
+            our <em>Privacy Policy.</em> Please go to{" "}
+            <Link href="/privacy">provepharmusa.com/privacy</Link>, and consent
+            to all actions we take with respect to your information consistent
+            with our Privacy Policy.
           </p>
 
           <p>
@@ -162,8 +165,8 @@ export default function TermsAndConditions() {
               applications.
             </li>
             <li>
-              If we provide social media features provepharmusa.com with certain
-              content, you may take such actions as are enabled by such
+              If we provide social media features on provepharmusa.com with
+              certain content, you may take such actions as are enabled by such
               features.
             </li>
           </ul>
@@ -597,8 +600,8 @@ export default function TermsAndConditions() {
 
           <p>
             All feedback, comments, requests for technical support, and other
-            communications relating to the Website should be directed
-            to:us-info@provepharm.com.
+            communications relating to the Website should be directed to:{" "}
+            <a href="mailto:us-info@provepharm.com">us-info@provepharm.com</a>.
           </p>
         </div>
       </Container>
