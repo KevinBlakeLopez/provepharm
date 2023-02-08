@@ -12,7 +12,7 @@ export default function ContactUs() {
     firstName: "",
     lastName: "",
     email: "",
-    subject: "General Inquiry",
+    topic: "",
     message: "",
   });
   const [errors, setErrors] = useState({});
@@ -55,14 +55,27 @@ export default function ContactUs() {
       return;
     }
 
-    fetch("https://submit-form.com/VpUaj2uX", {
+    const formSet = {
+      "General Inquiries": "hbCocYHR",
+      "Medical Information": "a3Ndy2UR",
+      "Adverse Events": "VpUaj2uX",
+      "Product Quality": "CbWevMvn",
+    };
+
+    const value = formSet[formData.topic];
+
+    fetch(`https://submit-form.com/${value}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: JSON.stringify({
-        message: formData,
+        message: `
+        Topic: ${formData.topic}
+        Name: ${formData.firstName} ${formData.lastName}
+        Email: ${formData.email}
+        Message: ${formData.message}`,
       }),
     })
       .then(function (response) {
@@ -72,8 +85,8 @@ export default function ContactUs() {
         console.error(error);
       });
 
-    const mailtoLink = `mailto:kevinblakelopez@gmail.com?subject=${formData.subject}&body=Name: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
-    window.location.href = mailtoLink;
+    // const mailtoLink = `mailto:kevinblakelopez@gmail.com?subject=${formData.subject}&body=Name: ${formData.firstName} ${formData.lastName}%0AEmail: ${formData.email}%0AMessage: ${formData.message}`;
+    // window.location.href = mailtoLink;
     setFormSubmitted(true);
   };
 
@@ -85,18 +98,22 @@ export default function ContactUs() {
     <>
       <Header menuItems={data.headerMenuItems} />
       <Banner>Contact Us</Banner>
-      <Container size="xl">
-        <div className="lg:flex justify-between my-16">
-          <section className="mr-24">
-            <h3 className="text-2xl text-primary mb-4">GENERAL INQUIRIES</h3>
+      <Container size="md">
+        <div className="lg:flex justify-between md:my-16">
+          <section className="md:mr-24">
+            <h3 className="text-2xl text-primary mb-8">GENERAL INQUIRIES</h3>
             <form onSubmit={handleSubmit}>
-              {" "}
+              <input
+                type="hidden"
+                name="_email.subject"
+                value={`Contact Form ${formData.topic} Submission`}
+              />
               {formSubmitted ? (
                 <p>Thanks for your message!</p>
               ) : (
                 <>
-                  <div className="md:flex justify-between mb-5">
-                    <div>
+                  <div className="md:flex md:gap-4 justify-between mb-5">
+                    <div className="md:w-1/2">
                       <input
                         type="text"
                         id="firstName"
@@ -104,14 +121,14 @@ export default function ContactUs() {
                         value={formData.firstName}
                         onChange={handleChange}
                         placeholder="First Name"
-                        className="text-xl py-1.5 pl-2 border-2 md:mr-8 mb-5 lg:mb-0"
+                        className="text-xl py-1.5 pl-2 border-2 w-full mb-5 md:mr-8 md:mb-0 lg:mb-0 "
                         required="required"
                         aria-required="true"
                       />
                       {errors.firstName && <p>{errors.firstName}</p>}
                     </div>
 
-                    <div>
+                    <div className="md:w-1/2">
                       <input
                         type="text"
                         id="lastName"
@@ -119,7 +136,7 @@ export default function ContactUs() {
                         value={formData.lastName}
                         onChange={handleChange}
                         placeholder="Last Name"
-                        className="text-xl py-1.5 pl-2 border-2 mb-5 lg:mb-0"
+                        className="text-xl py-1.5 pl-2 border-2 lg:mb-0 w-full"
                         required="required"
                         aria-required="true"
                       />
@@ -143,13 +160,12 @@ export default function ContactUs() {
                     {errors.email && <p>{errors.email}</p>}
                   </div>
                   <div>
-                    {" "}
                     <select
                       id="edit-topic"
                       name="topic"
-                      value={formData.subject}
+                      value={formData.topic}
                       onChange={handleChange}
-                      className="mb-5 border-2 text-xl py-1 pl-2 w-full"
+                      className="mb-5 border-2 text-lg py-1 pl-2 w-full"
                     >
                       <option value="">Topic</option>
                       <option value="Medical Information">
@@ -187,7 +203,7 @@ export default function ContactUs() {
                         value="SEND MESSAGE"
                       />
                     </div>
-                    <div className="mb-8 bg-primary md:w-48" id="edit-actions">
+                    {/* <div className="mb-8 bg-primary md:w-48" id="edit-actions">
                       <input
                         className="text-lg py-2 pl-7 text-white"
                         type="reset"
@@ -195,15 +211,15 @@ export default function ContactUs() {
                         name="reset"
                         value="CLEAR FORM"
                       />
-                    </div>
+                    </div> */}
                   </section>
                 </>
               )}
             </form>
             <div className="mb-10">
-              <p className="mb-5">
+              <p className="mb-2">
                 <a
-                  className="text-xl underline text-secondary"
+                  className="text-lg underline text-secondary"
                   href="mailto:safety-us@provepharm.com"
                 >
                   REQUEST FOR MEDICAL INFORMATION
@@ -211,7 +227,7 @@ export default function ContactUs() {
               </p>
               <p>
                 <a
-                  className="text-xl underline text-secondary"
+                  className="text-lg underline text-secondary"
                   href="mailto:safety-us@provepharm.com"
                 >
                   ADVERSE EVENT REPORTING
