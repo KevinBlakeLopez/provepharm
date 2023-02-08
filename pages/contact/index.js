@@ -228,7 +228,7 @@ export default function ContactUs() {
             </div>
           </section>
           <section className="md:w-[400px]">
-            <div className="text-lg">
+            <div className="text-lg float-right">
               <div className="mb-4">
                 <h4 className="font-medium">Pharmacovigilance:</h4>
                 <p>
@@ -293,7 +293,9 @@ export default function ContactUs() {
                 </p>
               </div>
               <div className="mb-5">
-                <h4>General Inquiries or Customer Service</h4>
+                <h4 className="font-medium">
+                  General Inquiries or Customer Service
+                </h4>
                 <p>
                   E:{" "}
                   <a
