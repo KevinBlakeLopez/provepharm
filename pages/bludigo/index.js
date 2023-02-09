@@ -3,24 +3,19 @@ import * as MENUS from "../../constants/menus";
 import { BlogInfoFragment } from "../../fragments/GeneralSettings";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Header,
-  Footer,
-  Main,
-  NavigationMenu,
-  Hero,
-  Modal,
-  SEO,
-} from "../../components";
+
+import { Header, Footer, Main, NavigationMenu } from "../../components";
+import Container from "../../components/Container";
+import ISI from "../../components/ISI";
+
 import bludigoProduct from "../../public/bludigo_product_image.png";
 import videoThumbnail from "../../public/video_thumbnail.png";
 import doctorsStock from "../../public/bludigo_doctors_stock.jpeg";
-import Container from "../../components/Container";
-import ISI from "../../components/ISI";
 import chart from "../../public/chart_icon_2x.png";
 import clock from "../../public/clock_icon_2x.png";
 import target from "../../public/target_icon_2x.png";
 import table from "../../public/table_2x.png";
+import bludigoAnimation from "../../public/bludigo-injection-animation.gif";
 
 export default function Bludigo() {
   const { data, loading } = useQuery(Bludigo.query, {
@@ -69,7 +64,7 @@ export default function Bludigo() {
                 diagnostic dye.
               </h2>
               <figure>
-                <Image src={videoThumbnail} />
+                <Image src={bludigoAnimation} />
               </figure>
             </section>
           </Container>
