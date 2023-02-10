@@ -125,6 +125,7 @@ export default function Timeline() {
               <Modal
                 text="ProvayBlue®, (injectable methylene blue)."
                 externalLink="https://americanregent.com/our-products/provayblue-methylene-blue-injection-usp-05/"
+                classes="text-prescribingAnchor underline"
               />
             </p>
           </div>

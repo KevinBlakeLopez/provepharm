@@ -67,6 +67,7 @@ export default function Product() {
                     <Modal
                       text="Click here"
                       externalLink={product.prescribinginformation.url}
+                      classes="text-prescribingAnchor underline"
                     />
                   ) : (
                     <p>Please add Link</p>

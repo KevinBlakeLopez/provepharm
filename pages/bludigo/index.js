@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import ISI from "../../components/ISI";
+import Modal from "../../components/Modal";
 
 import bludigoProduct from "../../public/bludigo_product_image.png";
 import doctorsStock from "../../public/bludigo_doctors_stock.jpeg";
@@ -140,12 +141,11 @@ export default function Bludigo() {
           <p className="mb-8 text-3xl font-bold">
             Read the full prescribing information
           </p>
-          <a
-            href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
-            className="bg-primary py-4 px-10 text-white text-xl"
-          >
-            LEARN MORE
-          </a>
+          <Modal
+            text="LEARN MORE"
+            externalLink="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
+            classes="bg-primary py-4 px-10 text-white text-xl"
+          />
         </section>
         {/* <section className="md:flex justify-evenly mb-16"></section> */}
         <section className="bg-primary md:flex items-center p-10 lg:w-3/4 mx-auto mb-16">
