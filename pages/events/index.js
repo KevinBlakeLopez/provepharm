@@ -5,8 +5,6 @@ import Banner from "../../components/Banner";
 import AllPostsTemplate from "../../components/AllPostsTemplate";
 import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Events() {
   const { loading, error, data } = useQuery(Events.query);

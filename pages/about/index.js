@@ -1,7 +1,5 @@
-import { useQuery, gql } from "@apollo/client";
-import * as MENUS from "../../constants/menus";
-import { BlogInfoFragment } from "../../fragments/GeneralSettings";
-import { Header, Footer, Main, NavigationMenu } from "../../components";
+import { useQuery } from "@apollo/client";
+import { Header, Footer, Main } from "../../components";
 import Container from "../../components/Container";
 import Timeline from "../../components/Timeline";
 import BannerPeopleLives from "../../components/BannerPeopleLives";
@@ -139,33 +137,3 @@ export default function AboutUs() {
     </>
   );
 }
-
-AboutUs.query = gql`
-  ${BlogInfoFragment}
-  ${NavigationMenu.fragments.entry}
-  query GetPageData(
-    $headerLocation: MenuLocationEnum
-    $footerLocation: MenuLocationEnum
-  ) {
-    generalSettings {
-      ...BlogInfoFragment
-    }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-    footerMenuItems: menuItems(where: { location: $footerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-  }
-`;
-
-AboutUs.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-    footerLocation: MENUS.FOOTER_LOCATION,
-  };
-};
