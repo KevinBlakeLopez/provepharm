@@ -39,13 +39,16 @@ Events.query = gql`
         excerpt
         date
         dateGmt
+        metaFields {
+          eventDate
+        }
         featuredImage {
           node {
             mediaItemUrl
             mediaDetails {
-            width
-            height
-          }
+              width
+              height
+            }
           }
         }
       }

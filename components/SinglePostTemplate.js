@@ -24,12 +24,14 @@ export default function SinglePostTemplate({ data }) {
   return (
     <section>
       <h5 className="mb-2 font-bold text-blue-600">
-        Published:{" "}
-        {new Date(data.date).toLocaleDateString("en-US", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric",
-        })}
+        {data.metaFields.eventDate
+          ? data.metaFields.eventDate
+          : "Published: " +
+            new Date(data.date).toLocaleDateString("en-US", {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            })}
       </h5>
       <h1 className="font-semibold text-lg md:text-2xl mb-8">{data.title}</h1>
       <figure className="mb-8 text-center">
@@ -39,7 +41,7 @@ export default function SinglePostTemplate({ data }) {
           height={height}
         />
       </figure>
-      <WYSIWYG content={data.content}/>
+      <WYSIWYG content={data.content} />
     </section>
   );
 }
