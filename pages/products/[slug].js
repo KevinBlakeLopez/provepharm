@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { Header, Footer, NavigationMenu } from "../../components";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
+import ComingSoon from "../../components/ComingSoon";
 import ISI from "../../components/ISI";
 
 Product.query = gql`
@@ -106,7 +107,7 @@ export default function Product() {
                         height="250"
                       />
                     ) : (
-                      <div className="h-[300px] w-[100px] bg-slate-700"></div>
+                      <ComingSoon />
                     )}
                   </section>
                 </div>
@@ -247,16 +248,22 @@ export default function Product() {
                   <p className="font-medium text-lg mb-4">Gluten Free </p>
                   <p className="">{product.glutenFree ? "yes" : "no"}</p>
                 </li>
-                {product.closuresize ? 
-                <li className="flex justify-between">
-                <p className="font-medium text-lg mb-4">Closure Size </p>
-                <p className="">{product.closuresize}</p>
-              </li> : ""}
-                {product.containersize ? 
-                <li className="flex justify-between">
-                <p className="font-medium text-lg mb-4">Container Size </p>
-                <p className="">{product.containersize}</p>
-              </li> : ""}
+                {product.closuresize ? (
+                  <li className="flex justify-between">
+                    <p className="font-medium text-lg mb-4">Closure Size </p>
+                    <p className="">{product.closuresize}</p>
+                  </li>
+                ) : (
+                  ""
+                )}
+                {product.containersize ? (
+                  <li className="flex justify-between">
+                    <p className="font-medium text-lg mb-4">Container Size </p>
+                    <p className="">{product.containersize}</p>
+                  </li>
+                ) : (
+                  ""
+                )}
                 <br />
                 <li className="flex justify-between">
                   <p className="mb-4">ITEM CODES</p>

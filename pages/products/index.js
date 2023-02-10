@@ -1,11 +1,11 @@
 import { getNextStaticProps } from "@faustwp/core";
-import { gql, useQuery, useMutation } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
-import ProductsFinder from "../../components/ProductsFinder/ProductsFinder";
-import Banner from "../../components/Banner";
-import { Header, Footer, NavigationMenu } from "../../components";
 import * as MENUS from "../../constants/menus";
+import { Header, Footer, NavigationMenu } from "../../components";
+import Banner from "../../components/Banner";
+import ComingSoon from "../../components/ComingSoon";
 
 export default function Products() {
   const { data, loading } = useQuery(Products.query);
@@ -17,7 +17,9 @@ export default function Products() {
   const categories = new Set();
   const groupedProducts = {};
 
-  {[], [], []}
+  {
+    [], [], [];
+  }
 
   data.products.nodes.forEach((product) => {
     const category = product.categories.nodes[0]
@@ -56,11 +58,7 @@ export default function Products() {
                             height="250"
                           />
                         ) : (
-                          <div className="h-[250px] w-[140px] bg-primary flex justify-center items-center text-center">
-                            <p className="text-white text-2xl font-medium p-2">
-                              Photo Coming Soon
-                            </p>
-                          </div>
+                          <ComingSoon />
                         )}
                         <div className="flex">
                           <ul className="mr-8 w-[210px]">
