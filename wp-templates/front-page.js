@@ -1,9 +1,7 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import Image from "next/image";
-import * as MENUS from "../constants/menus";
-import { BlogInfoFragment } from "../fragments/GeneralSettings";
 
-import { Header, Footer, Main, NavigationMenu, Hero, SEO } from "../components";
+import { Header, Footer, Main, SEO } from "../components";
 import Container from "../components/Container";
 import BannerBludigo from "../components/BannerBludigo";
 import BannerPeopleLives from "../components/BannerPeopleLives";
@@ -224,33 +222,3 @@ export default function Component() {
     </>
   );
 }
-
-Component.query = gql`
-  ${BlogInfoFragment}
-  ${NavigationMenu.fragments.entry}
-  query GetPageData(
-    $headerLocation: MenuLocationEnum
-    $footerLocation: MenuLocationEnum
-  ) {
-    generalSettings {
-      ...BlogInfoFragment
-    }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-    footerMenuItems: menuItems(where: { location: $footerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-  }
-`;
-
-Component.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-    footerLocation: MENUS.FOOTER_LOCATION,
-  };
-};
