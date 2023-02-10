@@ -15,7 +15,7 @@ Event.query = gql`
       dateGmt
       title
       content
-      metaFields {
+      events {
         eventDate
       }
       featuredImage {

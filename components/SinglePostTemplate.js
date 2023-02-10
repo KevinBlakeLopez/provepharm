@@ -21,6 +21,25 @@ export default function SinglePostTemplate({ data }) {
     width = 800 * aspectRatio;
   }
 
+  if (data.events) {
+    return (
+      <section>
+        <h5 className="mb-2 font-bold text-blue-600">
+          {data.events.eventDate}
+        </h5>
+        <h1 className="font-semibold text-lg md:text-2xl mb-8">{data.title}</h1>
+        <figure className="mb-8 text-center">
+          <Image
+            src={data.featuredImage.node.mediaItemUrl}
+            width={width}
+            height={height}
+          />
+        </figure>
+        <WYSIWYG content={data.content} />
+      </section>
+    );
+  }
+
   return (
     <section>
       <h5 className="mb-2 font-bold text-blue-600">
