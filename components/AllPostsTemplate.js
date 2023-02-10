@@ -24,7 +24,7 @@ export default function AllPostsTemplate({ data, route }) {
     console.log("working");
     return (
       <>
-        <div className="h-12" />
+        <div className="h-12 bg-inherit" />
         {data.nodes.map(
           ({ id, title, excerpt, featuredImage, slug, events }) => (
             <div className="md:flex md:items-center mb-10" key={id}>
