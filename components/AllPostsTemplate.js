@@ -26,7 +26,7 @@ export default function AllPostsTemplate({ data, route }) {
     <>
       <div className="h-12" />
       {data.nodes.map(
-        ({ id, title, excerpt, date, featuredImage, slug, metaFields }) => (
+        ({ id, title, excerpt, date, featuredImage, slug, events }) => (
           <div className="md:flex md:items-center mb-10" key={id}>
             {featuredImage ? (
               <div className="md:w-[386px] mr-12">
@@ -39,14 +39,12 @@ export default function AllPostsTemplate({ data, route }) {
             ) : null}
             <section>
               <p className="mb-2 text-sm">
-                {metaFields.eventDate
-                  ? metaFields.eventDate
-                  : "Published: " +
-                    new Date(data.date).toLocaleDateString("en-US", {
-                      day: "2-digit",
-                      month: "long",
-                      year: "numeric",
-                    })}
+                Published:{" "}
+                {new Date(date).toLocaleDateString("en-US", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+                })}
               </p>
               <h2 className="text-xl mb-3 font-semibold">{title}</h2>
               <div

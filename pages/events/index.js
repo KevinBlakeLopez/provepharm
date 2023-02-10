@@ -39,7 +39,7 @@ Events.query = gql`
         excerpt
         date
         dateGmt
-        metaFields {
+        events {
           eventDate
         }
         featuredImage {
