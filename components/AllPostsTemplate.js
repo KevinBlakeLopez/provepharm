@@ -20,8 +20,7 @@ export default function AllPostsTemplate({ data, route }) {
   //   height = 400;
   //   width = 400 * aspectRatio;
   // }
-  if (data.events) {
-    console.log("working");
+  if (data.nodes[0].events) {
     return (
       <>
         <div className="h-12 bg-inherit" />
