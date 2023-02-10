@@ -10,7 +10,7 @@ export default function Footer({ disclaimer }) {
       <div className="mb-10 h-[1px] w-full bg-slate-900"></div>
       <Container size="xl">
         <div className="py-4 px-10 mb-10 md:flex md:justify-between">
-          <div class="mb-10 max-w-[300px] md:mr-20">
+          <div className="mb-10 max-w-[300px] md:mr-20">
             <div className="mb-4">
               <Image src="/logo.jpeg" alt="me" height="80" width="200" />
             </div>
@@ -53,7 +53,7 @@ export default function Footer({ disclaimer }) {
                 </Link>
               </li>
             </div>
-            <div class="mb-6"></div>
+            <div className="mb-6"></div>
             <div className="md:mr-20">
               <li className="mb-3">
                 <Link className="" href="/contact">
@@ -66,7 +66,7 @@ export default function Footer({ disclaimer }) {
                 </Link>
               </li>
             </div>
-            <div class="mb-6"></div>
+            <div className="mb-6"></div>
             <div>
               <li className="mb-3">
                 <Link className="" href="/terms">
@@ -89,4 +89,3 @@ export default function Footer({ disclaimer }) {
     </footer>
   );
 }
-

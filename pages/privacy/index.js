@@ -742,7 +742,7 @@ export default function Privacy() {
             You may only submit a request to know twice within a 12-month
             period.{" "}
           </p>
-          <p class="mb-4">
+          <p className="mb-4">
             We cannot respond to your request or provide you with personal
             information if we cannot verify your identity or authority to make
             the request and confirm the personal information relates to

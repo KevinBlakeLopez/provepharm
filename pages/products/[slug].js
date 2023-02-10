@@ -8,7 +8,7 @@ import { gql, useQuery } from "@apollo/client";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Modal from "../../components/Modal";
-import { NavigationMenu } from "../../components";
+
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import ComingSoon from "../../components/ComingSoon";
@@ -31,7 +31,7 @@ export default function Product() {
 
   return (
     <>
-      <Header menuItems={data.headerMenuItems} />
+      <Header />
       <Banner>Our Products</Banner>
       <Container size="lg">
         <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-6">
@@ -246,8 +246,7 @@ export default function Product() {
 }
 
 Product.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query ProductQuery($id: ID!, $headerLocation: MenuLocationEnum) {
+  query ProductQuery($id: ID!) {
     product(id: $id, idType: SLUG) {
       title
       metaFields {
@@ -283,11 +282,6 @@ Product.query = gql`
         therapeuticequivalencerating
       }
     }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
   }
 `;
 
@@ -295,7 +289,6 @@ Product.variables = () => {
   return {
     first: appConfig.postsPerPage,
     after: "",
-    headerLocation: MENUS.PRIMARY_LOCATION,
   };
 };
 

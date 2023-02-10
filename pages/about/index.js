@@ -22,7 +22,7 @@ export default function AboutUs() {
         </div>
         <Container size="sm">
           <div className="md:flex mb-10">
-            <div class="mb-10 md:mb-0 md:w-1/2 md:flex md:flex-col md:justify-center md:pr-[60px] ">
+            <div className="mb-10 md:mb-0 md:w-1/2 md:flex md:flex-col md:justify-center md:pr-[60px] ">
               <h3 className="text-6xl tracking-wider text-secondary font-extralight mb-8">
                 OUR MISSION
               </h3>

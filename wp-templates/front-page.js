@@ -20,7 +20,7 @@ export default function Component() {
   return (
     <>
       <Header />
-      <div class="p-14 bg-[url('/frontPage-hero.jpeg')] bg-cover bg-slate-700 bg-blend-soft-light text-white mb-12 md:h-[800px] flex items-center">
+      <div className="p-14 bg-[url('/frontPage-hero.jpeg')] bg-cover bg-slate-700 bg-blend-soft-light text-white mb-12 md:h-[800px] flex items-center">
         <p className="md:pl-8 md:pl-64 text-4xl md:text-7xl font-light">
           THERAPEUTICS AND <br /> DIAGNOSTICS THAT
           <br />
@@ -55,7 +55,7 @@ export default function Component() {
             TO ACCOMPLISH THIS MISSION, <br />
             OUR STRATEGY IS BASED ON
           </h3>
-          <h3 class="text-3xl md:text-5xl text-white mb-20">5 PILLARS</h3>
+          <h3 className="text-3xl md:text-5xl text-white mb-20">5 PILLARS</h3>
 
           <div className="flex flex-col md:flex-row mb-12 gap-5">
             <div className="w-full md:max-w-[200px] mb-10">
