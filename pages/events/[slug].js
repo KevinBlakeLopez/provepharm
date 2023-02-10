@@ -15,6 +15,9 @@ Event.query = gql`
       dateGmt
       title
       content
+      metaFields {
+        eventDate
+      }
       featuredImage {
         node {
           uri
