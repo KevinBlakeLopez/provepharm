@@ -3,9 +3,12 @@ import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
 import * as MENUS from "../../constants/menus";
-import { Header, Footer, NavigationMenu } from "../../components";
+
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Banner from "../../components/Banner";
 import ComingSoon from "../../components/ComingSoon";
+import { NavigationMenu } from "../../components";
 
 export default function Products() {
   const { data, loading } = useQuery(Products.query);
@@ -16,10 +19,6 @@ export default function Products() {
 
   const categories = new Set();
   const groupedProducts = {};
-
-  {
-    [], [], [];
-  }
 
   data.products.nodes.forEach((product) => {
     const category = product.categories.nodes[0]
@@ -183,6 +182,6 @@ Products.variables = () => {
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
     Page: Products,
-    revalidate: 1,
+    revalidate: 5,
   });
 }

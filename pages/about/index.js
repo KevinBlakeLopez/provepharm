@@ -1,22 +1,15 @@
-import { useQuery } from "@apollo/client";
-import { Header, Footer, Main } from "../../components";
+import { Main } from "../../components";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Timeline from "../../components/Timeline";
 import BannerPeopleLives from "../../components/BannerPeopleLives";
 import BannerThirdWay from "../../components/BannerThirdWay";
 
 export default function AboutUs() {
-  const { data, loading } = useQuery(AboutUs.query, {
-    variables: AboutUs.variables(),
-  });
-
-  if (loading) {
-    return <></>;
-  }
-
   return (
     <>
-      <Header menuItems={data.headerMenuItems} />
+      <Header />
       <Main>
         <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[700px] text-white mb-10 flex items-center">
           <h2 className="pl-8 md:pl-64 text-2xl md:text-7xl font-semibold md:font-extralight tracking-wide">

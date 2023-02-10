@@ -1,20 +1,12 @@
-import { getNextStaticProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client";
 import Link from "next/link";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Container from "../../components/Container";
-import Banner from "../../components/Banner";
-import { Header, Footer, NavigationMenu } from "../../components";
-import * as MENUS from "../../constants/menus";
 
 export default function Privacy() {
-  const { loading, error, data } = useQuery(Privacy.query);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
-
   return (
     <>
-      <Header menuItems={data.headerMenuItems} />
+      <Header />
       <Container>
         <div className="text-xl text-zinc-700">
           <h2 className="text-3xl text-center font-bold mb-4">
@@ -888,30 +880,4 @@ export default function Privacy() {
       <Footer />
     </>
   );
-}
-
-Privacy.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query GetPageData(
-    $headerLocation: MenuLocationEnum
-    $footerLocation: MenuLocationEnum
-  ) {
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-    footerMenuItems: menuItems(where: { location: $footerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-  }
-`;
-
-export async function getStaticProps(context) {
-  return getNextStaticProps(context, {
-    Page: Privacy,
-    revalidate: 1,
-  });
 }

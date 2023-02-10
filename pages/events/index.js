@@ -1,10 +1,11 @@
 import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
+
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import AllPostsTemplate from "../../components/AllPostsTemplate";
-import { Header, Footer, NavigationMenu } from "../../components";
-import * as MENUS from "../../constants/menus";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function Events() {
   const { loading, error, data } = useQuery(Events.query);
@@ -12,11 +13,9 @@ export default function Events() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
 
-  console.log(data);
-
   return (
     <>
-      <Header menuItems={data.headerMenuItems} />
+      <Header />
       <Banner>Events</Banner>
       <Container size="sm">
         <AllPostsTemplate data={data.events} route="events" />
@@ -27,8 +26,7 @@ export default function Events() {
 }
 
 Events.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query Events($headerLocation: MenuLocationEnum) {
+  query Events {
     events(first: 200) {
       nodes {
         slug
@@ -51,19 +49,8 @@ Events.query = gql`
         }
       }
     }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
   }
 `;
-
-Events.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-  };
-};
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {

@@ -1,12 +1,11 @@
 import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
+
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import AllPostsTemplate from "../../components/AllPostsTemplate";
-import { Header, Footer, NavigationMenu } from "../../components";
-import * as MENUS from "../../constants/menus";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function PressReleases() {
   const { loading, error, data } = useQuery(PressReleases.query);
@@ -16,7 +15,7 @@ export default function PressReleases() {
 
   return (
     <>
-      <Header menuItems={data.headerMenuItems} />
+      <Header />
       <Banner>Press Releases</Banner>
       <Container size="sm">
         <AllPostsTemplate data={data.pressReleases} route="press" />
@@ -27,8 +26,7 @@ export default function PressReleases() {
 }
 
 PressReleases.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query AllPressReleases($headerLocation: MenuLocationEnum) {
+  query AllPressReleases {
     pressReleases(first: 200) {
       nodes {
         slug
@@ -41,26 +39,15 @@ PressReleases.query = gql`
           node {
             mediaItemUrl
             mediaDetails {
-            width
-            height
-          }
+              width
+              height
+            }
           }
         }
       }
     }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
   }
 `;
-
-PressReleases.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-  };
-};
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {

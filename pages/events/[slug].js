@@ -1,14 +1,40 @@
 import { getWordPressProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { Header, Footer, NavigationMenu } from "../../components";
+
 import Container from "../../components/Container";
-import Banner from "../../components/Banner";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import SinglePostTemplate from "../../components/SinglePostTemplate";
 
+export default function Event() {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  const { data, loading } = useQuery(Event.query, {
+    variables: { id: slug },
+  });
+
+  if (loading) {
+    return <></>;
+  }
+
+  console.log(22, data);
+  const { event } = data;
+
+  return (
+    <>
+      <Header />
+      <Container size="xxs">
+        <SinglePostTemplate data={event} />
+      </Container>
+      <Footer />
+    </>
+  );
+}
+
 Event.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query EventQuery($id: ID!, $headerLocation: MenuLocationEnum) {
+  query EventQuery($id: ID!) {
     event(id: $id, idType: SLUG) {
       id
       date
@@ -29,11 +55,6 @@ Event.query = gql`
         }
       }
     }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
   }
 `;
 
@@ -41,39 +62,8 @@ Event.variables = () => {
   return {
     first: appConfig.postsPerPage,
     after: "",
-    headerLocation: MENUS.PRIMARY_LOCATION,
   };
 };
-
-export default function Event() {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  console.log(slug);
-
-  const { data, loading } = useQuery(Event.query, {
-    variables: { id: slug },
-  });
-
-  if (loading) {
-    return <></>;
-  }
-  console.log(55, data);
-  const { event } = data;
-  console.log(event);
-
-  return (
-    <>
-      <Header menuItems={data.headerMenuItems} />
-      {/* <Banner>Press Releases</Banner> */}
-      <Container size="xxs">
-        <SinglePostTemplate data={event} />
-      </Container>
-
-      <Footer />
-    </>
-  );
-}
 
 export async function getServerProps(context) {
   return getWordPressProps(context, {

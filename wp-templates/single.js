@@ -2,14 +2,14 @@ import { gql } from "@apollo/client";
 import * as MENUS from "../constants/menus";
 import { BlogInfoFragment } from "../fragments/GeneralSettings";
 import {
-  Header,
+  // Header,
   Footer,
   Main,
   EntryHeader,
   NavigationMenu,
   ContentWrapper,
   FeaturedImage,
-  SEO,
+  // SEO,
 } from "../components";
 import Container from "../components/Container";
 
@@ -27,11 +27,11 @@ export default function Component(props) {
 
   return (
     <>
-      <SEO
+      {/* <SEO
         title={siteTitle}
         description={siteDescription}
         imageUrl={featuredImage?.node?.sourceUrl}
-      />
+      /> */}
       {/* <Header
         title={siteTitle}
         description={siteDescription}

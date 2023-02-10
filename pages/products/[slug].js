@@ -1,68 +1,18 @@
-import { getWordPressProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client";
-import Modal from "../../components/Modal";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Header, Footer, NavigationMenu } from "../../components";
+
+import { getWordPressProps } from "@faustwp/core";
+import { gql, useQuery } from "@apollo/client";
+
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Modal from "../../components/Modal";
+import { NavigationMenu } from "../../components";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import ComingSoon from "../../components/ComingSoon";
 import ISI from "../../components/ISI";
-
-Product.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query ProductQuery($id: ID!, $headerLocation: MenuLocationEnum) {
-    product(id: $id, idType: SLUG) {
-      title
-      metaFields {
-        amerisourcebergen2
-        brandProduct
-        cardinal
-        closuresize
-        containersize
-        form
-        genericname
-        glutenFree
-        gtin
-        importantsafetyinformation
-        mckesson
-        morrisDickson
-        ndc
-        noNaturalRubber
-        packsize
-        prescribinginformation {
-          url
-        }
-        preservativeFree
-        productimage {
-          mediaItemUrl
-        }
-        productvariationtitle
-        safetysheet {
-          mediaItemUrl
-        }
-        video
-        strength
-        therapeuticclass
-        therapeuticequivalencerating
-      }
-    }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-  }
-`;
-
-Product.variables = () => {
-  return {
-    first: appConfig.postsPerPage,
-    after: "",
-    headerLocation: MENUS.PRIMARY_LOCATION,
-  };
-};
 
 export default function Product() {
   const router = useRouter();
@@ -294,6 +244,60 @@ export default function Product() {
     </>
   );
 }
+
+Product.query = gql`
+  ${NavigationMenu.fragments.entry}
+  query ProductQuery($id: ID!, $headerLocation: MenuLocationEnum) {
+    product(id: $id, idType: SLUG) {
+      title
+      metaFields {
+        amerisourcebergen2
+        brandProduct
+        cardinal
+        closuresize
+        containersize
+        form
+        genericname
+        glutenFree
+        gtin
+        importantsafetyinformation
+        mckesson
+        morrisDickson
+        ndc
+        noNaturalRubber
+        packsize
+        prescribinginformation {
+          url
+        }
+        preservativeFree
+        productimage {
+          mediaItemUrl
+        }
+        productvariationtitle
+        safetysheet {
+          mediaItemUrl
+        }
+        video
+        strength
+        therapeuticclass
+        therapeuticequivalencerating
+      }
+    }
+    headerMenuItems: menuItems(where: { location: $headerLocation }) {
+      nodes {
+        ...NavigationMenuItemFragment
+      }
+    }
+  }
+`;
+
+Product.variables = () => {
+  return {
+    first: appConfig.postsPerPage,
+    after: "",
+    headerLocation: MENUS.PRIMARY_LOCATION,
+  };
+};
 
 export async function getServerProps(context) {
   return getWordPressProps(context, {

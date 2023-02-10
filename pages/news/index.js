@@ -1,12 +1,11 @@
 import { getNextStaticProps } from "@faustwp/core";
-import Image from "next/image";
-import Link from "next/link";
-import Container from "../../components/Container";
 import { gql, useQuery } from "@apollo/client";
+
+import Container from "../../components/Container";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Banner from "../../components/Banner";
 import AllPostsTemplate from "../../components/AllPostsTemplate";
-import { Header, Footer, NavigationMenu } from "../../components";
-import * as MENUS from "../../constants/menus";
 
 export default function Posts() {
   const { data, loading, error } = useQuery(Posts.query);
@@ -19,7 +18,7 @@ export default function Posts() {
 
   return (
     <>
-      <Header menuItems={data.headerMenuItems} />
+      <Header />
       <Banner>News</Banner>
       <Container size="sm">
         <AllPostsTemplate data={data.posts} route="news" />
@@ -30,8 +29,7 @@ export default function Posts() {
 }
 
 Posts.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query Posts($headerLocation: MenuLocationEnum) {
+  query Posts {
     posts(first: 10) {
       nodes {
         date
@@ -43,26 +41,15 @@ Posts.query = gql`
             id
             mediaItemUrl
             mediaDetails {
-            width
-            height
-          }
+              width
+              height
+            }
           }
         }
       }
     }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
   }
 `;
-
-Posts.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-  };
-};
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {

@@ -1,15 +1,13 @@
-import { useQuery, gql } from "@apollo/client";
-import * as MENUS from "../../constants/menus";
-import { BlogInfoFragment } from "../../fragments/GeneralSettings";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Header, Footer, Main, NavigationMenu } from "../../components";
+import { Main } from "../../components";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import ISI from "../../components/ISI";
 
 import bludigoProduct from "../../public/bludigo_product_image.png";
-import videoThumbnail from "../../public/video_thumbnail.png";
 import doctorsStock from "../../public/bludigo_doctors_stock.jpeg";
 import chart from "../../public/chart_icon_2x.png";
 import clock from "../../public/clock_icon_2x.png";
@@ -18,14 +16,6 @@ import table from "../../public/table_2x.png";
 import bludigoAnimation from "../../public/bludigo-injection-animation.gif";
 
 export default function Bludigo() {
-  const { data, loading } = useQuery(Bludigo.query, {
-    variables: Bludigo.variables(),
-  });
-
-  if (loading) {
-    return <></>;
-  }
-
   return (
     <>
       <Header />
@@ -163,33 +153,3 @@ export default function Bludigo() {
     </>
   );
 }
-
-Bludigo.query = gql`
-  ${BlogInfoFragment}
-  ${NavigationMenu.fragments.entry}
-  query GetPageData(
-    $headerLocation: MenuLocationEnum
-    $footerLocation: MenuLocationEnum
-  ) {
-    generalSettings {
-      ...BlogInfoFragment
-    }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-    footerMenuItems: menuItems(where: { location: $footerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-  }
-`;
-
-Bludigo.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-    footerLocation: MENUS.FOOTER_LOCATION,
-  };
-};

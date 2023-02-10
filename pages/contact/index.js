@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { getNextStaticProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client";
+
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
-import { Header, Footer, NavigationMenu } from "../../components";
-import * as MENUS from "../../constants/menus";
 
 export default function ContactUs() {
-  const { data, loading } = useQuery(ContactUs.query);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -15,7 +13,9 @@ export default function ContactUs() {
     topic: "",
     message: "",
   });
+
   const [errors, setErrors] = useState({});
+
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleChange = (e) => {
@@ -86,13 +86,9 @@ export default function ContactUs() {
     setFormSubmitted(true);
   };
 
-  if (loading) {
-    return <></>;
-  }
-
   return (
     <>
-      <Header menuItems={data.headerMenuItems} />
+      <Header />
       <Banner>Contact Us</Banner>
       <Container size="md">
         <div className="lg:flex md:gap-12 justify-between md:my-16">
@@ -310,28 +306,4 @@ export default function ContactUs() {
       <Footer />
     </>
   );
-}
-
-ContactUs.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query Posts($headerLocation: MenuLocationEnum) {
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
-  }
-`;
-
-ContactUs.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-  };
-};
-
-export async function getStaticProps(context) {
-  return getNextStaticProps(context, {
-    Page: ContactUs,
-    revalidate: 1,
-  });
 }
