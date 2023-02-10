@@ -12,11 +12,11 @@ export default function SinglePostTemplate({ data }) {
   );
   let width, height;
   if (aspectRatio > 1) {
-    // image is rectangular
+    // rectangular image is oriented horizontally
     width = 800;
     height = 800 / aspectRatio;
   } else {
-    // image is square
+    // rectangular image is oriented vertically
     height = 800;
     width = 800 * aspectRatio;
   }

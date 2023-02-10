@@ -1,3 +1,5 @@
+import { gql, useQuery } from "@apollo/client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,6 +18,15 @@ import table from "../../public/table_2x.png";
 import bludigoAnimation from "../../public/bludigo-injection-animation.gif";
 
 export default function Bludigo() {
+  const { data, loading } = useQuery(Bludigo.query);
+
+  if (loading) {
+    return <></>;
+  }
+
+  const { metaFields } = data.product;
+  const bludigo = metaFields;
+
   return (
     <>
       <Header />
@@ -148,8 +159,19 @@ export default function Bludigo() {
             </a>
           </Link>
         </section>
+        <ISI importantsafetyinformation={bludigo.importantsafetyinformation} />
       </Main>
       <Footer />
     </>
   );
 }
+
+Bludigo.query = gql`
+  query {
+    product(id: "cG9zdDozODU=") {
+      metaFields {
+        importantsafetyinformation
+      }
+    }
+  }
+`;
