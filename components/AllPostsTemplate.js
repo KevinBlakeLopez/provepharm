@@ -29,7 +29,7 @@ export default function AllPostsTemplate({ data, route }) {
         ({ id, title, excerpt, date, featuredImage, slug, metaFields }) => (
           <div className="md:flex md:items-center mb-10" key={id}>
             {featuredImage ? (
-              <div className="max-w-[386px] mr-12">
+              <div className="md:w-[386px] mr-12">
                 <Image
                   width={featuredImage.node.mediaDetails.width}
                   height={featuredImage.node.mediaDetails.height}
