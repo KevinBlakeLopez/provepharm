@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { Container, NavigationMenu, SkipNavigationLink } from "..";
-import classNames from "classnames/bind";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import styles from "./Header.module.scss";
 
 export default function Header({ menuItems }) {
   console.log(menuItems);
@@ -38,7 +35,11 @@ export default function Header({ menuItems }) {
          border-b-2 w-full p-5 ${isNavShown ? "fixed top-0 width:100%" : ""}`}
       >
         <div className="flex justify-between items-center">
-          <div className="cursor-pointer"><Link href="/"><Image src="/logo.jpeg" alt="me" height="55" width="130" /></Link></div>
+          <div className="cursor-pointer">
+            <Link href="/">
+              <Image src="/logo.jpeg" alt="me" height="55" width="130" />
+            </Link>
+          </div>
 
           <div>
             <div className="md:hidden" onClick={handleClick}>
@@ -88,34 +89,3 @@ export default function Header({ menuItems }) {
     </>
   );
 }
-
-// return (
-//   <header className={cx('component')}>
-//     <SkipNavigationLink />
-//       <Container>
-//         <div className={cx('navbar')}>
-//           <div className={cx('brand')}>
-//             <Link href="/">
-//               <a className={cx('title')}>{title}</a>
-//             </Link>
-//             {description && <p className={cx('description')}>{description}</p>}
-//           </div>
-//           <button
-//             type="button"
-//             className={cx('nav-toggle')}
-//             onClick={() => setIsNavShown(!isNavShown)}
-//             aria-label="Toggle navigation"
-//             aria-controls={cx('primary-navigation')}
-//             aria-expanded={isNavShown}
-//           >
-//             ☰
-//           </button>
-//           <NavigationMenu
-//             className={cx(['primary-navigation', isNavShown ? 'show' : undefined])}
-//             menuItems={menuItems}
-//           />
-//       </div>
-//     </Container>
-//   </header>
-// );
-// }

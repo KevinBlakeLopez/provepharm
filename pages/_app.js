@@ -22,3 +22,4 @@ export default function MyApp({ Component, pageProps }) {
     </FaustProvider>
   );
 }
+  
