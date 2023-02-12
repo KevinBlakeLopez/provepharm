@@ -88,7 +88,7 @@ export default function Bludigo() {
           </div>
         </section>
 
-        <section className="mb-40">
+        <section className="  mb-40">
           <p className="text-3xl md:text-5xl text-[#4E157D] md:w-2/3 md:ml-32 pb-16">
             Bludigo has a deep blue color that significantly aids visualization
             when assessing ureter patency.
