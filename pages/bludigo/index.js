@@ -1,7 +1,7 @@
-import { gql, useQuery } from "@apollo/client";
-
 import Image from "next/image";
 import Link from "next/link";
+
+import { gql, useQuery } from "@apollo/client";
 
 import { Main } from "../../components";
 import Header from "../../components/Header";
