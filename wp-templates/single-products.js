@@ -1,32 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
-import { getWordPressProps } from "@faustwp/core";
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Modal from "../../components/Modal";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 
-import Container from "../../components/Container";
-import Banner from "../../components/Banner";
-import ComingSoon from "../../components/ComingSoon";
-import ISI from "../../components/ISI";
+import Container from "../components/Container";
+import Banner from "../components/Banner";
+import ComingSoon from "../components/ComingSoon";
+import ISI from "../components/ISI";
 
-export default function Product() {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  const { data, loading } = useQuery(Product.query, {
-    variables: { id: slug },
-  });
-
-  if (loading) {
-    return <></>;
+export default function Product(props) {
+  if (props.loading) {
+    return <>Loading...</>;
   }
 
-  const { metaFields } = data.product;
+  const { metaFields } = props.data.product;
   const product = metaFields;
 
   return (
@@ -42,7 +33,7 @@ export default function Product() {
               </Link>
               {" > "}
               {product.brandProduct
-                ? `${product.productvariationtitle} `
+                ? `{product.productvariationtitle} `
                 : ""}{" "}
               {product.genericname}
             </h2>
@@ -247,8 +238,8 @@ export default function Product() {
 }
 
 Product.query = gql`
-  query ProductQuery($id: ID!) {
-    product(id: $id, idType: SLUG) {
+  query ProductQuery($databaseId: ID!, $asPreview: Boolean = false) {
+    product(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       title
       metaFields {
         amerisourcebergen2
@@ -286,16 +277,9 @@ Product.query = gql`
   }
 `;
 
-Product.variables = () => {
+Product.variables = ({ databaseId }, ctx) => {
   return {
-    first: appConfig.postsPerPage,
-    after: "",
+    databaseId,
+    asPreview: ctx?.asPreview,
   };
 };
-
-export async function getServerProps(context) {
-  return getWordPressProps(context, {
-    Product,
-    revalidate: 1,
-  });
-}

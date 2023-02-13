@@ -26,7 +26,6 @@ const Wysiwyg = ({ content }) => {
   const openModal = (externalLink) => {
     setIsOpen(true);
     setExternalLink(externalLink);
-    console.log(28, isOpen);
   };
 
   return (

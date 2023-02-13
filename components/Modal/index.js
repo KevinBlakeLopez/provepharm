@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const Modal = ({ text, externalLink, open, classes }) => {
-  console.log(4, open);
   const [isOpen, setIsOpen] = useState(open ? true : false);
   useEffect(() => {
     setIsOpen(open);

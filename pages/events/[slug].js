@@ -19,7 +19,6 @@ export default function Event() {
     return <></>;
   }
 
-  console.log(22, data);
   const { event } = data;
 
   return (
