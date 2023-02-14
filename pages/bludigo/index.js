@@ -38,12 +38,14 @@ export default function Bludigo() {
           className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] h-[765px] md:max-h-[900px] text-white md:flex items-center"
         >
           <div className="pt-12 md:pt-0 md:px-32">
-            <p className="text-3xl lg:text-8xl pb-6">See the difference.</p>
-            <h1 className="text-2xl pb-24">
+            <p className="text-3xl lg:text-8xl pb-6 px-8 md:px-0">
+              See the difference.
+            </p>
+            <h1 className="text-2xl pb-24 px-8 md:px-0">
               Bludigo™ (indigotindisulfonate sodium injection, USP)
             </h1>
-            <div className="bg-[#230A2F] py-8 md:p-8">
-              <h5 className="text-3xl text-white mb-4">Product Information</h5>
+            <div className="bg-[#230A2F] p-8">
+              <h5 className="text-3xl text-white mb-4 ">Product Information</h5>
               <Link href="products/bludigo-indigotindisulfonate-sodium-injection-usp">
                 <a className="underline text-2xl text-white ">
                   Click to read more
@@ -69,12 +71,12 @@ export default function Bludigo() {
             </section>
           </Container>
         </div>
-        <section className="lg:flex mb-40">
+        <section className="lg:flex mb-16 md:mb-40">
           <figure className="flex lg:w-1/2 md:order-2">
             <Image src={bludigoDoctorsStock} />
           </figure>
           <div className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] text-white font-light lg:w-1/2 md:order-1">
-            <section className="lg:max-w-[543px] md:float-right md:py-20 py-14 px-14 md:pl-0 -mt-2">
+            <section className="lg:max-w-[543px] md:float-right py-14 md:py-20 px-12 md:pl-0 -mt-2">
               <h3 className="text-3xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
                 Not just any blue dye.
               </h3>
@@ -88,7 +90,7 @@ export default function Bludigo() {
           </div>
         </section>
 
-        <section className="  mb-40">
+        <section className="px-12 md:px-0 md:mb-40">
           <p className="text-3xl md:text-5xl text-[#4E157D] md:w-2/3 md:ml-32 pb-16">
             Bludigo has a deep blue color that significantly aids visualization
             when assessing ureter patency.
@@ -125,7 +127,7 @@ export default function Bludigo() {
           </Container>
         </section>
 
-        <section className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] py-12 md:py-36">
+        <section className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] py-12 px-12 md:py-36 md:px-0">
           <h3 className="text-3xl md:text-5xl text-white mb-16 md:ml-32 md:w-3/5">
             Fast detection. Bludigo is excreted in the urine quickly.
           </h3>
@@ -138,7 +140,7 @@ export default function Bludigo() {
           </figure>
         </section>
         <hr className="mb-16" />
-        <section className="mb-16 text-center">
+        <section className="mb-16 px-4 md:px-0 text-center">
           <p className="mb-8 text-3xl font-bold">
             Read the full prescribing information
           </p>
