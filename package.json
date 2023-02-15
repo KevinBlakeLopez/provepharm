@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "faust build",
+    "build": "next build",
     "generate": "faust generatePossibleTypes",
-    "start": "faust start"
+    "start": "next start"
   },
   "dependencies": {
     "@apollo/client": "^3.6.6",

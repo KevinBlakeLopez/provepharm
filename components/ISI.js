@@ -9,9 +9,9 @@ export default function ISI({ importantsafetyinformation }) {
         expanded ? "top-[75px]" : ""
       } bottom-[-170px] md:bottom-[-91px] left-0 right-0 w-full z-50 transition-transform-[top 1s ease-in-out]`}
     >
-      <div className="bg-gray-600 text-zinc-100 flex justify-end">
+      <div className="bg-gray-600 text-zinc-100 flex justify-center md:justify-end">
         <button
-          className="text-xl py-4 pr-24"
+          className="text-xl py-4 md:pr-24"
           onClick={() => setExpanded(!expanded)}
         >
           {expanded
@@ -30,7 +30,7 @@ export default function ISI({ importantsafetyinformation }) {
         </button> */}
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center px-5 md:p-0">
         <div
           style={{ height: expanded ? "calc(100vh - 220px)" : "200px" }}
           className={`isi mt-10 mb-20 md:mb-0 max-w-[1400px] overflow-auto md:pr-6`}
