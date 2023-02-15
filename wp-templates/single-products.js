@@ -33,7 +33,7 @@ export default function Product(props) {
               </Link>
               {" > "}
               {product.brandProduct
-                ? `{product.productvariationtitle} `
+                ? product.productvariationtitle
                 : ""}{" "}
               {product.genericname}
             </h2>
