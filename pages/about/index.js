@@ -1,6 +1,7 @@
-import { useRouter } from "next/router";
 import { getNextStaticProps } from "@faustwp/core";
-import { gql } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
+
+import SEO from "../../components/SEO";
 
 import { Main } from "../../components";
 import Header from "../../components/Header";
@@ -11,19 +12,11 @@ import BannerPeopleLives from "../../components/BannerPeopleLives";
 import BannerThirdWay from "../../components/BannerThirdWay";
 
 export default function AboutUs() {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  console.log(slug);
-  console.log(`/${slug}/`);
-
-  // const { data } = useQuery(AboutUs.query, {
-  //   variables: { uri: `/${slug}/` },
-  // });
+  const { data } = useQuery(AboutUs.query);
 
   return (
     <>
-      {/* <SEO title={data.seo.title} description={data.seo.title} /> */}
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Main>
         <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[700px] text-white mb-10 flex items-center">
@@ -146,16 +139,16 @@ export default function AboutUs() {
   );
 }
 
-// AboutUs.query = gql`
-//   query About($uri: ID!) {
-//     pageBy(uri: $uri) {
-//       seo {
-//         title
-//         metaDesc
-//       }
-//     }
-//   }
-// `;
+AboutUs.query = gql`
+  query AboutPage {
+    page(id: "/about/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
+  }
+`;
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
