@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { gql } from "@apollo/client";
 
+import SEO from "../components/SEO";
+
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
@@ -17,11 +19,13 @@ export default function Product(props) {
     return <>Loading...</>;
   }
 
-  const { metaFields } = props.data.product;
+  const { metaFields, seo } = props.data.product;
+  console.log(seo);
   const product = metaFields;
 
   return (
     <>
+      <SEO title={seo.title} description={seo.metaDesc} />
       <Header />
       <Banner>Our Products</Banner>
       <Container size="lg">
@@ -32,9 +36,7 @@ export default function Product(props) {
                 <a className=" text-blue-500">Products</a>
               </Link>
               {" > "}
-              {product.brandProduct
-                ? product.productvariationtitle
-                : ""}{" "}
+              {product.brandProduct ? product.productvariationtitle : ""}{" "}
               {product.genericname}
             </h2>
             <div className="md:flex md:justify-between">
@@ -272,6 +274,10 @@ Product.query = gql`
         strength
         therapeuticclass
         therapeuticequivalencerating
+      }
+      seo {
+        metaDesc
+        title
       }
     }
   }
