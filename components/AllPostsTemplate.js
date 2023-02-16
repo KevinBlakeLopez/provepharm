@@ -20,7 +20,9 @@ export default function AllPostsTemplate({ data, route }) {
   //   height = 400;
   //   width = 400 * aspectRatio;
   // }
-  if (data.nodes[0].events) {
+  if (!data.nodes[0]) {
+    return <p>Coming Soon!</p>;
+  } else if (data.nodes[0].events) {
     return (
       <>
         <div className="h-12 bg-inherit" />
