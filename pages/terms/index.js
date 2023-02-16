@@ -1,3 +1,7 @@
+import { getNextStaticProps } from "@faustwp/core";
+import { gql, useQuery } from "@apollo/client";
+
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
@@ -5,8 +9,11 @@ import styles from "./terms.module.scss";
 import Link from "next/link";
 
 export default function TermsAndConditions() {
+  const { data } = useQuery(TermsAndConditions.query);
+
   return (
     <>
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Container>
         <div className={`${styles.termsDiv} text-zinc-700 text-xl`}>
@@ -600,4 +607,22 @@ export default function TermsAndConditions() {
       <Footer />
     </>
   );
+}
+
+TermsAndConditions.query = gql`
+  query Terms {
+    page(id: "/terms/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
+  }
+`;
+
+export async function getStaticProps(context) {
+  return getNextStaticProps(context, {
+    Page: TermsAndConditions,
+    revalidate: 10,
+  });
 }

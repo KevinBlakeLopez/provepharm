@@ -1,12 +1,20 @@
 import Link from "next/link";
+
+import { getNextStaticProps } from "@faustwp/core";
+import { gql, useQuery } from "@apollo/client";
+
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import SinglePostTemplate from "../../components/SinglePostTemplate";
 
 export default function Privacy() {
+  const { data } = useQuery(Privacy.query);
+
   return (
     <>
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Container>
         <div className="text-xl text-zinc-700">
@@ -881,4 +889,22 @@ export default function Privacy() {
       <Footer />
     </>
   );
+}
+
+Privacy.query = gql`
+  query PrivacyPage {
+    page(id: "/privacy/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
+  }
+`;
+
+export async function getStaticProps(context) {
+  return getNextStaticProps(context, {
+    Page: Privacy,
+    revalidate: 10,
+  });
 }

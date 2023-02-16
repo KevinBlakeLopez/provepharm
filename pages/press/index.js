@@ -1,6 +1,7 @@
 import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
@@ -15,6 +16,7 @@ export default function PressReleases() {
 
   return (
     <>
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Banner>Press Releases</Banner>
       <Container size="sm">
@@ -27,6 +29,12 @@ export default function PressReleases() {
 
 PressReleases.query = gql`
   query AllPressReleases {
+    page(id: "/press/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
     pressReleases(first: 200) {
       nodes {
         slug
@@ -52,6 +60,6 @@ PressReleases.query = gql`
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
     Page: PressReleases,
-    revalidate: 1,
+    revalidate: 10,
   });
 }

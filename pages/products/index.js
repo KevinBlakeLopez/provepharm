@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import * as MENUS from "../../constants/menus";
 
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Banner from "../../components/Banner";
@@ -34,6 +35,7 @@ export default function Products() {
 
   return (
     <>
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header menuItems={data.headerMenuItems} />
       <Banner>Our Products</Banner>
       <div className="mt-10 mx-4 md:mx-0">
@@ -139,6 +141,12 @@ export default function Products() {
 Products.query = gql`
   ${NavigationMenu.fragments.entry}
   query Products($headerLocation: MenuLocationEnum) {
+    page(id: "/products/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
     products(first: 30) {
       nodes {
         title
