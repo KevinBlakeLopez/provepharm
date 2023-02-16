@@ -9,7 +9,6 @@ export default function Privacy() {
     <>
       <Header />
       <Container>
-        <SinglePostTemplate />
         <div className="text-xl text-zinc-700">
           <h2 className="text-3xl text-center font-bold mb-4">
             Website Privacy Policy

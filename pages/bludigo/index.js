@@ -112,10 +112,10 @@ export default function Bludigo() {
           </p>
           <div className="md:w-3/4 lg:w-2/3 md:mx-auto mb-20">
             <figure className="flex mb-20 md:items-center">
-              <div className="w-5/6 md:w-1/2 lg:w-5/12">
+              <div className="w-2/3 md:w-7/12 lg:w-1/4 ml-[5px] lg:ml-[10px]">
                 <Image src={chart} />
               </div>
-              <div className="text-[#4E157D] ml-[20px] md:ml-[105px]">
+              <div className="text-[#4E157D] ml-[20px] md:ml-[65px] lg:ml-[114px]">
                 <figcaption className="text-lg md:text-2xl">
                   83% of the ureter patency assessments in the Bludigo™ clinical
                   trial were reported as visualizing good or striking color
@@ -124,10 +124,10 @@ export default function Bludigo() {
               </div>
             </figure>
             <figure className="flex md:items-center">
-              <div className="w-5/6 md:w-1/2 lg:w-5/12">
+              <div className="w-full md:w-11/12 lg:w-5/12">
                 <Image src={target} />
               </div>
-              <div className="text-[#4E157D] ml-[20px] md:ml-[105px]">
+              <div className="text-[#4E157D] ml-[20px] md:ml-[60px] lg:ml-[105px]">
                 <figcaption className="text-lg md:text-2xl">
                   In 90% of urologic and gynecologic surgical procedures (N=49)
                   in the Bludigo™ clinical trial, physicians agreed that their
