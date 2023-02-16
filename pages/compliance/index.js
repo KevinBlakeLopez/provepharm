@@ -1,11 +1,18 @@
+import { getNextStaticProps } from "@faustwp/core";
+import { gql, useQuery } from "@apollo/client";
+
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 
 export default function Compliance() {
+  const { data } = useQuery(Compliance.query);
+
   return (
     <>
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Banner>California Compliance Declaration</Banner>
       <Container>
@@ -202,4 +209,22 @@ export default function Compliance() {
       <Footer />
     </>
   );
+}
+
+Compliance.query = gql`
+  query CompliancePage {
+    page(id: "/compliance/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
+  }
+`;
+
+export async function getStaticProps(context) {
+  return getNextStaticProps(context, {
+    Page: Compliance,
+    revalidate: 10,
+  });
 }

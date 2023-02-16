@@ -258,9 +258,9 @@ export default function ContactUs() {
                   E:{" "}
                   <a
                     className="underline text-secondary"
-                    href="mailto:safety-us@provepharm.com"
+                    href="mailto:provepharm@medicalinformation.center"
                   >
-                    safety-us@provepharm.com
+                    provepharm@medicalinformation.center
                   </a>
                 </p>
               </div>

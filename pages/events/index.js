@@ -1,6 +1,7 @@
 import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 
+import SEO from "../../components/SEO";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
 import AllPostsTemplate from "../../components/AllPostsTemplate";
@@ -15,6 +16,7 @@ export default function Events() {
 
   return (
     <>
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Banner>Events</Banner>
       <Container size="sm">
@@ -27,6 +29,12 @@ export default function Events() {
 
 Events.query = gql`
   query Events {
+    page(id: "/events/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
     events(first: 200) {
       nodes {
         slug
@@ -55,6 +63,6 @@ Events.query = gql`
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
     Page: Events,
-    revalidate: 1,
+    revalidate: 10,
   });
 }

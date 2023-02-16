@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 
 import { Main } from "../../components";
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
@@ -30,6 +32,7 @@ export default function Bludigo() {
 
   return (
     <>
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Main>
         {/* adjust height of section element for mobile to make sure the Image component doesn't overflow */}
@@ -192,6 +195,12 @@ export default function Bludigo() {
 
 Bludigo.query = gql`
   query {
+    page(id: "/bludigo", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
     product(id: "cG9zdDozODU=") {
       metaFields {
         importantsafetyinformation
@@ -199,3 +208,10 @@ Bludigo.query = gql`
     }
   }
 `;
+
+export async function getStaticProps(context) {
+  return getNextStaticProps(context, {
+    Page: Bludigo,
+    revalidate: 10,
+  });
+}
