@@ -12,10 +12,10 @@ import Container from "../../components/Container";
 import ISI from "../../components/ISI";
 import Modal from "../../components/Modal";
 
-import bludigoProduct from "../../public/bludigo_product_image.png";
+import bludigoProduct from "../../public/bludigo_product_packaging_vial.png";
 import bludigoDoctorsStock from "../../public/bludigoDoctorsStock.jpeg";
 import chart from "../../public/chart_icon.png";
-import clock from "../../public/clock_icon_2x.png";
+import clock from "../../public/clock_icon_white.png";
 import target from "../../public/target_icon.png";
 import table from "../../public/table_2x.png";
 import bludigoAnimation from "../../public/bludigo-injection-animation.gif";
@@ -38,7 +38,7 @@ export default function Bludigo() {
         {/* adjust height of section element for mobile to make sure the Image component doesn't overflow */}
         <section
           id="hero"
-          className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] md:h-[1000px] lg:h-[750px] text-white lg:flex items-center px-2 py-10 md:p-16"
+          className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] md:h-[1000px] lg:h-[750px] text-white lg:flex lg:justify-center items-center px-2 py-10 md:p-16"
         >
           <div className="lg:pr-32">
             <div className="px-4 md:px-0 mb-14 lg:mb-24">
@@ -60,7 +60,7 @@ export default function Bludigo() {
               </Link>
             </div>
           </div>
-          <figure className="w-5/6 lg:w-1/2">
+          <figure className="lg:w-[800px]">
             <Image
               // style={{ width: "75%", height: "auto" }}
               src={bludigoProduct}
