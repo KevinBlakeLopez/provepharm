@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+import SEO from "../components/SEO";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -10,10 +11,11 @@ export default function Event(props) {
     return <>Loading...</>;
   }
 
-  const { event } = props.data;
+  const { event, seo } = props.data;
 
   return (
     <>
+      <SEO title={seo.title} description={seo.metaDesc} />
       <Header />
       <Container size="xxs">
         <SinglePostTemplate data={event} />
@@ -43,6 +45,10 @@ Event.query = gql`
             height
           }
         }
+      }
+      seo {
+        metaDesc
+        title
       }
     }
   }

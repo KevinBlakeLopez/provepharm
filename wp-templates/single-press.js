@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+import SEO from "../components/SEO";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Container from "../components/Container";
@@ -10,10 +11,11 @@ export default function PressRelease(props) {
     return <>Loading...</>;
   }
 
-  const { pressRelease } = props.data;
+  const { pressRelease, seo } = props.data;
 
   return (
     <>
+      <SEO title={seo.title} description={seo.metaDesc} />
       <Header />
       <Container size="xxs">
         <SinglePostTemplate data={pressRelease} />
@@ -40,6 +42,10 @@ PressRelease.query = gql`
             height
           }
         }
+      }
+      seo {
+        metaDesc
+        title
       }
     }
   }
