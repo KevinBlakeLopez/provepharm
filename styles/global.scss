@@ -40,23 +40,23 @@ html {
 }
 
 .isi h5 {
-  @apply text-2xl mb-6;
+  @apply text-xl mb-6;
 }
 
 .isi h6 {
-  @apply text-xl mt-8 mb-3;
+  @apply text-lg mt-8 mb-3;
 }
 
 .isi p {
-  @apply text-xl mb-4;
+  @apply text-lg mb-4;
 }
 
 .isi ul {
-  @apply text-xl mb-4 list-disc;
+  @apply text-lg mb-4 list-disc;
 }
 
 .isi li {
-  @apply text-xl mb-2 ml-4;
+  @apply text-lg mb-2 ml-4;
 }
 
 // Post Content
