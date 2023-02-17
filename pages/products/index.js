@@ -52,15 +52,17 @@ export default function Products() {
                     </h2>
                     {groupedProducts[category].map((product) => (
                       <div className="md:flex md:justify-between mb-16">
-                        {product.metaFields.productimage ? (
-                          <Image
-                            src={product.metaFields.productimage.mediaItemUrl}
-                            width="130"
-                            height="250"
-                          />
-                        ) : (
-                          <ComingSoon />
-                        )}
+                        <div className="text-center mb-12 md:mb-0">
+                          {product.metaFields.productimage ? (
+                            <Image
+                              src={product.metaFields.productimage.mediaItemUrl}
+                              width="130"
+                              height="250"
+                            />
+                          ) : (
+                            <ComingSoon />
+                          )}
+                        </div>
                         <div className="flex">
                           <ul className="mr-8 w-[210px]">
                             <li className="font-medium text-lg text-[#1e387d] ">
@@ -78,7 +80,7 @@ export default function Products() {
                             <li className="font-medium text-lg text-[#1e387d]">
                               Strength:
                             </li>
-                            <li className="mb-4">
+                            <li className="mb-10 md:mb-4">
                               {product.metaFields.strength}
                             </li>
                             <li className="mt-5 bg-[#00a6e7] w-10/12 text-white">
