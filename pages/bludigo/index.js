@@ -38,7 +38,7 @@ export default function Bludigo() {
         {/* adjust height of section element for mobile to make sure the Image component doesn't overflow */}
         <section
           id="hero"
-          className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] md:h-[1000px] lg:h-[750px] text-white lg:flex lg:justify-center items-center px-2 py-10 md:p-16"
+          className="bg-gradient-to-b from-[#4E157D] to-primary md:h-[1000px] lg:h-[750px] text-white lg:flex lg:justify-center items-center px-2 py-10 md:p-16"
         >
           <div className="lg:pr-32">
             <div className="px-4 md:px-0 mb-14 lg:mb-24">
@@ -71,10 +71,7 @@ export default function Bludigo() {
         </section>
         <div>
           <Container>
-            <section
-              id="video-section"
-              className="text-[#4E157D] my-10 md:my-15"
-            >
+            <section id="video-section" className="text-primary my-10 md:my-15">
               <h2 className="text-2xl md:text-3xl mb-20 md:mb-10 md:pb-12">
                 Introducing Bludigo™ (indigotindisulfonate sodium injection,
                 USP) the first and only FDA-approved injectable indigo carmine
@@ -93,7 +90,7 @@ export default function Bludigo() {
           <figure className="flex lg:w-1/2 md:order-2">
             <Image src={bludigoDoctorsStock} />
           </figure>
-          <div className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] text-white font-light lg:w-1/2 md:order-1">
+          <div className="bg-gradient-to-b from-primary to-[#230A2F] text-white font-light lg:w-1/2 md:order-1">
             <section className="lg:max-w-[543px] lg:float-right py-12 md:py-20 lg:py-14 px-10 md:px-10 lg:px-12 lg:pl-0 md:-mt-2">
               <h3 className="text-2xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
                 Not just any blue dye.
@@ -109,7 +106,7 @@ export default function Bludigo() {
         </section>
 
         <section className="px-12 lg:px-0 mb-16 lg:mb-24">
-          <p className="text-2xl md:text-5xl text-[#4E157D] lg:w-2/3 lg:ml-32 mb-16">
+          <p className="text-2xl md:text-5xl text-primary lg:w-2/3 lg:ml-32 mb-16">
             Bludigo™ has a deep blue color that significantly aids visualization
             when assessing ureter patency.
           </p>
@@ -118,7 +115,7 @@ export default function Bludigo() {
               <div className="w-2/3 md:w-7/12 lg:w-1/4 ml-[5px] lg:ml-[10px]">
                 <Image src={chart} />
               </div>
-              <div className="text-[#4E157D] ml-[20px] md:ml-[65px] lg:ml-[114px]">
+              <div className="text-primary ml-[20px] md:ml-[65px] lg:ml-[114px]">
                 <figcaption className="text-lg md:text-2xl">
                   83% of the ureter patency assessments in the Bludigo™ clinical
                   trial were reported as visualizing good or striking color
@@ -130,7 +127,7 @@ export default function Bludigo() {
               <div className="w-full md:w-11/12 lg:w-5/12">
                 <Image src={target} />
               </div>
-              <div className="text-[#4E157D] ml-[20px] md:ml-[60px] lg:ml-[105px]">
+              <div className="text-primary ml-[20px] md:ml-[60px] lg:ml-[105px]">
                 <figcaption className="text-lg md:text-2xl">
                   In 90% of urologic and gynecologic surgical procedures (N=49)
                   in the Bludigo™ clinical trial, physicians agreed that their
@@ -150,7 +147,7 @@ export default function Bludigo() {
           </figure>
         </div>
 
-        <section className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] py-12 px-8 md:py-36 md:px-0">
+        <section className="bg-gradient-to-b from-primary to-[#230A2F] py-12 px-8 md:py-36 md:px-0">
           <h3 className="text-2xl md:text-5xl text-white mb-4 md:mb-24 md:ml-24 lg:ml-32 md:w-3/5">
             Fast detection. Bludigo™ is excreted in the urine quickly.
           </h3>
@@ -172,16 +169,16 @@ export default function Bludigo() {
           <Modal
             text="LEARN MORE"
             externalLink="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
-            classes="bg-gradient-to-b from-[#4E157D] to-[#230A2F] py-4 px-10 text-white text-xl md:text-2xl"
+            classes="bg-gradient-to-b from-primary to-[#230A2F] py-4 px-10 text-white text-xl md:text-2xl"
           />
         </section>
-        <section className="bg-gradient-to-b from-[#4E157D] to-[#230A2F] flex flex-col md:flex-row  items-center p-10 md:py-16 lg:w-3/4 mx-auto mb-16">
+        <section className="bg-gradient-to-b from-primary to-[#230A2F] flex flex-col md:flex-row  items-center p-10 md:py-16 lg:w-3/4 mx-auto mb-16">
           <p className="text-white text-2xl md:text-4xl mb-12 md:mb-0 text-center md:text-left">
             Learn more about Bludigo™ (indigotindisulfonate sodium injection,
             USP){" "}
           </p>
           <Link href="/contact">
-            <a className="bg-white text-[#4E157D] text-xl py-4 px-8 h-14 min-w-[13rem]">
+            <a className="bg-white text-primary text-xl py-4 px-8 h-14 min-w-[13rem]">
               CONTACT US
             </a>
           </Link>
