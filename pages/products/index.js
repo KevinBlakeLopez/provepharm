@@ -63,7 +63,7 @@ export default function Products() {
                             <ComingSoon />
                           )}
                         </div>
-                        <div className="flex">
+                        <div className="flex justify-evenly">
                           <ul className="mr-8 w-[210px]">
                             <li className="font-medium text-lg text-[#1e387d] ">
                               {product.metaFields.brandProduct
