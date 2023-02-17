@@ -11,12 +11,12 @@ export default function ISI({ importantsafetyinformation }) {
     >
       <div className="bg-gray-600 text-zinc-100 flex justify-center md:justify-end">
         <button
-          className="text-xl py-4 md:pr-24"
+          className="text-xl py-2 md:pr-24 font-bold"
           onClick={() => setExpanded(!expanded)}
         >
           {expanded
             ? "Minimize Important Safety Information"
-            : "Read Important Safety Information"}
+            : "Read the full Important Safety Information"}
         </button>
         {/* <h5 className="text-center text-xl font-bold py-4">
           Important Safety Information
@@ -32,8 +32,8 @@ export default function ISI({ importantsafetyinformation }) {
 
       <div className="flex justify-center px-5 md:p-0">
         <div
-          style={{ height: expanded ? "calc(100vh - 220px)" : "200px" }}
-          className={`isi mt-10 mb-20 md:mb-0 max-w-[1400px] overflow-auto md:pr-6`}
+          style={{ height: expanded ? "calc(100vh - 220px)" : "240px" }}
+          className={`isi mt-4 mb-20 md:mb-0 max-w-[1400px] overflow-auto md:pr-6`}
           dangerouslySetInnerHTML={{
             __html: importantsafetyinformation,
           }}

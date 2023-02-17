@@ -28,7 +28,7 @@ export default function Product(props) {
       <Header />
       <Banner>Our Products</Banner>
       <Container size="lg">
-        <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14 pb-6">
+        <div className="md:flex md:flex-col md:items-center mx-4 lg:mx-0 mt-14">
           <div className="mb-20 mt-2">
             <h2 className="text-[1.7em] tracking-wide mb-8">
               <Link legacyBehavior href="/products">
