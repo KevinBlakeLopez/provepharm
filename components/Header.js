@@ -54,7 +54,7 @@ export default function Header({ menuItems }) {
               className={
                 isNavShown
                   ? `
-                  w-full h-full overflow-hidden absolute left-0 top-24  pt-7 pl-7 bg-white z-50 md:relative md:top-[initial]
+                  w-full h-full overflow-hidden fixed left-0 top-24 pt-7 pl-7 bg-white z-50 md:relative md:top-[initial] border-t-2 border-solid border-primary
                   `
                   : "hidden md:block"
               }
@@ -86,6 +86,11 @@ export default function Header({ menuItems }) {
           </div>
         </div>
       </header>
+      <style global jsx>{`
+        body {
+          overflow: ${isNavShown ? "hidden" : "auto"};
+        }
+      `}</style>
     </>
   );
 }
