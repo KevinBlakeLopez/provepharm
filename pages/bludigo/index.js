@@ -54,7 +54,7 @@ export default function Bludigo() {
                 Product Information
               </h5> */}
             <Link href="products/bludigo-indigotindisulfonate-sodium">
-              <a className="inline-block border-2 border-white p-4  mb-8 rounded text-center text-2xl text-white ">
+              <a className="inline-block border-2 border-white p-4 mb-8 rounded text-center text-2xl text-white w-full lg:w-auto ">
                 View Product Information
               </a>
             </Link>
@@ -105,7 +105,7 @@ export default function Bludigo() {
         </section>
 
         <section className="px-12 lg:px-0 mb-16 lg:mb-24">
-          <p className="text-2xl md:text-5xl text-primary lg:w-2/3 lg:ml-32 mb-16">
+          <p className="text-2xl md:text-4xl text-primary lg:w-2/3 lg:ml-32 mb-16">
             Bludigo™ has a deep blue color that significantly aids visualization
             when assessing ureter patency.
           </p>
@@ -141,7 +141,7 @@ export default function Bludigo() {
           </div>
         </section>
         <div className="hidden md:block md:mb-16">
-          <figure className="lg:w-5/6 mx-auto">
+          <figure className="lg:w-2/3 mx-auto">
             <Image src={table} layout="responsive" />
           </figure>
         </div>
