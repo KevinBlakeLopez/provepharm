@@ -93,7 +93,7 @@ export default function ContactUs() {
       <Header />
       <Banner>Contact Us</Banner>
       <Container size="md">
-        <div className="lg:flex md:gap-12 justify-between md:mt-16 md:mb-4">
+        <div className="lg:flex md:gap-12 justify-between md:mt-16">
           <section className="md:w-[600px]">
             {/* <h3 className="text-2xl text-primary mb-8">GENERAL INQUIRIES</h3> */}
             {formSubmitted ? (
@@ -222,8 +222,8 @@ export default function ContactUs() {
               </p>
             </div>
           </section>
-          <section className="md:w-[400px]">
-            <div className="text-lg float-right">
+          <section>
+            <div className="text-lg lg:float-right">
               <div className="mb-4">
                 <h4 className="font-medium">Pharmacovigilance:</h4>
                 <p>
@@ -304,7 +304,9 @@ export default function ContactUs() {
             </div>
           </section>
         </div>
-        <div>
+      </Container>
+      <Container size="md">
+        <div className="md:w-[600px]">
           <p>
             * The information you submit will be governed by our{" "}
             <span className="underline text-secondary">
@@ -313,6 +315,7 @@ export default function ContactUs() {
           </p>
         </div>
       </Container>
+
       <Footer />
     </>
   );
