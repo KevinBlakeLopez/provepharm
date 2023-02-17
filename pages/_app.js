@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { FaustProvider } from "@faustwp/core";
 import "../styles/global.scss";
 import Head from "next/head";
+import PasswordProtection from "../components/PasswordProtection";
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -18,7 +19,9 @@ export default function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} key={router.asPath} />
+      <PasswordProtection password="provepharm">
+        <Component {...pageProps} key={router.asPath} />
+      </PasswordProtection>
     </FaustProvider>
   );
 }
