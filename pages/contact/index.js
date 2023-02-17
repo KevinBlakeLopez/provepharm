@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import Link from "next/link";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
@@ -91,7 +93,7 @@ export default function ContactUs() {
       <Header />
       <Banner>Contact Us</Banner>
       <Container size="md">
-        <div className="lg:flex md:gap-12 justify-between md:my-16">
+        <div className="lg:flex md:gap-12 justify-between md:mt-16 md:mb-4">
           <section className="md:w-[600px]">
             {/* <h3 className="text-2xl text-primary mb-8">GENERAL INQUIRIES</h3> */}
             {formSubmitted ? (
@@ -301,6 +303,14 @@ export default function ContactUs() {
               </div>
             </div>
           </section>
+        </div>
+        <div>
+          <p>
+            * The information you submit will be governed by our{" "}
+            <span className="underline text-secondary">
+              <Link href="/privacy">Privacy Policy</Link>
+            </span>
+          </p>
         </div>
       </Container>
       <Footer />

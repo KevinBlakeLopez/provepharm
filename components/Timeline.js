@@ -53,7 +53,7 @@ export default function Timeline() {
             <figure className="mb-8">
               <Image src={MF} />
               <figcaption className="text-base text-center">
-                Michel Feraud, Founder CEO
+                Michel Feraud, Founder and CEO
               </figcaption>
             </figure>
 

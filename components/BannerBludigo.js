@@ -16,13 +16,12 @@ export default function BannerBludigo() {
             </div>
             <div className="md:w-1/2 px-2 py-10">
               <p className="text-2xl mb-12 md:mb-8">
-                is a diagnostic dye indicated for use as a visualization aid in
-                the cystoscopic assessment of the integrity of the ureters in
-                adults.
+                The first and only FDA-approved injectable indigo carmine
+                diagnostic dye.
               </p>
               <Link href="/bludigo">
                 <button className="bg-[#7200A8] px-6 py-[11px] rounded-lg text-xl">
-                  Explore the benefits
+                  Explore the benefits.
                 </button>
               </Link>
             </div>
