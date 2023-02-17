@@ -40,8 +40,8 @@ export default function Product(props) {
             </h2>
             <div className="md:flex md:justify-between">
               <section>
-                <div className="flex justify-between">
-                  <section className="border border-solid p-8 px-32">
+                <div className="flex justify-center">
+                  <section className="border border-solid p-8 px-24 md:px-32">
                     {product.productimage ? (
                       <Image
                         src={product.productimage.mediaItemUrl}

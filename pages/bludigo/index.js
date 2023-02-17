@@ -41,7 +41,7 @@ export default function Bludigo() {
           className="bg-gradient-to-b from-[#4E157D] to-primary md:h-[1000px] lg:h-[750px] text-white lg:flex lg:justify-center items-center px-2 py-10 md:p-16"
         >
           <div className="lg:pr-32">
-            <div className="px-4 md:px-0 mb-14 lg:mb-24">
+            <div className="px-4 md:px-0 mb-14 lg:mb-14">
               <p className="text-4xl md:text-6xl lg:text-7xl pb-6">
                 See the difference.
               </p>
@@ -49,18 +49,17 @@ export default function Bludigo() {
                 Bludigo™ (indigotindisulfonate sodium injection, USP)
               </h1>
             </div>
-            <div className="bg-[#230A2F] p-6 md:p-8 mb-14 lg:pb-10">
-              <h5 className="text-2xl md:text-3xl text-white mb-4 ">
+
+            {/* <h5 className="text-2xl md:text-3xl text-white mb-4 ">
                 Product Information
-              </h5>
-              <Link href="products/bludigo-indigotindisulfonate-sodium">
-                <a className="underline text-xl text-white ">
-                  Click to read more
-                </a>
-              </Link>
-            </div>
+              </h5> */}
+            <Link href="products/bludigo-indigotindisulfonate-sodium">
+              <a className="inline-block border-2 border-white p-4  mb-8 rounded text-center text-2xl text-white ">
+                View Product Information
+              </a>
+            </Link>
           </div>
-          <figure className="lg:w-[800px]">
+          <figure className="lg:w-[740px]">
             <Image
               // style={{ width: "75%", height: "auto" }}
               src={bludigoProduct}
@@ -90,7 +89,7 @@ export default function Bludigo() {
           <figure className="flex lg:w-1/2 md:order-2">
             <Image src={bludigoDoctorsStock} />
           </figure>
-          <div className="bg-gradient-to-b from-primary to-[#230A2F] text-white font-light lg:w-1/2 md:order-1">
+          <div className="bg-gradient-to-b from-primary to-[#020224] text-white font-light lg:w-1/2 md:order-1">
             <section className="lg:max-w-[543px] lg:float-right py-12 md:py-20 lg:py-14 px-10 md:px-10 lg:px-12 lg:pl-0 md:-mt-2">
               <h3 className="text-2xl md:text-[3.3rem] tracking-wide leading-extra-tight mb-6">
                 Not just any blue dye.
@@ -147,7 +146,7 @@ export default function Bludigo() {
           </figure>
         </div>
 
-        <section className="bg-gradient-to-b from-primary to-[#230A2F] py-12 px-8 md:py-36 md:px-0">
+        <section className="bg-gradient-to-b from-[#0e0e63] to-primary py-12 px-8 md:py-36 md:px-0">
           <h3 className="text-2xl md:text-5xl text-white mb-4 md:mb-24 md:ml-24 lg:ml-32 md:w-3/5">
             Fast detection. Bludigo™ is excreted in the urine quickly.
           </h3>
@@ -169,11 +168,11 @@ export default function Bludigo() {
           <Modal
             text="LEARN MORE"
             externalLink="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
-            classes="bg-gradient-to-b from-primary to-[#230A2F] py-4 px-10 text-white text-xl md:text-2xl"
+            classes="bg-primary py-4 px-10 text-white text-xl md:text-2xl"
           />
         </section>
-        <section className="bg-gradient-to-b from-primary to-[#230A2F] flex flex-col md:flex-row  items-center p-10 md:py-16 lg:w-3/4 mx-auto mb-16">
-          <p className="text-white text-2xl md:text-4xl mb-12 md:mb-0 text-center md:text-left">
+        <section className="bg-primary flex flex-col md:flex-row justify-between items-center p-10 md:py-16 lg:w-3/4 mx-auto mb-16">
+          <p className="text-white text-2xl md:text-3xl mb-12 md:mb-0 text-center md:text-left md:mr-8">
             Learn more about Bludigo™ (indigotindisulfonate sodium injection,
             USP){" "}
           </p>
