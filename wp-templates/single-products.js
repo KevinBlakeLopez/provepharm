@@ -20,12 +20,11 @@ export default function Product(props) {
   }
 
   const { metaFields, seo } = props.data.product;
-  console.log(seo);
   const product = metaFields;
 
   return (
     <>
-      <SEO title={seo.title} description={seo.metaDesc} />
+      {seo.metaDesc && <SEO title={seo.title} description={seo.metaDesc} />}
       <Header />
       <Banner>Our Products</Banner>
       <Container size="lg">

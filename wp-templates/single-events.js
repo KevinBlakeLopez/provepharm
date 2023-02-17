@@ -11,23 +11,39 @@ export default function Event(props) {
     return <>Loading...</>;
   }
 
-  const { event, seo } = props.data;
+  const { event } = props.data;
 
-  return (
-    <>
-      <SEO title={seo.title} description={seo.metaDesc} />
-      <Header />
-      <Container size="xxs">
-        <SinglePostTemplate data={event} />
-      </Container>
-      <Footer />
-    </>
-  );
+  if (!event.seo.metaDesc) {
+    return (
+      <>
+        <Header />
+        <Container size="xxs">
+          <SinglePostTemplate data={event} />
+        </Container>
+        <Footer />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <SEO title={event.seo.title} description={event.seo.metaDesc} />
+        <Header />
+        <Container size="xxs">
+          <SinglePostTemplate data={event} />
+        </Container>
+        <Footer />
+      </>
+    );
+  }
 }
 
 Event.query = gql`
   query EventQuery($databaseId: ID!, $asPreview: Boolean = false) {
     event(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
+      seo {
+        metaDesc
+        title
+      }
       id
       date
       dateGmt
@@ -45,10 +61,6 @@ Event.query = gql`
             height
           }
         }
-      }
-      seo {
-        metaDesc
-        title
       }
     }
   }

@@ -11,11 +11,25 @@ export default function PressRelease(props) {
     return <>Loading...</>;
   }
 
-  const { pressRelease, seo } = props.data;
-
+  const { pressRelease } = props.data;
+  console.log(pressRelease.seo.title);
+  if (!pressRelease.seo.metaDesc) {
+    return (
+      <>
+        <Header />
+        <Container size="xxs">
+          <SinglePostTemplate data={pressRelease} />
+        </Container>
+        <Footer />
+      </>
+    );
+  }
   return (
     <>
-      <SEO title={seo.title} description={seo.metaDesc} />
+      <SEO
+        title={pressRelease.seo.title}
+        description={pressRelease.seo.metaDesc}
+      />
       <Header />
       <Container size="xxs">
         <SinglePostTemplate data={pressRelease} />

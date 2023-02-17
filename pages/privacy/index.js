@@ -17,6 +17,7 @@ export default function Privacy() {
       <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Container>
+        {/* <SinglePostTemplate data={data.page} /> */}
         <div className="text-xl text-zinc-700">
           <h2 className="text-3xl text-center font-bold mb-4">
             Website Privacy Policy
@@ -898,6 +899,7 @@ Privacy.query = gql`
         title
         metaDesc
       }
+      content
     }
   }
 `;

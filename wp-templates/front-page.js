@@ -1,6 +1,7 @@
 // import { useQuery } from "@apollo/client";
 import Image from "next/image";
 
+import SEO from "../components/SEO";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -19,6 +20,7 @@ import shield from "../public/frontPage-secure-shield.png";
 export default function Component() {
   return (
     <>
+      <SEO />
       <Header />
       <div className="p-14 bg-[url('/frontPage-hero.jpeg')] bg-cover bg-slate-700 bg-blend-soft-light text-white mb-12 md:h-[800px] flex items-center">
         <p className="md:pl-8 md:pl-64 text-4xl md:text-7xl font-light">
