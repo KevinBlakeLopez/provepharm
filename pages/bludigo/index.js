@@ -159,18 +159,47 @@ export default function Bludigo() {
               detectable within 4–9 minutes.
             </figcaption>
           </figure>
+          {bludigo.trifold.mediaItemUrl ? (
+            <a
+              href={bludigo.trifold.mediaItemUrl}
+              className="block border-2 border-white p-4 mt-24 mx-auto rounded text-center text-2xl text-white w-11/12 md:3/4 lg:w-1/2"
+            >
+              See Product Brochure
+            </a>
+          ) : (
+            <span className="inline-block border-2 border-white p-4 mb-8 rounded text-center text-2xl text-white w- lg:w-auto ">
+              Product Brochure coming soon!
+            </span>
+          )}
         </section>
         <hr className="mb-16" />
-        <section className="mb-16 px-4 md:px-0 text-center">
-          <p className="mb-8 text-xl md:text-3xl font-medium">
-            Read the full prescribing information
-          </p>
-          <Modal
-            text="LEARN MORE"
-            externalLink="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
-            classes="bg-primary py-4 px-10 text-white text-xl md:text-2xl"
-          />
-        </section>
+        <div className="md:flex justify-evenly">
+          <section className="mb-16 px-4 md:px-0 text-center">
+            <p className="mb-8 text-xl md:text-3xl font-medium">
+              Prescribing Information
+            </p>
+            <Modal
+              text="Read more"
+              externalLink="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=73f246c4-b127-452e-856f-134b56cb8870"
+              classes="bg-primary py-4 px-10 text-white text-xl md:text-2xl"
+            />
+          </section>
+          <section className="mb-16 px-4 md:px-0 text-center">
+            <p className="mb-12 text-xl md:text-3xl font-medium">
+              Indications and Usage
+            </p>
+            {bludigo.salesSheet.mediaItemUrl ? (
+              <a
+                className="bg-primary py-4 px-10 text-white text-xl md:text-2xl"
+                href={bludigo.salesSheet.mediaItemUrl}
+              >
+                Read more
+              </a>
+            ) : (
+              <span>Product Sales Sheet coming soon!</span>
+            )}
+          </section>
+        </div>
         <section className="bg-primary flex flex-col md:flex-row justify-between items-center p-10 md:py-16 lg:w-3/4 mx-auto mb-16">
           <p className="text-white text-2xl md:text-3xl mb-12 md:mb-0 text-center md:text-left md:mr-8">
             Learn more about Bludigo™ (indigotindisulfonate sodium injection,
@@ -200,6 +229,12 @@ Bludigo.query = gql`
     product(id: "cG9zdDozODU=") {
       metaFields {
         importantsafetyinformation
+        salesSheet {
+          mediaItemUrl
+        }
+        trifold {
+          mediaItemUrl
+        }
       }
     }
   }
