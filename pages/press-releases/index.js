@@ -20,7 +20,7 @@ export default function PressReleases() {
       <Header />
       <Banner>Press Releases</Banner>
       <Container size="sm">
-        <AllPostsTemplate data={data.pressReleases} route="press" />
+        <AllPostsTemplate data={data.pressReleases} route="press-releases" />
       </Container>
       <Footer />
     </>
