@@ -29,7 +29,7 @@ export default function PressReleases() {
 
 PressReleases.query = gql`
   query AllPressReleases {
-    page(id: "/press/", idType: URI) {
+    page(id: "/press-releases/", idType: URI) {
       seo {
         title
         metaDesc
