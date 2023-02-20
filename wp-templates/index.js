@@ -5,7 +5,7 @@ import page from "./page";
 import single from "./single";
 import product from "./single-products";
 import event from "./single-events";
-import press from "./single-press";
+import press from "./single-press-releases";
 
 export default {
   category,
@@ -15,5 +15,5 @@ export default {
   single,
   "single-products": product,
   "single-events": event,
-  "single-press": press,
+  "single-press-releases": press,
 };
