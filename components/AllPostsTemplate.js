@@ -6,22 +6,8 @@ import Link from "next/link";
 //   }
 
 export default function AllPostsTemplate({ data, route }) {
-  // const aspectRatio = calculateAspectRatio(
-  //   data.featuredImage.node.mediaDetails.width,
-  //   data.featuredImage.node.mediaDetails.height
-  // );
-  // let width, height;
-  // if (aspectRatio > 1) {
-  //   // image is rectangular
-  //   width = 400;
-  //   height = 400 / aspectRatio;
-  // } else {
-  //   // image is square
-  //   height = 400;
-  //   width = 400 * aspectRatio;
-  // }
   if (!data.nodes[0]) {
-    return <p>Coming Soon!</p>;
+    return <p className="text-3xl">Coming Soon!</p>;
   } else if (data.nodes[0].events) {
     return (
       <>
