@@ -70,7 +70,7 @@ export default function Header({ menuItems }) {
                   <Link href="/bludigo">Bludigo™</Link>
                 </li>
                 <li className="text-2xl md:text-base mb-6 md:mb-0 md:mr-4">
-                  <Link href="/press">Press Releases</Link>
+                  <Link href="/press-releases">Press Releases</Link>
                 </li>
                 <li className="text-2xl md:text-base mb-6 md:mb-0 md:mr-4">
                   <Link href="/news">News</Link>
