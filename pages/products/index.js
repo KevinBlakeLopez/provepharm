@@ -2,14 +2,12 @@ import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import Link from "next/link";
-import * as MENUS from "../../constants/menus";
 
 import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Banner from "../../components/Banner";
 import ComingSoon from "../../components/ComingSoon";
-import { NavigationMenu } from "../../components";
 
 export default function Products() {
   const { data, loading } = useQuery(Products.query);
@@ -41,8 +39,6 @@ export default function Products() {
       <div className="mt-10 mx-4 md:mx-0">
         <div className="md:flex md:flex-col md:items-center">
           <div className="lg:w-[675px]">
-            {/* upgrades - either make the ProductsFinder component work and/or add filter/sort functionality */}
-            {/* <ProductsFinder /> */}
             {data ? (
               Object.keys(groupedProducts).map((category) => {
                 return (
@@ -141,8 +137,7 @@ export default function Products() {
 }
 
 Products.query = gql`
-  ${NavigationMenu.fragments.entry}
-  query Products($headerLocation: MenuLocationEnum) {
+  query Products {
     page(id: "/products/", idType: URI) {
       seo {
         title
@@ -175,23 +170,11 @@ Products.query = gql`
         slug
       }
     }
-    headerMenuItems: menuItems(where: { location: $headerLocation }) {
-      nodes {
-        ...NavigationMenuItemFragment
-      }
-    }
   }
 `;
-
-Products.variables = () => {
-  return {
-    headerLocation: MENUS.PRIMARY_LOCATION,
-  };
-};
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
     Page: Products,
-    revalidate: 5,
   });
 }
