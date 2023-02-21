@@ -18,7 +18,7 @@ export default function BannerThirdWay() {
           PROVEPHARM IS AN INTERNATIONAL,
           <br /> PRIVATE, PHARMACEUTICAL
           <br /> COMPANY WITH A GLOBAL PRESENCE
-          <br /> IN OVER 30 COUNTRIES WORLDWIDE
+          <br /> IN OVER 30 COUNTRIES WORLDWIDE.
         </p>
       </div>
     </div>

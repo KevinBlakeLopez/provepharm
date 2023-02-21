@@ -20,7 +20,7 @@ export default function SEO({ title, description, imageUrl, url }) {
   return (
     <>
       <Head>
-        {/* <meta name="robots" content="noindex, nofollow" /> */}
+        <meta name="robots" content="noindex, nofollow" />
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />
         <></>
