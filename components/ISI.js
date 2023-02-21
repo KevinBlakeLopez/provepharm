@@ -5,7 +5,7 @@ export default function ISI({ importantsafetyinformation }) {
 
   return (
     <>
-      <div className="relative z-0">
+      <div className="relative z-10">
         <section
           className={`bg-gray-400 fixed ${
             expanded ? "top-[102px]" : ""

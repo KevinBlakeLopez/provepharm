@@ -140,30 +140,39 @@ export default function Bludigo() {
         </section>
 
         <section className="bg-gradient-to-b from-[#0e0e63] to-primary py-12 px-8 md:py-36 md:px-0">
-          <h3 className="text-2xl md:text-5xl text-white mb-4 md:mb-24 md:ml-24 lg:ml-32 md:w-3/5">
-            Fast detection. Bludigo™ is excreted in the urine quickly.
-          </h3>
-          <figure className="flex md:w-5/6 lg:w-2/3 md:mx-auto items-center">
-            <div className="w-1/2 lg:w-1/4">
-              <Image src={clock} layout="responsive" />
-            </div>
-            <figcaption className="text-lg md:text-3xl text-white ml-12 mt-8 md:mt-0">
-              After injection, the blue color at the ureteral orifices is
-              detectable within 4–9 minutes.
-            </figcaption>
-          </figure>
-          {bludigo.trifold.mediaItemUrl ? (
-            <a
-              href={bludigo.trifold.mediaItemUrl}
-              className="block border-2 border-white p-4 mt-24 mx-auto rounded text-center text-2xl text-white w-11/12 md:3/4 lg:w-1/2"
-            >
-              See Product Brochure
-            </a>
-          ) : (
-            <span className="inline-block border-2 border-white p-4 mb-8 rounded text-center text-2xl text-white w- lg:w-auto ">
-              Product Brochure coming soon!
-            </span>
-          )}
+          <Container size="md">
+            <h3 className="text-2xl md:text-5xl text-white mb-4 md:mb-24 md:ml-24 lg:ml-32 md:w-3/5">
+              Fast detection. Bludigo™ is excreted in the urine quickly.
+            </h3>
+            <figure className="flex md:w-5/6 lg:w-2/3 md:mx-auto items-center">
+              <div className="w-1/2 lg:w-1/2">
+                <Image src={clock} layout="responsive" />
+              </div>
+              <figcaption className="text-lg md:text-3xl text-white ml-12 mt-8 md:mt-0">
+                After injection, the blue color at the ureteral orifices is
+                detectable within 4–9 minutes.
+              </figcaption>
+            </figure>
+            {bludigo.trifold.mediaItemUrl ? (
+              <div>
+                <a
+                  href={bludigo.trifold.mediaItemUrl}
+                  className="block border-2 border-white p-4 mt-24 mx-auto rounded text-center text-2xl text-white w-[400px] md:2/3 lg:w-1/2"
+                >
+                  See Product Brochure{" "}
+                  <img
+                    class="inline-block ml-1 h-7"
+                    src="/pdf-icon-white.png"
+                    alt="pdf"
+                  />
+                </a>
+              </div>
+            ) : (
+              <span className="inline-block border-2 border-white p-4 mb-8 rounded text-center text-2xl text-white w- lg:w-auto ">
+                Product Brochure coming soon!
+              </span>
+            )}
+          </Container>
         </section>
         <hr className="mb-16" />
         <div className="md:flex justify-evenly">
