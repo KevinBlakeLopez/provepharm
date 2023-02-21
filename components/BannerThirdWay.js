@@ -11,7 +11,7 @@ export default function BannerThirdWay() {
             <img src="/frontPage-V-icon.png" />
           </figure>
           <figure className="hidden md:block absolute bottom-[5%]">
-            <img src="/frontPage-A-icon.png" />
+            <img src="/frontpage-A-icon.png" />
           </figure>
         </div>
         <p className="z-10 text-3xl lg:text-[3.5rem] font-light leading-tight text-white tracking-wider py-16 px-8">
