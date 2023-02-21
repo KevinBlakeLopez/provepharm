@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { fallbackHttpConfig, gql } from "@apollo/client";
 import Image from "next/image";
 
 import SEO from "../components/SEO";
@@ -10,6 +10,7 @@ import BannerPeopleLives from "../components/BannerPeopleLives";
 import Timeline from "../components/Timeline";
 import BannerThirdWay from "../components/BannerThirdWay";
 
+import frontPageHero from "../public/frontPage-hero.jpeg";
 import frontPageBanner from "../public/frontPageBanner.jpeg";
 import award from "../public/frontPage-award.png";
 import gears from "../public/frontPage-gears.png";
@@ -28,21 +29,33 @@ export default function Component(props) {
     <>
       <SEO title={home.seo.title} description={home.seo.metaDesc} />
       <Header />
-      <div className="p-14 bg-[url('/frontPage-hero.jpeg')] bg-cover bg-slate-700 bg-blend-soft-light text-white mb-12 md:h-[800px] flex items-center">
-        <p className="md:pl-8 md:pl-64 text-4xl md:text-7xl font-light">
-          THERAPEUTICS AND <br /> DIAGNOSTICS THAT
-          <br />
-          <strong className="font-bold">
-            MAKE A <br /> DIFFERENCE IN <br /> PATIENTS' LIVES
-          </strong>
-        </p>
+      <div className="relative h-[400px] md:h-[800px] bg-slate-700 flex justify-center xl:justify-start">
+        <Image
+          src={frontPageHero}
+          alt="Scientists performing surgery operating room"
+          className="mix-blend-soft-light 0 z-0"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="top"
+          quality={90}
+          priority={true}
+          placeholder="blur"
+        />
+        <div className="text-white mb-12 flex items-center z-1 relative">
+          <p className="xl:pl-64 text-4xl md:text-7xl font-light">
+            THERAPEUTICS AND <br /> DIAGNOSTICS THAT
+            <br />
+            <strong className="font-bold">
+              MAKE A <br /> DIFFERENCE IN <br /> PATIENTS' LIVES
+            </strong>
+          </p>
+        </div>
       </div>
 
-      <Container size="lg">
-        <div className="md:flex justify-between mb-12 text-primary">
-          <section className="md:w-1/2">
+      <Container size="lg" padding="px-10 py-10">
+        <div className="md:flex justify-between pt-12 mb-12 text-primary">
+          <section className="md:w-1/2 md:mr-2">
             <h3 className="mb-4 text-4xl md:text-6xl">ABOUT US</h3>
-
             <p className="text-xl mb-10 md:mb-0">
               With an impressive legacy of healthcare innovations and solutions
               spanning more than 20 years, Provepharm is at the forefront of

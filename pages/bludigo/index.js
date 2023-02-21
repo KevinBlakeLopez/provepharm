@@ -59,6 +59,7 @@ export default function Bludigo() {
             <Image
               src={bludigoProduct}
               placeholder="blur"
+              quality={10}
               layout="responsive"
               priority
             />

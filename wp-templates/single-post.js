@@ -10,7 +10,7 @@ export default function Post(props) {
   if (props.loading) {
     return <>Loading...</>;
   }
-  console.log(props);
+
   const { post, seo } = props.data;
 
   return (

@@ -6,11 +6,10 @@ import Container from "../components/Container";
 import SinglePostTemplate from "../components/SinglePostTemplate";
 
 export default function Post(props) {
-  console.log(props);
   if (props.loading) {
     return <>Loading...</>;
   }
-  console.log(props);
+
   const { post } = props.data;
 
   return (

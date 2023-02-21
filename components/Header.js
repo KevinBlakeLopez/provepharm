@@ -3,9 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
-export default function Header({ menuItems }) {
-  console.log(menuItems);
-
+export default function Header() {
   const [isNavShown, setIsNavShown] = useState(false);
   const handleClick = () => {
     setIsNavShown(!isNavShown);

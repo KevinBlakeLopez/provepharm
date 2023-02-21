@@ -12,7 +12,6 @@ export default function PressRelease(props) {
   }
 
   const { pressRelease } = props.data;
-  console.log(pressRelease.seo.title);
   if (!pressRelease.seo.metaDesc) {
     return (
       <>
