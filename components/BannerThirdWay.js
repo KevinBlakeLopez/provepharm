@@ -8,10 +8,10 @@ export default function BannerThirdWay() {
       >
         <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
           <figure className="hidden md:block absolute top-[-20%]">
-            <img src="/frontPage-V.png" />
+            <img src="/frontPage-V-icon.png" />
           </figure>
           <figure className="hidden md:block absolute bottom-[5%]">
-            <img src="/frontPage-A.png" />
+            <img src="/frontPage-A-icon.png" />
           </figure>
         </div>
         <p className="z-10 text-3xl lg:text-[3.5rem] font-light leading-tight text-white tracking-wider py-16 px-8">
