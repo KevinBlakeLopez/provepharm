@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const PasswordProtection = ({ password, children }) => {
   const [inputPassword, setInputPassword] = useState("");
+
+  useEffect(() => {
+    const storedPassword = localStorage.getItem("password");
+    if (storedPassword) {
+      setInputPassword(storedPassword);
+    }
+  }, []);
+
+  const handlePasswordChange = (event) => {
+    const newPassword = event.target.value;
+    setInputPassword(newPassword);
+    localStorage.setItem("password", newPassword);
+  };
 
   return (
     <div>
@@ -17,7 +30,7 @@ const PasswordProtection = ({ password, children }) => {
               placeholder="Enter password"
               type="password"
               value={inputPassword}
-              onChange={(event) => setInputPassword(event.target.value)}
+              onChange={handlePasswordChange}
             />
           </form>
           <div className="mt-40">

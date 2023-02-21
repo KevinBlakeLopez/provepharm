@@ -41,7 +41,7 @@ export default function Component(props) {
           priority={true}
         />
         <div className="text-white mb-12 flex items-center z-1 relative">
-          <p className="xl:pl-64 text-4xl md:text-7xl font-light">
+          <p className="xl:pl-64 text-3xl md:text-7xl font-light">
             THERAPEUTICS AND <br /> DIAGNOSTICS THAT
             <br />
             <strong className="font-bold">

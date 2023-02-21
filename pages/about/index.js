@@ -19,7 +19,7 @@ export default function AboutUs() {
       <Header />
       <Main>
         <div className="bg-[url('/about-hero.jpeg')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[700px] text-white mb-10 flex items-center">
-          <h2 className="pl-8 md:pl-64 text-2xl md:text-7xl font-semibold md:font-extralight tracking-wide">
+          <h2 className="pl-8 md:pl-64 text-3xl md:text-7xl font-semibold md:font-extralight tracking-wide">
             CONNECTING <br />
             HEALTHCARE
             <br /> PROVIDERS <br />

@@ -53,7 +53,7 @@ export default function Product(props) {
                     )}
                   </section>
                 </div>
-                <section className="mt-12">
+                <section className="mt-12 mb-8 md:mb-0">
                   Prescribing Information:{" "}
                   {product.prescribinginformation ? (
                     <Modal
@@ -162,7 +162,7 @@ export default function Product(props) {
                   <p className="font-medium text-lg mb-4 mr-20">
                     Therapeutic Class
                   </p>
-                  <p className="mb-4">{product.therapeuticclass}</p>
+                  <p className="mb-4 text-end">{product.therapeuticclass}</p>
                 </li>
 
                 {product.therapeuticequivalencerating ? (

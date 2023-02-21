@@ -29,7 +29,7 @@ export default function Header() {
         }}
       />
       <header
-        className={`bg-white
+        className={`bg-white relative
          border-b-2 w-full p-5 ${
            isNavShown ? "h-full absolute overflow-hidden top-0 width:100%" : ""
          }`}
