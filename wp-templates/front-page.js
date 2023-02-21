@@ -39,7 +39,6 @@ export default function Component(props) {
           objectPosition="top"
           quality={90}
           priority={true}
-          placeholder="blur"
         />
         <div className="text-white mb-12 flex items-center z-1 relative">
           <p className="xl:pl-64 text-4xl md:text-7xl font-light">
