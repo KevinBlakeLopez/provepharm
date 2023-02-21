@@ -221,7 +221,7 @@ export default function Bludigo() {
         </section>
         <ISI importantsafetyinformation={bludigo.importantsafetyinformation} />
       </Main>
-      <Footer />
+      <Footer disclaimer />
     </>
   );
 }
