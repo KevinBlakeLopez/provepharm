@@ -17,7 +17,7 @@ function Container({ custom, margin, padding, size, children }) {
   return (
     <div
       className={`flex justify-center ${margin ? margin : ""} ${
-        padding ? padding : "p-10"
+        padding ? padding : "px-5 py-10"
       }`}
     >
       <div className={`${width}`}>{children}</div>

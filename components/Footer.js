@@ -7,21 +7,21 @@ export default function Footer({ disclaimer }) {
 
   return (
     <footer>
-      <div className="mb-10 h-[1px] w-full bg-slate-900"></div>
+      <div className="lg:mb-10 h-[1px] w-full bg-slate-900"></div>
       <Container size="xl">
-        <div className="py-4 px-10 mb-10 md:flex md:justify-between">
+        <div className="lg:py-4 lg:px-10 mb-10 md:flex md:justify-between">
           <div className="mb-10 max-w-[300px] md:mr-20">
-            <div className="mb-4">
+            <div className="mb-4 flex flex-col items-center md:items-start">
               <Image src="/logo.jpeg" alt="me" height="80" width="200" />
+              <p className="mt-10 text-center md:text-start">
+                Provepharm is driven to improve the lives of our patients,
+                employees, and the ecosystem!
+              </p>
             </div>
-            <p>
-              Provepharm is driven to improve the lives of our patients,
-              employees, and the ecosystem!
-            </p>
           </div>
 
-          <ul className="mt-5 md:mt-0 flex flex-col md:flex-row text-lg text-[#1e387d]">
-            <div className="md:mr-20">
+          <div className="mt-5 md:mt-0 flex flex-col md:flex-row text-lg text-[#1e387d]">
+            <ul className="md:mr-20">
               <li className="mb-3">
                 <Link className="" href="/about">
                   About
@@ -52,9 +52,9 @@ export default function Footer({ disclaimer }) {
                   Events
                 </Link>
               </li>
-            </div>
+            </ul>
             <div className="mb-6"></div>
-            <div className="md:mr-20">
+            <ul className="md:mr-20">
               <li className="mb-3">
                 <Link className="" href="/contact">
                   Report an adverse event
@@ -65,9 +65,9 @@ export default function Footer({ disclaimer }) {
                   Compliance & Code of Conduct
                 </Link>
               </li>
-            </div>
+            </ul>
             <div className="mb-6"></div>
-            <div>
+            <ul>
               <li className="mb-3">
                 <Link className="" href="/terms">
                   Terms and Conditions
@@ -78,8 +78,8 @@ export default function Footer({ disclaimer }) {
                   Privacy
                 </Link>
               </li>
-            </div>
-          </ul>
+            </ul>
+          </div>
         </div>
       </Container>
       <div className="bg-[#1e387d] text-white py-10 px-5 flex justify-center">

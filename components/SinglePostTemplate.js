@@ -61,6 +61,7 @@ export default function SinglePostTemplate({ data }) {
             src={data.featuredImage.node.mediaItemUrl}
             width={width}
             height={height}
+            layout="fill"
           />
         </figure>
         <WYSIWYG content={data.content} />

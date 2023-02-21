@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function AllPostsTemplate({ data, route }) {
   if (!data.nodes[0]) {
-    return <p className="text-3xl">Coming Soon!</p>;
+    return <p className="text-3xl p-10">Coming Soon!</p>;
   } else if (data.nodes[0].events) {
     return (
       <>

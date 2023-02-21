@@ -49,10 +49,6 @@ export default function Bludigo() {
                 Bludigo™ (indigotindisulfonate sodium injection, USP)
               </h1>
             </div>
-
-            {/* <h5 className="text-2xl md:text-3xl text-white mb-4 ">
-                Product Information
-              </h5> */}
             <Link href="products/bludigo-indigotindisulfonate-sodium">
               <a className="inline-block border-2 border-white p-4 mb-8 rounded text-center text-2xl text-white w-full lg:w-auto ">
                 View Product Information
@@ -60,12 +56,7 @@ export default function Bludigo() {
             </Link>
           </div>
           <figure className="lg:w-[740px]">
-            <Image
-              // style={{ width: "75%", height: "auto" }}
-              src={bludigoProduct}
-              layout="responsive"
-              priority
-            />
+            <Image src={bludigoProduct} layout="responsive" priority />
           </figure>
         </section>
         <div>
@@ -79,13 +70,13 @@ export default function Bludigo() {
               <figure className="flex flex-col justify-center items-center">
                 <Image src={bludigoAnimation} />
                 <figcaption className="mt-3">
-                  Bludigo™ Dye Being Injected
+                  Bludigo™ being injected
                 </figcaption>
               </figure>
             </section>
           </Container>
         </div>
-        <section className="lg:flex mb-16 lg:mb-24">
+        <section className="lg:flex">
           <figure className="flex lg:w-1/2 md:order-2">
             <Image src={bludigoDoctorsStock} />
           </figure>
@@ -104,47 +95,49 @@ export default function Bludigo() {
           </div>
         </section>
 
-        <section className="px-12 lg:px-0 mb-16 lg:mb-24">
-          <p className="text-2xl md:text-4xl text-primary lg:w-2/3 lg:ml-32 mb-16">
-            Bludigo™ has a deep blue color that significantly aids visualization
-            when assessing ureter patency.
-          </p>
-          <div className="md:w-3/4 lg:w-2/3 md:mx-auto mb-20">
-            <figure className="flex mb-20 md:items-center">
-              <div className="w-2/3 md:w-7/12 lg:w-1/4 ml-[5px] lg:ml-[10px]">
-                <Image src={chart} />
-              </div>
-              <div className="text-primary ml-[20px] md:ml-[65px] lg:ml-[114px]">
-                <figcaption className="text-lg md:text-2xl">
-                  83% of the ureter patency assessments in the Bludigo™ clinical
-                  trial were reported as visualizing good or striking color
-                  contrast in the ureter jet stream.
-                </figcaption>
-              </div>
-            </figure>
-            <figure className="flex md:items-center">
-              <div className="w-full md:w-11/12 lg:w-5/12">
-                <Image src={target} />
-              </div>
-              <div className="text-primary ml-[20px] md:ml-[60px] lg:ml-[105px]">
-                <figcaption className="text-lg md:text-2xl">
-                  In 90% of urologic and gynecologic surgical procedures (N=49)
-                  in the Bludigo™ clinical trial, physicians agreed that their
-                  ability to assess ureteral patency was improved following the
-                  use of Bludigo™ compared to saline.
-                </figcaption>
-                <p className="text-primary italic">
-                  Data on file PVP-19ICO1 clinical study report.
-                </p>
-              </div>
+        <section>
+          <Container size="sm" padding="px-5 py-20 md:py-28">
+            <p className="text-2xl md:text-4xl text-primary mb-24">
+              Bludigo™ has a deep blue color that significantly aids
+              visualization when assessing ureter patency.
+            </p>
+            <div className="md:mx-auto">
+              <figure className="flex mb-20 md:items-center">
+                <div className="w-2/3 md:w-7/12 lg:w-1/4 ml-[5px] lg:ml-[10px]">
+                  <Image src={chart} />
+                </div>
+                <div className="text-primary ml-[20px] md:ml-[65px] lg:ml-[114px]">
+                  <figcaption className="text-lg md:text-2xl">
+                    83% of the ureter patency assessments in the Bludigo™
+                    clinical trial were reported as visualizing good or striking
+                    color contrast in the ureter jet stream.
+                  </figcaption>
+                </div>
+              </figure>
+              <figure className="flex md:items-center">
+                <div className="w-full md:w-11/12 lg:w-5/12">
+                  <Image src={target} />
+                </div>
+                <div className="text-primary ml-[20px] md:ml-[60px] lg:ml-[105px]">
+                  <figcaption className="text-lg md:text-2xl">
+                    In 90% of urologic and gynecologic surgical procedures
+                    (N=49) in the Bludigo™ clinical trial, physicians agreed
+                    that their ability to assess ureteral patency was improved
+                    following the use of Bludigo™ compared to saline.
+                  </figcaption>
+                  <p className="text-primary italic">
+                    Data on file PVP-19ICO1 clinical study report.
+                  </p>
+                </div>
+              </figure>
+            </div>
+          </Container>
+          <div className="hidden md:block md:mb-16">
+            <figure className="lg:max-w-[1000px] mx-auto">
+              <Image src={table} layout="responsive" />
             </figure>
           </div>
         </section>
-        <div className="hidden md:block md:mb-16">
-          <figure className="lg:w-2/3 mx-auto">
-            <Image src={table} layout="responsive" />
-          </figure>
-        </div>
 
         <section className="bg-gradient-to-b from-[#0e0e63] to-primary py-12 px-8 md:py-36 md:px-0">
           <h3 className="text-2xl md:text-5xl text-white mb-4 md:mb-24 md:ml-24 lg:ml-32 md:w-3/5">

@@ -1,4 +1,4 @@
-// import { useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 import Image from "next/image";
 
 import SEO from "../components/SEO";
@@ -17,10 +17,16 @@ import hexagon from "../public/frontPage-hexagonArrows.png";
 import plant from "../public/frontPage-plant.png";
 import shield from "../public/frontPage-secure-shield.png";
 
-export default function Component() {
+export default function Component(props) {
+  if (props.loading) {
+    return <>Loading...</>;
+  }
+
+  const home = props.data.page;
+
   return (
     <>
-      <SEO />
+      <SEO title={home.seo.title} description={home.seo.metaDesc} />
       <Header />
       <div className="p-14 bg-[url('/frontPage-hero.jpeg')] bg-cover bg-slate-700 bg-blend-soft-light text-white mb-12 md:h-[800px] flex items-center">
         <p className="md:pl-8 md:pl-64 text-4xl md:text-7xl font-light">
@@ -208,3 +214,14 @@ export default function Component() {
     </>
   );
 }
+
+Component.query = gql`
+  query Home {
+    page(id: "/home/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
+  }
+`;

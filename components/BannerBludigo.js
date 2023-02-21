@@ -27,7 +27,7 @@ export default function BannerBludigo() {
             </div>
           </div>
         </Container>
-      </div>
+    </div>
     </div>
   );
 }

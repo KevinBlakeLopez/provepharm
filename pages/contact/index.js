@@ -203,24 +203,6 @@ export default function ContactUs() {
                 </section>
               </form>
             )}
-            <div className="mb-10">
-              <p className="mb-2">
-                {/* <a
-                  className="text-lg underline text-secondary"
-                  href="mailto:safety-us@provepharm.com"
-                >
-                  REQUEST FOR MEDICAL INFORMATION
-                </a>{" "}
-              </p>
-              <p>
-                <a
-                  className="text-lg underline text-secondary"
-                  href="mailto:safety-us@provepharm.com"
-                >
-                  ADVERSE EVENT REPORTING
-                </a> */}
-              </p>
-            </div>
           </section>
           <section>
             <div className="text-lg lg:float-right">
@@ -256,7 +238,7 @@ export default function ContactUs() {
                     1-833-727-6556
                   </a>
                 </p>
-                <p>
+                <p className="text-base md:text-lg">
                   E:{" "}
                   <a
                     className="underline text-secondary"
@@ -305,17 +287,16 @@ export default function ContactUs() {
           </section>
         </div>
       </Container>
-      <Container size="md">
+      <Container size="md" padding="px-5 pb-10">
         <div className="md:w-[600px]">
           <p>
-            * The information you submit will be governed by our{" "}
+            * The information you submit will be governed by our
             <span className="underline text-secondary">
               <Link href="/privacy">Privacy Policy</Link>
             </span>
           </p>
         </div>
       </Container>
-
       <Footer />
     </>
   );
