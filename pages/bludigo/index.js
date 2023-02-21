@@ -58,8 +58,8 @@ export default function Bludigo() {
           <figure className="lg:w-[740px]">
             <Image
               src={bludigoProduct}
-              placeholder="blur"
-              quality={10}
+              // placeholder="blur"
+              quality={50}
               layout="responsive"
               priority
             />
