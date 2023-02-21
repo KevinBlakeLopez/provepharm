@@ -38,7 +38,7 @@ export default function Bludigo() {
         {/* adjust height of section element for mobile to make sure the Image component doesn't overflow */}
         <section
           id="hero"
-          className="bg-gradient-to-b from-[#4E157D] to-primary md:h-[1000px] lg:h-[750px] text-white lg:flex lg:justify-center items-center px-2 py-10 md:p-16"
+          className="bg-gradient-to-l from-[#31023d] to-primary md:h-[1000px] lg:h-[750px] text-white lg:flex lg:justify-center items-center px-2 py-10 md:p-16"
         >
           <div className="lg:pr-32">
             <div className="px-4 md:px-0 mb-14 lg:mb-14">
@@ -56,7 +56,12 @@ export default function Bludigo() {
             </Link>
           </div>
           <figure className="lg:w-[740px]">
-            <Image src={bludigoProduct} layout="responsive" priority />
+            <Image
+              src={bludigoProduct}
+              placeholder="blur"
+              layout="responsive"
+              priority
+            />
           </figure>
         </section>
         <div>
