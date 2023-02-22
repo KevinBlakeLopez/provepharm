@@ -77,7 +77,7 @@ export default function ContactUs() {
         Topic: formData.topic,
         Name: `${formData.firstName} ${" "} ${formData.lastName}`,
         Email: formData.email,
-        Message: formData.message,
+        Message: sanitize(formData.message),
       }),
     })
       .then(function (response) {

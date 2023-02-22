@@ -16,6 +16,7 @@ export default function Header() {
         src="https://www.googletagmanager.com/gtag/js?id=G-TZWF1H1MKM"
       />
       <Script
+        nonce="2726c7f26c"
         id="google-analytics"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
