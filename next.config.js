@@ -1,12 +1,6 @@
 const { withFaust, getWpHostname } = require("@faustwp/core");
 
-const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self';
-  child-src example.com;
-  style-src 'self' example.com;
-  font-src 'self';  
-`;
+const ContentSecurityPolicy = `default-src 'self'`;
 
 const securityHeaders = [
   {
