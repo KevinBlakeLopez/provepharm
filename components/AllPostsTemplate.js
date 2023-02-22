@@ -11,11 +11,11 @@ export default function AllPostsTemplate({ data, route }) {
         {data.nodes.map(
           ({ id, title, excerpt, featuredImage, slug, events }) => (
             <div
-              className="py-5 md:flex md:items-center mb-10 border-y-2 border-gray-300"
+              className="pt-1 pb-9 md:flex md:items-center mb-10 border-b-2 border-gray-300"
               key={id}
             >
               {featuredImage ? (
-                <div className="relative w-[400px] h-[200px] mr-12">
+                <div className="relative w-full lg:w-[400px] h-[200px] mr-12">
                   <Image
                     layout="fill"
                     objectFit="cover"
@@ -25,7 +25,7 @@ export default function AllPostsTemplate({ data, route }) {
                   />
                 </div>
               ) : null}
-              <section className="max-w-[500px] h-[200px] flex items-center">
+              <section className="lg:w-[500px]">
                 <div>
                   <p className="mb-2 text-sm">{events.eventDate}</p>
                   <h2 className="text-xl mb-3 font-semibold">{title}</h2>
@@ -51,9 +51,12 @@ export default function AllPostsTemplate({ data, route }) {
     <>
       <div className="h-12" />
       {data.nodes.map(({ id, title, excerpt, date, featuredImage, slug }) => (
-        <div className="md:flex md:items-center mb-10" key={id}>
+        <div
+          className="pt-1 pb-9 md:flex md:items-center mb-10 border-b-2 border-gray-300"
+          key={id}
+        >
           {featuredImage ? (
-            <div className="relative w-[400px] h-[200px] mr-12">
+            <div className="relative w-full lg:w-[400px] h-[200px] mr-12">
               <Image
                 layout="fill"
                 objectFit="cover"
@@ -63,7 +66,7 @@ export default function AllPostsTemplate({ data, route }) {
               />
             </div>
           ) : null}
-          <section className="max-w-[500px] h-[200px] border-b border-gray-200">
+          <section className="lg:w-[500px]">
             <p className="mb-2 text-sm">
               Published:{" "}
               {new Date(date).toLocaleDateString("en-US", {
