@@ -7,3 +7,5 @@ jobs:
     steps:
       - name: Dastardly Scan Action
         uses: PortSwigger/dastardly-github-action@v1.0.0
+        with:
+          target-url: 'https://www.provepharmusa.com'
