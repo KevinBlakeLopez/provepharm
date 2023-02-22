@@ -1,0 +1,11 @@
+name: Dastardly Scan Action
+run-name: ${{ github.actor }} is running dastardly 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dastardly Scan Action
+        uses: PortSwigger/dastardly-github-action@v1.0.0
+        with:
+          target-url: 'https://www.provepharmusa.com'
