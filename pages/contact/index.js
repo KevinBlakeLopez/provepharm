@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
+var sanitize = require("sanitize-html");
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -76,7 +77,7 @@ export default function ContactUs() {
         Topic: formData.topic,
         Name: `${formData.firstName} ${" "} ${formData.lastName}`,
         Email: formData.email,
-        Message: formData.message,
+        Message: sanitize(formData.message),
       }),
     })
       .then(function (response) {
