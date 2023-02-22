@@ -35,6 +35,6 @@ module.exports = withFaust({
     defaultLocale: "en",
   },
   async headers() {
-    return [...securityHeaders, ...(await withFaust({}).headers())];
+    return [{ source: "/:path*", headers: securityHeaders }];
   },
 });
