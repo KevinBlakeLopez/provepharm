@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Script from "next/script";
 
 import Link from "next/link";
 
@@ -6,7 +7,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
 import Banner from "../../components/Banner";
-var sanitize = require("sanitize-html");
+import sanitizeHtml from "sanitize-html";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -77,7 +78,7 @@ export default function ContactUs() {
         Topic: formData.topic,
         Name: `${formData.firstName} ${" "} ${formData.lastName}`,
         Email: formData.email,
-        Message: sanitize(formData.message),
+        Message: sanitizeHtml(formData.message),
       }),
     })
       .then(function (response) {
@@ -91,10 +92,14 @@ export default function ContactUs() {
 
   return (
     <>
+      <Script
+        src="https://unpkg.com/@botpoison/browser"
+        strategy="afterInteractive"
+      />
       <Header />
       <Banner>Contact Us</Banner>
       <Container size="md">
-        <div className="lg:flex md:gap-12 justify-between md:mt-16">
+        <div className="lg:flex md:gap-12 justify-between md:mt-12">
           <section className="md:w-[600px]">
             {/* <h3 className="text-2xl text-primary mb-8">GENERAL INQUIRIES</h3> */}
             {formSubmitted ? (
@@ -103,6 +108,13 @@ export default function ContactUs() {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
+                <input
+                  type="checkbox"
+                  name="_honeypot"
+                  className="hidden"
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
                 <input
                   type="hidden"
                   name="_email.subject"
