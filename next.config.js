@@ -3,7 +3,7 @@ const { withFaust, getWpHostname } = require("@faustwp/core");
 const ContentSecurityPolicy = `script-src ${
   process.env.PRODUCTION
     ? "'self' https://www.googletagmanager.com/ 'nonce-2726c7f26c';"
-    : "'unsafe-eval'"
+    : "'unsafe-eval';"
 } img-src 'self' data:; font-src 'self' https://fonts.googleapis.com/ https://fonts.gstatic.com/;`;
 
 const securityHeaders = [
