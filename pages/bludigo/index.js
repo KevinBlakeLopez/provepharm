@@ -145,7 +145,7 @@ export default function Bludigo() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-b from-[#31023d] to-primary py-12 px-8 md:py-18 md:px-0">
+        <section className="bg-gradient-to-b from-[#31023d] to-primary py-12 px-4 md:py-18 md:px-0">
           <Container size="md">
             <h3 className="text-2xl md:text-5xl text-white mb-4 md:mb-24 md:ml-24 lg:ml-32 md:w-3/5">
               Fast detection. Bludigo™ is excreted in the urine quickly.
@@ -163,14 +163,14 @@ export default function Bludigo() {
               <div>
                 <a
                   href={bludigo.trifold.mediaItemUrl}
-                  className="block border-2 border-white p-4 mt-24 mx-auto rounded text-center text-2xl text-white w-[400px] md:2/3 lg:w-1/2"
+                  className="block border-2 border-white p-4 mt-24 mx-auto rounded text-center text-2xl text-white w-full md:max-w-[350px] md:2/3 lg:w-1/2"
                 >
                   See Product Brochure{" "}
-                  <img
+                  {/* <img
                     class="inline-block ml-1 h-7"
                     src="/pdf-icon-white.png"
                     alt="pdf"
-                  />
+                  /> */}
                 </a>
               </div>
             ) : (

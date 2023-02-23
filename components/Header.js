@@ -43,10 +43,10 @@ export default function Header() {
           </div>
 
           <div>
-            <div className="md:hidden" onClick={handleClick}>
-              <div className="h-[2px] w-6 bg-black mb-1"></div>
-              <div className="h-[2px] w-6 bg-black mb-1"></div>
-              <div className="h-[2px] w-6 bg-black mb-1"></div>
+            <div className="md:hidden p-5" onClick={handleClick}>
+              <div className="h-[2px] w-7 bg-black mb-[6px]"></div>
+              <div className="h-[2px] w-7 bg-black mb-[6px]"></div>
+              <div className="h-[2px] w-7 bg-black mb-[6px]"></div>
             </div>
 
             <div

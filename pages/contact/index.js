@@ -16,6 +16,7 @@ export default function ContactUs() {
     email: "",
     topic: "",
     message: "",
+    _honeypot: false,
   });
 
   const [errors, setErrors] = useState({});
@@ -68,18 +69,24 @@ export default function ContactUs() {
 
     const value = formSet[formData.topic];
 
+    const formSubmission = {
+      Topic: formData.topic,
+      Name: `${formData.firstName} ${" "} ${formData.lastName}`,
+      Email: formData.email,
+      Message: sanitizeHtml(formData.message),
+    };
+
+    if (formData["_honeypot"] === true) {
+      formSubmission["_honeypot"] = formData["_honeypot"];
+    }
+
     fetch(`https://submit-form.com/${value}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({
-        Topic: formData.topic,
-        Name: `${formData.firstName} ${" "} ${formData.lastName}`,
-        Email: formData.email,
-        Message: sanitizeHtml(formData.message),
-      }),
+      body: JSON.stringify(formSubmission),
     })
       .then(function (response) {
         console.log(response);
@@ -114,6 +121,13 @@ export default function ContactUs() {
                   className="hidden"
                   tabIndex="-1"
                   autoComplete="off"
+                  onClick={() =>
+                    setFormData({
+                      ...formData,
+                      _honeypot: !formData["_honeypot"],
+                    })
+                  }
+                  value={formData["_honeypot"]}
                 />
                 <input
                   type="hidden"
