@@ -43,7 +43,7 @@ export default function AboutUs() {
 
             <div className="md:w-1/2">
               <div>
-                <div className="bg-[#0c132a] bg-blend-soft-light bg-[url('/aboutMainBG.jpeg')] bg-cover opacity-[90] px-12 py-12 max-w-[630px]">
+                <div className="bg-[#0c132a] bg-blend-soft-light bg-[url('/aboutMainBG.jpeg')] bg-cover opacity-[90] px-12 py-12 w-full md:max-w-[630px]">
                   <h4 className="text-3xl text-tertiary mb-4">
                     Main Areas of Development
                   </h4>
