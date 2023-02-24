@@ -23,9 +23,6 @@ export default function Posts() {
       <Header />
       <Banner>News</Banner>
       <Container size="sm">
-        <h1 className="text-6xl">
-          TEST for Vercel Backup - 2nd test with restore
-        </h1>
         <AllPostsTemplate data={data.posts} route="news" />
       </Container>
       <Footer />
