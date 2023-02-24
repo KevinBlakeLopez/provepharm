@@ -76,7 +76,7 @@ export default function Bludigo() {
               <figure className="flex flex-col justify-center items-center">
                 <Image src={bludigoAnimation} />
                 <figcaption className="mt-3">
-                  Bludigo™ being injected
+                  Urine Jet post - Bludigo™ application
                 </figcaption>
               </figure>
             </section>
