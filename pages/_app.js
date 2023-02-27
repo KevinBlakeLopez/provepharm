@@ -19,9 +19,9 @@ export default function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      {/* <PasswordProtection password="provepharm"> */}
-      <Component {...pageProps} key={router.asPath} />
-      {/* </PasswordProtection> */}
+      <PasswordProtection password="provepharm">
+        <Component {...pageProps} key={router.asPath} />
+      </PasswordProtection>
     </FaustProvider>
   );
 }
