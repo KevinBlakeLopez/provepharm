@@ -78,7 +78,7 @@ export default function Component(props) {
         </div>
       </Container>
 
-      <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-primary text-white text-center text-xl md:p-10">
+      <div className="bg-primary text-white text-center text-xl md:p-10">
         <Container size="md">
           <h3 className="text-3xl md:text-4xl text-secondary mb-5">
             TO ACCOMPLISH THIS MISSION, <br />
