@@ -18,14 +18,14 @@ export default function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <FaustProvider pageProps={pageProps}>
-        <PasswordProtection password="provepharm">
-          <style jsx global>{`
-            html {
-              font-family: ${inter.style.fontFamily};
-            }
-          `}</style>
-          <Component {...pageProps} key={router.asPath} />
-        </PasswordProtection>
+        {/* <PasswordProtection password="provepharm"> */}
+        <style jsx global>{`
+          html {
+            font-family: ${inter.style.fontFamily};
+          }
+        `}</style>
+        <Component {...pageProps} key={router.asPath} />
+        {/* </PasswordProtection> */}
       </FaustProvider>
     </>
   );
