@@ -12,7 +12,15 @@ export default function Footer({ disclaimer }) {
         <div className="lg:py-4 lg:px-10 mb-10 md:flex md:justify-between">
           <div className="mb-10 max-w-[300px] md:mr-20">
             <div className="mb-4 flex flex-col items-center md:items-start">
-              <Image src="/logo.jpeg" alt="me" height="80" width="200" />
+              <Image
+                src="/logo.jpeg"
+                alt="me"
+                height="80"
+                width="200"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
               <p className="mt-10 text-center md:text-start">
                 Provepharm is driven to improve the lives of our patients,
                 employees, and the ecosystem!

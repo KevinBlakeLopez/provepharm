@@ -35,7 +35,12 @@ export default function Timeline() {
 
           <div className="in-box">
             <figure className="mb-8">
-              <Image src={blueDye} />
+              <Image
+                src={blueDye}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </figure>
 
             <p className="mb-8">
@@ -51,7 +56,12 @@ export default function Timeline() {
 
           <div className="in-box md:mt-[-4rem]">
             <figure className="mb-8">
-              <Image src={MF} />
+              <Image
+                src={MF}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
               <figcaption className="text-base text-center">
                 Michel Feraud, Founder and CEO
               </figcaption>
@@ -72,7 +82,12 @@ export default function Timeline() {
               management team and executive board.{" "}
             </p>
             <figure className="">
-              <Image src={allEmployees} />
+              <Image
+                src={allEmployees}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </figure>
           </div>
 
@@ -89,7 +104,12 @@ export default function Timeline() {
         <div className="dot-right md:w-1/2 relative">
           <div className="in-box">
             <figure className="mb-8">
-              <Image src={microscope} />
+              <Image
+                src={microscope}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </figure>
 
             <div>
@@ -117,7 +137,12 @@ export default function Timeline() {
           </div>
           <div className="in-box">
             <figure className="mb-8">
-              <Image src={provayblue} />
+              <Image
+                src={provayblue}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </figure>
 
             <p>
@@ -131,7 +156,12 @@ export default function Timeline() {
           </div>
           <div className="in-box">
             <figure className="mb-8">
-              <Image src={lab2} />
+              <Image
+                src={lab2}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </figure>
 
             <p>

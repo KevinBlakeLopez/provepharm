@@ -39,7 +39,10 @@ const PasswordProtection = ({ password, children }) => {
               width={448}
               height={56}
               priority
-            />
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
             <p className="mt-4 text-2xl text-white font-medium text-center">
               USA Website Launching Soon!
             </p>

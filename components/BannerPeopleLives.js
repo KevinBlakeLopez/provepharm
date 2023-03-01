@@ -12,8 +12,12 @@ export default function BannerPeopleLives() {
           <div className="block">
             <Image
               fill="true"
-              style={{ height: "100%", width: "100%", objectFit: "cover" }}
               src={aboutMainBG}
+              style={{
+                width: "100%",
+                objectFit: "cover",
+                maxWidth: "100%",
+              }}
             />
           </div>
         </figure>
