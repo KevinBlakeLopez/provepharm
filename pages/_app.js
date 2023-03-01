@@ -4,7 +4,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import { FaustProvider } from "@faustwp/core";
 import "../styles/global.scss";
-import Head from "next/head";
 import PasswordProtection from "../components/PasswordProtection";
 
 const inter = Inter({ subsets: ["latin"] });

@@ -88,16 +88,8 @@ export default function Component(props) {
 
           <div className="flex flex-col md:flex-row mb-12 gap-5">
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image
-                  src={plant}
-                  width={110}
-                  height={110}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={plant} width={110} height={110} />
 
                 <figcaption className="font-semibold pb-4">
                   External
@@ -110,16 +102,8 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image
-                  src={gears}
-                  width={110}
-                  height={110}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={gears} width={110} height={110} />
                 <figcaption className="font-semibold pb-4">
                   Internal
                   <br />
@@ -131,15 +115,12 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
+              <figure className="flex flex-col items-center">
                 <Image
+                  className="mb-3"
                   src={hexagon}
                   width={110}
                   height={110}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
                 />
                 <figcaption className="font-semibold pb-4">
                   Commercial
@@ -152,16 +133,8 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image
-                  src={shield}
-                  width={110}
-                  height={110}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={shield} width={110} height={110} />
                 <figcaption className="font-semibold pb-4">
                   Secure
                   <br />
@@ -173,16 +146,8 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image
-                  src={award}
-                  width={110}
-                  height={110}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={award} width={110} height={110} />
                 <figcaption className="font-semibold pb-4">
                   Operational
                   <br />
