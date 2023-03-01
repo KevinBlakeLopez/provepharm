@@ -30,6 +30,7 @@ const PasswordProtection = ({ password, children }) => {
               placeholder="Enter password"
               type="password"
               value={inputPassword}
+              autoComplete="new-password"
               onChange={handlePasswordChange}
             />
           </form>
@@ -41,8 +42,9 @@ const PasswordProtection = ({ password, children }) => {
               priority
               style={{
                 maxWidth: "100%",
-                height: "auto"
-              }} />
+                height: "auto",
+              }}
+            />
             <p className="mt-4 text-2xl text-white font-medium text-center">
               USA Website Launching Soon!
             </p>
