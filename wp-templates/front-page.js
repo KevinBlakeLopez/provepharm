@@ -34,11 +34,14 @@ export default function Component(props) {
           src={frontPageHero}
           alt="Scientists performing surgery operating room"
           className="mix-blend-soft-light 0 z-0"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top"
           quality={90}
           priority={true}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "top",
+          }}
         />
         <div className="text-white mb-12 flex items-center z-1 relative">
           <p className="xl:pl-64 text-3xl md:text-7xl font-light">
@@ -64,12 +67,18 @@ export default function Component(props) {
           </section>
 
           <figure className="md:w-1/2">
-            <Image src={frontPageBanner} />
+            <Image
+              src={frontPageBanner}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </figure>
         </div>
       </Container>
 
-      <div className="bg-[url('/.jpeg')] bg-cover bg-center bg-blend-soft-light bg-primary text-white text-center text-xl md:p-10">
+      <div className="bg-primary text-white text-center text-xl md:p-10">
         <Container size="md">
           <h3 className="text-3xl md:text-4xl text-secondary mb-5">
             TO ACCOMPLISH THIS MISSION, <br />
@@ -79,8 +88,8 @@ export default function Component(props) {
 
           <div className="flex flex-col md:flex-row mb-12 gap-5">
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image src={plant} width={110} height={110} />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={plant} width={110} height={110} />
 
                 <figcaption className="font-semibold pb-4">
                   External
@@ -93,8 +102,8 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image src={gears} width={110} height={110} />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={gears} width={110} height={110} />
                 <figcaption className="font-semibold pb-4">
                   Internal
                   <br />
@@ -106,8 +115,13 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image src={hexagon} width={110} height={110} />
+              <figure className="flex flex-col items-center">
+                <Image
+                  className="mb-3"
+                  src={hexagon}
+                  width={110}
+                  height={110}
+                />
                 <figcaption className="font-semibold pb-4">
                   Commercial
                   <br />
@@ -119,8 +133,8 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image src={shield} width={110} height={110} />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={shield} width={110} height={110} />
                 <figcaption className="font-semibold pb-4">
                   Secure
                   <br />
@@ -132,8 +146,8 @@ export default function Component(props) {
             </div>
 
             <div className="w-full md:max-w-[200px] mb-10">
-              <figure>
-                <Image src={award} width={110} height={110} />
+              <figure className="flex flex-col items-center">
+                <Image className="mb-3" src={award} width={110} height={110} />
                 <figcaption className="font-semibold pb-4">
                   Operational
                   <br />

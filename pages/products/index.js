@@ -48,7 +48,7 @@ export default function Products() {
                     </h2>
                     {groupedProducts[category].map((product) => (
                       <div className="md:flex md:justify-between mb-16">
-                        <div className="text-center mb-12 md:mb-0">
+                        <div className="flex justify-center mb-12 md:mb-0">
                           {product.metaFields.productimage ? (
                             <Image
                               src={product.metaFields.productimage.mediaItemUrl}

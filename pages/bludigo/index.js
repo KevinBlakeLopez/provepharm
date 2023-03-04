@@ -49,10 +49,11 @@ export default function Bludigo() {
                 Bludigo™ (indigotindisulfonate sodium injection, USP)
               </h1>
             </div>
-            <Link href="products/bludigo-indigotindisulfonate-sodium">
-              <a className="inline-block border-2 border-white p-4 mb-8 rounded text-center text-2xl text-white w-full lg:w-auto ">
-                View Product Information
-              </a>
+            <Link
+              href="products/bludigo-indigotindisulfonate-sodium"
+              className="inline-block border-2 border-white p-4 mb-8 rounded text-center text-2xl text-white w-full lg:w-auto "
+            >
+              View Product Information
             </Link>
           </div>
           <figure className="lg:w-[740px]">
@@ -60,8 +61,12 @@ export default function Bludigo() {
               src={bludigoProduct}
               // placeholder="blur"
               quality={50}
-              layout="responsive"
               priority
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
             />
           </figure>
         </section>
@@ -74,7 +79,13 @@ export default function Bludigo() {
                 diagnostic dye.
               </h2>
               <figure className="flex flex-col justify-center items-center">
-                <Image src={bludigoAnimation} />
+                <Image
+                  src={bludigoAnimation}
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                  }}
+                />
                 <figcaption className="mt-3">
                   Urine Jet post - Bludigo™ application
                 </figcaption>
@@ -84,7 +95,13 @@ export default function Bludigo() {
         </div>
         <section className="lg:flex">
           <figure className="flex lg:w-1/2 md:order-2">
-            <Image src={bludigoDoctorsStock} />
+            <Image
+              src={bludigoDoctorsStock}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }}
+            />
           </figure>
           <div className="bg-gradient-to-b from-primary to-[#020224] text-white font-light lg:w-1/2 md:order-1">
             <section className="lg:max-w-[543px] lg:float-right py-12 md:py-20 lg:py-14 px-10 md:px-10 lg:px-12 lg:pl-0 md:-mt-2">
@@ -110,7 +127,13 @@ export default function Bludigo() {
             <div className="md:mx-auto">
               <figure className="flex mb-20 md:items-center">
                 <div className="w-2/3 md:w-7/12 lg:w-1/4 ml-[5px] lg:ml-[10px]">
-                  <Image src={chart} />
+                  <Image
+                    src={chart}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                    }}
+                  />
                 </div>
                 <div className="text-primary ml-[20px] md:ml-[65px] lg:ml-[114px]">
                   <figcaption className="text-lg md:text-2xl">
@@ -122,7 +145,13 @@ export default function Bludigo() {
               </figure>
               <figure className="flex md:items-center">
                 <div className="w-full md:w-11/12 lg:w-5/12">
-                  <Image src={target} />
+                  <Image
+                    src={target}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                    }}
+                  />
                 </div>
                 <div className="text-primary ml-[20px] md:ml-[60px] lg:ml-[105px]">
                   <figcaption className="text-lg md:text-2xl">
@@ -140,7 +169,14 @@ export default function Bludigo() {
           </Container>
           <div className="hidden md:block md:mb-16">
             <figure className="lg:max-w-[1000px] mx-auto">
-              <Image src={table} layout="responsive" />
+              <Image
+                src={table}
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
+              />
             </figure>
           </div>
         </section>
@@ -152,7 +188,14 @@ export default function Bludigo() {
             </h3>
             <figure className="flex md:w-5/6 lg:w-2/3 md:mx-auto items-center">
               <div className="w-1/2 lg:w-1/2">
-                <Image src={clock} layout="responsive" />
+                <Image
+                  src={clock}
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
+                />
               </div>
               <figcaption className="text-lg md:text-3xl text-white ml-12 mt-8 md:mt-0">
                 After injection, the blue color at the ureteral orifices is
@@ -167,10 +210,10 @@ export default function Bludigo() {
                 >
                   See Product Brochure{" "}
                   {/* <img
-                    class="inline-block ml-1 h-7"
-                    src="/pdf-icon-white.png"
-                    alt="pdf"
-                  /> */}
+                  class="inline-block ml-1 h-7"
+                  src="/pdf-icon-white.png"
+                  alt="pdf"
+                /> */}
                 </a>
               </div>
             ) : (
@@ -213,10 +256,11 @@ export default function Bludigo() {
             Learn more about Bludigo™ (indigotindisulfonate sodium injection,
             USP){" "}
           </p>
-          <Link href="/contact">
-            <a className="border-2 border-white text-white text-xl py-4 px-8 h-14 min-w-[13rem]">
-              CONTACT US
-            </a>
+          <Link
+            href="/contact"
+            className="border-2 border-white text-white text-xl py-4 px-8 min-w-[13rem] text-center"
+          >
+            CONTACT US
           </Link>
         </section>
         <ISI importantsafetyinformation={bludigo.importantsafetyinformation} />

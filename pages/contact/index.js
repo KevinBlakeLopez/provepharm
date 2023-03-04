@@ -99,10 +99,6 @@ export default function ContactUs() {
 
   return (
     <>
-      <Script
-        src="https://unpkg.com/@botpoison/browser"
-        strategy="afterInteractive"
-      />
       <Header />
       <Banner>Contact Us</Banner>
       <Container size="md">

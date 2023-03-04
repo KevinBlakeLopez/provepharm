@@ -1,5 +1,5 @@
 const { withFaust, getWpHostname } = require("@faustwp/core");
-console.log("wpHostname():", getWpHostname());
+// console.log("getWpHostname():", getWpHostname());
 
 const ContentSecurityPolicy = `script-src ${
   process.env.PRODUCTION

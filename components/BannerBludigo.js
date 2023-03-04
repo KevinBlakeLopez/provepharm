@@ -22,7 +22,13 @@ export default function BannerBludigo() {
             </div>
             <div className="md:max-w-[475px] md:ml-20">
               <figure>
-                <Image src={bludigoProduct} quality="100" />
+                <Image
+                  src={bludigoProduct}
+                  quality="100"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
               </figure>
             </div>
           </div>
