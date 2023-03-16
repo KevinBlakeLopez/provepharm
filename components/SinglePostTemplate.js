@@ -37,10 +37,12 @@ export default function SinglePostTemplate({ data }) {
                 src={data.featuredImage.node.mediaItemUrl}
                 width={width}
                 height={height}
+                priority
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  height: "auto",
+                }}
+              />
             )}
           </figure>
           <WYSIWYG content={data.content} />
@@ -64,10 +66,12 @@ export default function SinglePostTemplate({ data }) {
             src={data.featuredImage.node.mediaItemUrl}
             width={width}
             height={height}
+            priority
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </figure>
         <WYSIWYG content={data.content} />
       </section>
