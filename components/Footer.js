@@ -19,8 +19,9 @@ export default function Footer({ disclaimer }) {
                 width="200"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  height: "auto",
+                }}
+              />
               <p className="mt-10 text-center md:text-start">
                 Provepharm is driven to improve the lives of our patients,
                 employees, and the ecosystem!
@@ -30,31 +31,31 @@ export default function Footer({ disclaimer }) {
 
           <div className="mt-5 md:mt-0 flex flex-col md:flex-row text-lg text-[#1e387d]">
             <ul className="md:mr-20">
-              <li className="mb-3">
+              {/* <li className="mb-3">
                 <Link className="" href="/about">
                   About
                 </Link>
-              </li>
-              <li className="mb-3">
+              </li> */}
+              {/* <li className="mb-3">
                 <Link className="" href="/products">
                   Products
                 </Link>
-              </li>
+              </li> */}
               <li className="mb-3">
-                <Link className="" href="/bludigo">
+                <Link className="" href="/">
                   Bludigo™
                 </Link>
               </li>
               <li className="mb-3">
-                <Link className="ted" href="/press">
+                <Link className="ted" href="/press-releases">
                   Press Releases
                 </Link>
               </li>
-              <li className="mb-3">
+              {/* <li className="mb-3">
                 <Link className="" href="/news">
                   News
                 </Link>
-              </li>
+              </li> */}
               <li className="mb-3">
                 <Link className="" href="/events">
                   Events
