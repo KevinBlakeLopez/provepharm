@@ -75,7 +75,7 @@ export default function Header() {
                 <Link href="/products">Products</Link>
               </li> */}
                 <li className="text-2xl md:text-base mb-6 md:mb-0 md:mr-4">
-                  <Link href="/bludigo">Bludigo™</Link>
+                  <Link href="/">Bludigo™</Link>
                 </li>
                 <li className="text-2xl md:text-base mb-6 md:mb-0 md:mr-4">
                   <Link href="/press-releases">Press Releases</Link>
