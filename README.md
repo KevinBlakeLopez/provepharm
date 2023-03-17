@@ -10,6 +10,6 @@ https://faustjs.org/
 Host
 https://vercel.com/
 
-### When you push to this repo, a new build starts on the Vercel server and the files will be redeployed.
+### When you push to this repo, a new build starts on the Vercel server and the static files will be redeployed and pushed to the CDN. 
 
 
