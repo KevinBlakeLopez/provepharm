@@ -1,7 +1,7 @@
 # Provepharm Next.js/Faust Frontend Hosted on Vercel 
 You can host this Nextjs App for free on Vercel.
 
-#### Main Stack
+### Main Stack
 
 Frontend JS Framwork - 
 https://nextjs.org/
