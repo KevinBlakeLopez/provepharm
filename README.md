@@ -1,5 +1,5 @@
 # Provepharm Next.js/Faust Frontend Hosted on Vercel 
-You can host this Next.js App for free on Vercel
+You can host another instance of this Next.js App for free on Vercel
 
 When you push to this repo, a new build starts on the Vercel server and the static files will be redeployed and pushed to the CDN
 
