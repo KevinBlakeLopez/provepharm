@@ -30,14 +30,37 @@ export default function Posts() {
   );
 }
 
+// Posts.query = gql`
+//   query Posts {
+//     page(id: "/news/", idType: URI) {
+//       seo {
+//         title
+//         metaDesc
+//       }
+//     }
+//     posts(first: 10) {
+//       nodes {
+//         date
+//         title
+//         excerpt
+//         slug
+//         featuredImage {
+//           node {
+//             id
+//             mediaItemUrl
+//             mediaDetails {
+//               width
+//               height
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
+
 Posts.query = gql`
   query Posts {
-    # page(id: "/news/", idType: URI) {
-    #   seo {
-    #     title
-    #     metaDesc
-    #   }
-    # }
     posts(first: 10) {
       nodes {
         date
