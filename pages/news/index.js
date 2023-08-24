@@ -19,7 +19,7 @@ export default function Posts() {
 
   return (
     <>
-      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
+      {/* <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} /> */}
       <Header />
       <Banner>News</Banner>
       <Container size="sm">
@@ -32,12 +32,12 @@ export default function Posts() {
 
 Posts.query = gql`
   query Posts {
-    page(id: "/news/", idType: URI) {
-      seo {
-        title
-        metaDesc
-      }
-    }
+    # page(id: "/news/", idType: URI) {
+    #   seo {
+    #     title
+    #     metaDesc
+    #   }
+    # }
     posts(first: 10) {
       nodes {
         date
