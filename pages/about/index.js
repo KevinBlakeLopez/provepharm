@@ -15,7 +15,7 @@ export default function AboutUs() {
 
   return (
     <>
-      {/* <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} /> */}
+      <SEO title={data.page.seo.title} description={data.page.seo.metaDesc} />
       <Header />
       <Main>
         <div className="bg-[url('/about-hero.webp')] bg-cover bg-center bg-slate-700 bg-blend-soft-light h-[400px] md:h-[700px] text-white mb-10 flex items-center">

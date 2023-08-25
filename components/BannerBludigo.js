@@ -31,7 +31,6 @@ export default function BannerBludigo() {
                   }}
                   alt="Bludigo inside the Provepharm's box packaging"
                 />
-                alt="Provepharm's flagship product Bludigo, a diagnostic dye"
               </figure>
             </div>
           </div>

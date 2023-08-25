@@ -67,6 +67,7 @@ export default function Bludigo() {
                 width: "100%",
                 height: "auto",
               }}
+              alt="the bludigo dye inside its Provepharm box packaging"
             />
           </figure>
         </section>
@@ -85,6 +86,7 @@ export default function Bludigo() {
                     maxWidth: "100%",
                     height: "auto",
                   }}
+                  alt="a video of bludigo dye being injected inside urinary system"
                 />
                 <figcaption className="mt-3">
                   Urine Jet post - Bludigo™ application
@@ -101,6 +103,7 @@ export default function Bludigo() {
                 maxWidth: "100%",
                 height: "auto",
               }}
+              alt="a group of doctors surrounding an operating room table"
             />
           </figure>
           <div className="bg-gradient-to-b from-primary to-[#020224] text-white font-light lg:w-1/2 md:order-1">
@@ -133,6 +136,7 @@ export default function Bludigo() {
                       maxWidth: "100%",
                       height: "auto",
                     }}
+                    alt="an icon of a chart"
                   />
                 </div>
                 <div className="text-primary ml-[20px] md:ml-[65px] lg:ml-[114px]">
@@ -151,6 +155,7 @@ export default function Bludigo() {
                       maxWidth: "100%",
                       height: "auto",
                     }}
+                    alt="a target icon"
                   />
                 </div>
                 <div className="text-primary ml-[20px] md:ml-[60px] lg:ml-[105px]">
@@ -171,6 +176,7 @@ export default function Bludigo() {
             <figure className="lg:max-w-[1000px] mx-auto">
               <Image
                 src={table}
+                alt="a table showing information from surgeons about using bludigo"
                 sizes="100vw"
                 style={{
                   width: "100%",
@@ -195,6 +201,7 @@ export default function Bludigo() {
                     width: "100%",
                     height: "auto",
                   }}
+                  alt="a clock icon"
                 />
               </div>
               <figcaption className="text-lg md:text-3xl text-white ml-12 mt-8 md:mt-0">
@@ -244,7 +251,7 @@ export default function Bludigo() {
                 className="bg-primary py-4 px-10 text-white text-xl md:text-2xl"
                 href={bludigo.salesSheet.mediaItemUrl}
               >
-                Read more
+                Read Sales Sheet
               </a>
             ) : (
               <span>Product Sales Sheet coming soon!</span>
