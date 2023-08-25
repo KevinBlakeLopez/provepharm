@@ -134,6 +134,7 @@ export default function Component(props) {
                   src={hexagon}
                   width={110}
                   height={110}
+                  alt="a hexagon icon with circles on the corners and arrows on top and bottom"
                 />
                 <figcaption className="font-semibold pb-4">
                   Commercial
