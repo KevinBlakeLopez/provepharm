@@ -1,3 +1,7 @@
+import Image from "next/image";
+import vIcon from "../public/frontpage-A-icon.png";
+import aIcon from "../public/frontpage-V-icon.png";
+
 export default function BannerThirdWay() {
   return (
     <div id="third-way-banner" className="mb-16 overflow-hidden">
@@ -9,9 +13,19 @@ export default function BannerThirdWay() {
         <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
           <figure className="hidden md:block absolute top-[-20%]">
             <img src="/frontPage-V-icon.png" />
+            <Image
+              src={vIcon}
+              quality="100"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
           </figure>
           <figure className="hidden md:block absolute bottom-[5%]">
             <img src="/frontpage-A-icon.png" />
+            <Image
+              src={aIcon}
+              quality="100"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
           </figure>
         </div>
         <p className="z-10 text-3xl lg:text-[3.5rem] font-light leading-tight text-white tracking-wider py-16 px-8">
