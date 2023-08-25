@@ -27,8 +27,10 @@ export default function BannerBludigo() {
                   quality="100"
                   style={{
                     maxWidth: "100%",
-                    height: "auto"
-                  }} />
+                    height: "auto",
+                  }}
+                />
+                alt="Provepharm's flagship product Bludigo, a diagnostic dye"
               </figure>
             </div>
           </div>

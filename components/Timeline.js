@@ -40,6 +40,7 @@ export default function Timeline() {
                 style={{
                   maxWidth: "100%",
                   height: "auto"
+                  alt="blue dye dispersing in solution"
                 }} />
             </figure>
 
@@ -61,6 +62,7 @@ export default function Timeline() {
                 style={{
                   maxWidth: "100%",
                   height: "auto"
+                  alt="a headshot of Michel Feraud"
                 }} />
               <figcaption className="text-base text-center">
                 Michel Feraud, Founder and CEO
@@ -87,6 +89,7 @@ export default function Timeline() {
                 style={{
                   maxWidth: "100%",
                   height: "auto"
+                  alt="a shot of all the Provepharm employees at the French headquarters"
                 }} />
             </figure>
           </div>
@@ -109,6 +112,7 @@ export default function Timeline() {
                 style={{
                   maxWidth: "100%",
                   height: "auto"
+                  alt="a scientist with a microscope"
                 }} />
             </figure>
 
@@ -142,6 +146,7 @@ export default function Timeline() {
                 style={{
                   maxWidth: "100%",
                   height: "auto"
+                  alt="a vial of ProvayBlue"
                 }} />
             </figure>
 
@@ -161,6 +166,7 @@ export default function Timeline() {
                 style={{
                   maxWidth: "100%",
                   height: "auto"
+                  alt="a scientist performing tests in a lab"
                 }} />
             </figure>
 

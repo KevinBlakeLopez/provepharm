@@ -18,6 +18,7 @@ export default function BannerPeopleLives() {
                 objectFit: "cover",
                 maxWidth: "100%",
               }}
+              alt="a man in a hospital bed"
             />
           </div>
         </figure>

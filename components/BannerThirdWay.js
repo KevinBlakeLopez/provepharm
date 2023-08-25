@@ -12,7 +12,10 @@ export default function BannerThirdWay() {
       >
         <div className="absolute w-[388px] z-20 left-0 top-0 bottom-0">
           <figure className="hidden md:block absolute top-[-20%]">
-            {/* <img src="/frontPage-V-icon.png" /> */}
+            <img
+              src="/frontPage-V-icon.png"
+              alt="a V icon that resembles Provepharm's logo"
+            />
             {/* <Image
               src={vIcon}
               quality="100"
@@ -20,7 +23,10 @@ export default function BannerThirdWay() {
             /> */}
           </figure>
           <figure className="hidden md:block absolute bottom-[5%]">
-            <img src="/frontpage-A-icon.png" />
+            <img
+              src="/frontpage-A-icon.png"
+              alt="an inverted v icon resembling Provepharm's logo"
+            />
             {/* <Image
               src={aIcon}
               quality="100"
