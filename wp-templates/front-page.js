@@ -73,6 +73,7 @@ export default function Component(props) {
                 maxWidth: "100%",
                 height: "auto",
               }}
+              alt="a convalescing man in a hospital bed with a caring woman bedside and a doctor advising the woman"
             />
           </figure>
         </div>
@@ -89,7 +90,13 @@ export default function Component(props) {
           <div className="flex flex-col md:flex-row mb-12 gap-5">
             <div className="w-full md:max-w-[200px] mb-10">
               <figure className="flex flex-col items-center">
-                <Image className="mb-3" src={plant} width={110} height={110} />
+                <Image
+                  className="mb-3"
+                  src={plant}
+                  width={110}
+                  height={110}
+                  alt="a plant icon"
+                />
 
                 <figcaption className="font-semibold pb-4">
                   External
@@ -103,7 +110,13 @@ export default function Component(props) {
 
             <div className="w-full md:max-w-[200px] mb-10">
               <figure className="flex flex-col items-center">
-                <Image className="mb-3" src={gears} width={110} height={110} />
+                <Image
+                  className="mb-3"
+                  src={gears}
+                  width={110}
+                  height={110}
+                  alt="a gears icon"
+                />
                 <figcaption className="font-semibold pb-4">
                   Internal
                   <br />
@@ -134,7 +147,13 @@ export default function Component(props) {
 
             <div className="w-full md:max-w-[200px] mb-10">
               <figure className="flex flex-col items-center">
-                <Image className="mb-3" src={shield} width={110} height={110} />
+                <Image
+                  className="mb-3"
+                  src={shield}
+                  width={110}
+                  height={110}
+                  alt="a shield icon"
+                />
                 <figcaption className="font-semibold pb-4">
                   Secure
                   <br />
@@ -147,7 +166,13 @@ export default function Component(props) {
 
             <div className="w-full md:max-w-[200px] mb-10">
               <figure className="flex flex-col items-center">
-                <Image className="mb-3" src={award} width={110} height={110} />
+                <Image
+                  className="mb-3"
+                  src={award}
+                  width={110}
+                  height={110}
+                  alt="an icon of an award"
+                />
                 <figcaption className="font-semibold pb-4">
                   Operational
                   <br />
