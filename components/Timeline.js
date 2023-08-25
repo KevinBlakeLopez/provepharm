@@ -37,11 +37,12 @@ export default function Timeline() {
             <figure className="mb-8">
               <Image
                 src={blueDye}
+                alt="blue dye dispersing in solution"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                  alt="blue dye dispersing in solution"
-                }} />
+                  height: "auto",
+                }}
+              />
             </figure>
 
             <p className="mb-8">
@@ -61,9 +62,10 @@ export default function Timeline() {
                 src={MF}
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                  alt="a headshot of Michel Feraud"
-                }} />
+                  height: "auto",
+                }}
+                alt="a headshot of Michel Feraud"
+              />
               <figcaption className="text-base text-center">
                 Michel Feraud, Founder and CEO
               </figcaption>
@@ -86,11 +88,12 @@ export default function Timeline() {
             <figure className="">
               <Image
                 src={allEmployees}
+                alt="a shot of all the Provepharm employees at the French headquarters"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                  alt="a shot of all the Provepharm employees at the French headquarters"
-                }} />
+                  height: "auto",
+                }}
+              />
             </figure>
           </div>
 
@@ -109,11 +112,12 @@ export default function Timeline() {
             <figure className="mb-8">
               <Image
                 src={microscope}
+                alt="a scientist with a microscope"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                  alt="a scientist with a microscope"
-                }} />
+                  height: "auto",
+                }}
+              />
             </figure>
 
             <div>
@@ -143,11 +147,12 @@ export default function Timeline() {
             <figure className="mb-8">
               <Image
                 src={provayblue}
+                alt="a vial of ProvayBlue"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                  alt="a vial of ProvayBlue"
-                }} />
+                  height: "auto",
+                }}
+              />
             </figure>
 
             <p>
@@ -163,11 +168,12 @@ export default function Timeline() {
             <figure className="mb-8">
               <Image
                 src={lab2}
+                alt="a scientist performing tests in a lab"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
-                  alt="a scientist performing tests in a lab"
-                }} />
+                  height: "auto",
+                }}
+              />
             </figure>
 
             <p>
