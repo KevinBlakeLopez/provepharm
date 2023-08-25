@@ -1,5 +1,4 @@
 const { withFaust, getWpHostname } = require("@faustwp/core");
-const withOptimizedImages = require("next-optimized-images");
 // console.log("getWpHostname():", getWpHostname());
 
 const ContentSecurityPolicy = `script-src ${
@@ -34,21 +33,19 @@ const securityHeaders = [
 /**
  * @type {import('next').NextConfig}
  **/
-module.exports = withOptimizedImages(
-  withFaust({
-    reactStrictMode: true,
-    sassOptions: {
-      includePaths: ["node_modules"],
-    },
-    images: {
-      domains: [getWpHostname()],
-    },
-    i18n: {
-      locales: ["en"],
-      defaultLocale: "en",
-    },
-    async headers() {
-      return [{ source: "/:path*", headers: securityHeaders }];
-    },
-  })
-);
+module.exports = withFaust({
+  reactStrictMode: true,
+  sassOptions: {
+    includePaths: ["node_modules"],
+  },
+  images: {
+    domains: [getWpHostname()],
+  },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
+  async headers() {
+    return [{ source: "/:path*", headers: securityHeaders }];
+  },
+});
