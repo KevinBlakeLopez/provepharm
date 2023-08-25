@@ -1,6 +1,6 @@
 import Image from "next/image";
-import vIcon from "../public/frontpage-A-icon.png";
-import aIcon from "../public/frontpage-V-icon.png";
+// import vIcon from "../public/frontpage-A-icon.png";
+// import aIcon from "../public/frontpage-V-icon.png";
 
 export default function BannerThirdWay() {
   return (
