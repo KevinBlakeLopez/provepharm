@@ -57,6 +57,7 @@ export default function Products() {
                                 }
                                 width="130"
                                 height="250"
+                                alt={product.metaFields.productimage.altText}
                               />
                             ) : (
                               <ComingSoon />
@@ -173,6 +174,7 @@ Products.query = gql`
           }
           productimage {
             mediaItemUrl
+            altText
           }
         }
         slug
