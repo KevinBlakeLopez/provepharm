@@ -2,7 +2,7 @@ import { getNextStaticProps } from "@faustwp/core";
 import { gql, useQuery } from "@apollo/client";
 
 import { Main } from "../../components";
-// import SEO from "../../components/SEO";
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Container from "../../components/Container";
