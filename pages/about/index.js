@@ -138,16 +138,16 @@ export default function AboutUs() {
   );
 }
 
-// AboutUs.query = gql`
-//   query AboutPage {
-//     page(id: "/about/", idType: URI) {
-//       seo {
-//         title
-//         metaDesc
-//       }
-//     }
-//   }
-// `;
+AboutUs.query = gql`
+  query AboutPage {
+    page(id: "/about/", idType: URI) {
+      seo {
+        title
+        metaDesc
+      }
+    }
+  }
+`;
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
