@@ -11,7 +11,7 @@ import BannerPeopleLives from "../../components/BannerPeopleLives";
 import BannerThirdWay from "../../components/BannerThirdWay";
 
 export default function AboutUs() {
-  // const { data } = useQuery(AboutUs.query);
+  const { data } = useQuery(AboutUs.query);
 
   return (
     <>
