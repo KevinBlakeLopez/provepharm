@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ComingSoon from "../../components/ComingSoon";
 
 export default function AllPostsTemplate({ data, route }) {
   if (!data.nodes[0]) {
@@ -19,7 +20,7 @@ export default function AllPostsTemplate({ data, route }) {
                   <Image
                     quality={90}
                     priority={true}
-                    alt={featuredImage.node.altText}
+                    alt={featuredImage.node.altText || "Bludigo image assets"}
                     src={featuredImage.node.mediaItemUrl}
                     fill
                     sizes="100vw"
@@ -28,7 +29,9 @@ export default function AllPostsTemplate({ data, route }) {
                     }}
                   />
                 </div>
-              ) : null}
+              ) : (
+                <ComingSoon />
+              )}
               <section className="lg:w-[500px]">
                 <div>
                   <p className="mb-2 text-sm">{events.eventDate}</p>
