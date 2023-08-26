@@ -46,6 +46,7 @@ PressReleases.query = gql`
         featuredImage {
           node {
             mediaItemUrl
+            altText
             mediaDetails {
               width
               height
