@@ -38,14 +38,14 @@ export default function Bludigo() {
         {/* adjust height of section element for mobile to make sure the Image component doesn't overflow */}
         <section
           id="hero"
-          className="bg-gradient-to-l from-[#31023d] to-primary md:h-[1000px] lg:h-[750px] text-white lg:flex lg:justify-center items-center px-2 py-10 md:p-16"
+          className="bg-gradient-to-l from-[#31023d] to-primary text-white lg:flex lg:justify-center items-center px-2 sm:p-20 py-10 lg:p-16 flex flex-col-reverse lg:flex-row"
         >
           <div className="lg:pr-32">
-            <div className="px-4 md:px-0 mb-14 lg:mb-14">
-              <p className="text-4xl md:text-6xl lg:text-7xl pb-6">
+            <div className="px-4 md:px-0 my-10 md:mt-0 lg:mb-14">
+              <p className="text-4xl md:text-6xl lg:text-7xl pb-4 sm:pb-6">
                 See the difference.
               </p>
-              <h1 className="text-2xl">
+              <h1 className="text-xl sm:text-2xl">
                 Bludigo™ (indigotindisulfonate sodium injection, USP)
               </h1>
             </div>
@@ -64,7 +64,7 @@ export default function Bludigo() {
               priority
               sizes="100vw"
               style={{
-                width: "100%",
+                width: "1200px",
                 height: "auto",
               }}
               alt="the bludigo dye inside its Provepharm box packaging"
